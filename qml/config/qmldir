@@ -1,0 +1,2 @@
+singleton EntryState 1.0 EntryState.qml
+singleton EntrySubState 1.0 EntrySubState.qml
