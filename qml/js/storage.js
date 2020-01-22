@@ -41,16 +41,13 @@ function getDatabase() {
 
 function doInit(db) {
     // Database tables: (primary key in all-caps)
-    // entries: ID, date, state, substate, parent, weight, text, description
-    // settings: SETTING, value
+    // entries: ID, date, state, substate, createdOn, weight, text, description
 
     db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
-            id INTEGER NOT NULL, date STRING NOT NULL, state STRING NOT NULL,\
-            substate STRING NOT NULL, parent INTEGER, weight INTEGER NOT NULL,\
-            text TEXT NOT NULL, description TEXT,\
-            PRIMARY KEY(id)');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS settings(setting TEXT NOT NULL PRIMARY KEY, value TEXT)');
+            date STRING NOT NULL, state STRING NOT NULL,\
+            substate STRING NOT NULL, createdOn STRING NOT NULL, weight INTEGER NOT NULL,\
+            text TEXT NOT NULL, description TEXT)');
     });
 }
 
@@ -74,16 +71,60 @@ function simpleQuery(query, values/*, getSelectedCount*/) {
     return res;
 }
 
-function getSetting(key) {
-    var value = simpleQuery('SELECT * FROM settings WHERE setting=? LIMIT 1;', [key]);
+function getEntries() {
+    var q = simpleQuery('SELECT rowid, * FROM entries;', []);
+    var res = []
 
-    if (rs.rows.length > 0) {
-        return res.rows.item(0);
-    } else {
-        return undefined;
+    for (var i = 0; i < q.rows.length; i++) {
+        var item = q.rows.item(i);
+
+        res.push({entryid: item.rowid,
+                     date: new Date(item.date),
+                     entrystate: parseInt(item.state, 10),
+                     substate: parseInt(item.substate, 10),
+                     createdOn: new Date(item.createdOn),
+                     weight: parseInt(item.weight, 10),
+                     text: item.text,
+                     description: item.description
+                 });
     }
+
+    return res;
 }
 
-function setSetting(key, value) {
-    simpleQuery('INSERT OR REPLACE INTO settings VALUES (?, ?);', [key, value]);
+function addEntry(date, entrystate, substate, createdOn, weight, text, description) {
+    simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?)', [
+        date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Number(entrystate), Number(substate),
+        createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        weight, text, description
+    ])
+
+    var q = simpleQuery('SELECT rowid FROM entries ORDER BY rowid DESC LIMIT 1;', []);
+    if (q.rows.length > 0) return q.rows.item(0).rowid;
+    else return undefined;
+}
+
+function updateEntry(entryid, date, entrystate, substate, createdOn, weight, text, description) {
+    if (entryid === undefined) {
+        console.warn("failed to update: invalid entry id", date, text);
+        return;
+    }
+
+    simpleQuery('UPDATE entries SET date=?, state=?, substate=?, createdOn=?, weight=?, text=?, description=? WHERE rowid=?', [
+        date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Number(entrystate), Number(substate),
+        createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        weight, text, description,
+        entryid
+    ])
+}
+
+function deleteEntry(entryid) {
+    if (entryid === undefined) {
+        console.warn("failed to delete: invalid entry id");
+        return;
+    }
+
+    simpleQuery('DELETE FROM entries WHERE rowid=?', [entryid]);
 }

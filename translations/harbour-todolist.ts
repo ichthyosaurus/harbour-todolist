@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en_US" sourcelanguage="en_US">
 <context>
     <name>AboutPage</name>
     <message>
@@ -9,6 +9,44 @@
     </message>
     <message>
         <source>Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ArchivePage</name>
+    <message>
+        <source>Archived Entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No entries yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page will show a list of all old entries.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ConfirmDeleteDialog</name>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Abort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you really want to delete this entry?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Task</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -38,26 +76,73 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tomorrow</source>
+        <source>for today</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>for tomorrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>for later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add new entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter task text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Task text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter optional description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Abort</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show old entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TodoList</name>
     <message>
         <source>Today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Yesterday</source>
+        <source>Tomorrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Older entries</source>
+        <source>No entries yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pull down to add entries</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>TodoDrawerComponent</name>
+    <name>TodoListItem</name>
     <message>
-        <source>Add new entry</source>
+        <source>continue today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -85,27 +170,55 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>⭑ %1, %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from yesterday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from earlier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>for today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>carried over</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ignored today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to be done tomorrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>done today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>press and hold to edit or delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Todo</source>
+        <source>Description (optional)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ignored</source>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Done</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>(error)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Nothing to show here...</source>
+        <source>Abort</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -121,6 +234,10 @@
     </message>
     <message>
         <source>ddd d MMM yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>d MMM yyyy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

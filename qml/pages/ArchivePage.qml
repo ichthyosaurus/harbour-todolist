@@ -8,28 +8,25 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    ListModel {
-        id: rawEntriesModel
-    }
-
     SortFilterProxyModel {
-        id: entriesModel
-        sourceModel: rawEntriesModel
+        id: filteredModel
+        sourceModel: rawModel
 
         sorters: [
-            RoleSorter { roleName: "date"; sortOrder: Qt.AscendingOrder },
+            RoleSorter { roleName: "date"; sortOrder: Qt.DescendingOrder },
             RoleSorter { roleName: "entrystate"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "weight"; sortOrder: Qt.DescendingOrder }
         ]
+
         proxyRoles: [
             ExpressionRole {
-                name: "isOld"
+                name: "_isOld"
                 expression: model.date < today
             }
         ]
 
         filters: ValueFilter {
-            roleName: "isOld"
+            roleName: "_isOld"
             value: true
         }
     }
@@ -37,14 +34,16 @@ Page {
     SilicaListView {
         id: view
         anchors.fill: parent
-        model: entriesModel
+        model: filteredModel
+        height: contentHeight + Theme.paddingLarge
 
         header: PageHeader {
             title: qsTr("Archived Entries")
         }
 
-        delegate: EntriesListDelegate {
+        delegate: TodoListItem {
             editable: false
+            onMarkItemAs: main.markItemAs(view.model.mapToSource(which), mainState, subState, copyToDate);
         }
 
         section {
@@ -55,21 +54,10 @@ Page {
             }
         }
 
-        EntriesListPlaceholder { date: date }
-    }
-
-    Component.onCompleted: {
-        rawEntriesModel.append({date: new Date("1970-01-01T00:00Z"), entrystate: EntryState.done, substate: EntrySubState.today, parentItem: "",
-                           weight: 1, text: "Schon erledigt", description: ""});
-        rawEntriesModel.append({date: new Date("1970-01-04T00:00Z"), entrystate: EntryState.todo, substate: EntrySubState.today, parentItem: "",
-                           weight: 1, text: "Kochen", description: ""});
-        rawEntriesModel.append({date: new Date("1970-01-01T00:00Z"), entrystate: EntryState.todo, substate: EntrySubState.today, parentItem: "",
-                           weight: 1, text: "Etwas Kompliziertes machen", description: "Das muss hier noch ausführlich beschrieben werden!"});
-        rawEntriesModel.append({date: new Date("1970-01-02T00:00Z"), entrystate: EntryState.ignored, substate: EntrySubState.today, parentItem: "",
-                           weight: 1, text: "Nö, das mach' ich nicht", description: ""});
-        rawEntriesModel.append({date: new Date("1970-02-01T00:00Z"), entrystate: EntryState.todo, substate: EntrySubState.tomorrow, parentItem: "",
-                           weight: 1, text: "Wäsche waschen", description: ""});
-        rawEntriesModel.append({date: new Date("1970-01-01T00:00Z"), entrystate: EntryState.done, substate: EntrySubState.tomorrow, parentItem: "",
-                           weight: 1, text: "Nichts mehr zu tun", description: ""});
+        ViewPlaceholder {
+            enabled: view.count == 0 && startupComplete
+            text: qsTr("No entries yet")
+            hintText: qsTr("This page will show a list of all old entries.")
+        }
     }
 }
