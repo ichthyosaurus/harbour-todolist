@@ -44,7 +44,7 @@ Page {
             }
 
             TodoDrawer {
-                date: getDate(1)
+                date: tomorrow
                 title: qsTr("Tomorrow")
                 open: false
             }
@@ -54,12 +54,8 @@ Page {
                 title: qsTr("Today")
                 open: true
             }
-        }
-    }
 
-    function getDate(offset) {
-        var currentDate = new Date();
-        currentDate.setDate(currentDate.getDate() + offset);
-        return currentDate;
+            Spacer { }
+        }
     }
 }
