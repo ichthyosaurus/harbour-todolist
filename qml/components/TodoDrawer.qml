@@ -37,10 +37,44 @@ GroupedDrawer {
             model: entriesModel
 
             header: Column {
+                id: listHeader
                 width: parent.width
                 height: childrenRect.height
 
-                // TODO implement GUI for adding items here
+                SectionHeader {
+                    text: qsTr("Add new entry")
+                }
+
+                TextField {
+                    id: taskText
+                    width: parent.width
+                    focus: true
+                    placeholderText: qsTr("Enter task text")
+                    label: qsTr("Task text")
+                }
+
+                TextArea {
+                    width: parent.width
+                    placeholderText: qsTr("Enter optional description")
+                    label: qsTr("Description")
+                }
+
+                Row {
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: Theme.paddingLarge
+
+                    Button {
+                        text: qsTr("Save")
+                        onClicked: console.log("new entry: save", date)
+                    }
+
+                    Button {
+                        text: qsTr("Abort")
+                        onClicked: console.log("new entry: abort", date)
+                    }
+                }
+
+                Spacer { }
             }
 
             delegate: EntriesListDelegate { }
@@ -72,9 +106,9 @@ GroupedDrawer {
     }
 
     Component.onCompleted: {
-        rawEntriesModel.append({date: today, entrystate: EntryState.done, substate: EntrySubState.today, parentItem: "",
+        rawEntriesModel.append({date: tomorrow, entrystate: EntryState.done, substate: EntrySubState.today, parentItem: "",
                            weight: 1, text: "Schon erledigt", description: ""});
-        rawEntriesModel.append({date: today, entrystate: EntryState.todo, substate: EntrySubState.today, parentItem: "",
+        rawEntriesModel.append({date: tomorrow, entrystate: EntryState.todo, substate: EntrySubState.today, parentItem: "",
                            weight: 1, text: "Kochen", description: ""});
         rawEntriesModel.append({date: today, entrystate: EntryState.todo, substate: EntrySubState.today, parentItem: "",
                            weight: 1, text: "Etwas Kompliziertes machen", description: "Das muss hier noch ausführlich beschrieben werden!"});
