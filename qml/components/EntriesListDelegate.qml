@@ -102,7 +102,7 @@ ListItem {
 
             Label {
                 visible: description !== ""
-                opacity: 0.6
+                opacity: Theme.opacityHigh
                 width: parent.width
                 text: description
                 font.pixelSize: Theme.fontSizeSmall
@@ -127,13 +127,13 @@ ListItem {
             name: "ignored"
             when: entrystate === EntryState.ignored
             PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
-            PropertyChanges { target: row; opacity: 0.6 }
+            PropertyChanges { target: row; opacity: Theme.opacityHigh }
         },
         State {
             name: "done"
             when: entrystate === EntryState.done
             PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; }
-            PropertyChanges { target: row; opacity: 0.6 }
+            PropertyChanges { target: row; opacity: Theme.opacityHigh }
         }
     ]
 }

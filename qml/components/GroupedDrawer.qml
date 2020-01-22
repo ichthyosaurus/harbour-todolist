@@ -63,7 +63,7 @@ Item {
             }
             text: ""
             color: Theme.highlightColor
-            opacity: 0.6
+            opacity: Theme.opacityHigh
             font.pixelSize: Theme.fontSizeSmall
         }
 
