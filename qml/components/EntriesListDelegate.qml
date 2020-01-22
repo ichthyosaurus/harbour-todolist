@@ -18,41 +18,50 @@ ListItem {
     ListView.onRemove: animateRemoval(item) // enable animated list item removals
 
     showMenuOnPressAndHold: false
-    onPressAndHold: editable ? {} /*edit*/ : {}
-    onClicked: editable ? openMenu() : {}
+    // onPressAndHold: editable ? {} /*edit*/ : {}
+    onClicked: (editable || hasInfoLabel.visible) ? openMenu() : {}
     menu: Component {
         ContextMenu {
             MenuItem {
-                visible: entrystate !== EntryState.done
+                visible: editable && entrystate !== EntryState.done
                 text: qsTr("done")
                 onClicked: markItemAs(index, EntryState.done, substate);
             }
             MenuItem {
-                visible: entrystate !== EntryState.done && substate !== EntrySubState.tomorrow
+                visible: editable && entrystate !== EntryState.done && substate !== EntrySubState.tomorrow
                 text: qsTr("done for today, continue tomorrow")
                 onClicked: markItemAs(index, EntryState.done, EntrySubState.tomorrow);
             }
             MenuItem {
-                visible: entrystate === EntryState.todo && substate !== EntrySubState.tomorrow
+                visible: editable && entrystate === EntryState.todo && substate !== EntrySubState.tomorrow
                 text: qsTr("move to tomorrow")
                 onClicked: markItemAs(index, EntryState.ignored, EntrySubState.tomorrow);
             }
             MenuItem {
-                visible: entrystate === EntryState.todo
+                visible: editable && entrystate === EntryState.todo
                 text: qsTr("ignore")
                 onClicked: markItemAs(index, EntryState.ignored, substate);
             }
             MenuItem {
-                visible: entrystate === EntryState.done && substate !== EntrySubState.tomorrow
+                visible: editable && entrystate === EntryState.done && substate !== EntrySubState.tomorrow
                 text: qsTr("continue tomorrow")
                 onClicked: markItemAs(index, EntryState.done, EntrySubState.tomorrow);
             }
             MenuItem {
-                visible: entrystate === EntryState.done
+                visible: editable && entrystate === EntryState.done
                 text: qsTr("not completely done yet")
                 onClicked: markItemAs(index, EntryState.todo, substate);
             }
             MenuItem {
+                enabled: false
+                visible: hasInfoLabel.visible
+                text: qsTr("⭑ %1, %2").arg(
+                          substate === EntrySubState.today ? qsTr("done today") : qsTr("for tomorrow")).arg(
+                          parentItem === "" ? qsTr("from today") : qsTr("from yesterday"))
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            MenuItem {
+                visible: editable
                 enabled: false
                 text: qsTr("press and hold to edit or delete")
                 font.pixelSize: Theme.fontSizeSmall
@@ -89,16 +98,30 @@ ListItem {
 
             Spacer { height: Theme.paddingMedium }
 
-            Label {
-                width: parent.width
-                text: model.text
-                font.pixelSize: Theme.fontSizeMedium
-                textFormat: Text.PlainText
-                elide: Text.ElideRight
-                truncationMode: TruncationMode.Fade
-                maximumLineCount: 2
-                wrapMode: Text.WordWrap
+            Row {
+                width: parent.width-Theme.horizontalPageMargin
+
+                Label {
+                    width: parent.width
+                    text: model.text
+                    font.pixelSize: Theme.fontSizeMedium
+                    textFormat: Text.PlainText
+                    elide: Text.ElideRight
+                    truncationMode: TruncationMode.Fade
+                    maximumLineCount: 2
+                    wrapMode: Text.WordWrap
+                }
+
+                Label {
+                    id: hasInfoLabel
+                    visible: parentItem !== "" || substate === EntrySubState.tomorrow
+                    width: Theme.iconSizeExtraSmall
+                    text: "⭑"
+                    color: Theme.highlightColor
+                    opacity: Theme.opacityHigh
+                }
             }
+
 
             Label {
                 visible: description !== ""
