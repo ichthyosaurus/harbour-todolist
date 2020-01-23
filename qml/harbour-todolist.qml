@@ -11,6 +11,7 @@ ApplicationWindow
     id: main
     property alias rawModel: mainModel
     property alias categoriesModel: mainCategoriesModel
+    property alias configuration: config
 
     property bool startupComplete: false
     property string currentCategoryName: ""
@@ -93,6 +94,31 @@ ApplicationWindow
         copyToDate = Storage.defaultFor(copyToDate, getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
                 EntryState.todo, EntrySubState.today, item.createdOn);
+    }
+
+    function addCategory(name, entryState) {
+        entryState = Storage.defaultFor(entryState, EntryState.todo);
+        name = Storage.defaultFor(name, "")
+        var entryId = Storage.addCategory(name, entryState);
+
+        if (entryId === undefined) {
+            console.error("failed to save new category", name, entryState);
+            return;
+        } else {
+            categoriesModel.append({entryId: entryId, entryState: entryState, name: name});
+        }
+    }
+
+    function updateCategory(which, name, entryState) {
+        if (name !== undefined) categoriesModel.setProperty(which, "name", name);
+        if (entryState !== undefined) categoriesModel.setProperty(which, "entryState", entryState);
+        var item = categoriesModel.get(which);
+        Storage.updateCategory(item.entryId, item.name, item.entryState);
+    }
+
+    function deleteCategory(which) {
+        Storage.deleteCategory(categoriesModel.get(which).entryId);
+        categoriesModel.remove(which);
     }
 
     function setCurrentCategory(entryId) {

@@ -51,8 +51,8 @@ Dialog {
                 id: textField
                 width: parent.width
                 focus: true
-                placeholderText: qsTr("Enter text")
-                label: qsTr("Text")
+                placeholderText: qsTr("Enter title")
+                label: qsTr("Title")
                 // inputMethodHints: Qt.ImhNoPredictiveText
 
                 EnterKey.enabled: text.length > 0

@@ -111,6 +111,33 @@ function getCategory(entryId) {
     }
 }
 
+function addCategory(name, entryState) {
+    if (!name) return undefined;
+    simpleQuery('INSERT INTO categories VALUES (?, ?)', [name, Number(entryState)])
+    var q = simpleQuery('SELECT rowid FROM categories ORDER BY rowid DESC LIMIT 1;', []);
+    if (q.rows.length > 0) return q.rows.item(0).rowid;
+    else return undefined;
+}
+
+function updateCategory(entryId, name, entryState) {
+    if (entryId === undefined) {
+        console.warn("failed to update category: invalid entry id", name, entryState);
+        return;
+    }
+
+    simpleQuery('UPDATE categories SET name=?, entryState=? WHERE rowid=?',
+                [name, Number(entryState), entryId])
+}
+
+function deleteCategory(entryId) {
+    if (entryId === undefined) {
+        console.warn("failed to delete category: invalid entry id");
+        return;
+    }
+
+    simpleQuery('DELETE FROM categories WHERE rowid=?', [entryId]);
+}
+
 function getEntries(forCategory) {
     forCategory = defaultFor(forCategory, 0);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE category=?;', [forCategory]);

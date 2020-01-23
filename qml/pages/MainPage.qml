@@ -12,7 +12,7 @@ Page {
     function addItemFor(date) {
         var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), { date: date })
         dialog.accepted.connect(function() {
-            addItem(date, dialog.text, dialog.description);
+            addItem(date, dialog.text.trim(), dialog.description.trim());
         });
     }
 
