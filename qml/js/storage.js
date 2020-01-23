@@ -85,7 +85,7 @@ function simpleQuery(query, values/*, getSelectedCount*/) {
 }
 
 function getCategories() {
-    var q = simpleQuery('SELECT rowid, * FROM categories;', [forCategory]);
+    var q = simpleQuery('SELECT rowid, * FROM categories;', []);
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
