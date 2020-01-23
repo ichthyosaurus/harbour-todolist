@@ -46,8 +46,8 @@ function doInit(db) {
     db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
             date STRING NOT NULL,
-            entryState STRING NOT NULL,
-            subState STRING NOT NULL,
+            entryState INTEGER NOT NULL,
+            subState INTEGER NOT NULL,
             createdOn STRING NOT NULL,
             weight INTEGER NOT NULL,
             interval INTEGER NOT NULL,
