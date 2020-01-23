@@ -84,8 +84,25 @@ function simpleQuery(query, values/*, getSelectedCount*/) {
     return res;
 }
 
-function getEntries() {
-    var q = simpleQuery('SELECT rowid, * FROM entries;', []);
+function getCategories() {
+    var q = simpleQuery('SELECT rowid, * FROM categories;', [forCategory]);
+    var res = []
+
+    for (var i = 0; i < q.rows.length; i++) {
+        var item = q.rows.item(i);
+
+        res.push({entryId: item.rowid,
+                     name: item.name,
+                     entryState: parseInt(item.entryState, 10),
+                 });
+    }
+
+    return res;
+}
+
+function getEntries(forCategory) {
+    forCategory = defaultFor(forCategory, 0);
+    var q = simpleQuery('SELECT rowid, * FROM entries WHERE category=?;', [forCategory]);
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
