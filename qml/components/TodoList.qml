@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
 import "../constants" 1.0
+import "../js/helpers.js" as Helpers
 
 SilicaListView {
     id: view
@@ -18,8 +19,9 @@ SilicaListView {
         onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription);
         onDeleteThisItem: deleteItem(view.model.mapToSource(which))
         Component.onCompleted: {
+            // FIXME if the list is long, not all entries are hidden properly
             view.toggleShowSection.connect(function(section) {
-                if (section.split("T")[0] === getDateString(date)) hidden = !hidden;
+                if (section.split("T")[0] === Helpers.getDateString(date)) hidden = !hidden;
             })
         }
     }
@@ -29,8 +31,8 @@ SilicaListView {
         delegate: Column {
             width: parent.width
             property bool open: true
-            property bool isToday: String(section).split("T")[0] === getDateString(today)
-            property bool isTomorrow: String(section).split("T")[0] === getDateString(tomorrow)
+            property bool isToday: String(section).split("T")[0] === Helpers.getDateString(today)
+            property bool isTomorrow: String(section).split("T")[0] === Helpers.getDateString(tomorrow)
 
             Spacer { height: Theme.paddingLarge }
 
@@ -40,6 +42,7 @@ SilicaListView {
 
                 onClicked: {
                     open = !open;
+                    console.log("sent", section)
                     view.toggleShowSection(section);
                 }
 

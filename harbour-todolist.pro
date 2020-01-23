@@ -24,6 +24,8 @@ DISTFILES += qml/harbour-todolist.qml \
     qml/pages/*.qml \
     qml/components/*.qml \
     qml/js/*.js \
+    qml/constants/*.js \
+    qml/constants/qmldir \
     qml/images/*.png \
     rpm/harbour-todolist.changes.in \
     rpm/harbour-todolist.changes.run.in \

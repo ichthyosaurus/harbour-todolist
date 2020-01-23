@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 import "constants" 1.0
 import "js/storage.js" as Storage
+import "js/helpers.js" as Helpers
 import "pages"
 
 ApplicationWindow
@@ -15,8 +16,8 @@ ApplicationWindow
     property bool startupComplete: false
     property string currentCategoryName: ""
 
-    property date today: getDate(0)
-    property date tomorrow: getDate(1)
+    property date today: Helpers.getDate(0)
+    property date tomorrow: Helpers.getDate(1)
 
     property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
     property string timeFormat: qsTr("hh':'mm")
@@ -36,17 +37,6 @@ ApplicationWindow
         property date lastCarriedOverFrom
         property date lastCarriedOverTo
         property int currentCategory
-    }
-
-    function getDate(offset, baseDate) {
-        var currentDate = baseDate === undefined ? new Date() : baseDate;
-        currentDate.setUTCDate(currentDate.getDate() + offset);
-        currentDate.setUTCHours(0, 0, 0, 0);
-        return currentDate;
-    }
-
-    function getDateString(date) {
-        return new Date(date).toLocaleString(Qt.locale(), "yyyy-MM-dd");
     }
 
     function addItem(forDate, task, description, entryState, subState, createdOn) {
@@ -90,7 +80,7 @@ ApplicationWindow
 
     function copyItemTo(which, copyToDate) {
         var item = rawModel.get(which);
-        copyToDate = Storage.defaultFor(copyToDate, getDate(1, item.date))
+        copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
@@ -140,7 +130,7 @@ ApplicationWindow
     Component.onCompleted: {
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverTo = today;
-            config.lastCarriedOverFrom = getDate(-1, today);
+            config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
         setCurrentCategory(config.currentCategory);
 

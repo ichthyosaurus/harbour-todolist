@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../constants" 1.0
+import "../js/helpers.js" as Helpers
 
 TodoListBaseItem {
     id: item
@@ -26,12 +27,12 @@ TodoListBaseItem {
             MenuItem {
                 visible: editable && entryState !== EntryState.done && subState !== EntrySubState.tomorrow
                 text: qsTr("done for today, continue tomorrow")
-                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
+                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
             }
             MenuItem {
                 visible: editable && entryState === EntryState.todo && subState !== EntrySubState.tomorrow
                 text: qsTr("move to tomorrow")
-                onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.tomorrow, getDate(1, date));
+                onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.tomorrow, Helpers.getDate(1, date));
             }
             MenuItem {
                 visible: editable && entryState === EntryState.todo
@@ -41,7 +42,7 @@ TodoListBaseItem {
             MenuItem {
                 visible: editable && entryState === EntryState.done && subState !== EntrySubState.tomorrow
                 text: qsTr("continue tomorrow")
-                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
+                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
             }
             MenuItem {
                 visible: editable && entryState === EntryState.done
@@ -56,7 +57,7 @@ TodoListBaseItem {
 
                     if (createdOn.getTime() === date.getTime()) {
                         text = text.arg(qsTr("from today"));
-                    } else if (createdOn.getTime() === getDate(-1, date).getTime()) {
+                    } else if (createdOn.getTime() === Helpers.getDate(-1, date).getTime()) {
                         text = text.arg(qsTr("from yesterday"));
                     } else {
                         text = text.arg(qsTr("from earlier"));
