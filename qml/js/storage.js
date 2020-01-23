@@ -100,6 +100,17 @@ function getCategories() {
     return res;
 }
 
+function getCategory(entryId) {
+    entryId = defaultFor(entryId, 0);
+    var q = simpleQuery('SELECT rowid, * FROM categories WHERE rowid=? LIMIT 1;', [entryId]);
+    if (q.rows.length > 0) {
+        var item = q.rows.item(0);
+        return { entryId: item.rowid, name: item.name, entryState: parseInt(item.entryState, 10) };
+    } else {
+        return undefined;
+    }
+}
+
 function getEntries(forCategory) {
     forCategory = defaultFor(forCategory, 0);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE category=?;', [forCategory]);

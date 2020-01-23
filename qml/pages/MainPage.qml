@@ -46,6 +46,7 @@ Page {
 
         header: PageHeader {
             title: qsTr("Todo List")
+            description: currentCategoryName
         }
 
         PullDownMenu {

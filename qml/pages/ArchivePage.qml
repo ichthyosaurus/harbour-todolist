@@ -39,6 +39,7 @@ Page {
 
         header: PageHeader {
             title: qsTr("Archived Entries")
+            description: currentCategoryName
         }
 
         delegate: TodoListItem {

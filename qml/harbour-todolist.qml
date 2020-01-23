@@ -11,6 +11,7 @@ ApplicationWindow
     id: main
     property alias rawModel: mainModel
     property bool startupComplete: false
+    property string currentCategoryName: ""
 
     property date today: getDate(0)
     property date tomorrow: getDate(1)
@@ -31,6 +32,7 @@ ApplicationWindow
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
         property date lastCarriedOverTo
+        property int currentCategory
     }
 
     function getDate(offset, baseDate) {
@@ -50,7 +52,7 @@ ApplicationWindow
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
         var interval = 0;
-        var category = 0;
+        var category = config.currentCategory;
 
         var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
                                        weight, interval, category, task, description);
@@ -98,7 +100,10 @@ ApplicationWindow
         // TODO read config.* and import old unfinished entries from earlier
         // to be continued today
 
-        var entries = Storage.getEntries();
+        if (!config.currentCategory) config.currentCategory = 0;
+        currentCategoryName = Storage.getCategory(config.currentCategory).name;
+
+        var entries = Storage.getEntries(config.currentCategory);
 
         for (var i in entries) {
             rawModel.append(entries[i]);
