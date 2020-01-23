@@ -174,3 +174,16 @@ function deleteEntry(entryId) {
 
     simpleQuery('DELETE FROM entries WHERE rowid=?', [entryId]);
 }
+
+function carryOverFrom(fromDate) {
+    console.log("carrying over");
+    fromDate = defaultFor(fromDate, new Date(NaN));
+
+    if (isNaN(fromDate.valueOf())) {
+        // for the first time
+    } else {
+        // from fromDate
+    }
+
+    return false;
+}

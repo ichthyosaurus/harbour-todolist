@@ -114,12 +114,10 @@ ApplicationWindow
     }
 
     Component.onCompleted: {
-        // TODO read config.* and import old unfinished entries from earlier
-        // to be continued today
-
-
-        console.log(config.lastCarriedOverFrom, config.lastCarriedOverTo);
-
+        if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
+            config.lastCarriedOverTo = today;
+            config.lastCarriedOverFrom = getDate(-1, today);
+        }
         setCurrentCategory(config.currentCategory);
     }
 }
