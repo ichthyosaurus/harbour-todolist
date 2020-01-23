@@ -136,7 +136,7 @@ ListItem {
             anchors.fill: statusIcon // FIXME not possible in a Row
             icon.source: "image://theme/icon-m-delete"
             onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("ConfirmDeleteDialog.qml"),
+                var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"),
                                             { text: text, description: description })
                 dialog.accepted.connect(function() {
                     deleteThisItem(index)
