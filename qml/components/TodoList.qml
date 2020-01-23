@@ -9,10 +9,10 @@ SilicaListView {
     signal toggleShowSection(var section)
 
     delegate: TodoListItem {
-        onMarkItemAs: main.markItemAs(view.model.mapToSource(which), mainState, subState);
+        onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
         onCopyAndMarkItem: {
             var sourceIndex = view.model.mapToSource(which);
-            main.markItemAs(sourceIndex, mainState, subState);
+            updateItem(sourceIndex, mainState, subState);
             main.copyItemTo(sourceIndex, copyToDate);
         }
         onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription);

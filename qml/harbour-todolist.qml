@@ -85,10 +85,6 @@ ApplicationWindow
         rawModel.remove(which);
     }
 
-    function markItemAs(which, mainState, subState, copyToDate) {
-        updateItem(which, mainState, subState);
-    }
-
     function copyItemTo(which, copyToDate) {
         var item = rawModel.get(which);
         copyToDate = Storage.defaultFor(copyToDate, getDate(1, item.date))

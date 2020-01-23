@@ -48,7 +48,7 @@ Page {
             editable: false
             onCopyAndMarkItem: {
                 var sourceIndex = view.model.mapToSource(which);
-                main.markItemAs(sourceIndex, mainState, subState);
+                main.updateItem(sourceIndex, mainState, subState);
                 main.copyItemTo(sourceIndex, copyToDate);
             }
         }
