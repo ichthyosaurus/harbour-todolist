@@ -31,6 +31,8 @@ Page {
         delegate: TodoListBaseItem {
             editable: true
             descriptionEnabled: false
+            infoMarkerEnabled: false
+            title: model.name
         }
 
         section {

@@ -8,8 +8,12 @@ ListItem {
     contentHeight: row.height + (isEditing ? editButtonRow.height : 0)
     ListView.onRemove: animateRemoval(item) // enable animated list item removals
 
+    property string title: ""
+    property string description: ""
+    property bool infoMarkerEnabled: false
     property bool editable: true
     property bool descriptionEnabled: true
+
     property bool isEditing: false
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
@@ -20,7 +24,7 @@ ListItem {
         isEditing = true;
         item.enabled = false;
         editDescriptionField.text = description;
-        editTextField.text = text;
+        editTextField.text = title;
         editTextField.forceActiveFocus();
     }
 
@@ -71,7 +75,7 @@ ListItem {
             icon.source: "image://theme/icon-m-delete"
             onClicked: {
                 var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"),
-                                            { text: text, description: description })
+                                            { text: title, description: description })
                 dialog.accepted.connect(function() {
                     deleteThisItem(index)
                 });
@@ -89,10 +93,9 @@ ListItem {
                 width: parent.width-Theme.horizontalPageMargin
 
                 Label {
-                    id: taskText
                     visible: !isEditing
                     width: parent.width
-                    text: model.text
+                    text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
                     wrapMode: Text.WordWrap
@@ -102,14 +105,14 @@ ListItem {
                     id: editTextField
                     visible: isEditing
                     z: row.z-1
-                    placeholderText: model.text
-                    text: model.text
+                    placeholderText: title
+                    text: title
                     labelVisible: false
                     textTopMargin: 0
                     textMargin: 0
                     width: parent.width
 
-                    EnterKey.enabled: text.length > 0
+                    EnterKey.enabled: title.length > 0
                     EnterKey.iconSource: "image://theme/icon-m-enter-" + (descriptionEnabled ? "next" : "accept")
                     EnterKey.onClicked: {
                         if (descriptionEnabled) {
@@ -123,7 +126,7 @@ ListItem {
 
                 Label {
                     id: hasInfoLabel
-                    visible: !isEditing && (createdOn.getTime() !== date.getTime() || subState === EntrySubState.tomorrow)
+                    visible: !isEditing && infoMarkerEnabled
                     width: Theme.iconSizeExtraSmall
                     text: "⭑"
                     color: Theme.highlightColor

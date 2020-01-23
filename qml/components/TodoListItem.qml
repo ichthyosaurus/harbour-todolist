@@ -6,6 +6,9 @@ TodoListBaseItem {
     id: item
     editable: true
     descriptionEnabled: true
+    infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState === EntrySubState.tomorrow)
+    title: model.text
+    description: model.description
 
     menu: Component {
         ContextMenu {
