@@ -20,6 +20,7 @@ ListItem {
         item.enabled = false;
         editDescriptionField.text = description;
         editTextField.text = text;
+        editTextField.forceActiveFocus();
     }
 
     function stopEditing() {
@@ -160,9 +161,6 @@ ListItem {
                     text: model.text
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
-                    elide: Text.ElideRight
-                    truncationMode: TruncationMode.Fade
-                    maximumLineCount: 2
                     wrapMode: Text.WordWrap
                 }
 
@@ -176,6 +174,10 @@ ListItem {
                     textTopMargin: 0
                     textMargin: 0
                     width: parent.width
+
+                    EnterKey.enabled: text.length > 0
+                    EnterKey.iconSource: "image://theme/icon-m-enter-next"
+                    EnterKey.onClicked: editDescriptionField.forceActiveFocus();
                 }
 
                 Label {
@@ -195,9 +197,6 @@ ListItem {
                 text: description
                 font.pixelSize: Theme.fontSizeSmall
                 textFormat: Text.PlainText
-                elide: Text.ElideRight
-                truncationMode: TruncationMode.Fade
-                maximumLineCount: 8
                 wrapMode: Text.WordWrap
             }
 
