@@ -1,18 +1,18 @@
 Name: harbour-todolist
-Summary: My Sailfish OS Application
-Version: 0.1
+Summary: A simple todo list manager
+Version: 1.0
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
-Group: Qt/Qt
-URL: http://example.org/
-License: LICENSE
+Group: Applications/Productivity
+URL: https://github.com/ichthyosaurus/harbour-todolist
+License: GPLv3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my Sailfish OS Application
+  A simple todo list manager with support for multiple projects.
 Configure: none
 Builder: qmake5
 
