@@ -51,6 +51,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                // TODO
                 text: qsTr("Change category")
                 onClicked: console.log("change category!"); //pageStack.push(Qt.resolvedUrl("CategoriesPage.qml"))
             }

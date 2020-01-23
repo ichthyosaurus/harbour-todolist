@@ -96,19 +96,30 @@ ApplicationWindow
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
+    function setCurrentCategory(entryId) {
+        entryId = Storage.defaultFor(entryId, 0);
+        config.currentCategory = entryId;
+        currentCategoryName = Storage.getCategory(config.currentCategory).name;
+
+        if (currentCategoryName === undefined) {
+            // if the requested category is not available, reset it to the default category
+            setCurrentCategory(0);
+        } else {
+            startupComplete = false;
+            rawModel.clear();
+            var entries = Storage.getEntries(config.currentCategory);
+            for (var i in entries) rawModel.append(entries[i]);
+            startupComplete = true;
+        }
+    }
+
     Component.onCompleted: {
         // TODO read config.* and import old unfinished entries from earlier
         // to be continued today
 
-        if (!config.currentCategory) config.currentCategory = 0;
-        currentCategoryName = Storage.getCategory(config.currentCategory).name;
 
-        var entries = Storage.getEntries(config.currentCategory);
+        console.log(config.lastCarriedOverFrom, config.lastCarriedOverTo);
 
-        for (var i in entries) {
-            rawModel.append(entries[i]);
-        }
-
-        startupComplete = true;
+        setCurrentCategory(config.currentCategory);
     }
 }
