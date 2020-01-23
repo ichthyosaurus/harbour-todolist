@@ -55,6 +55,10 @@ function doInit(db) {
             text TEXT NOT NULL,
             description TEXT
         );');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS categories(\
+            name TEXT NOT NULL,
+            entryState INTEGER NOT NULL
+        );');
     });
 }
 
