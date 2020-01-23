@@ -50,7 +50,7 @@ ApplicationWindow
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
         var interval = 0;
-        var category = "default";
+        var category = 0;
 
         var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
                                        weight, interval, category, task, description);

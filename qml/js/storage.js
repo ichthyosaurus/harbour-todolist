@@ -42,6 +42,7 @@ function getDatabase() {
 function doInit(db) {
     // Database tables: (primary key in all-caps)
     // entries: ID, date, entryState, subState, createdOn, weight, interval, category, text, description
+    // categories: ID, name, entryState
 
     db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
@@ -51,7 +52,7 @@ function doInit(db) {
             createdOn STRING NOT NULL,
             weight INTEGER NOT NULL,
             interval INTEGER NOT NULL,
-            category STRING NOT NULL,
+            category INTEGER NOT NULL,
             text TEXT NOT NULL,
             description TEXT
         );');
@@ -59,6 +60,7 @@ function doInit(db) {
             name TEXT NOT NULL,
             entryState INTEGER NOT NULL
         );');
+        tx.executeSql('INSERT OR IGNORE INTO categories(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
     });
 }
 
