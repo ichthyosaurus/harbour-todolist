@@ -43,7 +43,11 @@ Page {
 
         delegate: TodoListItem {
             editable: false
-            onMarkItemAs: main.markItemAs(view.model.mapToSource(which), mainState, subState, copyToDate);
+            onCopyAndMarkItem: {
+                var sourceIndex = view.model.mapToSource(which);
+                main.markItemAs(sourceIndex, mainState, subState);
+                main.copyItemTo(sourceIndex, copyToDate);
+            }
         }
 
         section {

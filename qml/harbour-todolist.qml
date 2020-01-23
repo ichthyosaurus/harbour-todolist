@@ -80,13 +80,13 @@ ApplicationWindow
 
     function markItemAs(which, mainState, subState, copyToDate) {
         updateItem(which, mainState, subState);
+    }
 
-        if (subState === EntrySubState.tomorrow) {
-            var item = rawModel.get(which);
-            addItem(copyToDate === undefined ? getDate(1, item.date) : copyToDate,
-                    item.text, item.description,
-                    EntryState.todo, EntrySubState.today, item.createdOn);
-        }
+    function copyItemTo(which, copyToDate) {
+        var item = rawModel.get(which);
+        copyToDate = Storage.defaultFor(copyToDate, getDate(1, item.date))
+        addItem(copyToDate, item.text, item.description,
+                EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
     Component.onCompleted: {

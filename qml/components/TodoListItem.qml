@@ -10,7 +10,8 @@ ListItem {
 
     property bool isEditing: false
     property bool editable: true
-    signal markItemAs(var which, var mainState, var subState, var copyToDate)
+    signal markItemAs(var which, var mainState, var subState)
+    signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal saveItemTexts(var which, var newText, var newDescription)
     signal deleteThisItem(var which)
 
@@ -34,38 +35,38 @@ ListItem {
             MenuItem {
                 visible: !editable
                 text: qsTr("continue today")
-                onClicked: markItemAs(index, entrystate, EntrySubState.tomorrow, today)
+                onClicked: copyAndMarkItem(index, entrystate, EntrySubState.tomorrow, today);
             }
 
             MenuItem {
                 visible: editable && entrystate !== EntryState.done
                 text: qsTr("done")
-                onClicked: markItemAs(index, EntryState.done, substate, undefined);
+                onClicked: markItemAs(index, EntryState.done, substate);
             }
             MenuItem {
                 visible: editable && entrystate !== EntryState.done && substate !== EntrySubState.tomorrow
                 text: qsTr("done for today, continue tomorrow")
-                onClicked: markItemAs(index, EntryState.done, EntrySubState.tomorrow, undefined);
+                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
                 visible: editable && entrystate === EntryState.todo && substate !== EntrySubState.tomorrow
                 text: qsTr("move to tomorrow")
-                onClicked: markItemAs(index, EntryState.ignored, EntrySubState.tomorrow, undefined);
+                onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
                 visible: editable && entrystate === EntryState.todo
                 text: qsTr("ignore")
-                onClicked: markItemAs(index, EntryState.ignored, substate, undefined);
+                onClicked: markItemAs(index, EntryState.ignored, substate);
             }
             MenuItem {
                 visible: editable && entrystate === EntryState.done && substate !== EntrySubState.tomorrow
                 text: qsTr("continue tomorrow")
-                onClicked: markItemAs(index, EntryState.done, EntrySubState.tomorrow, undefined);
+                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
                 visible: editable && entrystate === EntryState.done
                 text: qsTr("not completely done yet")
-                onClicked: markItemAs(index, EntryState.todo, substate, undefined);
+                onClicked: markItemAs(index, EntryState.todo, substate);
             }
             MenuItem {
                 enabled: false
