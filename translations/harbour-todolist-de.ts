@@ -13,6 +13,45 @@
     </message>
 </context>
 <context>
+    <name>AddItemDialog</name>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Abort</source>
+        <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Add entry for today</source>
+        <translation>Eintrag für heute hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add entry for tomorrow</source>
+        <translation>Eintrag für morgen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add entry</source>
+        <translation>Eintrag hinzufügen</translation>
+    </message>
+    <message>
+        <source>Enter title</source>
+        <translation>Titel eingeben</translation>
+    </message>
+    <message>
+        <source>Title</source>
+        <translation>Titel</translation>
+    </message>
+    <message>
+        <source>Enter optional description</source>
+        <translation>Optionale Beschreibung eingeben</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
+    </message>
+</context>
+<context>
     <name>ArchivePage</name>
     <message>
         <source>Archived Entries</source>
@@ -28,6 +67,41 @@
     </message>
 </context>
 <context>
+    <name>CategoriesPage</name>
+    <message>
+        <source>Categories</source>
+        <translation>Kategorien</translation>
+    </message>
+    <message>
+        <source>Add category</source>
+        <translation>Kategorie hinzufügen</translation>
+    </message>
+    <message>
+        <source>select</source>
+        <translation>auswählen</translation>
+    </message>
+    <message>
+        <source>mark as active</source>
+        <translation>als aktiv markieren</translation>
+    </message>
+    <message>
+        <source>mark as halted</source>
+        <translation>als unterbrochen markieren</translation>
+    </message>
+    <message>
+        <source>mark as finished</source>
+        <translation>als abgeschlossen markieren</translation>
+    </message>
+    <message>
+        <source>No entries</source>
+        <translation>Keine Einträge</translation>
+    </message>
+    <message>
+        <source>This should not be possible. Most probably a database error occurred.</source>
+        <translation>Das sollte nicht möglich sein. Vermutlich ist ein Datenbankfehler aufgetreten.</translation>
+    </message>
+</context>
+<context>
     <name>ConfirmDeleteDialog</name>
     <message>
         <source>Delete</source>
@@ -38,16 +112,12 @@
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <source>Do you really want to delete this entry?</source>
-        <translation>Wollen Sie diesen Eintrag wirklich löschen?</translation>
-    </message>
-    <message>
-        <source>Task</source>
-        <translation>Aufgabe</translation>
-    </message>
-    <message>
         <source>Description</source>
         <translation>Beschreibung</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Text</translation>
     </message>
 </context>
 <context>
@@ -76,48 +146,12 @@
         <translation>Eintrag für heute hinzufügen</translation>
     </message>
     <message>
-        <source>for today</source>
-        <translation>für heute</translation>
-    </message>
-    <message>
-        <source>for tomorrow</source>
-        <translation>für morgen</translation>
-    </message>
-    <message>
-        <source>for later</source>
-        <translation>für später</translation>
-    </message>
-    <message>
-        <source>Add new entry</source>
-        <translation>Eintrag hinzufügen</translation>
-    </message>
-    <message>
-        <source>Enter task text</source>
-        <translation>Aufgabentext eintragen</translation>
-    </message>
-    <message>
-        <source>Task text</source>
-        <translation>Aufgaben-Text</translation>
-    </message>
-    <message>
-        <source>Enter optional description</source>
-        <translation>Optionale Beschreibung eintragen</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Beschreibung</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation>Abbrechen</translation>
-    </message>
-    <message>
         <source>Show old entries</source>
         <translation>Alte Einträge anzeigen</translation>
+    </message>
+    <message>
+        <source>Change category</source>
+        <translation>Kategorie wechseln</translation>
     </message>
 </context>
 <context>
@@ -137,6 +171,21 @@
     <message>
         <source>Pull down to add entries</source>
         <translation>Herunterziehen, um Einträge hinzuzufügen</translation>
+    </message>
+</context>
+<context>
+    <name>TodoListBaseItem</name>
+    <message>
+        <source>Description (optional)</source>
+        <translation>Beschreibung (optional)</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
+    </message>
+    <message>
+        <source>Abort</source>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -191,7 +240,7 @@
     </message>
     <message>
         <source>carried over</source>
-        <translation>von neulich übertragen</translation>
+        <translation>weitergetragen</translation>
     </message>
     <message>
         <source>ignored today</source>
@@ -208,18 +257,6 @@
     <message>
         <source>press and hold to edit or delete</source>
         <translation>lange drücken zum Bearbeiten oder Löschen</translation>
-    </message>
-    <message>
-        <source>Description (optional)</source>
-        <translation>Beschreibung (optional)</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -239,6 +276,13 @@
     <message>
         <source>d MMM yyyy</source>
         <translation>d. MMM yyyy</translation>
+    </message>
+</context>
+<context>
+    <name>storage</name>
+    <message>
+        <source>Default</source>
+        <translation>Allgemein</translation>
     </message>
 </context>
 </TS>
