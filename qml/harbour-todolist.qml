@@ -10,6 +10,8 @@ ApplicationWindow
 {
     id: main
     property alias rawModel: mainModel
+    property alias categoriesModel: mainCategoriesModel
+
     property bool startupComplete: false
     property string currentCategoryName: ""
 
@@ -26,6 +28,7 @@ ApplicationWindow
     allowedOrientations: defaultAllowedOrientations
 
     ListModel { id: mainModel }
+    ListModel { id: mainCategoriesModel }
 
     ConfigurationGroup {
         id: config
@@ -115,5 +118,9 @@ ApplicationWindow
             config.lastCarriedOverFrom = getDate(-1, today);
         }
         setCurrentCategory(config.currentCategory);
+
+        categoriesModel.clear();
+        var categories = Storage.getCategories();
+        for (var i in categories) categoriesModel.append(categories[i]);
     }
 }
