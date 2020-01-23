@@ -13,7 +13,7 @@ TodoListBaseItem {
     menu: Component {
         ContextMenu {
             MenuItem {
-                visible: !editable
+                visible: !editable && (entryState !== EntryState.todo || date.getTime() > main.configuration.lastCarriedOverFrom.getTime())
                 text: qsTr("continue today")
                 onClicked: copyAndMarkItem(index, entryState, EntrySubState.tomorrow, today);
             }
@@ -50,7 +50,7 @@ TodoListBaseItem {
             }
             MenuItem {
                 enabled: false
-                visible: hasInfoLabel.visible
+                visible: infoMarkerEnabled
                 text: {
                     var text = qsTr("⭑ %1, %2")
 

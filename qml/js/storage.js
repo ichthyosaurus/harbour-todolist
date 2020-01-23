@@ -23,7 +23,6 @@
 .pragma library
 .import QtQuick.LocalStorage 2.0 as LS
 
-
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
 var initialized = false
@@ -203,14 +202,39 @@ function deleteEntry(entryId) {
 }
 
 function carryOverFrom(fromDate) {
-    console.log("carrying over");
     fromDate = defaultFor(fromDate, new Date(NaN));
 
+    // copy all entry with entryState = todo and subState = today, that are older than today
+    // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
+    var query = 'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, category, text, description)\
+        SELECT date("now"), entryState, subState, createdOn, weight, interval, category, text, description FROM entries\
+            WHERE (date < date("now")) AND (entryState = ?) AND (subState = ?) %1 ORDER BY rowid ASC'
+    var mainValues = [0, 0]; // TODO these should be EntryState.todo and EntrySubState.today
+                         // There must be some way to access them as constants.
+
+    var updateQuery = 'UPDATE entries SET subState=? WHERE (date < date("now")) AND (entryState = ?) AND (subState = ?) %1'
+    var updateValues = [1, 0, 0]; // TODO first is EntrySubState.tomorrow; see comment on mainValues
+
     if (isNaN(fromDate.valueOf())) {
-        // for the first time
+        query = query.arg("");
+        updateQuery = updateQuery.arg("");
     } else {
-        // from fromDate
+        var fromDateString = fromDate.toLocaleString(Qt.locale(), "yyyy-MM-dd");
+        var extraClause = "AND (date > date(?))";
+        query = query.arg(extraClause);
+        updateQuery = updateQuery.arg(extraClause);
+        mainValues.push(fromDateString);
+        updateValues.push(fromDateString);
     }
 
-    return false;
+    var result = simpleQuery(query, mainValues);
+    simpleQuery(updateQuery, updateValues);
+
+    if (result === undefined) {
+        console.log("failed to carry over any entries");
+        return false;
+    } else {
+        console.log("entries carried over:", result.rowsAffected);
+        return true;
+    }
 }
