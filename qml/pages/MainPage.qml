@@ -22,7 +22,7 @@ Page {
 
         sorters: [
             RoleSorter { roleName: "date"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "entrystate"; sortOrder: Qt.AscendingOrder },
+            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "weight"; sortOrder: Qt.DescendingOrder }
         ]
 

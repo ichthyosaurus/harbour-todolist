@@ -44,42 +44,42 @@ ApplicationWindow
         return new Date(date).toLocaleString(Qt.locale(), "yyyy-MM-dd");
     }
 
-    function addItem(forDate, task, description, state, substate, createdOn) {
-        state = Storage.defaultFor(state, EntryState.todo);
-        substate = Storage.defaultFor(substate, EntrySubState.today);
+    function addItem(forDate, task, description, entryState, subState, createdOn) {
+        entryState = Storage.defaultFor(entryState, EntryState.todo);
+        subState = Storage.defaultFor(subState, EntrySubState.today);
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
         var interval = 0;
         var category = "default";
 
-        var entryid = Storage.addEntry(forDate, state, substate, createdOn,
+        var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
                                        weight, interval, category, task, description);
 
-        if (entryid === undefined) {
+        if (entryId === undefined) {
             console.error("failed to save new item", forDate, task);
             return;
         }
 
-        rawModel.append({entryid: entryid, date: forDate, entrystate: state,
-                            substate: substate, createdOn: createdOn, weight: weight,
+        rawModel.append({entryId: entryId, date: forDate, entryState: entryState,
+                            subState: subState, createdOn: createdOn, weight: weight,
                             interval: interval, category: category,
                             text: task, description: description});
     }
 
-    function updateItem(which, mainState, subState, text, description) {
-        if (mainState !== undefined) rawModel.setProperty(which, "entrystate", mainState);
-        if (subState !== undefined) rawModel.setProperty(which, "substate", subState);
+    function updateItem(which, entryState, subState, text, description) {
+        if (entryState !== undefined) rawModel.setProperty(which, "entryState", entryState);
+        if (subState !== undefined) rawModel.setProperty(which, "subState", subState);
         if (text !== undefined) rawModel.setProperty(which, "text", text);
         if (description !== undefined) rawModel.setProperty(which, "description", description);
 
         var item = rawModel.get(which);
-        Storage.updateEntry(item.entryid, item.date, item.entrystate, item.substate,
+        Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
                             item.category, item.text, item.description);
     }
 
     function deleteItem(which) {
-        Storage.deleteEntry(rawModel.get(which).entryid);
+        Storage.deleteEntry(rawModel.get(which).entryId);
         rawModel.remove(which);
     }
 

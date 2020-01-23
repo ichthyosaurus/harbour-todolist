@@ -36,38 +36,38 @@ ListItem {
             MenuItem {
                 visible: !editable
                 text: qsTr("continue today")
-                onClicked: copyAndMarkItem(index, entrystate, EntrySubState.tomorrow, today);
+                onClicked: copyAndMarkItem(index, entryState, EntrySubState.tomorrow, today);
             }
 
             MenuItem {
-                visible: editable && entrystate !== EntryState.done
+                visible: editable && entryState !== EntryState.done
                 text: qsTr("done")
-                onClicked: markItemAs(index, EntryState.done, substate);
+                onClicked: markItemAs(index, EntryState.done, subState);
             }
             MenuItem {
-                visible: editable && entrystate !== EntryState.done && substate !== EntrySubState.tomorrow
+                visible: editable && entryState !== EntryState.done && subState !== EntrySubState.tomorrow
                 text: qsTr("done for today, continue tomorrow")
                 onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
-                visible: editable && entrystate === EntryState.todo && substate !== EntrySubState.tomorrow
+                visible: editable && entryState === EntryState.todo && subState !== EntrySubState.tomorrow
                 text: qsTr("move to tomorrow")
                 onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
-                visible: editable && entrystate === EntryState.todo
+                visible: editable && entryState === EntryState.todo
                 text: qsTr("ignore")
-                onClicked: markItemAs(index, EntryState.ignored, substate);
+                onClicked: markItemAs(index, EntryState.ignored, subState);
             }
             MenuItem {
-                visible: editable && entrystate === EntryState.done && substate !== EntrySubState.tomorrow
+                visible: editable && entryState === EntryState.done && subState !== EntrySubState.tomorrow
                 text: qsTr("continue tomorrow")
                 onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, getDate(1, date));
             }
             MenuItem {
-                visible: editable && entrystate === EntryState.done
+                visible: editable && entryState === EntryState.done
                 text: qsTr("not completely done yet")
-                onClicked: markItemAs(index, EntryState.todo, substate);
+                onClicked: markItemAs(index, EntryState.todo, subState);
             }
             MenuItem {
                 enabled: false
@@ -83,15 +83,15 @@ ListItem {
                         text = text.arg(qsTr("from earlier"));
                     }
 
-                    if (entrystate === EntryState.todo) {
-                        if (substate === EntrySubState.today) text = text.arg(qsTr("for today"))
-                        else if (substate === EntrySubState.tomorrow) text = text.arg(qsTr("carried over"))
-                    } else if (entrystate === EntryState.ignored) {
-                        if (substate === EntrySubState.today) text = text.arg(qsTr("ignored today"))
-                        else if (substate === EntrySubState.tomorrow) text = text.arg(qsTr("to be done tomorrow"))
-                    } else if (entrystate === EntryState.done) {
-                        if (substate === EntrySubState.today) text = text.arg(qsTr("done today"))
-                        else if (substate === EntrySubState.tomorrow) text = text.arg(qsTr("continue tomorrow"))
+                    if (entryState === EntryState.todo) {
+                        if (subState === EntrySubState.today) text = text.arg(qsTr("for today"))
+                        else if (subState === EntrySubState.tomorrow) text = text.arg(qsTr("carried over"))
+                    } else if (entryState === EntryState.ignored) {
+                        if (subState === EntrySubState.today) text = text.arg(qsTr("ignored today"))
+                        else if (subState === EntrySubState.tomorrow) text = text.arg(qsTr("to be done tomorrow"))
+                    } else if (entryState === EntryState.done) {
+                        if (subState === EntrySubState.today) text = text.arg(qsTr("done today"))
+                        else if (subState === EntrySubState.tomorrow) text = text.arg(qsTr("continue tomorrow"))
                     }
 
                     return text;
@@ -182,7 +182,7 @@ ListItem {
 
                 Label {
                     id: hasInfoLabel
-                    visible: !isEditing && (createdOn.getTime() !== date.getTime() || substate === EntrySubState.tomorrow)
+                    visible: !isEditing && (createdOn.getTime() !== date.getTime() || subState === EntrySubState.tomorrow)
                     width: Theme.iconSizeExtraSmall
                     text: "⭑"
                     color: Theme.highlightColor
@@ -243,18 +243,18 @@ ListItem {
     states: [
         State {
             name: "todo"
-            when: entrystate === EntryState.todo
+            when: entryState === EntryState.todo
             PropertyChanges { target: statusIcon; source: "../images/icon-todo.png"; opacity: Theme.opacityHigh }
         },
         State {
             name: "ignored"
-            when: entrystate === EntryState.ignored
+            when: entryState === EntryState.ignored
             PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityHigh }
         },
         State {
             name: "done"
-            when: entrystate === EntryState.done
+            when: entryState === EntryState.done
             PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityLow }
         }
