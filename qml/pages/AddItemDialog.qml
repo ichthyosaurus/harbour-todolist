@@ -5,8 +5,9 @@ import "../components"
 Dialog {
     id: dialog
     property date date: main.today
-    property alias text: taskText.text
-    property alias description: descriptionText.text
+    property alias text: textField.text
+    property alias description: descriptionField.text
+    property bool descriptionEnabled: true
 
     canAccept: text !== ""
 
@@ -47,28 +48,31 @@ Dialog {
             Spacer { }
 
             TextField {
-                id: taskText
+                id: textField
                 width: parent.width
                 focus: true
-                placeholderText: qsTr("Enter task text")
-                label: qsTr("Task text")
+                placeholderText: qsTr("Enter text")
+                label: qsTr("Text")
                 // inputMethodHints: Qt.ImhNoPredictiveText
 
                 EnterKey.enabled: text.length > 0
                 EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: descriptionText.forceActiveFocus();
+                EnterKey.onClicked: descriptionField.forceActiveFocus();
             }
 
             Spacer { }
 
             TextArea {
-                id: descriptionText
+                id: descriptionField
+                visible: descriptionEnabled
                 width: parent.width
                 placeholderText: qsTr("Enter optional description")
                 label: qsTr("Description")
             }
 
-            Spacer { }
+            Spacer {
+                visible: descriptionEnabled
+            }
         }
     }
 }

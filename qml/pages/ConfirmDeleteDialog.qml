@@ -24,7 +24,7 @@ Dialog {
             }
 
             SectionHeader {
-                text: qsTr("Task")
+                text: qsTr("Text")
             }
             Label {
                 anchors {
