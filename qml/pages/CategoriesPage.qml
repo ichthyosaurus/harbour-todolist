@@ -46,7 +46,7 @@ Page {
             descriptionEnabled: false
             infoMarkerEnabled: false
             title: model.name
-            property bool isCurrentCategory: main.configuration.currentCategory === entryId
+            highlighted: main.configuration.currentCategory === entryId
 
             onMarkItemAs: main.updateCategory(view.model.mapToSource(which), undefined, mainState);
             onSaveItemTexts: main.updateCategory(view.model.mapToSource(which), newText, undefined);
@@ -55,38 +55,26 @@ Page {
             menu: Component {
                 ContextMenu {
                     MenuItem {
-                        visible: !isCurrentCategory
+                        visible: main.configuration.currentCategory !== entryId
                         text: qsTr("select")
                         onClicked: main.setCurrentCategory(entryId)
                     }
                     MenuItem {
                         visible: entryState !== EntryState.todo
-                        text: qsTr("activate")
+                        text: qsTr("mark as active")
                         onClicked: markItemAs(index, EntryState.todo, undefined)
                     }
                     MenuItem {
                         visible: entryState !== EntryState.ignored
-                        text: qsTr("halt")
+                        text: qsTr("mark as halted")
                         onClicked: markItemAs(index, EntryState.ignored, undefined)
                     }
                     MenuItem {
                         visible: entryState !== EntryState.done
-                        text: qsTr("finish")
+                        text: qsTr("mark as finished")
                         onClicked: markItemAs(index, EntryState.done, undefined)
                     }
                 }
-            }
-
-            function select() {
-                if (isCurrentCategory) highlighted = true;
-                else highlighted = undefined;
-            }
-
-            Component.onCompleted: {
-                select();
-                main.configuration.valueChanged.connect(function(key) {
-                    if (key === "currentCategory") item.select();
-                })
             }
         }
 
