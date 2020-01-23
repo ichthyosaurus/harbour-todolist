@@ -56,8 +56,15 @@ Dialog {
                 // inputMethodHints: Qt.ImhNoPredictiveText
 
                 EnterKey.enabled: text.length > 0
-                EnterKey.iconSource: "image://theme/icon-m-enter-next"
-                EnterKey.onClicked: descriptionField.forceActiveFocus();
+                EnterKey.iconSource: "image://theme/icon-m-enter-" + (descriptionEnabled ? "next" : "accept")
+                EnterKey.onClicked: {
+                    if (descriptionEnabled) {
+                        descriptionField.forceActiveFocus();
+                    } else {
+                        focus = false;
+                        if (canAccept) accept();
+                    }
+                }
             }
 
             Spacer { }
