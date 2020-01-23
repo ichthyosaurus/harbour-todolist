@@ -42,6 +42,8 @@ Page {
             description: currentCategoryName
         }
 
+        footer: Spacer { }
+
         delegate: TodoListItem {
             editable: false
             onCopyAndMarkItem: {
