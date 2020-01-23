@@ -41,13 +41,20 @@ function getDatabase() {
 
 function doInit(db) {
     // Database tables: (primary key in all-caps)
-    // entries: ID, date, state, substate, createdOn, weight, text, description
+    // entries: ID, date, state, substate, createdOn, weight, interval, category, text, description
 
     db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
-            date STRING NOT NULL, state STRING NOT NULL,\
-            substate STRING NOT NULL, createdOn STRING NOT NULL, weight INTEGER NOT NULL,\
-            text TEXT NOT NULL, description TEXT)');
+            date STRING NOT NULL,
+            state STRING NOT NULL,
+            substate STRING NOT NULL,
+            createdOn STRING NOT NULL,
+            weight INTEGER NOT NULL,
+            interval INTEGER NOT NULL,
+            category STRING NOT NULL,
+            text TEXT NOT NULL,
+            description TEXT
+        );');
     });
 }
 
@@ -84,6 +91,8 @@ function getEntries() {
                      substate: parseInt(item.substate, 10),
                      createdOn: new Date(item.createdOn),
                      weight: parseInt(item.weight, 10),
+                     interval: parseInt(item.interval, 10),
+                     category: item.category,
                      text: item.text,
                      description: item.description
                  });
@@ -92,12 +101,12 @@ function getEntries() {
     return res;
 }
 
-function addEntry(date, entrystate, substate, createdOn, weight, text, description) {
-    simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?)', [
+function addEntry(date, entrystate, substate, createdOn, weight, interval, category, text, description) {
+    simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
         date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
         Number(entrystate), Number(substate),
         createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
-        weight, text, description
+        weight, interval, category, text, description
     ])
 
     var q = simpleQuery('SELECT rowid FROM entries ORDER BY rowid DESC LIMIT 1;', []);
@@ -105,17 +114,20 @@ function addEntry(date, entrystate, substate, createdOn, weight, text, descripti
     else return undefined;
 }
 
-function updateEntry(entryid, date, entrystate, substate, createdOn, weight, text, description) {
+function updateEntry(entryid, date, entrystate, substate, createdOn, weight, interval, category, text, description) {
     if (entryid === undefined) {
         console.warn("failed to update: invalid entry id", date, text);
         return;
     }
 
-    simpleQuery('UPDATE entries SET date=?, state=?, substate=?, createdOn=?, weight=?, text=?, description=? WHERE rowid=?', [
+    simpleQuery('UPDATE entries SET\
+        date=?, state=?, substate=?,
+        createdOn=?, weight=?, interval=?,
+        category=?, text=?, description=? WHERE rowid=?', [
         date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
         Number(entrystate), Number(substate),
         createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
-        weight, text, description,
+        weight, interval, category, text, description,
         entryid
     ])
 }

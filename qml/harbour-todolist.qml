@@ -49,8 +49,11 @@ ApplicationWindow
         substate = Storage.defaultFor(substate, EntrySubState.today);
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
+        var interval = 0;
+        var category = "default";
 
-        var entryid = Storage.addEntry(forDate, state, substate, createdOn, weight, task, description);
+        var entryid = Storage.addEntry(forDate, state, substate, createdOn,
+                                       weight, interval, category, task, description);
 
         if (entryid === undefined) {
             console.error("failed to save new item", forDate, task);
@@ -59,6 +62,7 @@ ApplicationWindow
 
         rawModel.append({entryid: entryid, date: forDate, entrystate: state,
                             substate: substate, createdOn: createdOn, weight: weight,
+                            interval: interval, category: category,
                             text: task, description: description});
     }
 
@@ -70,7 +74,8 @@ ApplicationWindow
 
         var item = rawModel.get(which);
         Storage.updateEntry(item.entryid, item.date, item.entrystate, item.substate,
-                            item.createdOn, item.weight, item.text, item.description);
+                            item.createdOn, item.weight, item.interval,
+                            item.category, item.text, item.description);
     }
 
     function deleteItem(which) {
