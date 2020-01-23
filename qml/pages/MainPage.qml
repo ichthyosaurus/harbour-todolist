@@ -51,8 +51,8 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("About")
-                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
+                text: qsTr("Change category")
+                onClicked: console.log("change category!"); //pageStack.push(Qt.resolvedUrl("CategoriesPage.qml"))
             }
             MenuItem {
                 text: qsTr("Add entry for tomorrow")
@@ -68,6 +68,10 @@ Page {
             MenuItem {
                 text: qsTr("Show old entries")
                 onClicked: pageStack.push(Qt.resolvedUrl("ArchivePage.qml"));
+            }
+            MenuItem {
+                text: qsTr("About")
+                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
         }
 
