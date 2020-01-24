@@ -13,6 +13,7 @@ ListItem {
     property bool infoMarkerEnabled: false
     property bool editable: true
     property bool descriptionEnabled: true
+    property bool customClickHandlingEnabled: false
 
     property bool isEditing: false
     signal markItemAs(var which, var mainState, var subState)
@@ -41,9 +42,12 @@ ListItem {
         item.enabled = true;
     }
 
-    showMenuOnPressAndHold: false
-    onPressAndHold: if (editable) startEditing();
-    onClicked: menu ? openMenu() : {}
+    showMenuOnPressAndHold: customClickHandlingEnabled ? undefined : false
+    Connections {
+        target: customClickHandlingEnabled ? null : item
+        onPressAndHold: if (editable) startEditing();
+        onClicked: menu ? openMenu() : {}
+    }
 
     Row {
         id: row

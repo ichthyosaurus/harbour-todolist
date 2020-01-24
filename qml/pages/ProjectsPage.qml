@@ -53,13 +53,16 @@ Page {
             onSaveItemTexts: main.updateProject(view.model.mapToSource(which), newText, undefined);
             onDeleteThisItem: main.deleteItem(view.model.mapToSource(which))
 
+            customClickHandlingEnabled: true
+            showMenuOnPressAndHold: true
+            onClicked: {
+                if (main.configuration.currentProject !== entryId) {
+                    main.setCurrentProject(entryId);
+                }
+            }
+
             menu: Component {
                 ContextMenu {
-                    MenuItem {
-                        visible: main.configuration.currentProject !== entryId
-                        text: qsTr("select")
-                        onClicked: main.setCurrentProject(entryId)
-                    }
                     MenuItem {
                         visible: entryState !== EntryState.todo
                         text: qsTr("mark as active")
@@ -74,6 +77,11 @@ Page {
                         visible: entryState !== EntryState.done
                         text: qsTr("mark as finished")
                         onClicked: markItemAs(index, EntryState.done, undefined)
+                    }
+                    MenuItem {
+                        visible: editable
+                        text: qsTr("edit or delete")
+                        onClicked: startEditing()
                     }
                 }
             }
