@@ -10,7 +10,7 @@ Page {
 
     SortFilterProxyModel {
         id: filteredModel
-        sourceModel: categoriesModel
+        sourceModel: projectsModel
         sorters: [
             RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "entryId"; sortOrder: Qt.AscendingOrder }
@@ -24,16 +24,16 @@ Page {
         VerticalScrollDecorator { flickable: view }
 
         header: PageHeader {
-            title: qsTr("Categories")
+            title: qsTr("Projects")
         }
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Add category")
+                text: qsTr("Add project")
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), { date: new Date(NaN), descriptionEnabled: false })
                     dialog.accepted.connect(function() {
-                        main.addCategory(dialog.text.trim());
+                        main.addProject(dialog.text.trim());
                     });
                 }
             }
@@ -47,18 +47,18 @@ Page {
             descriptionEnabled: false
             infoMarkerEnabled: false
             title: model.name
-            highlighted: main.configuration.currentCategory === entryId
+            highlighted: main.configuration.currentProject === entryId
 
-            onMarkItemAs: main.updateCategory(view.model.mapToSource(which), undefined, mainState);
-            onSaveItemTexts: main.updateCategory(view.model.mapToSource(which), newText, undefined);
+            onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
+            onSaveItemTexts: main.updateProject(view.model.mapToSource(which), newText, undefined);
             onDeleteThisItem: main.deleteItem(view.model.mapToSource(which))
 
             menu: Component {
                 ContextMenu {
                     MenuItem {
-                        visible: main.configuration.currentCategory !== entryId
+                        visible: main.configuration.currentProject !== entryId
                         text: qsTr("select")
-                        onClicked: main.setCurrentCategory(entryId)
+                        onClicked: main.setCurrentProject(entryId)
                     }
                     MenuItem {
                         visible: entryState !== EntryState.todo

@@ -40,7 +40,7 @@ Page {
 
         header: PageHeader {
             title: qsTr("Archived Entries")
-            description: currentCategoryName
+            description: currentProjectName
         }
 
         footer: Spacer { }

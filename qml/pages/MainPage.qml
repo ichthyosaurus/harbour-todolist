@@ -46,13 +46,13 @@ Page {
 
         header: PageHeader {
             title: qsTr("Todo List")
-            description: currentCategoryName
+            description: currentProjectName
         }
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Change category")
-                onClicked: pageStack.push(Qt.resolvedUrl("CategoriesPage.qml"))
+                text: qsTr("Change project")
+                onClicked: pageStack.push(Qt.resolvedUrl("ProjectsPage.qml"))
             }
             MenuItem {
                 text: qsTr("Add entry for tomorrow")

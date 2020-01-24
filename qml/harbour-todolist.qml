@@ -10,11 +10,11 @@ ApplicationWindow
 {
     id: main
     property alias rawModel: mainModel
-    property alias categoriesModel: mainCategoriesModel
+    property alias projectsModel: mainProjectsModel
     property alias configuration: config
 
     property bool startupComplete: false
-    property string currentCategoryName: ""
+    property string currentProjectName: ""
 
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
@@ -29,14 +29,14 @@ ApplicationWindow
     allowedOrientations: defaultAllowedOrientations
 
     ListModel { id: mainModel }
-    ListModel { id: mainCategoriesModel }
+    ListModel { id: mainProjectsModel }
 
     ConfigurationGroup {
         id: config
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
         property date lastCarriedOverTo
-        property int currentCategory
+        property int currentProject
     }
 
     function addItem(forDate, task, description, entryState, subState, createdOn) {
@@ -45,10 +45,10 @@ ApplicationWindow
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
         var interval = 0;
-        var category = config.currentCategory;
+        var project = config.currentProject;
 
         var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
-                                       weight, interval, category, task, description);
+                                       weight, interval, project, task, description);
 
         if (entryId === undefined) {
             console.error("failed to save new item", forDate, task);
@@ -57,7 +57,7 @@ ApplicationWindow
 
         rawModel.append({entryId: entryId, date: forDate, entryState: entryState,
                             subState: subState, createdOn: createdOn, weight: weight,
-                            interval: interval, category: category,
+                            interval: interval, project: project,
                             text: task, description: description});
     }
 
@@ -70,7 +70,7 @@ ApplicationWindow
         var item = rawModel.get(which);
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
-                            item.category, item.text, item.description);
+                            item.project, item.text, item.description);
     }
 
     function deleteItem(which) {
@@ -85,43 +85,43 @@ ApplicationWindow
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
-    function addCategory(name, entryState) {
+    function addProject(name, entryState) {
         entryState = Storage.defaultFor(entryState, EntryState.todo);
         name = Storage.defaultFor(name, "")
-        var entryId = Storage.addCategory(name, entryState);
+        var entryId = Storage.addProject(name, entryState);
 
         if (entryId === undefined) {
-            console.error("failed to save new category", name, entryState);
+            console.error("failed to save new project", name, entryState);
             return;
         } else {
-            categoriesModel.append({entryId: entryId, entryState: entryState, name: name});
+            projectsModel.append({entryId: entryId, entryState: entryState, name: name});
         }
     }
 
-    function updateCategory(which, name, entryState) {
-        if (name !== undefined) categoriesModel.setProperty(which, "name", name);
-        if (entryState !== undefined) categoriesModel.setProperty(which, "entryState", entryState);
-        var item = categoriesModel.get(which);
-        Storage.updateCategory(item.entryId, item.name, item.entryState);
+    function updateProject(which, name, entryState) {
+        if (name !== undefined) projectsModel.setProperty(which, "name", name);
+        if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
+        var item = projectsModel.get(which);
+        Storage.updateProject(item.entryId, item.name, item.entryState);
     }
 
-    function deleteCategory(which) {
-        Storage.deleteCategory(categoriesModel.get(which).entryId);
-        categoriesModel.remove(which);
+    function deleteProject(which) {
+        Storage.deleteProject(projectsModel.get(which).entryId);
+        projectsModel.remove(which);
     }
 
-    function setCurrentCategory(entryId) {
+    function setCurrentProject(entryId) {
         entryId = Storage.defaultFor(entryId, 0);
-        config.currentCategory = entryId;
-        currentCategoryName = Storage.getCategory(config.currentCategory).name;
+        config.currentProject = entryId;
+        currentProjectName = Storage.getProject(config.currentProject).name;
 
-        if (currentCategoryName === undefined) {
-            // if the requested category is not available, reset it to the default category
-            setCurrentCategory(0);
+        if (currentProjectName === undefined) {
+            // if the requested project is not available, reset it to the default project
+            setCurrentProject(0);
         } else {
             startupComplete = false;
             rawModel.clear();
-            var entries = Storage.getEntries(config.currentCategory);
+            var entries = Storage.getEntries(config.currentProject);
             for (var i in entries) rawModel.append(entries[i]);
             startupComplete = true;
         }
@@ -132,10 +132,10 @@ ApplicationWindow
             config.lastCarriedOverTo = today;
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
-        setCurrentCategory(config.currentCategory);
+        setCurrentProject(config.currentProject);
 
-        categoriesModel.clear();
-        var categories = Storage.getCategories();
-        for (var i in categories) categoriesModel.append(categories[i]);
+        projectsModel.clear();
+        var projects = Storage.getProjects();
+        for (var i in projects) projectsModel.append(projects[i]);
     }
 }

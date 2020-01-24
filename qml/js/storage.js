@@ -42,8 +42,8 @@ function getDatabase() {
 
 function doInit(db) {
     // Database tables: (primary key in all-caps)
-    // entries: ID, date, entryState, subState, createdOn, weight, interval, category, text, description
-    // categories: ID, name, entryState
+    // entries: ID, date, entryState, subState, createdOn, weight, interval, project, text, description
+    // projects: ID, name, entryState
 
     db.transaction(function(tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
@@ -53,15 +53,15 @@ function doInit(db) {
             createdOn STRING NOT NULL,
             weight INTEGER NOT NULL,
             interval INTEGER NOT NULL,
-            category INTEGER NOT NULL,
+            project INTEGER NOT NULL,
             text TEXT NOT NULL,
             description TEXT
         );');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS categories(\
+        tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
             name TEXT NOT NULL,
             entryState INTEGER NOT NULL
         );');
-        tx.executeSql('INSERT OR IGNORE INTO categories(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
+        tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
     });
 }
 
@@ -85,8 +85,8 @@ function simpleQuery(query, values/*, getSelectedCount*/) {
     return res;
 }
 
-function getCategories() {
-    var q = simpleQuery('SELECT rowid, * FROM categories;', []);
+function getProjects() {
+    var q = simpleQuery('SELECT rowid, * FROM projects;', []);
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
@@ -101,9 +101,9 @@ function getCategories() {
     return res;
 }
 
-function getCategory(entryId) {
+function getProject(entryId) {
     entryId = defaultFor(entryId, 0);
-    var q = simpleQuery('SELECT rowid, * FROM categories WHERE rowid=? LIMIT 1;', [entryId]);
+    var q = simpleQuery('SELECT rowid, * FROM projects WHERE rowid=? LIMIT 1;', [entryId]);
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
         return { entryId: item.rowid, name: item.name, entryState: parseInt(item.entryState, 10) };
@@ -112,36 +112,36 @@ function getCategory(entryId) {
     }
 }
 
-function addCategory(name, entryState) {
+function addProject(name, entryState) {
     if (!name) return undefined;
-    simpleQuery('INSERT INTO categories VALUES (?, ?)', [name, Number(entryState)])
-    var q = simpleQuery('SELECT rowid FROM categories ORDER BY rowid DESC LIMIT 1;', []);
+    simpleQuery('INSERT INTO projects VALUES (?, ?)', [name, Number(entryState)])
+    var q = simpleQuery('SELECT rowid FROM projects ORDER BY rowid DESC LIMIT 1;', []);
     if (q.rows.length > 0) return q.rows.item(0).rowid;
     else return undefined;
 }
 
-function updateCategory(entryId, name, entryState) {
+function updateProject(entryId, name, entryState) {
     if (entryId === undefined) {
-        console.warn("failed to update category: invalid entry id", name, entryState);
+        console.warn("failed to update project: invalid entry id", name, entryState);
         return;
     }
 
-    simpleQuery('UPDATE categories SET name=?, entryState=? WHERE rowid=?',
+    simpleQuery('UPDATE projects SET name=?, entryState=? WHERE rowid=?',
                 [name, Number(entryState), entryId])
 }
 
-function deleteCategory(entryId) {
+function deleteProject(entryId) {
     if (entryId === undefined) {
-        console.warn("failed to delete category: invalid entry id");
+        console.warn("failed to delete project: invalid entry id");
         return;
     }
 
-    simpleQuery('DELETE FROM categories WHERE rowid=?', [entryId]);
+    simpleQuery('DELETE FROM projects WHERE rowid=?', [entryId]);
 }
 
-function getEntries(forCategory) {
-    forCategory = defaultFor(forCategory, 0);
-    var q = simpleQuery('SELECT rowid, * FROM entries WHERE category=?;', [forCategory]);
+function getEntries(forProject) {
+    forProject = defaultFor(forProject, 0);
+    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=?;', [forProject]);
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
@@ -154,7 +154,7 @@ function getEntries(forCategory) {
                      createdOn: new Date(item.createdOn),
                      weight: parseInt(item.weight, 10),
                      interval: parseInt(item.interval, 10),
-                     category: item.category,
+                     project: item.project,
                      text: item.text,
                      description: item.description
                  });
@@ -163,12 +163,12 @@ function getEntries(forCategory) {
     return res;
 }
 
-function addEntry(date, entryState, subState, createdOn, weight, interval, category, text, description) {
+function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {
     simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
         date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
         Number(entryState), Number(subState),
         createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
-        weight, interval, category, text, description
+        weight, interval, project, text, description
     ])
 
     var q = simpleQuery('SELECT rowid FROM entries ORDER BY rowid DESC LIMIT 1;', []);
@@ -176,7 +176,7 @@ function addEntry(date, entryState, subState, createdOn, weight, interval, categ
     else return undefined;
 }
 
-function updateEntry(entryId, date, entryState, subState, createdOn, weight, interval, category, text, description) {
+function updateEntry(entryId, date, entryState, subState, createdOn, weight, interval, project, text, description) {
     if (entryId === undefined) {
         console.warn("failed to update: invalid entry id", date, text);
         return;
@@ -185,11 +185,11 @@ function updateEntry(entryId, date, entryState, subState, createdOn, weight, int
     simpleQuery('UPDATE entries SET\
         date=?, entryState=?, subState=?,
         createdOn=?, weight=?, interval=?,
-        category=?, text=?, description=? WHERE rowid=?', [
+        project=?, text=?, description=? WHERE rowid=?', [
         date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
         Number(entryState), Number(subState),
         createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
-        weight, interval, category, text, description,
+        weight, interval, project, text, description,
         entryId
     ])
 }
@@ -208,8 +208,8 @@ function carryOverFrom(fromDate) {
 
     // copy all entry with entryState = todo and subState = today, that are older than today
     // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
-    var query = 'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, category, text, description)\
-        SELECT date("now"), entryState, subState, createdOn, weight, interval, category, text, description FROM entries\
+    var query = 'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
+        SELECT date("now"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
             WHERE (date < date("now")) AND (entryState = ?) AND (subState = ?) %1 ORDER BY rowid ASC'
     var mainValues = [EntryState.todo, EntrySubState.today];
 
