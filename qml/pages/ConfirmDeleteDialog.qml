@@ -7,6 +7,7 @@ Dialog {
     property string text
     property string description
     property bool _showDescription: description != ""
+    property string warning: ""
 
     SilicaFlickable {
         id: flick
@@ -44,6 +45,7 @@ Dialog {
                 text: qsTr("Description")
             }
             Label {
+                visible: _showDescription
                 anchors {
                     left: parent.left; right: parent.right;
                     leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
@@ -51,8 +53,24 @@ Dialog {
                 font.pixelSize: Theme.fontSizeMedium
                 textFormat: Text.PlainText
                 wrapMode: Text.WordWrap
-                visible: _showDescription
                 text: dialog.description
+            }
+
+            SectionHeader {
+                visible: warning !== ""
+                text: qsTr("Warning")
+            }
+            Label {
+                visible: warning !== ""
+                anchors {
+                    left: parent.left; right: parent.right;
+                    leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
+                }
+                font.pixelSize: Theme.fontSizeMedium
+                textFormat: Text.PlainText
+                wrapMode: Text.WordWrap
+                text: warning
+                color: Theme.highlightColor
             }
 
             Spacer { }

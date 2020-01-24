@@ -134,9 +134,13 @@ function deleteProject(entryId) {
     if (entryId === undefined) {
         console.warn("failed to delete project: invalid entry id");
         return;
+    } else if (entryId === 0) {
+        console.warn("cannot delete default project");
+        return;
     }
 
     simpleQuery('DELETE FROM projects WHERE rowid=?', [entryId]);
+    simpleQuery('DELETE FROM entries WHERE project=?', [entryId]);
 }
 
 function getEntries(forProject) {

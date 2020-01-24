@@ -10,8 +10,10 @@ ListItem {
 
     property string title: ""
     property string description: ""
+    property string extraDeleteWarning: ""
     property bool infoMarkerEnabled: false
     property bool editable: true
+    property bool deletable: true
     property bool descriptionEnabled: true
     property bool customClickHandlingEnabled: false
 
@@ -75,11 +77,15 @@ ListItem {
         IconButton {
             id: deleteButton
             visible: isEditing
+            enabled: deletable
             anchors.fill: statusIcon // FIXME not possible in a Row
             icon.source: "image://theme/icon-m-delete"
             onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"),
-                                            { text: title, description: description })
+                var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"), {
+                                                text: title,
+                                                description: description,
+                                                warning: extraDeleteWarning
+                                            })
                 dialog.accepted.connect(function() {
                     deleteThisItem(index)
                 });

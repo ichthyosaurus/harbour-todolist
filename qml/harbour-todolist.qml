@@ -106,7 +106,16 @@ ApplicationWindow
     }
 
     function deleteProject(which) {
-        Storage.deleteProject(projectsModel.get(which).entryId);
+        var item = projectsModel.get(which);
+
+        if (config.currentProject === item.entryId) {
+            setCurrentProject(0);
+        } else if (item.entryId === 0) {
+            // TODO warn
+            return;
+        }
+
+        Storage.deleteProject(item.entryId);
         projectsModel.remove(which);
     }
 

@@ -84,6 +84,10 @@
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -147,6 +151,10 @@
     </message>
     <message>
         <source>This should not be possible. Most probably a database error occurred.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All entries belonging to this project will be deleted!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

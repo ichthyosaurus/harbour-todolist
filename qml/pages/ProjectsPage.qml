@@ -44,6 +44,7 @@ Page {
         delegate: TodoListBaseItem {
             id: item
             editable: true
+            deletable: entryId !== 0
             descriptionEnabled: false
             infoMarkerEnabled: false
             title: model.name
@@ -51,7 +52,8 @@ Page {
 
             onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
             onSaveItemTexts: main.updateProject(view.model.mapToSource(which), newText, undefined);
-            onDeleteThisItem: main.deleteItem(view.model.mapToSource(which))
+            onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
+            extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 
             customClickHandlingEnabled: true
             showMenuOnPressAndHold: true
@@ -80,7 +82,7 @@ Page {
                     }
                     MenuItem {
                         visible: editable
-                        text: qsTr("edit or delete")
+                        text: deletable ? qsTr("edit or delete") : qsTr("edit")
                         onClicked: startEditing()
                     }
                 }
