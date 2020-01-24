@@ -20,12 +20,26 @@
  *
  */
 
-.pragma library
+// .pragma library
+// NOTE This can no longer be a library, because we need access to 'main.*' for
+// showing notifications directly from here. This means, that this script
+// is no longer shared between all QML components. Thus we MUST NOT include it
+// anywhere other than in harbour-todolist.qml.
+
 .import QtQuick.LocalStorage 2.0 as LS
 .import "../constants/EntryState.js" as EntryState
 .import "../constants/EntrySubState.js" as EntrySubState
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
+
+function error(summary, details) {
+    details = details.toString();
+    console.error("Database error:", summary, details);
+    dbErrorNotification.previewBody = summary; // short error description
+    dbErrorNotification.summary = summary; // same as previewBody
+    dbErrorNotification.body = details; // details on the error
+    dbErrorNotification.publish();
+}
 
 var initialized = false
 
@@ -45,24 +59,28 @@ function doInit(db) {
     // entries: ID, date, entryState, subState, createdOn, weight, interval, project, text, description
     // projects: ID, name, entryState
 
-    db.transaction(function(tx) {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
-            date STRING NOT NULL,
-            entryState INTEGER NOT NULL,
-            subState INTEGER NOT NULL,
-            createdOn STRING NOT NULL,
-            weight INTEGER NOT NULL,
-            interval INTEGER NOT NULL,
-            project INTEGER NOT NULL,
-            text TEXT NOT NULL,
-            description TEXT
-        );');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
-            name TEXT NOT NULL,
-            entryState INTEGER NOT NULL
-        );');
-        tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
-    });
+    try {
+        db.transaction(function(tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
+                date STRING NOT NULL,
+                entryState INTEGER NOT NULL,
+                subState INTEGER NOT NULL,
+                createdOn STRING NOT NULL,
+                weight INTEGER NOT NULL,
+                interval INTEGER NOT NULL,
+                project INTEGER NOT NULL,
+                text TEXT NOT NULL,
+                description TEXT
+            );');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
+                name TEXT NOT NULL,
+                entryState INTEGER NOT NULL
+            );');
+            tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
+        });
+    } catch(e) {
+        error(qsTr("Failed to initialize database"), e);
+    }
 }
 
 function simpleQuery(query, values/*, getSelectedCount*/) {
@@ -71,14 +89,15 @@ function simpleQuery(query, values/*, getSelectedCount*/) {
     values = defaultFor(values, []);
 
     if (!query) {
-        console.log("error: empty query");
+        error(qsTr("Empty database query"), qsTr("This is a programming error. Please file a bug report."))
         return undefined;
     }
 
     try {
         db.transaction(function(tx) { res = tx.executeSql(query, values); });
     } catch(e) {
-        console.log("error in query: '"+ e +"', values=", values);
+        error(qsTr("Database access failed"), e);
+        console.error("-> values=", values);
         res = undefined;
     }
 
@@ -122,7 +141,8 @@ function addProject(name, entryState) {
 
 function updateProject(entryId, name, entryState) {
     if (entryId === undefined) {
-        console.warn("failed to update project: invalid entry id", name, entryState);
+        error(qsTr("Failed to update project"), qsTr("No internal project ID was provided."));
+        console.error("->", name, entryState);
         return;
     }
 
@@ -132,10 +152,10 @@ function updateProject(entryId, name, entryState) {
 
 function deleteProject(entryId) {
     if (entryId === undefined) {
-        console.warn("failed to delete project: invalid entry id");
+        error(qsTr("Failed to delete project"), qsTr("No internal project ID was provided."));
         return;
     } else if (entryId === 0) {
-        console.warn("cannot delete default project");
+        error(qsTr("Failed to delete project"), qsTr("The default project cannot be deleted."));
         return;
     }
 
@@ -182,7 +202,8 @@ function addEntry(date, entryState, subState, createdOn, weight, interval, proje
 
 function updateEntry(entryId, date, entryState, subState, createdOn, weight, interval, project, text, description) {
     if (entryId === undefined) {
-        console.warn("failed to update: invalid entry id", date, text);
+        error(qsTr("Failed to update entry"), qsTr("No internal entry ID was provided."));
+        console.error("->", date, text);
         return;
     }
 
@@ -200,7 +221,7 @@ function updateEntry(entryId, date, entryState, subState, createdOn, weight, int
 
 function deleteEntry(entryId) {
     if (entryId === undefined) {
-        console.warn("failed to delete: invalid entry id");
+        error(qsTr("Failed to update entry"), qsTr("No internal entry ID was provided."));
         return;
     }
 
@@ -236,7 +257,7 @@ function carryOverFrom(fromDate) {
     simpleQuery(updateQuery, updateValues);
 
     if (result === undefined) {
-        console.log("failed to carry over any entries");
+        error(qsTr("Failed to carry over old entries"), "");
         return false;
     } else {
         console.log("entries carried over:", result.rowsAffected);

@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
-import "../js/storage.js" as Storage
 import "../components"
 import "../constants" 1.0
 
