@@ -172,13 +172,13 @@ ListItem {
         spacing: Theme.paddingLarge
 
         Button {
-            text: qsTr("Save")
-            onClicked: saveEdited();
+            text: qsTr("Abort")
+            onClicked: stopEditing();
         }
 
         Button {
-            text: qsTr("Abort")
-            onClicked: stopEditing();
+            text: qsTr("Save")
+            onClicked: saveEdited();
         }
     }
 
