@@ -8,7 +8,12 @@ SilicaListView {
     id: view
     VerticalScrollDecorator { flickable: view }
 
-    signal toggleShowSection(var section)
+    property var closedSections: []
+
+    Connections {
+        target: main.configuration
+        onValueChanged: if (key === "currentProject") closedSections = []
+    }
 
     delegate: TodoListItem {
         onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
@@ -19,12 +24,7 @@ SilicaListView {
         }
         onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription);
         onDeleteThisItem: deleteItem(view.model.mapToSource(which))
-        Component.onCompleted: {
-            // FIXME if the list is long, not all entries are hidden properly
-            view.toggleShowSection.connect(function(section) {
-                if (section.split("T")[0] === Helpers.getDateString(date)) hidden = !hidden;
-            })
-        }
+        hidden: closedSections.indexOf(Helpers.getDateString(date)) !== -1
     }
 
     section {
@@ -32,8 +32,14 @@ SilicaListView {
         delegate: Column {
             width: parent.width
             property bool open: true
-            property bool isToday: String(section).split("T")[0] === Helpers.getDateString(today)
-            property bool isTomorrow: String(section).split("T")[0] === Helpers.getDateString(tomorrow)
+            property string sectionString: String(section).split("T")[0]
+            property bool isToday: sectionString === Helpers.getDateString(today)
+            property bool isTomorrow: sectionString === Helpers.getDateString(tomorrow)
+
+            Connections {
+                target: main.configuration
+                onValueChanged: if (key === "currentProject") open = true;
+            }
 
             Spacer { height: Theme.paddingLarge }
 
@@ -43,8 +49,13 @@ SilicaListView {
 
                 onClicked: {
                     open = !open;
-                    console.log("sent", section)
-                    view.toggleShowSection(section);
+                    var tmp = closedSections;
+                    if (!open) {
+                        tmp.push(sectionString);
+                    } else {
+                        tmp = tmp.filter(function(e) { return e !== sectionString; });
+                    }
+                    closedSections = tmp;
                 }
 
                 Label {
