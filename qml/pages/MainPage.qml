@@ -51,10 +51,6 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Change project")
-                onClicked: pageStack.push(Qt.resolvedUrl("ProjectsPage.qml"))
-            }
-            MenuItem {
                 text: qsTr("Add entry for tomorrow")
                 onClicked: page.addItemFor(tomorrow)
             }
@@ -76,5 +72,11 @@ Page {
         }
 
         footer: Spacer { }
+    }
+
+    onStatusChanged: {
+        if (status === PageStatus.Active && !pageStack.busy) {
+            pageStack.pushAttached(Qt.resolvedUrl("ProjectsPage.qml"));
+        }
     }
 }
