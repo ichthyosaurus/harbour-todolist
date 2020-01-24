@@ -9,8 +9,10 @@ Dialog {
     property bool _showDescription: description != ""
 
     SilicaFlickable {
+        id: flick
         anchors.fill: parent
         contentHeight: column.height
+        VerticalScrollDecorator { flickable: flick }
 
         Column {
             id: column

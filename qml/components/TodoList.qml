@@ -6,6 +6,7 @@ import "../js/helpers.js" as Helpers
 
 SilicaListView {
     id: view
+    VerticalScrollDecorator { flickable: view }
 
     signal toggleShowSection(var section)
 

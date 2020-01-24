@@ -36,6 +36,7 @@ Page {
         anchors.fill: parent
         model: filteredModel
         height: contentHeight + Theme.paddingLarge
+        VerticalScrollDecorator { flickable: view }
 
         header: PageHeader {
             title: qsTr("Archived Entries")

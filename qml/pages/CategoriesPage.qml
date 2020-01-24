@@ -21,6 +21,7 @@ Page {
         id: view
         anchors.fill: parent
         model: filteredModel
+        VerticalScrollDecorator { flickable: view }
 
         header: PageHeader {
             title: qsTr("Categories")
