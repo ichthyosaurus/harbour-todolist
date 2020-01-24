@@ -45,8 +45,8 @@ Page {
         model: filteredModel
 
         header: PageHeader {
-            title: qsTr("Todo List")
-            description: currentProjectName
+            title: currentProjectName
+            description: qsTr("Todo List")
         }
 
         PullDownMenu {

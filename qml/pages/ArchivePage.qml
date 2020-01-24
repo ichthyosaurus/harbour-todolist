@@ -39,8 +39,8 @@ Page {
         VerticalScrollDecorator { flickable: view }
 
         header: PageHeader {
-            title: qsTr("Archived Entries")
-            description: currentProjectName
+            title: currentProjectName
+            description: qsTr("Archived Entries")
         }
 
         footer: Spacer { }
