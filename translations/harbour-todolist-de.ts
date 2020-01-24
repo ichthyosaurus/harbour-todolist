@@ -67,41 +67,6 @@
     </message>
 </context>
 <context>
-    <name>CategoriesPage</name>
-    <message>
-        <source>Categories</source>
-        <translation>Kategorien</translation>
-    </message>
-    <message>
-        <source>Add category</source>
-        <translation>Kategorie hinzufügen</translation>
-    </message>
-    <message>
-        <source>select</source>
-        <translation>auswählen</translation>
-    </message>
-    <message>
-        <source>mark as active</source>
-        <translation>als aktiv markieren</translation>
-    </message>
-    <message>
-        <source>mark as halted</source>
-        <translation>als unterbrochen markieren</translation>
-    </message>
-    <message>
-        <source>mark as finished</source>
-        <translation>als abgeschlossen markieren</translation>
-    </message>
-    <message>
-        <source>No entries</source>
-        <translation>Keine Einträge</translation>
-    </message>
-    <message>
-        <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation>Das sollte nicht möglich sein. Vermutlich ist ein Datenbankfehler aufgetreten.</translation>
-    </message>
-</context>
-<context>
     <name>ConfirmDeleteDialog</name>
     <message>
         <source>Delete</source>
@@ -149,9 +114,40 @@
         <source>Show old entries</source>
         <translation>Alte Einträge anzeigen</translation>
     </message>
+</context>
+<context>
+    <name>ProjectsPage</name>
     <message>
-        <source>Change category</source>
-        <translation>Kategorie wechseln</translation>
+        <source>Projects</source>
+        <translation>Projekte</translation>
+    </message>
+    <message>
+        <source>Add project</source>
+        <translation>Projekt hinzufügen</translation>
+    </message>
+    <message>
+        <source>mark as active</source>
+        <translation>als aktiv markieren</translation>
+    </message>
+    <message>
+        <source>mark as halted</source>
+        <translation>als unterbrochen markieren</translation>
+    </message>
+    <message>
+        <source>mark as finished</source>
+        <translation>als abgeschlossen markieren</translation>
+    </message>
+    <message>
+        <source>edit or delete</source>
+        <translation>bearbeiten oder löschen</translation>
+    </message>
+    <message>
+        <source>No entries</source>
+        <translation>Keine Einträge</translation>
+    </message>
+    <message>
+        <source>This should not be possible. Most probably a database error occurred.</source>
+        <translation>Das sollte nicht möglich sein. Wahrscheinlich ist ein Datenbankfehler aufgetreten.</translation>
     </message>
 </context>
 <context>

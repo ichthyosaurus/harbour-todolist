@@ -67,41 +67,6 @@
     </message>
 </context>
 <context>
-    <name>CategoriesPage</name>
-    <message>
-        <source>Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add category</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>select</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mark as active</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mark as halted</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mark as finished</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No entries</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ConfirmDeleteDialog</name>
     <message>
         <source>Delete</source>
@@ -149,8 +114,39 @@
         <source>Show old entries</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>ProjectsPage</name>
     <message>
-        <source>Change category</source>
+        <source>Projects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as halted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit or delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This should not be possible. Most probably a database error occurred.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
