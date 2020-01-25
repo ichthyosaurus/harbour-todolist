@@ -4,11 +4,40 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>Todo List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sources on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GNU GPL version 3 or later.
+This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16,10 +45,6 @@
     <name>AddItemDialog</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Abort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -50,6 +75,14 @@
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add entry for someday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArchivePage</name>
@@ -73,10 +106,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Abort</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
@@ -88,6 +117,10 @@
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -97,6 +130,13 @@
     </message>
     <message>
         <source>No entries yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LicensePage</name>
+    <message>
+        <source>License</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -120,6 +160,10 @@
     </message>
     <message>
         <source>Show old entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add entry for someday</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -184,6 +228,10 @@
         <source>Pull down to add entries</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Someday</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TodoListBaseItem</name>
@@ -196,7 +244,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Abort</source>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -268,6 +316,50 @@
     </message>
     <message>
         <source>press and hold to edit or delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move to next day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move to someday later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>continue next day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from this day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>from last day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>for this day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>for someday later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ignored this day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to be done next day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to be done someday later</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>done this day</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

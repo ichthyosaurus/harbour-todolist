@@ -4,12 +4,42 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Nested Page</source>
-        <translation>Unterseite</translation>
+        <source>Todo List</source>
+        <translation>Todo-Liste</translation>
     </message>
     <message>
-        <source>Item</source>
-        <translation>Element</translation>
+        <source>A simple tool for planning what to do next.</source>
+        <translation>Eine einfache Anwendung zum kurzfristigen Planen.</translation>
+    </message>
+    <message>
+        <source>Sources on GitHub</source>
+        <translation>Quellcode auf GitHub</translation>
+    </message>
+    <message>
+        <source>About %1</source>
+        <translation>Über %1</translation>
+    </message>
+    <message>
+        <source>Version %1</source>
+        <translation>Version %1</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>License</source>
+        <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>GNU GPL version 3 or later.
+This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</source>
+        <translation>GNU GPL Version 3 oder neuer.
+This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</translation>
     </message>
 </context>
 <context>
@@ -17,10 +47,6 @@
     <message>
         <source>Save</source>
         <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Abort</source>
-        <translation>Abbrechen</translation>
     </message>
     <message>
         <source>Add entry for today</source>
@@ -50,6 +76,14 @@
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
+    <message>
+        <source>Add entry for someday</source>
+        <translation>Eintrag für irgendwann hinzufügen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
+    </message>
 </context>
 <context>
     <name>ArchivePage</name>
@@ -73,10 +107,6 @@
         <translation>Löschen</translation>
     </message>
     <message>
-        <source>Abort</source>
-        <translation>Abbrechen</translation>
-    </message>
-    <message>
         <source>Description</source>
         <translation>Beschreibung</translation>
     </message>
@@ -86,18 +116,29 @@
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnung</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>Todo List</source>
-        <translation type="unfinished">Todo-Liste</translation>
+        <translation>Todo-Liste</translation>
     </message>
     <message>
         <source>No entries yet</source>
-        <translation type="unfinished">Noch keine Einträge</translation>
+        <translation>Noch keine Einträge</translation>
+    </message>
+</context>
+<context>
+    <name>LicensePage</name>
+    <message>
+        <source>License</source>
+        <translation>Lizenz</translation>
     </message>
 </context>
 <context>
@@ -121,6 +162,10 @@
     <message>
         <source>Show old entries</source>
         <translation>Alte Einträge anzeigen</translation>
+    </message>
+    <message>
+        <source>Add entry for someday</source>
+        <translation>Eintrag für irgendwann hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -159,11 +204,11 @@
     </message>
     <message>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Einträge, die zu diesem Projekt gehören, werden auch gelöscht!</translation>
     </message>
     <message>
         <source>edit</source>
-        <translation type="unfinished"></translation>
+        <translation>bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -184,6 +229,10 @@
         <source>Pull down to add entries</source>
         <translation>Herunterziehen, um Einträge hinzuzufügen</translation>
     </message>
+    <message>
+        <source>Someday</source>
+        <translation>Irgendwann</translation>
+    </message>
 </context>
 <context>
     <name>TodoListBaseItem</name>
@@ -196,7 +245,7 @@
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>Abort</source>
+        <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
 </context>
@@ -270,6 +319,50 @@
         <source>press and hold to edit or delete</source>
         <translation>lange drücken zum Bearbeiten oder Löschen</translation>
     </message>
+    <message>
+        <source>move to next day</source>
+        <translation>auf den nächsten Tag verschieben</translation>
+    </message>
+    <message>
+        <source>move to someday later</source>
+        <translation>auf irgendwann vertagen</translation>
+    </message>
+    <message>
+        <source>continue next day</source>
+        <translation>am nächsten Tag weitermachen</translation>
+    </message>
+    <message>
+        <source>from this day</source>
+        <translation>von diesem Tag</translation>
+    </message>
+    <message>
+        <source>from last day</source>
+        <translation>vom Vortag</translation>
+    </message>
+    <message>
+        <source>for this day</source>
+        <translation>für diesen Tag</translation>
+    </message>
+    <message>
+        <source>for someday later</source>
+        <translation>für irgendwann später</translation>
+    </message>
+    <message>
+        <source>ignored this day</source>
+        <translation>an diesem Tag ignoriert</translation>
+    </message>
+    <message>
+        <source>to be done next day</source>
+        <translation>zum am nächsten Tag Erledigen</translation>
+    </message>
+    <message>
+        <source>to be done someday later</source>
+        <translation>zum später Erledigen</translation>
+    </message>
+    <message>
+        <source>done this day</source>
+        <translation>an diesem Tag erledigt</translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
@@ -291,11 +384,11 @@
     </message>
     <message>
         <source>Database Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank-Fehler</translation>
     </message>
     <message>
         <source>Todo List</source>
-        <translation type="unfinished">Todo-Liste</translation>
+        <translation>Todo-Liste</translation>
     </message>
 </context>
 <context>
@@ -306,47 +399,47 @@
     </message>
     <message>
         <source>Failed to initialize database</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Initialisieren der Datenbank</translation>
     </message>
     <message>
         <source>Empty database query</source>
-        <translation type="unfinished"></translation>
+        <translation>Leere Datenbankanfrage</translation>
     </message>
     <message>
         <source>This is a programming error. Please file a bug report.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es handelt sich um ein Problem in der Programmierung. Bitte melden Sie den Fehler.</translation>
     </message>
     <message>
         <source>Database access failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank-Zugriff fehlgeschlagen</translation>
     </message>
     <message>
         <source>Failed to update project</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Projekt konnte nicht aktualisiert werden</translation>
     </message>
     <message>
         <source>No internal project ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurde keine interne Projekt-ID angegeben.</translation>
     </message>
     <message>
         <source>Failed to delete project</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Projekt konnte nicht gelöscht werden</translation>
     </message>
     <message>
         <source>The default project cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Standard-Projekt kann nicht gelöscht werden.</translation>
     </message>
     <message>
         <source>Failed to update entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Eintrag konnte nicht aktualisiert werden</translation>
     </message>
     <message>
         <source>No internal entry ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurde keine interne Eintrags-ID angegeben.</translation>
     </message>
     <message>
         <source>Failed to carry over old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Die alten Einträge konnten nicht auf heute übertragen werden</translation>
     </message>
 </context>
 </TS>
