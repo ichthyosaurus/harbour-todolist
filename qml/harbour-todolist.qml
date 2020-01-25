@@ -20,10 +20,10 @@ ApplicationWindow
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
 
-    property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
-    property string timeFormat: qsTr("hh':'mm")
-    property string fullDateFormat: qsTr("ddd d MMM yyyy")
-    property string shortDateFormat: qsTr("d MMM yyyy")
+    readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
+    readonly property string timeFormat: qsTr("hh':'mm")
+    readonly property string fullDateFormat: qsTr("ddd d MMM yyyy")
+    readonly property string shortDateFormat: qsTr("d MMM yyyy")
 
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
