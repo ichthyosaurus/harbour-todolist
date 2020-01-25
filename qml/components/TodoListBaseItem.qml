@@ -109,6 +109,7 @@ ListItem {
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
                     wrapMode: Text.WordWrap
+                    elide: Text.ElideNone
                 }
 
                 TextField {
@@ -152,6 +153,7 @@ ListItem {
                 font.pixelSize: Theme.fontSizeSmall
                 textFormat: Text.PlainText
                 wrapMode: Text.WordWrap
+                elide: Text.ElideNone
             }
 
             TextArea {
@@ -164,6 +166,15 @@ ListItem {
                 textTopMargin: 0
                 textMargin: 0
                 width: parent.width
+
+                // This element causes for some reason the following error:
+                // unknown:296 - file:///usr/lib/qt5/qml/Sailfish/Silica/private/TextBase.qml:296:5:
+                //      QML Label: Binding loop detected for property "_elideText"
+                // We can 'fix' this by declaring the placeholder text's elide mode
+                // manually. We specify Text.ElideNone, which somehow means that
+                // the label decides automatically to which side it elides anyways
+                // (which is what we want).
+                _placeholderTextLabel.elide: Text.ElideNone
             }
 
             Spacer { height: Theme.paddingMedium }
