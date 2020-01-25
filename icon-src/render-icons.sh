@@ -22,7 +22,7 @@ done
 echo "rendering status icons..."
 
 root="../qml/images"
-files=(icon-todo@112 icon-ignored@112 icon-done@112)
+files=(icon-todo@112 icon-ignored@112 icon-done@112 harbour-todolist@256)
 mkdir -p "$root"
 
 for img in "${files[@]}"; do
