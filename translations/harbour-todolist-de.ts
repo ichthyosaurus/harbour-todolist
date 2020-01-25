@@ -92,8 +92,12 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <source>Todo List</source>
+        <translation type="unfinished">Todo-Liste</translation>
+    </message>
+    <message>
+        <source>No entries yet</source>
+        <translation type="unfinished">Noch keine Einträge</translation>
     </message>
 </context>
 <context>
@@ -155,6 +159,10 @@
     </message>
     <message>
         <source>All entries belonging to this project will be deleted!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -281,12 +289,64 @@
         <source>d MMM yyyy</source>
         <translation>d. MMM yyyy</translation>
     </message>
+    <message>
+        <source>Database Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Todo List</source>
+        <translation type="unfinished">Todo-Liste</translation>
+    </message>
 </context>
 <context>
     <name>storage</name>
     <message>
         <source>Default</source>
         <translation>Allgemein</translation>
+    </message>
+    <message>
+        <source>Failed to initialize database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Empty database query</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This is a programming error. Please file a bug report.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Database access failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to update project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No internal project ID was provided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to delete project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The default project cannot be deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to update entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No internal entry ID was provided.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to carry over old entries</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
