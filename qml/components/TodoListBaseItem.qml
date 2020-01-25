@@ -190,7 +190,7 @@ ListItem {
         spacing: Theme.paddingLarge
 
         Button {
-            text: qsTr("Abort")
+            text: qsTr("Cancel")
             onClicked: stopEditing();
         }
 

@@ -23,7 +23,7 @@ Dialog {
 
             DialogHeader {
                 acceptText: qsTr("Delete")
-                cancelText: qsTr("Abort")
+                cancelText: qsTr("Cancel")
             }
 
             SectionHeader {

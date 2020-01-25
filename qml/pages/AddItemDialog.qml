@@ -25,7 +25,7 @@ Dialog {
 
             DialogHeader {
                 acceptText: qsTr("Save")
-                cancelText: qsTr("Abort")
+                cancelText: qsTr("Cancel")
             }
 
             Label {
