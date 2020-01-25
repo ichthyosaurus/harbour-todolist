@@ -72,6 +72,14 @@ function doInit(db) {
                 text TEXT NOT NULL,
                 description TEXT
             );');
+            tx.executeSql('CREATE TABLE IF NOT EXISTS recurrings(\
+                startDate STRING NOT NULL,
+                entryState INTEGER NOT NULL,
+                intervalDays INTEGER NOT NULL,
+                project INTEGER NOT NULL,
+                text TEXT NOT NULL,
+                description TEXT
+            );');
             tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
                 name TEXT NOT NULL,
                 entryState INTEGER NOT NULL
