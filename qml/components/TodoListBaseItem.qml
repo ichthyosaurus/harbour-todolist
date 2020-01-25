@@ -78,7 +78,8 @@ ListItem {
             id: deleteButton
             visible: isEditing
             enabled: deletable
-            anchors.fill: statusIcon // FIXME not possible in a Row
+            width: statusIcon.width; height: statusIcon.height
+            anchors.top: statusIcon.top
             icon.source: "image://theme/icon-m-delete"
             onClicked: {
                 var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"), {
