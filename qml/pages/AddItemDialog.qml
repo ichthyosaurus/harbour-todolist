@@ -41,6 +41,8 @@ Dialog {
                         qsTr("Add entry for today");
                     } else if (date.getTime() === tomorrow.getTime()) {
                         qsTr("Add entry for tomorrow");
+                    } else if (date.getTime() === someday.getTime()) {
+                        qsTr("Add entry for someday");
                     } else {
                         qsTr("Add entry");
                     }

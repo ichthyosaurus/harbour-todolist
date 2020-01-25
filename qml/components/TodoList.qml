@@ -8,11 +8,12 @@ SilicaListView {
     id: view
     VerticalScrollDecorator { flickable: view }
 
-    property var closedSections: []
+    readonly property var defaultClosedSections: [somedayString]
+    property var closedSections: defaultClosedSections
 
     Connections {
         target: main.configuration
-        onValueChanged: if (key === "currentProject") closedSections = []
+        onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections
     }
 
     delegate: TodoListItem {
@@ -31,14 +32,15 @@ SilicaListView {
         property: 'date'
         delegate: Column {
             width: parent.width
-            property bool open: true
             property string sectionString: String(section).split("T")[0]
-            property bool isToday: sectionString === Helpers.getDateString(today)
-            property bool isTomorrow: sectionString === Helpers.getDateString(tomorrow)
+            property bool isToday: sectionString === todayString
+            property bool isTomorrow: sectionString === tomorrowString
+            property bool isSomeday: sectionString === somedayString
+            property bool open: !isSomeday
 
             Connections {
                 target: main.configuration
-                onValueChanged: if (key === "currentProject") open = true;
+                onValueChanged: if (key === "currentProject") open = !isSomeday;
             }
 
             Spacer { height: Theme.paddingLarge }
@@ -70,6 +72,7 @@ SilicaListView {
                     text: {
                         if (isToday) qsTr("Today")
                         else if (isTomorrow) qsTr("Tomorrow")
+                        else if (isSomeday) qsTr("Someday")
                         else new Date(section).toLocaleString(Qt.locale(), "dddd")
                     }
                     color: Theme.highlightColor
@@ -83,8 +86,9 @@ SilicaListView {
                         rightMargin: Theme.paddingMedium
                         verticalCenter: parent.verticalCenter
                     }
-                    text: new Date(section).toLocaleString(Qt.locale(), (isToday || isTomorrow) ?
-                                                               main.fullDateFormat : main.shortDateFormat)
+                    text: isSomeday ? "" : new Date(section).toLocaleString(
+                                          Qt.locale(), (isToday || isTomorrow) ?
+                                              main.fullDateFormat : main.shortDateFormat)
                     color: Theme.highlightColor
                     opacity: Theme.opacityHigh
                     font.pixelSize: Theme.fontSizeSmall

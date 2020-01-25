@@ -50,6 +50,10 @@ Page {
 
         PullDownMenu {
             MenuItem {
+                text: qsTr("Add entry for someday")
+                onClicked: page.addItemFor(someday)
+            }
+            MenuItem {
                 text: qsTr("Add entry for tomorrow")
                 onClicked: page.addItemFor(tomorrow)
             }

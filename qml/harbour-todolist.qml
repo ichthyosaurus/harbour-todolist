@@ -19,6 +19,10 @@ ApplicationWindow
 
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
+    property date someday: Helpers.getDate(0, new Date("9999-01-01T00:00Z"))
+    property string todayString: Helpers.getDateString(today)
+    property string tomorrowString: Helpers.getDateString(tomorrow)
+    property string somedayString: Helpers.getDateString(someday)
 
     readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
     readonly property string timeFormat: qsTr("hh':'mm")
