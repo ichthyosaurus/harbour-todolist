@@ -44,6 +44,7 @@ ApplicationWindow
         body: "" // details on the error
     }
 
+    readonly property int defaultProjectId: 1
     ConfigurationGroup {
         id: config
         path: "/apps/harbour-todolist"
@@ -122,9 +123,9 @@ ApplicationWindow
         var item = projectsModel.get(which);
 
         if (config.currentProject === item.entryId) {
-            setCurrentProject(0);
-        } else if (item.entryId === 0) {
-            // TODO warn
+            setCurrentProject(defaultProjectId);
+        } else if (item.entryId === defaultProjectId) {
+            // This should not be reachable.
             return;
         }
 
@@ -133,14 +134,15 @@ ApplicationWindow
     }
 
     function setCurrentProject(entryId) {
-        entryId = Storage.defaultFor(entryId, 0);
+        entryId = Storage.defaultFor(entryId, defaultProjectId);
         config.currentProject = entryId;
-        currentProjectName = Storage.getProject(config.currentProject).name;
+        var project = Storage.getProject(config.currentProject);
 
-        if (currentProjectName === undefined) {
+        if (project === undefined) {
             // if the requested project is not available, reset it to the default project
-            setCurrentProject(0);
+            setCurrentProject(defaultProjectId);
         } else {
+            currentProjectName = project.name;
             startupComplete = false;
             rawModel.clear();
             var entries = Storage.getEntries(config.currentProject);

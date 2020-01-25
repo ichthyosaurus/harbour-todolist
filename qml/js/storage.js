@@ -76,7 +76,8 @@ function doInit(db) {
                 name TEXT NOT NULL,
                 entryState INTEGER NOT NULL
             );');
-            tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)', [0, qsTr("Default"), 0]);
+            tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)',
+                          [defaultProjectId, qsTr("Default"), 0]);
         });
     } catch(e) {
         error(qsTr("Failed to initialize database"), e);
@@ -121,7 +122,7 @@ function getProjects() {
 }
 
 function getProject(entryId) {
-    entryId = defaultFor(entryId, 0);
+    entryId = defaultFor(entryId, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM projects WHERE rowid=? LIMIT 1;', [entryId]);
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
@@ -154,7 +155,7 @@ function deleteProject(entryId) {
     if (entryId === undefined) {
         error(qsTr("Failed to delete project"), qsTr("No internal project ID was provided."));
         return;
-    } else if (entryId === 0) {
+    } else if (entryId === defaultProjectId) {
         error(qsTr("Failed to delete project"), qsTr("The default project cannot be deleted."));
         return;
     }
@@ -164,7 +165,7 @@ function deleteProject(entryId) {
 }
 
 function getEntries(forProject) {
-    forProject = defaultFor(forProject, 0);
+    forProject = defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=?;', [forProject]);
     var res = []
 
@@ -178,7 +179,7 @@ function getEntries(forProject) {
                      createdOn: new Date(item.createdOn),
                      weight: parseInt(item.weight, 10),
                      interval: parseInt(item.interval, 10),
-                     project: item.project,
+                     project: parseInt(item.project, 10),
                      text: item.text,
                      description: item.description
                  });

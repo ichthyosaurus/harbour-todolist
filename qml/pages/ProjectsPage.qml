@@ -44,7 +44,7 @@ Page {
         delegate: TodoListBaseItem {
             id: item
             editable: true
-            deletable: entryId !== 0
+            deletable: entryId !== defaultProjectId
             descriptionEnabled: false
             infoMarkerEnabled: false
             title: model.name
