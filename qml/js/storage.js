@@ -58,6 +58,7 @@ function getDatabase() {
 function doInit(db) {
     // Database tables: (primary key in all-caps)
     // entries: ID, date, entryState, subState, createdOn, weight, interval, project, text, description
+    // recurrings: ID, startDate, entryState, intervalDays, project, text, description
     // projects: ID, name, entryState
 
     try {
@@ -173,6 +174,64 @@ function deleteProject(entryId) {
     simpleQuery('DELETE FROM entries WHERE project=?', [entryId]);
 }
 
+function getRecurrings(forProject) {
+    forProject = defaultFor(forProject, defaultProjectId);
+    var q = simpleQuery('SELECT rowid, * FROM recurrings WHERE project=?;', [forProject]);
+    var res = []
+
+    for (var i = 0; i < q.rows.length; i++) {
+        var item = q.rows.item(i);
+
+        res.push({entryId: item.rowid,
+                     startDate: new Date(item.startDate),
+                     entryState: parseInt(item.entryState, 10),
+                     intervalDays: parseInt(item.intervalDays, 10),
+                     project: parseInt(item.project, 10),
+                     text: item.text,
+                     description: item.description
+                 });
+    }
+
+    return res;
+}
+
+function addRecurring(startDate, entryState, intervalDays, project, text, description) {
+    simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?)', [
+                    Helpers.getDateString(startDate),
+                    Number(entryState), Number(intervalDays),
+                    project, text, description
+                ])
+
+    var q = simpleQuery('SELECT rowid FROM recurrings ORDER BY rowid DESC LIMIT 1;', []);
+    if (q.rows.length > 0) return q.rows.item(0).rowid;
+    else return undefined;
+}
+
+function updateRecurring(entryId, startDate, entryState, intervalDays, project, text, description) {
+    if (entryId === undefined) {
+        error(qsTr("Failed to update recurring entry"), qsTr("No internal entry ID was provided."));
+        console.error("->", startDate, text, intervalDays);
+        return;
+    }
+
+    simpleQuery('UPDATE recurrings SET\
+        startDate=?, entryState=?, intervalDays=?,
+        project=?, text=?, description=? WHERE rowid=?', [
+                    Helpers.getDateString(startDate),
+                    Number(entryState), Number(intervalDays),
+                    project, text, description, entryId
+                ])
+}
+
+function deleteRecurring(entryId) {
+    if (entryId === undefined) {
+        error(qsTr("Failed to delete recurring entry"), qsTr("No internal entry ID was provided."));
+        return;
+    }
+
+    simpleQuery('DELETE FROM recurrings WHERE rowid=?', [entryId]);
+}
+
 function getEntries(forProject) {
     forProject = defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=?;', [forProject]);
@@ -262,4 +321,41 @@ function carryOverFrom(fromDate) {
         console.log("entries carried over:", mainResult.rowsAffected);
         return true;
     }
+}
+
+function copyRecurringsFor(lastFinishedDate) {
+    lastFinishedDate = defaultFor(lastFinishedDate, new Date(NaN));
+
+    if (isNaN(lastFinishedDate.valueOf())) {
+        var q = simpleQuery('SELECT startDate FROM recurrings ORDER BY startDate ASC LIMIT 1;');
+        q = defaultFor(q, {rows: []});
+        if (q.rows.length === 0) return true; // table is empty, nothing to do
+        else lastFinishedDate = Helpers.getDate(0, new Date(q.rows.item(0).startDate));
+    }
+
+    var copied = 0; var haveError = false;
+    while (lastFinishedDate.getTime() <= today.getTime()) {
+        var currentDateString = Helpers.getDateString(lastFinishedDate);
+        var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
+            SELECT date(?, "localtime"), 0, 0, date(?, "localtime"), 1, intervalDays, project, text, description FROM recurrings WHERE
+                (entryState = ?) AND date(?, "localtime") = date(startDate, "+" || intervalDays || " day", "localtime")',
+                                     [currentDateString, currentDateString, EntryState.todo, currentDateString]);
+        var updateResult = simpleQuery('UPDATE recurrings SET startDate=? WHERE\
+            (entryState = ?) AND date(?, "localtime") = date(startDate, "+" || intervalDays || " day", "localtime")',
+                                       [currentDateString, EntryState.todo, currentDateString])
+        lastFinishedDate = Helpers.getDate(1, lastFinishedDate);
+
+        if (mainResult === undefined || updateResult === undefined) {
+            if (mainResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Copying new entries failed."));
+            if (updateResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Updating reference entries failed."));
+            console.log("recurrings failed for", currentDateString)
+            haveError = true;
+        } else {
+            console.log(mainResult.rowsAffected, "copied for", currentDateString);
+            copied += mainResult.rowsAffected;
+        }
+    }
+
+    console.log("total recurrings copied:", copied);
+    return !haveError;
 }

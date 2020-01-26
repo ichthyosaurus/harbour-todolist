@@ -12,6 +12,7 @@ ApplicationWindow
     id: main
     property alias rawModel: mainModel
     property alias projectsModel: mainProjectsModel
+    property alias recurringsModel: mainRecurringsModel
     property alias configuration: config
 
     property bool startupComplete: false
@@ -35,6 +36,7 @@ ApplicationWindow
 
     ListModel { id: mainModel }
     ListModel { id: mainProjectsModel }
+    ListModel { id: mainRecurringsModel }
 
     Notification {
         id: dbErrorNotification
@@ -53,6 +55,7 @@ ApplicationWindow
         id: config
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
+        property date lastCopiedRecurringsTo
         property int currentProject
     }
 
@@ -100,6 +103,41 @@ ApplicationWindow
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
                 EntryState.todo, EntrySubState.today, item.createdOn);
+    }
+
+    function addRecurring(text, description, intervalDays) {
+        var entryState = EntryState.todo;
+        intervalDays = Storage.defaultFor(intervalDays, 1);
+        var project = config.currentProject;
+        var startDate = today;
+
+        var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description);
+
+        if (entryId === undefined) {
+            console.error("failed to save new recurring item", text, intervalDays);
+            return;
+        }
+
+        recurringsModel.append({entryId: entryId, startDate: startDate, entryState: entryState,
+                                intervalDays: intervalDays, project: project,
+                                text: text, description: description});
+    }
+
+    function updateRecurring(which, startDate, entryState, intervalDays, text, description) {
+        if (startDate !== undefined) recurringsModel.setProperty(which, "startDate", startDate);
+        if (entryState !== undefined) recurringsModel.setProperty(which, "entryState", entryState);
+        if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);
+        if (text !== undefined) recurringsModel.setProperty(which, "text", text);
+        if (description !== undefined) recurringsModel.setProperty(which, "description", description);
+
+        var item = recurringsModel.get(which);
+        Storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
+                                item.project, item.text, item.description);
+    }
+
+    function deleteRecurring(which) {
+        Storage.deleteRecurring(recurringsModel.get(which).entryId);
+        recurringsModel.remove(which);
     }
 
     function addProject(name, entryState) {
@@ -154,15 +192,24 @@ ApplicationWindow
             var entries = Storage.getEntries(config.currentProject);
             for (var i in entries) rawModel.append(entries[i]);
             startupComplete = true;
+
+            recurringsModel.clear();
+            entries = Storage.getRecurrings(config.currentProject);
+            for (i in entries) recurringsModel.append(entries[i]);
         }
     }
 
     Component.onCompleted: {
+        if (Storage.copyRecurringsFor(config.lastCopiedRecurringsTo)) {
+            config.lastCopiedRecurringsTo = today;
+        }
+
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
         setCurrentProject(config.currentProject);
 
+        // TODO initialize later
         projectsModel.clear();
         var projects = Storage.getProjects();
         for (var i in projects) projectsModel.append(projects[i]);
