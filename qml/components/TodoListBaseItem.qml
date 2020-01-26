@@ -66,10 +66,12 @@ ListItem {
 
         HighlightImage {
             id: statusIcon
+            opacity: Theme.opacityHigh
             visible: !isEditing
             highlighted: item.highlighted
             width: Theme.iconSizeSmallPlus
             height: width
+            color: Theme.primaryColor
             anchors.top: parent.top
             anchors.topMargin: parent.anchors.topMargin
         }

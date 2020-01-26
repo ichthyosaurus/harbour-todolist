@@ -158,7 +158,7 @@ ApplicationWindow
     Component.onCompleted: {
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverTo = today;
-            config.lastCarriedOverFrom = Helpers.getDate(-1, today);
+            config.lastCarriedOverFrom = Helpers.getDate(-2, today);
         }
         setCurrentProject(config.currentProject);
 
