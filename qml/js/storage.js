@@ -263,10 +263,13 @@ function carryOverFrom(fromDate) {
     }
 
     var result = simpleQuery(query, mainValues);
-    simpleQuery(updateQuery, updateValues);
+    var updateResult = simpleQuery(updateQuery, updateValues);
 
     if (result === undefined) {
-        error(qsTr("Failed to carry over old entries"), "");
+        error(qsTr("Failed to carry over old entries"), qsTr("Copying old entries failed."));
+        return false;
+    } else if (updateResult === undefined) {
+        error(qsTr("Failed to carry over old entries"), qsTr("Updating old entries failed."));
         return false;
     } else {
         console.log("entries carried over:", result.rowsAffected);
