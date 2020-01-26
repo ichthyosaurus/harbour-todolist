@@ -84,7 +84,7 @@ CoverBackground {
     }
 
     property int currentPageNumber: 1
-    property int scrollPerPage: 5
+    property int scrollPerPage: 2
 
     onCurrentPageNumberChanged: {
         anim.running = false;
