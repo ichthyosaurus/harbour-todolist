@@ -81,6 +81,36 @@ CoverBackground {
                 anchors { leftMargin: Theme.paddingSmall; left: statusIcon.right; right: parent.right }
             }
         }
+
+        Column {
+            id: placeholderColumn
+            visible: view.count === 0
+
+            anchors {
+                left: parent.left; right: parent.right
+                verticalCenter: parent.verticalCenter
+            }
+            spacing: Theme.paddingSmall
+
+            Label {
+                width: parent.width; horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere; font.pixelSize: Theme.fontSizeLarge
+                text: qsTr("Todo List")
+                color: Theme.highlightColor
+                opacity: 1.0
+            }
+
+            Label {
+                width: parent.width; horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.Wrap; font.pixelSize: Theme.fontSizeMedium
+                opacity: Theme.opacityHigh
+                text: currentProjectName
+                color: Theme.highlightColor
+                maximumLineCount: 5
+                truncationMode: TruncationMode.Fade
+                elide: Text.ElideRight
+            }
+        }
     }
 
     property int currentPageNumber: 1
