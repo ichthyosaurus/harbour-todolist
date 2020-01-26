@@ -117,7 +117,10 @@ ApplicationWindow
     }
 
     function updateProject(which, name, entryState) {
-        if (name !== undefined) projectsModel.setProperty(which, "name", name);
+        if (name !== undefined) {
+            projectsModel.setProperty(which, "name", name);
+            currentProjectName = name;
+        }
         if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
         var item = projectsModel.get(which);
         Storage.updateProject(item.entryId, item.name, item.entryState);
