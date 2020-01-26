@@ -243,11 +243,11 @@ function carryOverFrom(fromDate) {
     // copy all entry with entryState = todo and subState = today, that are older than today
     // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
     var query = 'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
-        SELECT date("now"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
-            WHERE (date < date("now")) AND (entryState = ?) AND (subState = ?) %1 ORDER BY rowid ASC'
+        SELECT date("now", "localtime"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
+            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) %1 ORDER BY rowid ASC'
     var mainValues = [EntryState.todo, EntrySubState.today];
 
-    var updateQuery = 'UPDATE entries SET subState=? WHERE (date < date("now")) AND (entryState = ?) AND (subState = ?) %1'
+    var updateQuery = 'UPDATE entries SET subState=? WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) %1'
     var updateValues = [EntrySubState.tomorrow, EntryState.todo, EntrySubState.today];
 
     if (isNaN(fromDate.valueOf())) {
