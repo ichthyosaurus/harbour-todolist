@@ -230,7 +230,7 @@ function updateEntry(entryId, date, entryState, subState, createdOn, weight, int
 
 function deleteEntry(entryId) {
     if (entryId === undefined) {
-        error(qsTr("Failed to update entry"), qsTr("No internal entry ID was provided."));
+        error(qsTr("Failed to delete entry"), qsTr("No internal entry ID was provided."));
         return;
     }
 
