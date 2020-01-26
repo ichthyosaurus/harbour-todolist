@@ -49,6 +49,17 @@ Dialog {
                 }
             }
 
+            Label {
+                anchors {
+                    left: parent.left; right: parent.right;
+                    leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
+                }
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeMedium
+                color: Theme.highlightColor
+                text: currentProjectName
+            }
+
             Spacer { }
 
             TextField {
