@@ -53,7 +53,6 @@ ApplicationWindow
         id: config
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
-        property date lastCarriedOverTo
         property int currentProject
     }
 
@@ -160,7 +159,6 @@ ApplicationWindow
 
     Component.onCompleted: {
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
-            config.lastCarriedOverTo = today;
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
         setCurrentProject(config.currentProject);
