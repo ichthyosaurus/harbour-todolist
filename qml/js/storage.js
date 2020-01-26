@@ -29,6 +29,7 @@
 .import QtQuick.LocalStorage 2.0 as LS
 .import "../constants/EntryState.js" as EntryState
 .import "../constants/EntrySubState.js" as EntrySubState
+.import "helpers.js" as Helpers
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
@@ -198,9 +199,9 @@ function getEntries(forProject) {
 
 function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {
     simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
-        date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Helpers.getDateString(date),
         Number(entryState), Number(subState),
-        createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Helpers.getDateString(createdOn),
         weight, interval, project, text, description
     ])
 
@@ -220,9 +221,9 @@ function updateEntry(entryId, date, entryState, subState, createdOn, weight, int
         date=?, entryState=?, subState=?,
         createdOn=?, weight=?, interval=?,
         project=?, text=?, description=? WHERE rowid=?', [
-        date.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Helpers.getDateString(date),
         Number(entryState), Number(subState),
-        createdOn.toLocaleString(Qt.locale(), "yyyy-MM-dd"),
+        Helpers.getDateString(createdOn),
         weight, interval, project, text, description,
         entryId
     ])
