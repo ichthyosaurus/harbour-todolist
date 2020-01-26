@@ -7,79 +7,61 @@ import "../constants" 1.0
 Page {
     id: page
     allowedOrientations: Orientation.All
+    showNavigationIndicator: true
 
-    function addItemFor(date) {
-        var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), { date: date })
-        dialog.accepted.connect(function() {
-            addItem(date, dialog.text.trim(), dialog.description.trim());
-        });
-    }
+    VisualItemModel {
+        id: viewsModel
+        TodoListView { // middle, index 0, offset 0 (or 3, when coming from 2)
+            width: parent.width; height: parent.height
+            showFakeNavigation: FakeNavigation.Both
+        }
 
-    SortFilterProxyModel {
-        id: filteredModel
-        sourceModel: rawModel
+        ProjectsView { // right, index 1, offset 2
+            width: parent.width; height: parent.height
+            showFakeNavigation: FakeNavigation.Left
+        }
 
-        sorters: [
-            RoleSorter { roleName: "date"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "weight"; sortOrder: Qt.DescendingOrder }
-        ]
-
-        proxyRoles: [
-            ExpressionRole {
-                name: "_isYoung"
-                expression: model.date >= today
-            }
-        ]
-
-        filters: ValueFilter {
-            roleName: "_isYoung"
-            value: true
+        RecurringsView { // left, index 2, offset 1
+            width: parent.width; height: parent.height
+            showFakeNavigation: FakeNavigation.Right
         }
     }
 
-    TodoList {
-        id: todoList
+    SlideshowView {
+        id: views
         anchors.fill: parent
-        model: filteredModel
+        clip: true
+        itemWidth: width
+        interactive: true
+        currentIndex: 0
+        model: viewsModel
 
-        header: PageHeader {
-            title: currentProjectName
-            description: qsTr("Todo List")
+        onOffsetChanged: {
+            if (currentIndex === 0) return;
+            else if (currentIndex === 1 && offset < 2) offset = 2;
+            else if (currentIndex === 2 && offset > 1) offset = 1;
         }
-
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Add entry for someday")
-                onClicked: page.addItemFor(someday)
-            }
-            MenuItem {
-                text: qsTr("Add entry for tomorrow")
-                onClicked: page.addItemFor(tomorrow)
-            }
-            MenuItem {
-                text: qsTr("Add entry for today")
-                onClicked: page.addItemFor(today)
-            }
-        }
-
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Show old entries")
-                onClicked: pageStack.push(Qt.resolvedUrl("ArchivePage.qml"));
-            }
-            MenuItem {
-                text: qsTr("About")
-                onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
-            }
-        }
-
-        footer: Spacer { }
     }
 
-    onStatusChanged: {
-        if (status === PageStatus.Active && !pageStack.busy) {
-            pageStack.pushAttached(Qt.resolvedUrl("ProjectsPage.qml"));
+    NumberAnimation { id: anim; target: views; property: "offset"; duration: 300 }
+
+    Connections {
+        target: main
+
+        function animateNavigation(from, to) {
+            anim.running = false;
+            anim.from = from; anim.to = to;
+            anim.running = true;
+        }
+
+        onFakeNavigateLeft: {
+            if (views.currentIndex === 0) animateNavigation(0, 1)
+            else if (views.currentIndex === 1) animateNavigation(2, 3)
+        }
+
+        onFakeNavigateRight: {
+            if (views.currentIndex === 0) animateNavigation(3, 2)
+            else if (views.currentIndex === 2) animateNavigation(1, 0)
         }
     }
 }

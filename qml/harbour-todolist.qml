@@ -30,6 +30,9 @@ ApplicationWindow
     readonly property string fullDateFormat: qsTr("ddd d MMM yyyy")
     readonly property string shortDateFormat: qsTr("d MMM yyyy")
 
+    signal fakeNavigateLeft()
+    signal fakeNavigateRight()
+
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
