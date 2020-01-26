@@ -239,41 +239,27 @@ function deleteEntry(entryId) {
 }
 
 function carryOverFrom(fromDate) {
-    fromDate = defaultFor(fromDate, new Date(NaN));
+    fromDate = defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
+    var fromDateString = Helpers.getDateString(fromDate)
 
     // copy all entry with entryState = todo and subState = today, that are older than today
     // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
-    var query = 'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
+    var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
         SELECT date("now", "localtime"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
-            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) %1 ORDER BY rowid ASC'
-    var mainValues = [EntryState.todo, EntrySubState.today];
+            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?)) ORDER BY rowid ASC',
+                             [EntryState.todo, EntrySubState.today, fromDateString]);
 
-    var updateQuery = 'UPDATE entries SET subState=? WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) %1'
-    var updateValues = [EntrySubState.tomorrow, EntryState.todo, EntrySubState.today];
+    var updateResult = simpleQuery('UPDATE entries SET subState=? WHERE\
+        (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?))',
+                                   [EntrySubState.tomorrow, EntryState.todo,
+                                    EntrySubState.today, fromDateString]);
 
-    if (isNaN(fromDate.valueOf())) {
-        query = query.arg("");
-        updateQuery = updateQuery.arg("");
-    } else {
-        var fromDateString = fromDate.toLocaleString(Qt.locale(), "yyyy-MM-dd");
-        var extraClause = "AND (date > date(?))";
-        query = query.arg(extraClause);
-        updateQuery = updateQuery.arg(extraClause);
-        mainValues.push(fromDateString);
-        updateValues.push(fromDateString);
-    }
-
-    var result = simpleQuery(query, mainValues);
-    var updateResult = simpleQuery(updateQuery, updateValues);
-
-    if (result === undefined) {
-        error(qsTr("Failed to carry over old entries"), qsTr("Copying old entries failed."));
-        return false;
-    } else if (updateResult === undefined) {
-        error(qsTr("Failed to carry over old entries"), qsTr("Updating old entries failed."));
+    if (mainResult === undefined || updateResult === undefined) {
+        if (mainResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Copying old entries failed."));
+        if (updateResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Updating old entries failed."));
         return false;
     } else {
-        console.log("entries carried over:", result.rowsAffected);
+        console.log("entries carried over:", mainResult.rowsAffected);
         return true;
     }
 }
