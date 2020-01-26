@@ -40,6 +40,14 @@
 This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;show license &lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
@@ -119,17 +127,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No entries yet</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -438,6 +435,14 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
     <message>
         <source>Failed to carry over old entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying old entries failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updating old entries failed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

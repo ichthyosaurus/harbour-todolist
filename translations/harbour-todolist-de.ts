@@ -41,6 +41,14 @@ This is free software: you are free to change and redistribute it.There is NO WA
         <translation>GNU GPL Version 3 oder neuer.
 This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</translation>
     </message>
+    <message>
+        <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
+        <translation>&lt;i&gt;Mitwirkende anzeigen &lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;show license &lt;/i&gt;</source>
+        <translation>&lt;i&gt;Lizenz anzeigen &lt;/i&gt;</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
@@ -121,17 +129,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation>Todo-Liste</translation>
-    </message>
-    <message>
-        <source>No entries yet</source>
-        <translation>Noch keine Einträge</translation>
     </message>
 </context>
 <context>
@@ -440,6 +437,14 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Failed to carry over old entries</source>
         <translation>Die alten Einträge konnten nicht auf heute übertragen werden</translation>
+    </message>
+    <message>
+        <source>Copying old entries failed.</source>
+        <translation>Das Kopieren der alten Einträge ist fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Updating old entries failed.</source>
+        <translation>Das Aktualisieren der alten Einträge ist fehlgeschlagen.</translation>
     </message>
 </context>
 </TS>
