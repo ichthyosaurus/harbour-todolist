@@ -98,7 +98,7 @@ Page {
                         Label {
                             id: showContributorsLabel
                             textFormat: Text.StyledText; font.pixelSize: Theme.fontSizeExtraSmall
-                            text: "<i>show contributors </i>"
+                            text: qsTr("<i>show contributors </i>")
                         }
                         Label { anchors.verticalCenter: showContributorsLabel.verticalCenter; text: "\u2022 \u2022 \u2022" } // three dots
                     }
@@ -135,7 +135,7 @@ Page {
                         Label {
                             id: showLicenseLabel
                             textFormat: Text.StyledText; font.pixelSize: Theme.fontSizeExtraSmall
-                            text: "<i>show license </i>"
+                            text: qsTr("<i>show license </i>")
                         }
                         Label { anchors.verticalCenter: showLicenseLabel.verticalCenter; text: "\u2022 \u2022 \u2022" } // three dots
                     }
