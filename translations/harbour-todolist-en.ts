@@ -94,30 +94,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
-    <name>AddRecurringDialog</name>
-    <message>
-        <source>Recurring</source>
-        <translation>Recurring</translation>
-    </message>
-    <message>
-        <source>once</source>
-        <comment>interval for recurring entries</comment>
-        <translation>once</translation>
-    </message>
-    <message numerus="yes">
-        <source>every %n day(s)</source>
-        <comment>interval for recurring entries</comment>
-        <translation>
-            <numerusform>every day</numerusform>
-            <numerusform>every %n day(s)</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Starting at</source>
-        <translation>Starting at</translation>
-    </message>
-</context>
-<context>
     <name>ArchivePage</name>
     <message>
         <source>Archived Entries</source>
@@ -160,6 +136,37 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Todo List</source>
         <translation>Todo List</translation>
+    </message>
+</context>
+<context>
+    <name>EditItemDialog</name>
+    <message>
+        <source>Edit entry</source>
+        <translation>Edit entry</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+</context>
+<context>
+    <name>IntervalCombo</name>
+    <message>
+        <source>Recurring</source>
+        <translation>Recurring</translation>
+    </message>
+    <message>
+        <source>once</source>
+        <comment>interval for recurring entries</comment>
+        <translation>once</translation>
+    </message>
+    <message numerus="yes">
+        <source>every %n day(s)</source>
+        <comment>interval for recurring entries</comment>
+        <translation>
+            <numerusform>every day</numerusform>
+            <numerusform>every %n day(s)</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -248,6 +255,13 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>StartDateButton</name>
+    <message>
+        <source>Starting at</source>
+        <translation>Starting at</translation>
+    </message>
+</context>
+<context>
     <name>TodoList</name>
     <message>
         <source>Today</source>
@@ -268,21 +282,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Pull down to add entries</source>
         <translation>Pull down to add entries</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Description (optional)</source>
-        <translation>Description (optional)</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Cancel</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Save</translation>
     </message>
 </context>
 <context>
@@ -425,6 +424,14 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>About</source>
         <translation>About</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Note</translation>
+    </message>
+    <message>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
+        <translation>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</translation>
     </message>
 </context>
 <context>

@@ -94,31 +94,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
-    <name>AddRecurringDialog</name>
-    <message>
-        <source>Recurring</source>
-        <translation>Wiederholt</translation>
-    </message>
-    <message numerus="yes">
-        <source>every %n day(s)</source>
-        <comment>interval for recurring entries</comment>
-        <translatorcomment>Intervall für wiederkehrende Einträge</translatorcomment>
-        <translation>
-            <numerusform>jeden Tag</numerusform>
-            <numerusform>alle %n Tage</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Starting at</source>
-        <translation>Beginnend am</translation>
-    </message>
-    <message>
-        <source>once</source>
-        <comment>interval for recurring entries</comment>
-        <translation>einmalig</translation>
-    </message>
-</context>
-<context>
     <name>ArchivePage</name>
     <message>
         <source>Archived Entries</source>
@@ -161,6 +136,37 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Todo List</source>
         <translation>Todo-Liste</translation>
+    </message>
+</context>
+<context>
+    <name>EditItemDialog</name>
+    <message>
+        <source>Edit entry</source>
+        <translation>Eintrag bearbeiten</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Löschen</translation>
+    </message>
+</context>
+<context>
+    <name>IntervalCombo</name>
+    <message>
+        <source>Recurring</source>
+        <translation>Wiederholt</translation>
+    </message>
+    <message>
+        <source>once</source>
+        <comment>interval for recurring entries</comment>
+        <translation>einmalig</translation>
+    </message>
+    <message numerus="yes">
+        <source>every %n day(s)</source>
+        <comment>interval for recurring entries</comment>
+        <translation>
+            <numerusform>jeden Tag</numerusform>
+            <numerusform>alle %n Tage</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -249,6 +255,13 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>StartDateButton</name>
+    <message>
+        <source>Starting at</source>
+        <translation>Beginnend am</translation>
+    </message>
+</context>
+<context>
     <name>TodoList</name>
     <message>
         <source>Today</source>
@@ -269,21 +282,6 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Someday</source>
         <translation>Irgendwann</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Description (optional)</source>
-        <translation>Beschreibung (optional)</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
@@ -426,6 +424,14 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>About</source>
         <translation>Über</translation>
+    </message>
+    <message>
+        <source>Note</source>
+        <translation>Anmerkung</translation>
+    </message>
+    <message>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
+        <translation>Wischen Sie nach links um wiederkehrende Einträge hinzuzufügen. Sie können dann angeben, alle wieviel Tage der Eintrag automatisch zur aktuellen Todo-Liste hinzugefügt wird.</translation>
     </message>
 </context>
 <context>
