@@ -35,10 +35,27 @@ TodoList {
     }
 
     function addItemFor(date) {
-        var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), { date: date })
+        var dialog = pageStack.push(addComponent, { date: date })
         dialog.accepted.connect(function() {
             addItem(date, dialog.text.trim(), dialog.description.trim());
         });
+    }
+
+    Component {
+        id: addComponent
+        AddItemDialog {
+            SectionHeader { text: qsTr("Note") }
+            Label {
+                anchors {
+                    left: parent.left; right: parent.right;
+                    leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
+                }
+                wrapMode: Text.WordWrap
+                color: Theme.highlightColor
+                text: qsTr("Swipe left to add recurring entries. You can specify an interval "
+                           + "in which they will be added automatically to the current todo list.")
+            }
+        }
     }
 
     SortFilterProxyModel {
