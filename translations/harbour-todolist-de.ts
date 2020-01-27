@@ -102,9 +102,10 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message numerus="yes">
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
+        <translatorcomment>Intervall für wiederkehrende Einträge</translatorcomment>
         <translation>
-            <numerusform>alle %n Tage</numerusform>
             <numerusform>jeden Tag</numerusform>
+            <numerusform>alle %n Tage</numerusform>
         </translation>
     </message>
     <message>
