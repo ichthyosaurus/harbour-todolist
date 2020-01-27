@@ -36,7 +36,7 @@ SilicaListView {
 
         sorters: [
             RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "intervalDays"; sortOrder: Qt.DescendingOrder },
+            RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
         ]
     }
