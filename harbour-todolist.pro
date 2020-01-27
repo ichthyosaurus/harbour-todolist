@@ -54,4 +54,5 @@ DISTFILES += qml/harbour-todolist.qml \
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-todolist-de.ts
+TRANSLATIONS += translations/harbour-todolist-en.ts \
+    translations/harbour-todolist-de.ts
