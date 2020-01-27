@@ -93,6 +93,30 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>AddRecurringDialog</name>
+    <message>
+        <source>Recurring</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>every %n day(s)</source>
+        <comment>interval for recurring entries</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Starting at</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>once</source>
+        <comment>interval for recurring entries</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ArchivePage</name>
     <message>
         <source>Archived Entries</source>
@@ -131,6 +155,13 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <source>Todo List</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LicensePage</name>
     <message>
         <source>License</source>
@@ -138,40 +169,17 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
-    <name>MainPage</name>
-    <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for today</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show old entries</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>ProjectsPage</name>
+    <name>ProjectsView</name>
     <message>
         <source>Projects</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All entries belonging to this project will be deleted!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -191,6 +199,10 @@ This is free software: you are free to change and redistribute it.There is NO WA
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>No entries</source>
         <translation type="unfinished"></translation>
     </message>
@@ -198,12 +210,39 @@ This is free software: you are free to change and redistribute it.There is NO WA
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>RecurringsView</name>
     <message>
-        <source>All entries belonging to this project will be deleted!</source>
+        <source>Recurring Entries</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>edit</source>
+        <source>Add recurring entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as halted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mark as done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No entries yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This page will show a list of all recurring entries.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -361,6 +400,33 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>TodoListView</name>
+    <message>
+        <source>Todo List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add entry for someday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add entry for tomorrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add entry for today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show old entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>harbour-todolist</name>
     <message>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
@@ -443,6 +509,30 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
     <message>
         <source>Updating old entries failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to update recurring entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to delete recurring entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to delete entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to update recurring entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying new entries failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Updating reference entries failed.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

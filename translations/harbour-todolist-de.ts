@@ -94,6 +94,30 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>AddRecurringDialog</name>
+    <message>
+        <source>Recurring</source>
+        <translation>Wiederholt</translation>
+    </message>
+    <message numerus="yes">
+        <source>every %n day(s)</source>
+        <comment>interval for recurring entries</comment>
+        <translation>
+            <numerusform>alle %n Tage</numerusform>
+            <numerusform>jeden Tag</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Starting at</source>
+        <translation>Beginnend am</translation>
+    </message>
+    <message>
+        <source>once</source>
+        <comment>interval for recurring entries</comment>
+        <translation>einmalig</translation>
+    </message>
+</context>
+<context>
     <name>ArchivePage</name>
     <message>
         <source>Archived Entries</source>
@@ -132,6 +156,13 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>CoverPage</name>
+    <message>
+        <source>Todo List</source>
+        <translation>Todo-Liste</translation>
+    </message>
+</context>
+<context>
     <name>LicensePage</name>
     <message>
         <source>License</source>
@@ -139,34 +170,7 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
-    <name>MainPage</name>
-    <message>
-        <source>About</source>
-        <translation>Über</translation>
-    </message>
-    <message>
-        <source>Todo List</source>
-        <translation>Todo-Liste</translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation>Eintrag für morgen hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add entry for today</source>
-        <translation>Eintrag für heute hinzufügen</translation>
-    </message>
-    <message>
-        <source>Show old entries</source>
-        <translation>Alte Einträge anzeigen</translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation>Eintrag für irgendwann hinzufügen</translation>
-    </message>
-</context>
-<context>
-    <name>ProjectsPage</name>
+    <name>ProjectsView</name>
     <message>
         <source>Projects</source>
         <translation>Projekte</translation>
@@ -174,6 +178,10 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Add project</source>
         <translation>Projekt hinzufügen</translation>
+    </message>
+    <message>
+        <source>All entries belonging to this project will be deleted!</source>
+        <translation>Alle Einträge, die zu diesem Projekt gehören, werden auch gelöscht!</translation>
     </message>
     <message>
         <source>mark as active</source>
@@ -192,6 +200,10 @@ This is free software: you are free to change and redistribute it.There is NO WA
         <translation>bearbeiten oder löschen</translation>
     </message>
     <message>
+        <source>edit</source>
+        <translation>bearbeiten</translation>
+    </message>
+    <message>
         <source>No entries</source>
         <translation>Keine Einträge</translation>
     </message>
@@ -199,13 +211,40 @@ This is free software: you are free to change and redistribute it.There is NO WA
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation>Das sollte nicht möglich sein. Wahrscheinlich ist ein Datenbankfehler aufgetreten.</translation>
     </message>
+</context>
+<context>
+    <name>RecurringsView</name>
     <message>
-        <source>All entries belonging to this project will be deleted!</source>
-        <translation>Alle Einträge, die zu diesem Projekt gehören, werden auch gelöscht!</translation>
+        <source>Recurring Entries</source>
+        <translation>Wiederholte Einträge</translation>
     </message>
     <message>
-        <source>edit</source>
-        <translation>bearbeiten</translation>
+        <source>Add recurring entry</source>
+        <translation>Wiederholten Eintrag hinzufügen</translation>
+    </message>
+    <message>
+        <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
+        <translation>Es werden &lt;i&gt;keine&lt;/i&gt; Einträge rückwirkend gelöscht.</translation>
+    </message>
+    <message>
+        <source>mark as active</source>
+        <translation>als aktiv markieren</translation>
+    </message>
+    <message>
+        <source>mark as halted</source>
+        <translation>als pausiert markieren</translation>
+    </message>
+    <message>
+        <source>mark as done</source>
+        <translation>als erledigt markieren</translation>
+    </message>
+    <message>
+        <source>No entries yet</source>
+        <translation>Noch keine Einträge</translation>
+    </message>
+    <message>
+        <source>This page will show a list of all recurring entries.</source>
+        <translation>Auf dieser Seite werden alle automatisch wiederholten Einträge angezeigt.</translation>
     </message>
 </context>
 <context>
@@ -362,6 +401,33 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
 </context>
 <context>
+    <name>TodoListView</name>
+    <message>
+        <source>Todo List</source>
+        <translation>Todo-Liste</translation>
+    </message>
+    <message>
+        <source>Add entry for someday</source>
+        <translation>Eintrag für irgendwann hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add entry for tomorrow</source>
+        <translation>Eintrag für morgen hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add entry for today</source>
+        <translation>Eintrag für heute hinzufügen</translation>
+    </message>
+    <message>
+        <source>Show old entries</source>
+        <translation>Alte Einträge anzeigen</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+</context>
+<context>
     <name>harbour-todolist</name>
     <message>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
@@ -445,6 +511,30 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Updating old entries failed.</source>
         <translation>Das Aktualisieren der alten Einträge ist fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Failed to update recurring entry</source>
+        <translation>Der wiederholte Eintrag konnte nicht aktualisiert werden</translation>
+    </message>
+    <message>
+        <source>Failed to delete recurring entry</source>
+        <translation>Der wiederholte Eintrag konnte nicht gelöscht werden</translation>
+    </message>
+    <message>
+        <source>Failed to delete entry</source>
+        <translation>Der Eintrag konnte nicht gelöscht werden</translation>
+    </message>
+    <message>
+        <source>Failed to update recurring entries</source>
+        <translation>Die wiederholten Einträge konnten nicht aktualisiert werden</translation>
+    </message>
+    <message>
+        <source>Copying new entries failed.</source>
+        <translation>Das Kopieren der neuen Einträge ist fehlgeschlagen.</translation>
+    </message>
+    <message>
+        <source>Updating reference entries failed.</source>
+        <translation>Die Referenzeinträge konnten nicht aktualisiert werden.</translation>
     </message>
 </context>
 </TS>

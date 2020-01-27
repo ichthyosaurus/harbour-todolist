@@ -22,7 +22,8 @@ AddItemDialog {
             Repeater {
                 model: 61
                 delegate: MenuItem {
-                    text: qsTr("every %n day(s)", "interval for recurring entries", index)
+                    text: index === 0 ? qsTr("once", "interval for recurring entries")
+                                      : qsTr("every %n day(s)", "interval for recurring entries", index)
                     property int value: index
                 }
             }
