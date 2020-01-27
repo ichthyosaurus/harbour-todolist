@@ -59,6 +59,8 @@ CoverBackground {
 
     SilicaListView {
         id: view
+        clip: true
+
         anchors {
             top: parent.top; topMargin: Theme.paddingMedium
             left: parent.left; leftMargin: Theme.paddingMedium
@@ -134,16 +136,24 @@ CoverBackground {
     property int currentPageNumber: 1
     property int scrollPerPage: 2
 
-    onCurrentPageNumberChanged: {
+    function showNextPage() { showPage(1); }
+    function showPrevPage() { showPage(-1); }
+    function showPage(pageOffset) {
         anim.running = false;
-
         var pos = view.contentY;
         var destPos;
 
-        view.positionViewAtIndex(currentPageNumber*scrollPerPage-scrollPerPage, ListView.Beginning);
+        view.positionViewAtIndex((currentPageNumber+pageOffset)*scrollPerPage-scrollPerPage, ListView.Beginning);
         destPos = view.contentY;
-
         scrollBar.showDecorator();
+
+        currentPageNumber = currentPageNumber + pageOffset;
+        if (pos === destPos && pageOffset < 0) {
+            // if the page number was too high, we skip a page
+            // until something moves
+            showPrevPage();
+        }
+
         anim.from = pos;
         anim.to = destPos;
         anim.running = true;
@@ -157,7 +167,7 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-previous"
             onTriggered: {
-                if (currentPageNumber > 1) currentPageNumber -= 1
+                if (currentPageNumber > 1) showPrevPage()
                 else scrollBar.showDecorator();
             }
         }
@@ -177,7 +187,7 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-next"
             onTriggered: {
-                if (currentPageNumber < (view.count/scrollPerPage)) currentPageNumber += 1;
+                if (currentPageNumber < (view.count/scrollPerPage)) showNextPage();
                 else scrollBar.showDecorator();
             }
         }
