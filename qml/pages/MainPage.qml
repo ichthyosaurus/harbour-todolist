@@ -26,7 +26,6 @@ import "../constants" 1.0
 Page {
     id: page
     allowedOrientations: Orientation.All
-    showNavigationIndicator: true
 
     VisualItemModel {
         id: viewsModel

@@ -23,6 +23,8 @@ import "../components"
 
 Dialog {
     id: dialog
+    allowedOrientations: Orientation.All
+
     property string text
     property string description
     property bool _showDescription: description != ""

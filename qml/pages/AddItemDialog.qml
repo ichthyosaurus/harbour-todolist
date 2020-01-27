@@ -23,6 +23,8 @@ import "../components"
 
 Dialog {
     id: dialog
+    allowedOrientations: Orientation.All
+
     property date date: main.today
     property alias text: textField.text
     property alias description: descriptionField.text

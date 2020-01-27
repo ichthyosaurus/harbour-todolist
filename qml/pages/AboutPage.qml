@@ -21,6 +21,9 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
+    id: page
+    allowedOrientations: Orientation.All
+
     property string appName: qsTr("Todo List")
     property string iconPath: "../images/harbour-todolist.png"
     property string versionNumber: VERSION_NUMBER

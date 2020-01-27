@@ -23,6 +23,7 @@ import "../components"
 import "../js/helpers.js" as Helpers
 
 AddItemDialog {
+    allowedOrientations: Orientation.All
     date: new Date(NaN)
     descriptionEnabled: true
 
