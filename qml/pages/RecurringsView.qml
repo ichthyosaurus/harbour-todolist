@@ -54,12 +54,9 @@ SilicaListView {
                 var dialog = pageStack.push(Qt.resolvedUrl("AddRecurringDialog.qml"))
                 dialog.accepted.connect(function() {
                     main.addRecurring(dialog.text.trim(), dialog.description.trim(), dialog.intervalDays, dialog.startDate);
-
-                    console.log(dialog.startDate, today)
                     if (Helpers.getDate(0, dialog.startDate).getTime() === today.getTime()) {
                         main.addItem(today, dialog.text.trim(), dialog.description.trim(),
                                      EntryState.todo, EntrySubState.today, today, dialog.intervalDays);
-                        console.log("add")
                     }
                 });
             }

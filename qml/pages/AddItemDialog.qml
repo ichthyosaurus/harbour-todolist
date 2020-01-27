@@ -31,13 +31,14 @@ Dialog {
     property bool descriptionEnabled: true
 
     default property alias contentColumn: column.children
+    property alias titleText: titleLabel.text
 
     canAccept: text !== ""
 
     SilicaFlickable {
         id: flick
         anchors.fill: parent
-        contentHeight: column.height
+        contentHeight: column.height + Theme.horizontalPageMargin
         VerticalScrollDecorator { flickable: flick }
 
         Column {
@@ -52,6 +53,7 @@ Dialog {
             }
 
             Label {
+                id: titleLabel
                 anchors {
                     left: parent.left; right: parent.right;
                     leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;

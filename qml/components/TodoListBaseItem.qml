@@ -24,10 +24,7 @@ import "../constants" 1.0
 ListItem {
     id: item
     width: ListView.view.width
-    contentHeight: row.height +
-                   (isEditing ? editButtonRow.height : 0) +
-                   (intervalCombo.visible ? intervalCombo.height : 0) +
-                   (startDateButton.visible ? startDateButton.height : 0)
+    contentHeight: row.height
     ListView.onRemove: animateRemoval(item) // enable animated list item removals
 
     property string title: ""
@@ -44,7 +41,6 @@ ListItem {
     property string intervalProperty: "interval"
     property string intervalStartProperty: "date"
 
-    property bool isEditing: false
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal saveItemTexts(var which, var newText, var newDescription)
@@ -52,25 +48,22 @@ ListItem {
     signal deleteThisItem(var which)
 
     function startEditing() {
-        isEditing = true;
-        item.enabled = false;
-        editDescriptionField.text = description;
-        editTextField.text = title;
-        editTextField.forceActiveFocus();
-    }
-
-    function saveEdited() {
-        var newText = editTextField.text;
-        var newDescription = editDescriptionField.text;
-        if (newText === "") return;
-        saveItemTexts(index, newText.trim(), newDescription.trim());
-        if (editableInterval) saveItemRecurring(index, intervalCombo.currentItem.value, startDateButton.startDate);
-        stopEditing();
-    }
-
-    function stopEditing() {
-        isEditing = false;
-        item.enabled = true;
+        var dialog = pageStack.push(Qt.resolvedUrl("../pages/EditItemDialog.qml"), {
+            text: title, description: description, descriptionEnabled: descriptionEnabled,
+            showRecurring: model[intervalProperty] !== undefined,
+            editableRecurring: editableInterval,
+            recurringStartDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date(NaN),
+            recurringInitialIntervalDays: model[intervalProperty] !== undefined ? model[intervalProperty] : 0,
+            extraDeleteWarning: extraDeleteWarning
+        });
+        dialog.accepted.connect(function() {
+            if (dialog.requestDeletion) {
+                deleteThisItem(index);
+            } else {
+                saveItemTexts(index, dialog.text.trim(), dialog.description.trim());
+                if (editableInterval) saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate);
+            }
+        });
     }
 
     showMenuOnPressAndHold: customClickHandlingEnabled ? undefined : false
@@ -96,32 +89,12 @@ ListItem {
         HighlightImage {
             id: statusIcon
             opacity: Theme.opacityHigh
-            visible: !isEditing
             highlighted: item.highlighted
             width: Theme.iconSizeSmallPlus
             height: width
             color: Theme.primaryColor
             anchors.top: parent.top
             anchors.topMargin: parent.anchors.topMargin
-        }
-
-        IconButton {
-            id: deleteButton
-            visible: isEditing
-            enabled: deletable
-            width: statusIcon.width; height: statusIcon.height
-            anchors.top: statusIcon.top
-            icon.source: "image://theme/icon-m-delete"
-            onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("../pages/ConfirmDeleteDialog.qml"), {
-                                                text: title,
-                                                description: description,
-                                                warning: extraDeleteWarning
-                                            })
-                dialog.accepted.connect(function() {
-                    deleteThisItem(index)
-                });
-            }
         }
 
         Column {
@@ -132,10 +105,9 @@ ListItem {
             Spacer { height: Theme.paddingMedium }
 
             Row {
-                width: parent.width//-Theme.horizontalPageMargin
+                width: parent.width
 
                 Label {
-                    visible: !isEditing
                     width: parent.width-intervalLabel.width-hasInfoLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
@@ -144,33 +116,10 @@ ListItem {
                     elide: Text.ElideNone
                 }
 
-                TextField {
-                    id: editTextField
-                    visible: isEditing
-                    z: row.z-1
-                    placeholderText: title
-                    text: title
-                    labelVisible: false
-                    textTopMargin: 0
-                    textMargin: 0
-                    width: parent.width
-
-                    EnterKey.enabled: title.length > 0
-                    EnterKey.iconSource: "image://theme/icon-m-enter-" + (descriptionEnabled ? "next" : "accept")
-                    EnterKey.onClicked: {
-                        if (descriptionEnabled) {
-                            editDescriptionField.forceActiveFocus();
-                        } else {
-                            focus = false;
-                            saveEdited();
-                        }
-                    }
-                }
-
                 Label {
                     id: hasInfoLabel
                     horizontalAlignment: Text.AlignRight
-                    visible: !isEditing && infoMarkerEnabled
+                    visible: infoMarkerEnabled
                     width: visible ? Theme.iconSizeExtraSmall : 0
                     text: "⭑"
                     color: Theme.highlightColor
@@ -179,7 +128,7 @@ ListItem {
 
                 Label {
                     id: intervalLabel
-                    visible: !isEditing && (alwaysShowInterval || model[intervalProperty] > 0)
+                    visible: (alwaysShowInterval || model[intervalProperty] > 0)
                     text: model[intervalProperty] !== undefined ? model[intervalProperty] : ""
                     color: Theme.highlightColor
                     opacity: Theme.opacityHigh
@@ -196,7 +145,7 @@ ListItem {
             }
 
             Label {
-                visible: descriptionEnabled && description !== "" && !isEditing
+                visible: descriptionEnabled && description !== ""
                 opacity: Theme.opacityHigh
                 width: parent.width
                 text: description
@@ -206,69 +155,7 @@ ListItem {
                 elide: Text.ElideNone
             }
 
-            TextArea {
-                id: editDescriptionField
-                visible: isEditing && descriptionEnabled
-                z: row.z-1
-                placeholderText: description !== "" ? description : qsTr("Description (optional)")
-                text: description
-                labelVisible: false
-                textTopMargin: 0
-                textMargin: 0
-                width: parent.width
-
-                // This element causes for some reason the following error:
-                // unknown:296 - file:///usr/lib/qt5/qml/Sailfish/Silica/private/TextBase.qml:296:5:
-                //      QML Label: Binding loop detected for property "_elideText"
-                // We can 'fix' this by declaring the placeholder text's elide mode
-                // manually. We specify Text.ElideNone, which somehow means that
-                // the label decides automatically to which side it elides anyways
-                // (which is what we want).
-                _placeholderTextLabel.elide: Text.ElideNone
-            }
-
             Spacer { height: Theme.paddingMedium }
-        }
-    }
-
-    Column {
-        id: intervalEditColumn
-        visible: isEditing
-        anchors.top: row.bottom
-        height: childrenRect.height; width: parent.width
-
-        IntervalCombo {
-            id: intervalCombo
-            currentIndex: model[intervalProperty]
-            enabled: editableInterval
-            visible: parent.visible && (model[intervalProperty] > 0 || alwaysShowInterval)
-            height: visible ? Theme.itemSizeSmall : 0
-        }
-
-        StartDateButton {
-            id: startDateButton
-            startDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date()
-            enabled: intervalCombo.currentIndex !== 0
-            visible: parent.visible && editableInterval
-            height: visible ? Theme.itemSizeSmall : 0
-        }
-    }
-
-    Row {
-        id: editButtonRow
-        visible: isEditing
-        anchors.top: intervalEditColumn.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        spacing: Theme.paddingLarge
-
-        Button {
-            text: qsTr("Cancel")
-            onClicked: stopEditing();
-        }
-
-        Button {
-            text: qsTr("Save")
-            onClicked: saveEdited();
         }
     }
 
