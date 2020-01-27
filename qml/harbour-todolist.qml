@@ -62,12 +62,12 @@ ApplicationWindow
         property int currentProject
     }
 
-    function addItem(forDate, task, description, entryState, subState, createdOn) {
+    function addItem(forDate, task, description, entryState, subState, createdOn, interval) {
         entryState = Storage.defaultFor(entryState, EntryState.todo);
         subState = Storage.defaultFor(subState, EntrySubState.today);
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
-        var interval = 0;
+        interval = Storage.defaultFor(interval, 0);
         var project = config.currentProject;
 
         var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
@@ -108,11 +108,12 @@ ApplicationWindow
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
-    function addRecurring(text, description, intervalDays) {
+    function addRecurring(text, description, intervalDays, startDate) {
         var entryState = EntryState.todo;
         intervalDays = Storage.defaultFor(intervalDays, 1);
         var project = config.currentProject;
-        var startDate = today;
+        startDate = Storage.defaultFor(startDate, new Date(NaN));
+        if (isNaN(startDate.valueOf())) startDate = today;
 
         var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description);
 

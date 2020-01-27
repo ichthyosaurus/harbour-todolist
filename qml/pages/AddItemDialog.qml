@@ -9,6 +9,8 @@ Dialog {
     property alias description: descriptionField.text
     property bool descriptionEnabled: true
 
+    default property alias contentColumn: column.children
+
     canAccept: text !== ""
 
     SilicaFlickable {

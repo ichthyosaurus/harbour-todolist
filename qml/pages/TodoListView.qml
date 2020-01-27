@@ -48,15 +48,15 @@ TodoList {
     PullDownMenu {
         MenuItem {
             text: qsTr("Add entry for someday")
-            onClicked: page.addItemFor(someday)
+            onClicked: addItemFor(someday)
         }
         MenuItem {
             text: qsTr("Add entry for tomorrow")
-            onClicked: page.addItemFor(tomorrow)
+            onClicked: addItemFor(tomorrow)
         }
         MenuItem {
             text: qsTr("Add entry for today")
-            onClicked: page.addItemFor(today)
+            onClicked: addItemFor(today)
         }
     }
 

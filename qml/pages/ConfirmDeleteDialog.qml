@@ -67,7 +67,7 @@ Dialog {
                     leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
                 }
                 font.pixelSize: Theme.fontSizeMedium
-                textFormat: Text.PlainText
+                textFormat: Text.StyledText
                 wrapMode: Text.WordWrap
                 text: warning
                 color: Theme.highlightColor
