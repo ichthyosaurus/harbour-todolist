@@ -75,8 +75,14 @@ SilicaListView {
         title: model.text
         description: model.description
 
+        alwaysShowInterval: true
+        editableInterval: true
+        intervalProperty: "intervalDays"
+        intervalStartProperty: "startDate"
+
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
         onSaveItemTexts: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription);
+        onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
         onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
         extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
 

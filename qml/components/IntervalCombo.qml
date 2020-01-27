@@ -19,28 +19,21 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
-import "../components"
-import "../js/helpers.js" as Helpers
 
-AddItemDialog {
-    allowedOrientations: Orientation.All
-    date: new Date(NaN)
-    descriptionEnabled: true
+ComboBox {
+    id: intervalCombo
+    width: parent.width
+    label: qsTr("Recurring")
+    currentIndex: 0
 
-    property bool enableStartDate: true
-    property alias startDate: startDateButton.startDate
-    property int intervalDays: intervalCombo.currentItem.value
-    property int defaultInterval: 1
-
-    IntervalCombo {
-        id: intervalCombo
-        currentIndex: defaultInterval
-    }
-
-    StartDateButton {
-        id: startDateButton
-        startDate: main.today
-
-        enabled: enableStartDate && intervalCombo.currentIndex !== 0
+    menu: ContextMenu {
+        Repeater {
+            model: 61
+            delegate: MenuItem {
+                text: index === 0 ? qsTr("once", "interval for recurring entries")
+                                  : qsTr("every %n day(s)", "interval for recurring entries", index)
+                property int value: index
+            }
+        }
     }
 }

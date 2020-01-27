@@ -24,7 +24,10 @@ import "../constants" 1.0
 ListItem {
     id: item
     width: ListView.view.width
-    contentHeight: row.height + (isEditing ? editButtonRow.height : 0)
+    contentHeight: row.height +
+                   (isEditing ? editButtonRow.height : 0) +
+                   (intervalCombo.visible ? intervalCombo.height : 0) +
+                   (startDateButton.visible ? startDateButton.height : 0)
     ListView.onRemove: animateRemoval(item) // enable animated list item removals
 
     property string title: ""
@@ -36,10 +39,16 @@ ListItem {
     property bool descriptionEnabled: true
     property bool customClickHandlingEnabled: false
 
+    property bool alwaysShowInterval: false
+    property bool editableInterval: false
+    property string intervalProperty: "interval"
+    property string intervalStartProperty: "date"
+
     property bool isEditing: false
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal saveItemTexts(var which, var newText, var newDescription)
+    signal saveItemRecurring(var which, var interval, var startDate)
     signal deleteThisItem(var which)
 
     function startEditing() {
@@ -55,6 +64,7 @@ ListItem {
         var newDescription = editDescriptionField.text;
         if (newText === "") return;
         saveItemTexts(index, newText.trim(), newDescription.trim());
+        if (editableInterval) saveItemRecurring(index, intervalCombo.currentItem.value, startDateButton.startDate);
         stopEditing();
     }
 
@@ -122,11 +132,11 @@ ListItem {
             Spacer { height: Theme.paddingMedium }
 
             Row {
-                width: parent.width-Theme.horizontalPageMargin
+                width: parent.width//-Theme.horizontalPageMargin
 
                 Label {
                     visible: !isEditing
-                    width: parent.width
+                    width: parent.width-intervalLabel.width-hasInfoLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
@@ -159,11 +169,29 @@ ListItem {
 
                 Label {
                     id: hasInfoLabel
+                    horizontalAlignment: Text.AlignRight
                     visible: !isEditing && infoMarkerEnabled
-                    width: Theme.iconSizeExtraSmall
+                    width: visible ? Theme.iconSizeExtraSmall : 0
                     text: "⭑"
                     color: Theme.highlightColor
                     opacity: Theme.opacityHigh
+                }
+
+                Label {
+                    id: intervalLabel
+                    visible: !isEditing && (alwaysShowInterval || model[intervalProperty] > 0)
+                    text: model[intervalProperty] !== undefined ? model[intervalProperty] : ""
+                    color: Theme.highlightColor
+                    opacity: Theme.opacityHigh
+                    width: visible ? implicitWidth : 0
+
+                    Rectangle {
+                        visible: parent.visible
+                        anchors.centerIn: parent
+                        width: parent.width+Theme.paddingSmall; height: parent.height
+                        radius: 20
+                        color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
+                    }
                 }
             }
 
@@ -203,10 +231,33 @@ ListItem {
         }
     }
 
+    Column {
+        id: intervalEditColumn
+        visible: isEditing
+        anchors.top: row.bottom
+        height: childrenRect.height; width: parent.width
+
+        IntervalCombo {
+            id: intervalCombo
+            currentIndex: model[intervalProperty]
+            enabled: editableInterval
+            visible: parent.visible && (model[intervalProperty] > 0 || alwaysShowInterval)
+            height: visible ? Theme.itemSizeSmall : 0
+        }
+
+        StartDateButton {
+            id: startDateButton
+            startDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date()
+            enabled: intervalCombo.currentIndex !== 0
+            visible: parent.visible && editableInterval
+            height: visible ? Theme.itemSizeSmall : 0
+        }
+    }
+
     Row {
         id: editButtonRow
         visible: isEditing
-        anchors.top: row.bottom
+        anchors.top: intervalEditColumn.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         spacing: Theme.paddingLarge
 

@@ -19,28 +19,23 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
-import "../components"
 import "../js/helpers.js" as Helpers
 
-AddItemDialog {
-    allowedOrientations: Orientation.All
-    date: new Date(NaN)
-    descriptionEnabled: true
+ValueButton {
+    property date startDate
 
-    property bool enableStartDate: true
-    property alias startDate: startDateButton.startDate
-    property int intervalDays: intervalCombo.currentItem.value
-    property int defaultInterval: 1
+    label: qsTr("Starting at")
+    value: startDate.toLocaleString(Qt.locale(), main.fullDateFormat)
 
-    IntervalCombo {
-        id: intervalCombo
-        currentIndex: defaultInterval
+    onClicked: {
+        var dialog = pageStack.push(pickerComponent, { date: startDate })
+        dialog.accepted.connect(function() {
+            startDate = Helpers.getDate(0, dialog.date);
+        })
     }
 
-    StartDateButton {
-        id: startDateButton
-        startDate: main.today
-
-        enabled: enableStartDate && intervalCombo.currentIndex !== 0
+    Component {
+        id: pickerComponent
+        DatePickerDialog {}
     }
 }
