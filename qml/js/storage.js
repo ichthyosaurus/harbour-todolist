@@ -58,7 +58,7 @@ function getDatabase() {
 function doInit(db) {
     // Database tables: (primary key in all-caps)
     // entries: ID, date, entryState, subState, createdOn, weight, interval, project, text, description
-    // recurrings: ID, startDate, entryState, intervalDays, project, text, description
+    // recurrings: ID, startDate, lastCopiedTo, entryState, intervalDays, project, text, description
     // projects: ID, name, entryState
 
     try {
@@ -76,6 +76,7 @@ function doInit(db) {
             );');
             tx.executeSql('CREATE TABLE IF NOT EXISTS recurrings(\
                 startDate STRING NOT NULL,
+                lastCopiedTo STRING,
                 entryState INTEGER NOT NULL,
                 intervalDays INTEGER NOT NULL,
                 project INTEGER NOT NULL,
@@ -196,8 +197,8 @@ function getRecurrings(forProject) {
 }
 
 function addRecurring(startDate, entryState, intervalDays, project, text, description) {
-    simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?)', [
-                    Helpers.getDateString(startDate),
+    simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?, ?)', [
+                    Helpers.getDateString(startDate), "",
                     Number(entryState), Number(intervalDays),
                     project, text, description
                 ])
@@ -323,39 +324,31 @@ function carryOverFrom(fromDate) {
     }
 }
 
-function copyRecurringsFor(lastFinishedDate) {
-    lastFinishedDate = defaultFor(lastFinishedDate, new Date(NaN));
+function copyRecurrings() {
+    var whereClause = '(entryState = ?) AND lastCopiedTo != ? AND ' +
+        '(julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0';
 
-    if (isNaN(lastFinishedDate.valueOf())) {
-        var q = simpleQuery('SELECT startDate FROM recurrings ORDER BY startDate ASC LIMIT 1;');
-        q = defaultFor(q, {rows: []});
-        if (q.rows.length === 0) return true; // table is empty, nothing to do
-        else lastFinishedDate = Helpers.getDate(0, new Date(q.rows.item(0).startDate));
+    var mainResult = simpleQuery(
+        'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description) ' +
+            'SELECT ?, 0, 0, ?, 1, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
+        [todayString, todayString, EntryState.todo, todayString, todayString]
+    );
+
+    var updateResult = 0;
+    if (mainResult !== undefined && mainResult.rowsAffected > 0) {
+        // only update if something was copied
+        updateResult = simpleQuery('UPDATE recurrings SET lastCopiedTo=? WHERE ' + whereClause,
+            [todayString, EntryState.todo, todayString, todayString]
+        );
     }
 
-    var copied = 0; var haveError = false;
-    while (lastFinishedDate.getTime() <= today.getTime()) {
-        var currentDateString = Helpers.getDateString(lastFinishedDate);
-        var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
-            SELECT date(?, "localtime"), 0, 0, date(?, "localtime"), 1, intervalDays, project, text, description FROM recurrings WHERE
-                (entryState = ?) AND date(?, "localtime") = date(startDate, "+" || intervalDays || " day", "localtime")',
-                                     [currentDateString, currentDateString, EntryState.todo, currentDateString]);
-        var updateResult = simpleQuery('UPDATE recurrings SET startDate=? WHERE\
-            (entryState = ?) AND date(?, "localtime") = date(startDate, "+" || intervalDays || " day", "localtime")',
-                                       [currentDateString, EntryState.todo, currentDateString])
-        lastFinishedDate = Helpers.getDate(1, lastFinishedDate);
-
-        if (mainResult === undefined || updateResult === undefined) {
-            if (mainResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Copying new entries failed."));
-            if (updateResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Updating reference entries failed."));
-            console.log("recurrings failed for", currentDateString)
-            haveError = true;
-        } else {
-            console.log(mainResult.rowsAffected, "copied for", currentDateString);
-            copied += mainResult.rowsAffected;
-        }
+    if (mainResult === undefined || updateResult === undefined) {
+        if (mainResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Copying new entries failed."));
+        if (updateResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Updating reference entries failed."));
+        console.log("recurrings failed for", todayString)
+        return false;
+    } else {
+        console.log(mainResult.rowsAffected, "recurrings for", todayString);
+        return true;
     }
-
-    console.log("total recurrings copied:", copied);
-    return !haveError;
 }

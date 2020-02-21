@@ -77,7 +77,6 @@ ApplicationWindow
         id: config
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
-        property date lastCopiedRecurringsTo
         property int currentProject
     }
 
@@ -223,16 +222,12 @@ ApplicationWindow
     }
 
     Component.onCompleted: {
-        if (Storage.copyRecurringsFor(config.lastCopiedRecurringsTo)) {
-            config.lastCopiedRecurringsTo = today;
-        }
-
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
+        Storage.copyRecurrings();
         setCurrentProject(config.currentProject);
 
-        // TODO initialize later
         projectsModel.clear();
         var projects = Storage.getProjects();
         for (var i in projects) projectsModel.append(projects[i]);
