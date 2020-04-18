@@ -46,8 +46,7 @@ Dialog {
         Column {
             id: column
             anchors { left: parent.left; right: parent.right }
-
-            spacing: 0//Theme.paddingMedium
+            spacing: 0
 
             DialogHeader {
                 acceptText: qsTr("Save")

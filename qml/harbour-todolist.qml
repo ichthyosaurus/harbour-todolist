@@ -37,6 +37,7 @@ ApplicationWindow
 
     property bool startupComplete: false
     property string currentProjectName: ""
+    property date lastSelectedCategory: today
 
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)

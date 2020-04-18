@@ -36,9 +36,10 @@ TodoList {
     }
 
     function addItem() {
-        var dialog = pageStack.push(addComponent, { date: today })
+        var dialog = pageStack.push(addComponent, { date: lastSelectedCategory })
         dialog.accepted.connect(function() {
             main.addItem(dialog.date, dialog.text.trim(), dialog.description.trim());
+            main.lastSelectedCategory = dialog.date
         });
     }
 
