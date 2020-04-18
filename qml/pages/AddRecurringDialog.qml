@@ -26,6 +26,7 @@ AddItemDialog {
     allowedOrientations: Orientation.All
     date: new Date(NaN)
     descriptionEnabled: true
+    titleText: qsTr("Add a recurring entry")
 
     property bool enableStartDate: true
     property alias startDate: startDateButton.startDate

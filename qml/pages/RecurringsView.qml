@@ -77,6 +77,9 @@ SilicaListView {
         intervalProperty: "intervalDays"
         intervalStartProperty: "startDate"
 
+        editableShowProject: true
+        editableTitleText: qsTr("Edit recurring entry")
+
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
         onSaveItemTexts: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription);
         onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);

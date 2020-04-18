@@ -47,7 +47,11 @@ SilicaListView {
         MenuItem {
             text: qsTr("Add project")
             onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), { date: new Date(NaN), descriptionEnabled: false })
+                var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
+                                                date: new Date(NaN), descriptionEnabled: false,
+                                                titleText: qsTr("Add a project"),
+                                                showProject: false
+                                            })
                 dialog.accepted.connect(function() {
                     main.addProject(dialog.text.trim());
                 });
@@ -71,6 +75,9 @@ SilicaListView {
         onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
         onMoveAndMarkItem: console.log("error: cannot 'move' project")
         extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
+
+        editableShowProject: false
+        editableTitleText: qsTr("Edit project")
 
         customClickHandlingEnabled: true
         showMenuOnPressAndHold: true

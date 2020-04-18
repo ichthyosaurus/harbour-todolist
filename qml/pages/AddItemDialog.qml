@@ -25,10 +25,12 @@ Dialog {
     id: dialog
     allowedOrientations: Orientation.All
 
-    property date date: main.today
+    property date date: new Date(NaN)
     property alias text: textField.text
     property alias description: descriptionField.text
     property bool descriptionEnabled: true
+    property alias predictiveHintsEnabled: predictionSwitch.checked
+    property alias showProject: project.visible
 
     default property alias contentColumn: column.children
     property alias titleText: titleLabel.text
@@ -45,7 +47,7 @@ Dialog {
             id: column
             anchors { left: parent.left; right: parent.right }
 
-            spacing: Theme.paddingMedium
+            spacing: 0//Theme.paddingMedium
 
             DialogHeader {
                 acceptText: qsTr("Save")
@@ -61,28 +63,43 @@ Dialog {
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeLarge
                 color: Theme.highlightColor
-                text: {
-                    if (date.getTime() === today.getTime()) {
-                        qsTr("Add entry for today");
-                    } else if (date.getTime() === tomorrow.getTime()) {
-                        qsTr("Add entry for tomorrow");
-                    } else if (date.getTime() === someday.getTime()) {
-                        qsTr("Add entry for someday");
-                    } else {
-                        qsTr("Add entry");
-                    }
+                text: qsTr("Add an entry")
+            }
+
+            ComboBox {
+                width: parent.width
+                label: qsTr("Scheduled for")
+                visible: currentIndex >= 0
+                currentIndex: {
+                    if (date.getTime() === today.getTime()) { return 0 }
+                    else if (date.getTime() === tomorrow.getTime()) { return 1 }
+                    else if (date.getTime() === thisweek.getTime()) { return 2 }
+                    else if (date.getTime() === someday.getTime()) { return 3 }
+                    else { return -1 }
+                }
+
+                menu: ContextMenu {
+                    MenuItem { text: qsTr("today"); property date date: today; }
+                    MenuItem { text: qsTr("tomorrow"); property date date: tomorrow; }
+                    MenuItem { text: qsTr("this week"); property date date: thisweek; }
+                    MenuItem { text: qsTr("someday"); property date date: someday; }
+                }
+
+                onCurrentItemChanged: {
+                    dialog.date = currentItem.date;
                 }
             }
 
-            Label {
-                anchors {
-                    left: parent.left; right: parent.right;
-                    leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
+            ComboBox {
+                id: project
+                width: parent.width
+                label: qsTr("Project")
+                currentIndex: 0
+                enabled: false
+
+                menu: ContextMenu {
+                    MenuItem { text: currentProjectName }
                 }
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeMedium
-                color: Theme.highlightColor
-                text: currentProjectName
             }
 
             Spacer { }
@@ -93,7 +110,7 @@ Dialog {
                 focus: true
                 placeholderText: qsTr("Enter title")
                 label: qsTr("Title")
-                // inputMethodHints: Qt.ImhNoPredictiveText
+                inputMethodHints: predictiveHintsEnabled ? Qt.ImhNone : Qt.ImhNoPredictiveText
 
                 EnterKey.enabled: text.length > 0
                 EnterKey.iconSource: "image://theme/icon-m-enter-" + (descriptionEnabled ? "next" : "accept")
@@ -107,7 +124,13 @@ Dialog {
                 }
             }
 
-            Spacer { }
+            TextSwitch {
+                id: predictionSwitch
+                text: "Enable predictive text"
+                checked: true
+            }
+
+            Spacer { height: Theme.paddingLarge }
 
             TextArea {
                 id: descriptionField
@@ -115,6 +138,7 @@ Dialog {
                 width: parent.width
                 placeholderText: qsTr("Enter optional description")
                 label: qsTr("Description")
+                inputMethodHints: predictiveHintsEnabled ? Qt.ImhNone : Qt.ImhNoPredictiveText
             }
 
             Spacer {

@@ -35,10 +35,10 @@ TodoList {
         showNavigation: showFakeNavigation
     }
 
-    function addItemFor(date) {
-        var dialog = pageStack.push(addComponent, { date: date })
+    function addItem() {
+        var dialog = pageStack.push(addComponent, { date: today })
         dialog.accepted.connect(function() {
-            addItem(date, dialog.text.trim(), dialog.description.trim());
+            main.addItem(dialog.date, dialog.text.trim(), dialog.description.trim());
         });
     }
 
@@ -84,16 +84,8 @@ TodoList {
 
     PullDownMenu {
         MenuItem {
-            text: qsTr("Add entry for someday")
-            onClicked: addItemFor(someday)
-        }
-        MenuItem {
-            text: qsTr("Add entry for tomorrow")
-            onClicked: addItemFor(tomorrow)
-        }
-        MenuItem {
-            text: qsTr("Add entry for today")
-            onClicked: addItemFor(today)
+            text: qsTr("Add entry")
+            onClicked: addItem()
         }
     }
 

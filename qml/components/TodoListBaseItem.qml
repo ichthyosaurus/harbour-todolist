@@ -36,6 +36,9 @@ ListItem {
     property bool descriptionEnabled: true
     property bool customClickHandlingEnabled: false
 
+    property bool editableShowProject: true
+    property string editableTitleText: qsTr("Edit entry")
+
     property bool alwaysShowInterval: false
     property bool editableInterval: false
     property string intervalProperty: "interval"
@@ -55,7 +58,9 @@ ListItem {
             editableRecurring: editableInterval,
             recurringStartDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date(NaN),
             recurringInitialIntervalDays: model[intervalProperty] !== undefined ? model[intervalProperty] : 0,
-            extraDeleteWarning: extraDeleteWarning
+            extraDeleteWarning: extraDeleteWarning,
+            showProject: editableShowProject,
+            titleText: editableTitleText
         });
         dialog.accepted.connect(function() {
             if (dialog.requestDeletion) {
