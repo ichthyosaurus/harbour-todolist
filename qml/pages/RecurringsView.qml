@@ -81,6 +81,7 @@ SilicaListView {
         onSaveItemTexts: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription);
         onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
         onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
+        onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
         extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
 
         menu: Component {

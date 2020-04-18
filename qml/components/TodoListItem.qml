@@ -25,7 +25,7 @@ import "../js/helpers.js" as Helpers
 TodoListBaseItem {
     id: item
     descriptionEnabled: true
-    infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState === EntrySubState.tomorrow)
+    infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState !== EntrySubState.today)
     title: model.text
     description: model.description
 
@@ -35,6 +35,7 @@ TodoListBaseItem {
     menu: Component {
         ContextMenu {
             property bool isToday: date.getTime() === today.getTime()
+            property bool isThisWeek: date.getTime() === thisweek.getTime()
             property bool isSomeday: date.getTime() === someday.getTime()
 
             MenuItem {
@@ -47,46 +48,63 @@ TodoListBaseItem {
                 visible:    editable && !isArchived
                          && entryState !== EntryState.done
                 text: qsTr("done")
-                onClicked: markItemAs(index, EntryState.done, subState);
+                onClicked: (isSomeday || isThisWeek) ?  moveAndMarkItem(index, EntryState.done, subState, today) : markItemAs(index, EntryState.done, subState);
             }
             MenuItem {
                 visible:    editable && !isArchived
                          && isToday
                          && entryState !== EntryState.done
                          && subState !== EntrySubState.tomorrow
+                         && subState !== EntrySubState.thisweek
                 text: qsTr("done for today, continue tomorrow")
+                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, tomorrow);
+            }
+            MenuItem {
+                visible:    editable && !isArchived
+                            && (isSomeday || isThisWeek)
+                            && (entryState === EntryState.todo || entryState === EntryState.ignored)
+                text: qsTr("handle today")
+                onClicked: moveAndMarkItem(index, EntryState.todo, EntrySubState.today, today);
+            }
+            MenuItem {
+                visible:    editable && !isArchived
+                         && !isSomeday && !isThisWeek
+                         && entryState === EntryState.done
+                         && subState !== EntrySubState.tomorrow
+                         && subState !== EntrySubState.thisweek
+                         && subState !== EntrySubState.someday
+                text: isToday ? qsTr("continue tomorrow") : qsTr("continue next day")
                 onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
             }
             MenuItem {
-                visible:    editable && !isArchived
-                         && !isSomeday
-                         && (entryState === EntryState.todo || entryState === EntryState.ignored)
-                         && subState !== EntrySubState.tomorrow
-                text: isToday ? qsTr("move to tomorrow") : qsTr("move to next day")
-                onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.tomorrow, Helpers.getDate(1, date));
+                visible: {
+                    if (!editable || isArchived) return false;
+                    if (isSomeday) return true;
+                    if (isThisWeek) return false;
+                    if (subState === EntrySubState.thisweek) return false;
+                    if (isToday && subState === EntrySubState.today) return true;
+                    if (date.getTime() > today.getTime()) return true;
+                    return false;
+                }
+                text: entryState !== EntryState.todo ? qsTr("continue later this week") : qsTr("handle later this week")
+                onClicked: (isSomeday || isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.thisweek, thisweek) :
+                                                       copyAndMarkItem(index, EntryState.ignored, EntrySubState.thisweek, thisweek); // "source" will be marked as ignored
             }
             MenuItem {
                 visible:    editable && !isArchived
-                         && date.getTime() > today.getTime()
+                         && !isToday
                          && !isSomeday
-                         && (entryState === EntryState.todo || entryState === EntryState.ignored)
+                         && entryState === EntryState.todo
                          && subState !== EntrySubState.tomorrow
                 text: qsTr("move to someday later")
-                onClicked: copyAndMarkItem(index, EntryState.ignored, EntrySubState.someday, someday);
+                onClicked: (isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.someday, someday) :
+                                          copyAndMarkItem(index, EntryState.ignored, EntrySubState.someday, someday); // "source" will be marked as ignored
             }
             MenuItem {
                 visible:    editable && !isArchived
                          && entryState === EntryState.todo
                 text: qsTr("ignore")
-                onClicked: markItemAs(index, EntryState.ignored, subState);
-            }
-            MenuItem {
-                visible:    editable && !isArchived
-                         && !isSomeday
-                         && entryState === EntryState.done
-                         && subState !== EntrySubState.tomorrow
-                text: isToday ? qsTr("continue tomorrow") : qsTr("continue next day")
-                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
+                onClicked: (isSomeday || isThisWeek) ?  moveAndMarkItem(index, EntryState.ignored, EntrySubState.today, today) : markItemAs(index, EntryState.ignored, subState);
             }
             MenuItem {
                 visible:    editable && !isArchived
@@ -121,11 +139,13 @@ TodoListBaseItem {
                         } else if (entryState === EntryState.ignored) {
                             if (subState === EntrySubState.today) text = text.arg(isToday ? qsTr("ignored today") : qsTr("ignored this day"))
                             else if (subState === EntrySubState.tomorrow) text = text.arg(isToday ? qsTr("to be done tomorrow") : qsTr("to be done next day"))
+                            else if (subState === EntrySubState.thisweek) text = text.arg(qsTr("to be done later this week"))
                             else if (subState === EntrySubState.someday) text = text.arg(qsTr("to be done someday later"))
                         } else if (entryState === EntryState.done) {
                             if (subState === EntrySubState.today) text = text.arg(isToday ? qsTr("done today") : qsTr("done this day"))
                             else if (subState === EntrySubState.tomorrow) text = text.arg(isToday ? qsTr("continue tomorrow") : qsTr("continue next day"))
-                            else if (subState === EntrySubState.someday) text = text.arg(qsTr("to be done someday later"))
+                            else if (subState === EntrySubState.thisweek) text = text.arg(qsTr("continue later this week"))
+                            else if (subState === EntrySubState.someday) text = text.arg(qsTr("continue someday later"))
                         }
 
                         if (editable) text += "\n"

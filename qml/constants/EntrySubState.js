@@ -21,4 +21,5 @@
 
 var today = 0
 var tomorrow = 1
-var someday = 2
+var thisweek = 2
+var someday = 3

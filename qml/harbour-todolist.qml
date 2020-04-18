@@ -40,9 +40,11 @@ ApplicationWindow
 
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
+    property date thisweek: Helpers.getDate(0, new Date("8888-01-01T00:00Z"))
     property date someday: Helpers.getDate(0, new Date("9999-01-01T00:00Z"))
     property string todayString: Helpers.getDateString(today)
     property string tomorrowString: Helpers.getDateString(tomorrow)
+    property string thisweekString: Helpers.getDateString(thisweek)
     property string somedayString: Helpers.getDateString(someday)
 
     readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
@@ -125,6 +127,18 @@ ApplicationWindow
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
                 EntryState.todo, EntrySubState.today, item.createdOn);
+    }
+
+    function moveItemTo(which, moveToDate) {
+        var item = rawModel.get(which);
+
+        if (Storage.defaultFor(moveToDate, "fail") === "fail") {
+            console.log("error: failed to move item", which, moveToDate);
+        }
+
+        addItem(moveToDate, item.text, item.description,
+                item.entryState, item.subState, item.createdOn);
+        deleteItem(which);
     }
 
     function addRecurring(text, description, intervalDays, startDate) {

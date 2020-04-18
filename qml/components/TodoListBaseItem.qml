@@ -43,6 +43,7 @@ ListItem {
 
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
+    signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
     signal saveItemTexts(var which, var newText, var newDescription)
     signal saveItemRecurring(var which, var interval, var startDate)
     signal deleteThisItem(var which)

@@ -44,6 +44,11 @@ SilicaListView {
         }
         onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription);
         onDeleteThisItem: deleteItem(view.model.mapToSource(which))
+        onMoveAndMarkItem: {
+            var sourceIndex = view.model.mapToSource(which);
+            updateItem(sourceIndex, mainState, subState);
+            moveItemTo(sourceIndex, moveToDate)
+        }
         hidden: closedSections.indexOf(Helpers.getDateString(date)) !== -1
     }
 
@@ -54,6 +59,7 @@ SilicaListView {
             property string sectionString: String(section).split("T")[0]
             property bool isToday: sectionString === todayString
             property bool isTomorrow: sectionString === tomorrowString
+            property bool isThisWeek: sectionString === thisweekString
             property bool isSomeday: sectionString === somedayString
             property bool open: !isSomeday
 
@@ -91,6 +97,7 @@ SilicaListView {
                     text: {
                         if (isToday) qsTr("Today")
                         else if (isTomorrow) qsTr("Tomorrow")
+                        else if (isThisWeek) qsTr("This week")
                         else if (isSomeday) qsTr("Someday")
                         else new Date(section).toLocaleString(Qt.locale(), "dddd")
                     }
@@ -105,7 +112,7 @@ SilicaListView {
                         rightMargin: Theme.paddingMedium
                         verticalCenter: parent.verticalCenter
                     }
-                    text: isSomeday ? "" : new Date(section).toLocaleString(
+                    text: (isSomeday || isThisWeek) ? "" : new Date(section).toLocaleString(
                                           Qt.locale(), (isToday || isTomorrow) ?
                                               main.fullDateFormat : main.shortDateFormat)
                     color: Theme.highlightColor
