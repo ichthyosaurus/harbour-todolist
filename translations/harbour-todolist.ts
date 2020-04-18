@@ -51,18 +51,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add entry for today</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enter title</source>
         <translation type="unfinished"></translation>
     </message>
@@ -79,11 +67,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add entry for someday</source>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>Add an entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scheduled for</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>tomorrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>this week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>someday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AddRecurringDialog</name>
+    <message>
+        <source>Add a recurring entry</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -227,6 +246,14 @@
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add a project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit project</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -262,6 +289,14 @@
         <source>This page will show a list of all recurring entries.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Edit recurring entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>press and hold to edit or delete</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartDateButton</name>
@@ -292,6 +327,17 @@
         <source>Someday</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>This week</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TodoListBaseItem</name>
+    <message>
+        <source>Edit entry</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TodoListItem</name>
@@ -305,10 +351,6 @@
     </message>
     <message>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>move to tomorrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -364,10 +406,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>move to next day</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>move to someday later</source>
         <translation type="unfinished"></translation>
     </message>
@@ -407,23 +445,31 @@
         <source>done this day</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>handle today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>continue later this week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>handle later this week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>to be done later this week</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>continue someday later</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TodoListView</name>
     <message>
         <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add entry for today</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -440,6 +486,10 @@
     </message>
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add entry</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -51,18 +51,6 @@
         <translation>Speichern</translation>
     </message>
     <message>
-        <source>Add entry for today</source>
-        <translation>Eintrag für heute hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation>Eintrag für morgen hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add entry</source>
-        <translation>Eintrag hinzufügen</translation>
-    </message>
-    <message>
         <source>Enter title</source>
         <translation>Titel eingeben</translation>
     </message>
@@ -79,12 +67,43 @@
         <translation>Beschreibung</translation>
     </message>
     <message>
-        <source>Add entry for someday</source>
-        <translation>Eintrag für irgendwann hinzufügen</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+    <message>
+        <source>Add an entry</source>
+        <translation>Eintrag hinzufügen</translation>
+    </message>
+    <message>
+        <source>Scheduled for</source>
+        <translation>Geplant für</translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation>heute</translation>
+    </message>
+    <message>
+        <source>tomorrow</source>
+        <translation>morgen</translation>
+    </message>
+    <message>
+        <source>this week</source>
+        <translation>diese Woche</translation>
+    </message>
+    <message>
+        <source>someday</source>
+        <translation>irgendwann</translation>
+    </message>
+    <message>
+        <source>Project</source>
+        <translation>Projekt</translation>
+    </message>
+</context>
+<context>
+    <name>AddRecurringDialog</name>
+    <message>
+        <source>Add a recurring entry</source>
+        <translation>Wiederholten Eintrag hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -227,6 +246,14 @@
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation>Das sollte nicht möglich sein. Wahrscheinlich ist ein Datenbankfehler aufgetreten.</translation>
     </message>
+    <message>
+        <source>Add a project</source>
+        <translation>Projekt hinzufügen</translation>
+    </message>
+    <message>
+        <source>Edit project</source>
+        <translation>Projekt bearbeiten</translation>
+    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -262,6 +289,14 @@
         <source>This page will show a list of all recurring entries.</source>
         <translation>Auf dieser Seite werden alle automatisch wiederholten Einträge angezeigt.</translation>
     </message>
+    <message>
+        <source>Edit recurring entry</source>
+        <translation>Wiederholten Eintrag bearbeiten</translation>
+    </message>
+    <message>
+        <source>press and hold to edit or delete</source>
+        <translation>lange drücken zum Bearbeiten oder Löschen</translation>
+    </message>
 </context>
 <context>
     <name>StartDateButton</name>
@@ -292,6 +327,17 @@
         <source>Someday</source>
         <translation>Irgendwann</translation>
     </message>
+    <message>
+        <source>This week</source>
+        <translation>Diese Woche</translation>
+    </message>
+</context>
+<context>
+    <name>TodoListBaseItem</name>
+    <message>
+        <source>Edit entry</source>
+        <translation>Eintrag bearbeiten</translation>
+    </message>
 </context>
 <context>
     <name>TodoListItem</name>
@@ -306,10 +352,6 @@
     <message>
         <source>done for today, continue tomorrow</source>
         <translation>fertig für heute, morgen weitermachen</translation>
-    </message>
-    <message>
-        <source>move to tomorrow</source>
-        <translation>auf morgen verschieben</translation>
     </message>
     <message>
         <source>ignore</source>
@@ -364,10 +406,6 @@
         <translation>lange drücken zum Bearbeiten oder Löschen</translation>
     </message>
     <message>
-        <source>move to next day</source>
-        <translation>auf den nächsten Tag verschieben</translation>
-    </message>
-    <message>
         <source>move to someday later</source>
         <translation>auf irgendwann vertagen</translation>
     </message>
@@ -407,24 +445,32 @@
         <source>done this day</source>
         <translation>an diesem Tag erledigt</translation>
     </message>
+    <message>
+        <source>handle today</source>
+        <translation>heute bearbeiten</translation>
+    </message>
+    <message>
+        <source>continue later this week</source>
+        <translation>diese Woche weitermachen</translation>
+    </message>
+    <message>
+        <source>handle later this week</source>
+        <translation>diese Woche bearbeiten</translation>
+    </message>
+    <message>
+        <source>to be done later this week</source>
+        <translation>zum diese Woche Erledigen</translation>
+    </message>
+    <message>
+        <source>continue someday later</source>
+        <translation>zum irgendwann Erledigen</translation>
+    </message>
 </context>
 <context>
     <name>TodoListView</name>
     <message>
         <source>Todo List</source>
         <translation>Todo-Liste</translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation>Eintrag für irgendwann hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation>Eintrag für morgen hinzufügen</translation>
-    </message>
-    <message>
-        <source>Add entry for today</source>
-        <translation>Eintrag für heute hinzufügen</translation>
     </message>
     <message>
         <source>Show old entries</source>
@@ -441,6 +487,10 @@
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
         <translation>Wischen Sie nach links um wiederkehrende Einträge hinzuzufügen. Sie können dann angeben, alle wieviel Tage der Eintrag automatisch zur aktuellen Todo-Liste hinzugefügt wird.</translation>
+    </message>
+    <message>
+        <source>Add entry</source>
+        <translation>Eintrag hinzufügen</translation>
     </message>
 </context>
 <context>

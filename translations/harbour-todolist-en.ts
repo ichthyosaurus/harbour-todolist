@@ -55,22 +55,6 @@
         <translation>Cancel</translation>
     </message>
     <message>
-        <source>Add entry for today</source>
-        <translation>Add entry for today</translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation>Add entry for tomorrow</translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation>Add entry for someday</translation>
-    </message>
-    <message>
-        <source>Add entry</source>
-        <translation>Add entry</translation>
-    </message>
-    <message>
         <source>Enter title</source>
         <translation>Enter title</translation>
     </message>
@@ -85,6 +69,41 @@
     <message>
         <source>Description</source>
         <translation>Description</translation>
+    </message>
+    <message>
+        <source>Add an entry</source>
+        <translation>Add an entry</translation>
+    </message>
+    <message>
+        <source>Scheduled for</source>
+        <translation>Scheduled for</translation>
+    </message>
+    <message>
+        <source>today</source>
+        <translation>today</translation>
+    </message>
+    <message>
+        <source>tomorrow</source>
+        <translation>tomorrow</translation>
+    </message>
+    <message>
+        <source>this week</source>
+        <translation>this week</translation>
+    </message>
+    <message>
+        <source>someday</source>
+        <translation>someday</translation>
+    </message>
+    <message>
+        <source>Project</source>
+        <translation>Project</translation>
+    </message>
+</context>
+<context>
+    <name>AddRecurringDialog</name>
+    <message>
+        <source>Add a recurring entry</source>
+        <translation>Add a recurring entry</translation>
     </message>
 </context>
 <context>
@@ -227,6 +246,14 @@
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation>This should not be possible. Most probably a database error occurred.</translation>
     </message>
+    <message>
+        <source>Add a project</source>
+        <translation>Add a project</translation>
+    </message>
+    <message>
+        <source>Edit project</source>
+        <translation>Edit project</translation>
+    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -262,6 +289,14 @@
         <source>This page will show a list of all recurring entries.</source>
         <translation>This page will show a list of all recurring entries.</translation>
     </message>
+    <message>
+        <source>Edit recurring entry</source>
+        <translation>Edit recurring entry</translation>
+    </message>
+    <message>
+        <source>press and hold to edit or delete</source>
+        <translation>press and hold to edit or delete</translation>
+    </message>
 </context>
 <context>
     <name>StartDateButton</name>
@@ -292,6 +327,17 @@
         <source>Pull down to add entries</source>
         <translation>Pull down to add entries</translation>
     </message>
+    <message>
+        <source>This week</source>
+        <translation>This week</translation>
+    </message>
+</context>
+<context>
+    <name>TodoListBaseItem</name>
+    <message>
+        <source>Edit entry</source>
+        <translation>Edit entry</translation>
+    </message>
 </context>
 <context>
     <name>TodoListItem</name>
@@ -306,14 +352,6 @@
     <message>
         <source>done for today, continue tomorrow</source>
         <translation>done for today, continue tomorrow</translation>
-    </message>
-    <message>
-        <source>move to tomorrow</source>
-        <translation>move to tomorrow</translation>
-    </message>
-    <message>
-        <source>move to next day</source>
-        <translation>move to next day</translation>
     </message>
     <message>
         <source>move to someday later</source>
@@ -407,24 +445,32 @@
         <source>press and hold to edit or delete</source>
         <translation>press and hold to edit or delete</translation>
     </message>
+    <message>
+        <source>handle today</source>
+        <translation>handle today</translation>
+    </message>
+    <message>
+        <source>continue later this week</source>
+        <translation>continue later this week</translation>
+    </message>
+    <message>
+        <source>handle later this week</source>
+        <translation>handle later this week</translation>
+    </message>
+    <message>
+        <source>to be done later this week</source>
+        <translation>to be done later this week</translation>
+    </message>
+    <message>
+        <source>continue someday later</source>
+        <translation>continue someday later</translation>
+    </message>
 </context>
 <context>
     <name>TodoListView</name>
     <message>
         <source>Todo List</source>
         <translation>Todo List</translation>
-    </message>
-    <message>
-        <source>Add entry for someday</source>
-        <translation>Add entry for someday</translation>
-    </message>
-    <message>
-        <source>Add entry for tomorrow</source>
-        <translation>Add entry for tomorrow</translation>
-    </message>
-    <message>
-        <source>Add entry for today</source>
-        <translation>Add entry for today</translation>
     </message>
     <message>
         <source>Show old entries</source>
@@ -441,6 +487,10 @@
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
         <translation>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</translation>
+    </message>
+    <message>
+        <source>Add entry</source>
+        <translation>Add entry</translation>
     </message>
 </context>
 <context>
