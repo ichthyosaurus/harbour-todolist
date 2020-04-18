@@ -500,10 +500,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Icon Desing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
@@ -521,6 +517,10 @@
     </message>
     <message>
         <source>Sources on GitHub</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Design</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -7,7 +7,7 @@ var VERSION_NUMBER // set in main.qml's Component.onCompleted
 
 var DEVELOPMENT = [
     {label: qsTr("Programming"), values: ["Mirian Margiani"]},
-    {label: qsTr("Icon Desing"), values: ["Mirian Margiani"]}
+    {label: qsTr("Icon Design"), values: ["Mirian Margiani"]}
 ]
 
 var TRANSLATIONS = [

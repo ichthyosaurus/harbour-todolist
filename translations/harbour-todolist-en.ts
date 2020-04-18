@@ -500,10 +500,6 @@
         <translation>Programming</translation>
     </message>
     <message>
-        <source>Icon Desing</source>
-        <translation>Icon Desing</translation>
-    </message>
-    <message>
         <source>English</source>
         <translation>English</translation>
     </message>
@@ -522,6 +518,10 @@
     <message>
         <source>Sources on GitHub</source>
         <translation>Sources on GitHub</translation>
+    </message>
+    <message>
+        <source>Icon Design</source>
+        <translation>Icon Design</translation>
     </message>
 </context>
 <context>
