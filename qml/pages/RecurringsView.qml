@@ -104,6 +104,14 @@ SilicaListView {
                     text: qsTr("mark as done")
                     onClicked: markItemAs(index, EntryState.done, undefined)
                 }
+                MenuItem {
+                    enabled: false
+                    text: qsTr("press and hold to edit or delete")
+                    font.pixelSize: Theme.fontSizeSmall
+                    truncationMode: TruncationMode.Fade
+                    _elideText: false
+                    _fadeText: true
+                }
             }
         }
     }
