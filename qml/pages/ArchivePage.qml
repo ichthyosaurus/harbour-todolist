@@ -33,7 +33,7 @@ Page {
 
         sorters: [
             RoleSorter { roleName: "date"; sortOrder: Qt.DescendingOrder },
-            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
+            RoleSorter { roleName: "entryState"; sortOrder: Qt.DescendingOrder },
             RoleSorter { roleName: "weight"; sortOrder: Qt.DescendingOrder }
         ]
 

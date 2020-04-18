@@ -44,6 +44,8 @@ ListItem {
     property string intervalProperty: "interval"
     property string intervalStartProperty: "date"
 
+    property bool _isArchivedEntry: typeof(_isOld) !== 'undefined' && _isOld === true
+
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
@@ -168,20 +170,37 @@ ListItem {
     states: [
         State {
             name: "todo"
-            when: entryState === EntryState.todo
+            when: _isArchivedEntry === false && entryState === EntryState.todo
             PropertyChanges { target: statusIcon; source: "../images/icon-todo.png"; opacity: Theme.opacityHigh }
         },
         State {
             name: "ignored"
-            when: entryState === EntryState.ignored
+            when: _isArchivedEntry === false && entryState === EntryState.ignored
             PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityHigh }
         },
         State {
             name: "done"
-            when: entryState === EntryState.done
+            when: _isArchivedEntry === false && entryState === EntryState.done
             PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityLow }
+        },
+        State {
+            name: "todoArchived"
+            when: _isArchivedEntry === true && entryState === EntryState.todo
+            PropertyChanges { target: statusIcon; source: "../images/icon-todo.png"; }
+            PropertyChanges { target: row; opacity: Theme.opacityLow }
+        },
+        State {
+            name: "ignoredArchived"
+            when: _isArchivedEntry === true && entryState === EntryState.ignored
+            PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
+            PropertyChanges { target: row; opacity: Theme.opacityHigh }
+        },
+        State {
+            name: "doneArchived"
+            when: _isArchivedEntry === true && entryState === EntryState.done
+            PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; opacity: Theme.opacityHigh }
         }
     ]
 }
