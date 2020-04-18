@@ -4,18 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Todo List</source>
-        <translation>Todo-Liste</translation>
-    </message>
-    <message>
-        <source>A simple tool for planning what to do next.</source>
-        <translation>Eine einfache Anwendung zum kurzfristigen Planen.</translation>
-    </message>
-    <message>
-        <source>Sources on GitHub</source>
-        <translation>Quellcode auf GitHub</translation>
-    </message>
-    <message>
         <source>About %1</source>
         <translation>Über %1</translation>
     </message>
@@ -36,18 +24,24 @@
         <translation>Lizenz</translation>
     </message>
     <message>
-        <source>GNU GPL version 3 or later.
-This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</source>
-        <translation>GNU GPL Version 3 oder neuer.
-This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</translation>
-    </message>
-    <message>
         <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
         <translation>&lt;i&gt;Mitwirkende anzeigen &lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;show license &lt;/i&gt;</source>
         <translation>&lt;i&gt;Lizenz anzeigen &lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Daten</translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation>Webseite</translation>
+    </message>
+    <message>
+        <source>Source Code</source>
+        <translation>Quellcode</translation>
     </message>
 </context>
 <context>
@@ -129,6 +123,21 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
+    </message>
+</context>
+<context>
+    <name>ContributorsPage</name>
+    <message>
+        <source>Contributors</source>
+        <translation>Mitwirkende</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
     </message>
 </context>
 <context>
@@ -432,6 +441,37 @@ This is free software: you are free to change and redistribute it.There is NO WA
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
         <translation>Wischen Sie nach links um wiederkehrende Einträge hinzuzufügen. Sie können dann angeben, alle wieviel Tage der Eintrag automatisch zur aktuellen Todo-Liste hinzugefügt wird.</translation>
+    </message>
+</context>
+<context>
+    <name>about</name>
+    <message>
+        <source>Programming</source>
+        <translation>Programmierung</translation>
+    </message>
+    <message>
+        <source>Icon Desing</source>
+        <translation>Icon-Design</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
+        <source>Todo List</source>
+        <translation>Todo-Liste</translation>
+    </message>
+    <message>
+        <source>A simple tool for planning what to do next.</source>
+        <translation>Eine einfache Anwendung zum kurzfristigen Planen.</translation>
+    </message>
+    <message>
+        <source>Sources on GitHub</source>
+        <translation>Quellcode auf GitHub</translation>
     </message>
 </context>
 <context>

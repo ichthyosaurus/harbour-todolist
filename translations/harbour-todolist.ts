@@ -4,18 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sources on GitHub</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -36,16 +24,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>GNU GPL version 3 or later.
-This is free software: you are free to change and redistribute it.There is NO WARRANTY, to the extent permitted by law.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;i&gt;show license &lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source Code</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -127,6 +122,21 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
     <message>
         <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContributorsPage</name>
+    <message>
+        <source>Contributors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -430,6 +440,37 @@ This is free software: you are free to change and redistribute it.There is NO WA
     </message>
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>about</name>
+    <message>
+        <source>Programming</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icon Desing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Todo List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sources on GitHub</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

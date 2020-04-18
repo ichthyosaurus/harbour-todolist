@@ -1,19 +1,21 @@
 /*
- * This file is part of harbour-todolist.
+ * This file is part of sf-about-page.
  * Copyright (C) 2020  Mirian Margiani
  *
- * harbour-todolist is free software: you can redistribute it and/or modify
+ * sf-about-page is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * harbour-todolist is distributed in the hope that it will be useful,
+ * sf-about-page is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with harbour-todolist.  If not, see <http://www.gnu.org/licenses/>.
+ * along with sf-about-page.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * FILE VERSION: 1.0 (2020-04-17)
  *
  */
 
@@ -24,14 +26,26 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property string appName: qsTr("Todo List")
-    property string iconPath: "../images/harbour-todolist.png"
-    property string versionNumber: VERSION_NUMBER
-    property string description: qsTr("A simple tool for planning what to do next.")
-    property string author: "Mirian Margiani"
-    property string sourcesLink: "https://github.com/ichthyosaurus/harbour-todolist"
-    property string sourcesText: qsTr("Sources on GitHub")
-    property bool enableContributorsPage: false
+    property string appName: "this app"  // the name of your app
+    property string iconPath: ""         // e.g. "/usr/share/icons/hicolor/172x172/apps/harbour-jammy.png"
+    property string versionNumber: "1.0" // e.g. 'VERSION_NUMBER' if you configured it via C++
+    property string description: ""      // a rich text description of your app
+    property string author: ""           // the main author(s) or maintainer(s)
+    property string dataInformation: ""  // if your app uses data from an external provider, add e.g. copyright
+                                         // info here
+    property string dataLink: ""         // a link to the website of an external provider
+    property string dataLinkText: ""     // custom button text
+    property string sourcesLink: ""      // where users can get your app's source code
+    property string sourcesText: ""      // custom button text, e.g. qsTr("Sources on GitHub")
+
+    property bool enableContributorsPage: false // whether to enable 'ContributorsPage.qml'
+    property var contribDevelopment: []
+    property var contribTranslations: []
+
+    // don't change this unless you change license.html
+    property string shortLicenseText: "GNU GPL version 3 or later.\n" +
+                                      "This is free software: you are free to change and redistribute it." +
+                                      "There is NO WARRANTY, to the extent permitted by law."
 
     SilicaFlickable {
         anchors.fill: parent
@@ -65,8 +79,9 @@ Page {
             Label {
                 x: 2*Theme.horizontalPageMargin
                 width: parent.width - 2*x
-                text: description
+                text: '<style type="text/css">A { color: "#ffffff"; }</style>' + description
                 wrapMode: Text.Wrap
+                textFormat: Text.RichText
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeMedium
             }
@@ -75,7 +90,10 @@ Page {
             BackgroundItem {
                 anchors.left: parent.left; anchors.right: parent.right
                 height: contributorsColumn.height
-                onClicked: pageStack.push(Qt.resolvedUrl("ContributorsPage.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("ContributorsPage.qml"), {
+                    development: contribDevelopment,
+                    translations: contribTranslations
+                })
                 enabled: enableContributorsPage
 
                 Column {
@@ -108,6 +126,31 @@ Page {
                 }
             }
 
+            Item { width: parent.width; height: Theme.paddingMedium; visible: (dataInformation || dataLink) }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Data")
+                color: Theme.secondaryHighlightColor
+                font.pixelSize: Theme.fontSizeLarge
+                visible: dataInformation || dataLink
+            }
+            Label {
+                x: 2*Theme.horizontalPageMargin
+                width: parent.width - 2*x
+                visible: dataInformation ? true : false
+                text: '<style type="text/css">A { color: "#ffffff"; }</style>' + dataInformation
+                wrapMode: Text.Wrap
+                textFormat: Text.RichText
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: Theme.fontSizeMedium
+            }
+            Button {
+                visible: dataLink ? true : false
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: dataLinkText ? dataLinkText : qsTr("Website")
+                onClicked: { Qt.openUrlExternally(dataLink) }
+            }
+
             Item { width: parent.width; height: Theme.paddingMedium }
             BackgroundItem {
                 anchors.left: parent.left; anchors.right: parent.right
@@ -129,9 +172,7 @@ Page {
                     Label {
                         width: parent.width; horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.Wrap; font.pixelSize: Theme.fontSizeMedium
-                        text: qsTr("GNU GPL version 3 or later.\n" +
-                                   "This is free software: you are free to change and redistribute it."+
-                                   "There is NO WARRANTY, to the extent permitted by law.")
+                        text: shortLicenseText
                     }
                     Row {
                         anchors.right: parent.right; spacing: Theme.paddingSmall
@@ -145,12 +186,11 @@ Page {
                 }
             }
 
-            Text {
-                text: "<a href=\"%1\">%2</a>".arg(githubLink).arg(sourcesText)
+            Button {
+                visible: sourcesLink ? true : false
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeMedium
-                linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally(githubLink)
+                text: sourcesText ? sourcesText : qsTr("Source Code")
+                onClicked: { Qt.openUrlExternally(sourcesLink) }
             }
 
             Item {

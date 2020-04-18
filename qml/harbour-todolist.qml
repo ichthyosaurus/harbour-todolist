@@ -24,6 +24,7 @@ import Nemo.Notifications 1.0
 import "constants" 1.0
 import "js/storage.js" as Storage
 import "js/helpers.js" as Helpers
+import "sf-about-page/about.js" as About
 import "pages"
 
 ApplicationWindow
@@ -222,6 +223,8 @@ ApplicationWindow
     }
 
     Component.onCompleted: {
+        About.VERSION_NUMBER = VERSION_NUMBER;
+
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
