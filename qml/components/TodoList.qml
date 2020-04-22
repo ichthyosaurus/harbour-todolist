@@ -29,6 +29,7 @@ SilicaListView {
 
     readonly property var defaultClosedSections: [somedayString]
     property var closedSections: defaultClosedSections.slice()
+    signal sectionToggled(var whichSection)
 
     Connections {
         target: main.configuration
@@ -36,6 +37,7 @@ SilicaListView {
     }
 
     delegate: TodoListItem {
+        id: listItem
         onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
         onCopyAndMarkItem: {
             var sourceIndex = view.model.mapToSource(which);
@@ -49,7 +51,38 @@ SilicaListView {
             updateItem(sourceIndex, mainState, subState);
             moveItemTo(sourceIndex, moveToDate)
         }
-        hidden: closedSections.indexOf(Helpers.getDateString(date)) !== -1
+
+        // To prevent a visual glitch when scrolling down a long list of items
+        // while the last section is closed, we have to be careful what to
+        // animate. We use an Item to declare a new state because it would
+        // otherwise interfere with TodoListItem's states. We then activate
+        // the transition once if the item's section was toggled.
+
+        property string sectionString: Helpers.getDateString(date)
+
+        Item {
+            states: State {
+                when: closedSections.indexOf(sectionString) !== -1
+                name: "customHidden"
+                PropertyChanges {
+                    target: listItem
+                    contentHeight: 0; enabled: false
+                    opacity: 0.0
+                }
+            }
+            transitions: Transition {
+                NumberAnimation {
+                    id: showHideAnimation
+                    properties: "contentHeight, opacity"
+                    duration: 0; onStopped: duration = 0
+                }
+            }
+        }
+
+        Connections {
+            target: view
+            onSectionToggled: if (whichSection === sectionString) showHideAnimation.duration = 200
+        }
     }
 
     section {
@@ -70,6 +103,7 @@ SilicaListView {
                 height: Theme.itemSizeSmall
 
                 onClicked: {
+                    sectionToggled(sectionString);
                     if (open) closedSections.push(sectionString);
                     else closedSections = closedSections.filter(function(e) { return e !== sectionString; });
                     closedSectionsChanged();
