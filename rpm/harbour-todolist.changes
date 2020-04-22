@@ -12,7 +12,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Apr 13 2014 Jack Tar <jack.tar@example.com> 0.0.1-1
-- Scrubbed the deck
-- Hoisted the sails
+* Wed Apr 22 2020 Mirian Margiani <> 1.0.1-1
+- Move "About" and "Show old entries" to the top pulley menu
+- Reduce visual glitching when quickly scrolling down a long list while the last section is closed
+- Fix section open state being unreliably reset when changing project
+- Only load archived entries when they are needed
+- Add zh_CN translation by dashinfantry
 
+* Sun Apr 19 2020 Mirian Margiani <> 1.0.0-1
+- initial public release
