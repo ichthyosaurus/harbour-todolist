@@ -26,10 +26,11 @@ import "../constants" 1.0
 Page {
     id: page
     allowedOrientations: Orientation.All
+    property bool archiveReady: false
 
     SortFilterProxyModel {
         id: filteredModel
-        sourceModel: rawModel
+        sourceModel: archiveModel
 
         sorters: [
             RoleSorter { roleName: "date"; sortOrder: Qt.DescendingOrder },
@@ -82,9 +83,16 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: view.count == 0 && startupComplete
+            enabled: view.count == 0 && archiveReady
             text: qsTr("No entries yet")
             hintText: qsTr("This page will show a list of all old entries.")
         }
+    }
+
+    Component.onCompleted: {
+        if (archiveModel.count === 0) {
+            loadArchive();
+        }
+        archiveReady = true;
     }
 }

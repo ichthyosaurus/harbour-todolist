@@ -233,9 +233,7 @@ function deleteRecurring(entryId) {
     simpleQuery('DELETE FROM recurrings WHERE rowid=?', [entryId]);
 }
 
-function getEntries(forProject) {
-    forProject = defaultFor(forProject, defaultProjectId);
-    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=?;', [forProject]);
+function _prepareEntries(q) {
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
@@ -255,6 +253,18 @@ function getEntries(forProject) {
     }
 
     return res;
+}
+
+function getEntries(forProject) {
+    forProject = defaultFor(forProject, defaultProjectId);
+    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date >= ?;', [forProject, todayString]);
+    return _prepareEntries(q);
+}
+
+function getArchivedEntries(forProject) {
+    forProject = defaultFor(forProject, defaultProjectId);
+    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
+    return _prepareEntries(q);
 }
 
 function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {

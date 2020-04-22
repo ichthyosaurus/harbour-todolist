@@ -33,6 +33,7 @@ ApplicationWindow
     property alias rawModel: mainModel
     property alias projectsModel: mainProjectsModel
     property alias recurringsModel: mainRecurringsModel
+    property ListModel archiveModel: ListModel { }
     property alias configuration: config
 
     property bool startupComplete: false
@@ -226,6 +227,7 @@ ApplicationWindow
         } else {
             currentProjectName = project.name;
             startupComplete = false;
+            archiveModel.clear();
             rawModel.clear();
             var entries = Storage.getEntries(config.currentProject);
             for (var i in entries) rawModel.append(entries[i]);
@@ -235,6 +237,11 @@ ApplicationWindow
             entries = Storage.getRecurrings(config.currentProject);
             for (i in entries) recurringsModel.append(entries[i]);
         }
+    }
+
+    function loadArchive() {
+        var entries = Storage.getArchivedEntries(config.currentProject);
+        for (var i in entries) archiveModel.append(entries[i]);
     }
 
     Component.onCompleted: {
