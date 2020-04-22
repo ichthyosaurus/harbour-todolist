@@ -523,6 +523,10 @@
         <source>Icon Design</source>
         <translation>Icon Design</translation>
     </message>
+    <message>
+        <source>Chinese</source>
+        <translation>Chinese</translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
