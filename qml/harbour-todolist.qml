@@ -30,9 +30,9 @@ import "pages"
 ApplicationWindow
 {
     id: main
-    property alias rawModel: mainModel
-    property alias projectsModel: mainProjectsModel
-    property alias recurringsModel: mainRecurringsModel
+    property ListModel rawModel: ListModel { }
+    property ListModel projectsModel: ListModel { }
+    property ListModel recurringsModel: ListModel { }
     property ListModel archiveModel: ListModel { }
     property alias configuration: config
 
@@ -60,10 +60,6 @@ ApplicationWindow
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
     allowedOrientations: defaultAllowedOrientations
-
-    ListModel { id: mainModel }
-    ListModel { id: mainProjectsModel }
-    ListModel { id: mainRecurringsModel }
 
     Notification {
         id: dbErrorNotification
