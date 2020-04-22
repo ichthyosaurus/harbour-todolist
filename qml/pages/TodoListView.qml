@@ -85,19 +85,16 @@ TodoList {
 
     PullDownMenu {
         MenuItem {
-            text: qsTr("Add entry")
-            onClicked: addItem()
+            text: qsTr("About")
+            onClicked: About.pushAboutPage(pageStack)
         }
-    }
-
-    PushUpMenu {
         MenuItem {
             text: qsTr("Show old entries")
             onClicked: pageStack.push(Qt.resolvedUrl("ArchivePage.qml"));
         }
         MenuItem {
-            text: qsTr("About")
-            onClicked: About.pushAboutPage(pageStack)
+            text: qsTr("Add entry")
+            onClicked: addItem()
         }
     }
 
