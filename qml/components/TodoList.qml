@@ -28,11 +28,11 @@ SilicaListView {
     VerticalScrollDecorator { flickable: view }
 
     readonly property var defaultClosedSections: [somedayString]
-    property var closedSections: defaultClosedSections
+    property var closedSections: defaultClosedSections.slice()
 
     Connections {
         target: main.configuration
-        onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections
+        onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
     }
 
     delegate: TodoListItem {
@@ -61,12 +61,7 @@ SilicaListView {
             property bool isTomorrow: sectionString === tomorrowString
             property bool isThisWeek: sectionString === thisweekString
             property bool isSomeday: sectionString === somedayString
-            property bool open: !isSomeday
-
-            Connections {
-                target: main.configuration
-                onValueChanged: if (key === "currentProject") open = !isSomeday;
-            }
+            property bool open: (closedSections.indexOf(sectionString) === -1)
 
             Spacer { height: Theme.paddingLarge }
 
@@ -75,14 +70,9 @@ SilicaListView {
                 height: Theme.itemSizeSmall
 
                 onClicked: {
-                    open = !open;
-                    var tmp = closedSections;
-                    if (!open) {
-                        tmp.push(sectionString);
-                    } else {
-                        tmp = tmp.filter(function(e) { return e !== sectionString; });
-                    }
-                    closedSections = tmp;
+                    if (open) closedSections.push(sectionString);
+                    else closedSections = closedSections.filter(function(e) { return e !== sectionString; });
+                    closedSectionsChanged();
                 }
 
                 Label {
