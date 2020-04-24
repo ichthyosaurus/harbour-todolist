@@ -527,6 +527,10 @@
         <source>Chinese</source>
         <translation>Chinese</translation>
     </message>
+    <message>
+        <source>Swedish</source>
+        <translation>Swedish</translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with sf-about-page.  If not, see <http://www.gnu.org/licenses/>.
  *
- * FILE VERSION: 1.0 (2020-04-17)
+ * FILE VERSION: 1.1 (2020-04-24)
  *
  */
 
@@ -49,7 +49,7 @@ Page {
 
             PageHeader { title: qsTr("Contributors") }
 
-            SectionHeader { text: qsTr("Development") }
+            SectionHeader { text: qsTr("Development"); visible: development.length > 0 }
 
             Repeater {
                 model: development
@@ -59,7 +59,7 @@ Page {
                 }
             }
 
-            SectionHeader { text: qsTr("Translations") }
+            SectionHeader { text: qsTr("Translations"); visible: translations.length > 0 }
 
             Repeater {
                 model: translations

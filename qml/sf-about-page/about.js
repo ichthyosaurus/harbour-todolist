@@ -5,14 +5,20 @@
 
 
 var DEVELOPMENT = [
-    {label: qsTr("Programming"), values: ["Mirian Margiani"]},
-    {label: qsTr("Icon Design"), values: ["Mirian Margiani"]}
+    // enable when there are other contributors
 ]
 
 var TRANSLATIONS = [
-    {label: qsTr("English"), values: ["Mirian Margiani"]},
+    {label: qsTr("Swedish"), values: ["Åke Engelbrektson"]},
+    {label: qsTr("Chinese"), values: ["dashinfantry"]},
     {label: qsTr("German"), values: ["Mirian Margiani"]},
-    {label: qsTr("Chinese"), values: ["dashinfantry"]}
+]
+
+var _NOT_YET_NEEDED = [
+    {label: qsTr("Programming"), values: ["Mirian Margiani"]},
+    {label: qsTr("Icon Design"), values: ["Mirian Margiani"]},
+
+    {label: qsTr("English"), values: ["Mirian Margiani"]},
 ]
 
 var VERSION_NUMBER // set in main.qml's Component.onCompleted
@@ -28,7 +34,7 @@ var APPINFO = {
     sourcesLink: "https://github.com/ichthyosaurus/harbour-todolist",
     sourcesText: qsTr("Sources on GitHub"),
 
-    enableContributorsPage: false, // whether to enable 'ContributorsPage.qml'
+    enableContributorsPage: true, // whether to enable 'ContributorsPage.qml'
     contribDevelopment: DEVELOPMENT,
     contribTranslations: TRANSLATIONS
 }

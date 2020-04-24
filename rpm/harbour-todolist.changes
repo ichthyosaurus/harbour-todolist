@@ -12,6 +12,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Apr 24 2020 Mirian Margiani <> 1.0.2-1
+- Add Swedish translation by eson57
+
 * Wed Apr 22 2020 Mirian Margiani <> 1.0.1-1
 - Move "About" and "Show old entries" to the top pulley menu
 - Reduce visual glitching when quickly scrolling down a long list while the last section is closed
