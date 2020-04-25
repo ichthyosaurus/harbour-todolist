@@ -192,7 +192,7 @@
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>每 %n 天</numerusform>
         </translation>
     </message>
 </context>
