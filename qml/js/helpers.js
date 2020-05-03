@@ -21,8 +21,8 @@
 
 function getDate(offset, baseDate) {
     var currentDate = baseDate === undefined ? new Date() : baseDate;
-    currentDate.setUTCDate(currentDate.getDate() + offset);
-    currentDate.setUTCHours(0, 0, 0, 0);
+    currentDate.setDate(currentDate.getDate() + offset);
+    currentDate.setHours(0, 0, 0, 0);
     return currentDate;
 }
 
