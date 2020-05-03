@@ -81,6 +81,49 @@ ApplicationWindow
         property int currentProject
     }
 
+    Timer {
+        id: timer
+        repeat: true
+        // Run every 1h to check for changes.
+        interval: 3600000
+        triggeredOnStart: true
+
+        // Start with true to trigger a refresh on application startup.
+        property bool updated: true
+
+        onTriggered: {
+            // Reset all date properties after a date change while the application is running.
+            let oldToday = today;
+            today = Helpers.getDate(0);
+            if (oldToday !== today) {
+                updated = true;
+            }
+
+            if (updated) {
+                tomorrow = Helpers.getDate(1);
+                thisweek = Helpers.getDate(0, new Date("8888-01-01T00:00Z"));
+                someday = Helpers.getDate(0, new Date("9999-01-01T00:00Z"));
+                todayString = Helpers.getDateString(today);
+                tomorrowString = Helpers.getDateString(tomorrow);
+                thisweekString = Helpers.getDateString(thisweek);
+                somedayString = Helpers.getDateString(someday);
+
+                // Update the database and models according to the new date properties.
+                if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
+                    config.lastCarriedOverFrom = Helpers.getDate(-1, today);
+                }
+                Storage.copyRecurrings();
+                setCurrentProject(config.currentProject);
+
+                projectsModel.clear();
+                var projects = Storage.getProjects();
+                for (var i in projects) projectsModel.append(projects[i]);
+
+                updated = false;
+            }
+        }
+    }
+
     function addItem(forDate, task, description, entryState, subState, createdOn, interval) {
         entryState = Storage.defaultFor(entryState, EntryState.todo);
         subState = Storage.defaultFor(subState, EntrySubState.today);
@@ -242,15 +285,6 @@ ApplicationWindow
 
     Component.onCompleted: {
         About.VERSION_NUMBER = VERSION_NUMBER;
-
-        if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
-            config.lastCarriedOverFrom = Helpers.getDate(-1, today);
-        }
-        Storage.copyRecurrings();
-        setCurrentProject(config.currentProject);
-
-        projectsModel.clear();
-        var projects = Storage.getProjects();
-        for (var i in projects) projectsModel.append(projects[i]);
+        timer.start();
     }
 }
