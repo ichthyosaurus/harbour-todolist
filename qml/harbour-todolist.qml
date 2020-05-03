@@ -84,7 +84,7 @@ ApplicationWindow
     Timer {
         id: timer
         repeat: true
-        // Run every 1h to check for changes.
+        // Initally run every 1h to check for changes.
         interval: 3600000
         triggeredOnStart: true
 
@@ -93,7 +93,7 @@ ApplicationWindow
 
         onTriggered: {
             // Reset all date properties after a date change while the application is running.
-            let oldToday = today;
+            var oldToday = today;
             today = Helpers.getDate(0);
             if (oldToday !== today) {
                 updated = true;
@@ -115,11 +115,9 @@ ApplicationWindow
                 Storage.copyRecurrings();
                 setCurrentProject(config.currentProject);
 
-                projectsModel.clear();
-                var projects = Storage.getProjects();
-                for (var i in projects) projectsModel.append(projects[i]);
-
                 updated = false;
+                // Start the next check once the next day is reached.
+                interval = tomorrow.getTime() - Date.now();
             }
         }
     }
@@ -286,5 +284,8 @@ ApplicationWindow
     Component.onCompleted: {
         About.VERSION_NUMBER = VERSION_NUMBER;
         timer.start();
+        projectsModel.clear();
+        var projects = Storage.getProjects();
+        for (var i in projects) projectsModel.append(projects[i]);
     }
 }
