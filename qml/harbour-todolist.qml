@@ -98,7 +98,6 @@ ApplicationWindow
             if (oldToday !== today) {
                 updated = true;
             }
-
             if (updated) {
                 tomorrow = Helpers.getDate(1);
                 thisweek = Helpers.getDate(0, new Date("8888-01-01T00:00Z"));
@@ -116,9 +115,9 @@ ApplicationWindow
                 setCurrentProject(config.currentProject);
 
                 updated = false;
-                // Start the next check once the next day is reached.
-                interval = tomorrow.getTime() - Date.now();
             }
+            // Start the next check once the next day is reached or in a minute if less.
+            interval = Math.max(tomorrow.getTime() - Date.now(), 60000);
         }
     }
 
