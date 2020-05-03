@@ -178,7 +178,7 @@ CoverBackground {
                 var dialog = pageStack.push(Qt.resolvedUrl("../pages/AddItemDialog.qml"), { date: main.today },
                                             PageStackAction.Immediate)
                 dialog.accepted.connect(function() {
-                    addItem(main.today, dialog.text.trim(), dialog.description.trim());
+                    addItem(dialog.date, dialog.text.trim(), dialog.description.trim());
                 });
                 main.activate();
             }
