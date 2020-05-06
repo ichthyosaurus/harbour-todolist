@@ -62,7 +62,7 @@ TodoList {
 
     SortFilterProxyModel {
         id: filteredModel
-        sourceModel: rawModel
+        sourceModel: currentEntriesModel
 
         sorters: [
             RoleSorter { roleName: "date"; sortOrder: Qt.AscendingOrder },

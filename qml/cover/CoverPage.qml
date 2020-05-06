@@ -26,7 +26,7 @@ import "../constants" 1.0
 CoverBackground {
     SortFilterProxyModel {
         id: filteredModel
-        sourceModel: status === Cover.Active ? rawModel : null
+        sourceModel: status === Cover.Active ? currentEntriesModel : null
 
         sorters: [
             RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },

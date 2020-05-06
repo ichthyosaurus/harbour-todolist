@@ -30,7 +30,7 @@ import "pages"
 ApplicationWindow
 {
     id: main
-    property ListModel rawModel: ListModel { }
+    property ListModel currentEntriesModel: ListModel { }
     property ListModel projectsModel: ListModel { }
     property ListModel recurringsModel: ListModel { }
     property ListModel archiveModel: ListModel { }
@@ -107,38 +107,36 @@ ApplicationWindow
             return;
         }
 
-        rawModel.append({entryId: entryId, date: forDate, entryState: entryState,
+        currentEntriesModel.append({entryId: entryId, date: forDate, entryState: entryState,
                             subState: subState, createdOn: createdOn, weight: weight,
                             interval: interval, project: project,
                             text: task, description: description});
     }
 
     function updateItem(which, entryState, subState, text, description) {
-        if (entryState !== undefined) rawModel.setProperty(which, "entryState", entryState);
-        if (subState !== undefined) rawModel.setProperty(which, "subState", subState);
-        if (text !== undefined) rawModel.setProperty(which, "text", text);
-        if (description !== undefined) rawModel.setProperty(which, "description", description);
+        if (entryState !== undefined) currentEntriesModel.setProperty(which, "entryState", entryState);
+        if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
 
-        var item = rawModel.get(which);
+        var item = currentEntriesModel.get(which);
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
                             item.project, item.text, item.description);
     }
 
     function deleteItem(which) {
-        Storage.deleteEntry(rawModel.get(which).entryId);
-        rawModel.remove(which);
+        Storage.deleteEntry(currentEntriesModel.get(which).entryId);
+        currentEntriesModel.remove(which);
     }
 
     function copyItemTo(which, copyToDate) {
-        var item = rawModel.get(which);
+        var item = currentEntriesModel.get(which);
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
     function moveItemTo(which, moveToDate) {
-        var item = rawModel.get(which);
+        var item = currentEntriesModel.get(which);
 
         if (Storage.defaultFor(moveToDate, "fail") === "fail") {
             console.log("error: failed to move item", which, moveToDate);
@@ -234,9 +232,9 @@ ApplicationWindow
             currentProjectName = project.name;
             startupComplete = false;
             archiveModel.clear();
-            rawModel.clear();
+            currentEntriesModel.clear();
             var entries = Storage.getEntries(config.currentProject);
-            for (var i in entries) rawModel.append(entries[i]);
+            for (var i in entries) currentEntriesModel.append(entries[i]);
             startupComplete = true;
 
             recurringsModel.clear();
