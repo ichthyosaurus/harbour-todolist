@@ -5,8 +5,7 @@
 
 
 var DEVELOPMENT = [
-    {label: "", values: ["Johannes Bachmann"]},
-    // enable when there are other contributors
+    {label: qsTr("Programming"), values: ["Mirian Margiani", "Johannes Bachmann"]},
 ]
 
 var TRANSLATIONS = [
@@ -16,9 +15,8 @@ var TRANSLATIONS = [
 ]
 
 var _NOT_YET_NEEDED = [
-    {label: qsTr("Programming"), values: ["Mirian Margiani"]},
     {label: qsTr("Icon Design"), values: ["Mirian Margiani"]},
-
+    // ---
     {label: qsTr("English"), values: ["Mirian Margiani"]},
 ]
 
