@@ -240,7 +240,7 @@ function _prepareEntries(q) {
         var item = q.rows.item(i);
 
         res.push({entryId: item.rowid,
-                     date: new Date(item.date),
+                     date: Helpers.getDate(0, new Date(item.date)),
                      entryState: parseInt(item.entryState, 10),
                      subState: parseInt(item.subState, 10),
                      createdOn: new Date(item.createdOn),
