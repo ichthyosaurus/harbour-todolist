@@ -316,11 +316,11 @@ function carryOverFrom(fromDate) {
     // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
     var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
         SELECT date("now", "localtime"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
-            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?)) ORDER BY rowid ASC',
+            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime")) ORDER BY rowid ASC',
                              [EntryState.todo, EntrySubState.today, fromDateString]);
 
     var updateResult = simpleQuery('UPDATE entries SET subState=? WHERE\
-        (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?))',
+        (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime"))',
                                    [EntrySubState.tomorrow, EntryState.todo,
                                     EntrySubState.today, fromDateString]);
 
