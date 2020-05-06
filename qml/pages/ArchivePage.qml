@@ -68,9 +68,7 @@ Page {
         delegate: TodoListItem {
             editable: false
             onCopyAndMarkItem: {
-                var sourceIndex = view.model.mapToSource(which);
-                main.updateItem(sourceIndex, mainState, subState);
-                main.copyItemTo(sourceIndex, copyToDate);
+                main.addItem(copyToDate, title, description, mainState, subState, createdOn);
             }
         }
 

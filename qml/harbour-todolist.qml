@@ -113,9 +113,13 @@ ApplicationWindow
                             text: task, description: description});
     }
 
+    // Update an entry in the database and in currentEntriesModel. This is not intended to be used
+    // for archived entries, as the archive should be immutable.
     function updateItem(which, entryState, subState, text, description) {
         if (entryState !== undefined) currentEntriesModel.setProperty(which, "entryState", entryState);
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
+        if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
+        if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
 
         var item = currentEntriesModel.get(which);
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
@@ -123,11 +127,15 @@ ApplicationWindow
                             item.project, item.text, item.description);
     }
 
+    // Delete an entry from the database and from currentEntriesModel. This is not intended to be used
+    // for archived entries, as the archive should be immutable.
     function deleteItem(which) {
         Storage.deleteEntry(currentEntriesModel.get(which).entryId);
         currentEntriesModel.remove(which);
     }
 
+    // Copy an entry in the database and in currentEntriesModel. This is not intended to be used
+    // for archived entries, as the archive should be immutable.
     function copyItemTo(which, copyToDate) {
         var item = currentEntriesModel.get(which);
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
@@ -135,6 +143,8 @@ ApplicationWindow
                 EntryState.todo, EntrySubState.today, item.createdOn);
     }
 
+    // Move an entry in the database and in currentEntriesModel. This is not intended to be used
+    // for archived entries, as the archive should be immutable.
     function moveItemTo(which, moveToDate) {
         var item = currentEntriesModel.get(which);
 

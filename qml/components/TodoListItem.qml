@@ -42,7 +42,7 @@ TodoListBaseItem {
                 visible: isArchived && (   entryState !== EntryState.todo
                                         || date.getTime() > main.configuration.lastCarriedOverFrom.getTime())
                 text: qsTr("continue today")
-                onClicked: copyAndMarkItem(index, entryState, EntrySubState.tomorrow, today);
+                onClicked: copyAndMarkItem(index, EntryState.todo, EntrySubState.tomorrow, today);
             }
             MenuItem {
                 visible:    editable && !isArchived
