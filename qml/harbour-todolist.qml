@@ -83,41 +83,11 @@ ApplicationWindow
 
     Timer {
         id: timer
-        repeat: true
-        // Initally run every 1h to check for changes.
+        // Run every 1h to check for changes.
         interval: 3600000
-        triggeredOnStart: true
-
-        // Start with true to trigger a refresh on application startup.
-        property bool updated: true
-
+        repeat: true
         onTriggered: {
-            // Reset all date properties after a date change while the application is running.
-            var oldToday = today;
-            today = Helpers.getDate(0);
-            if (oldToday !== today) {
-                updated = true;
-            }
-            if (updated) {
-                tomorrow = Helpers.getDate(1);
-                thisweek = Helpers.getDate(0, new Date("8888-01-01T00:00Z"));
-                someday = Helpers.getDate(0, new Date("9999-01-01T00:00Z"));
-                todayString = Helpers.getDateString(today);
-                tomorrowString = Helpers.getDateString(tomorrow);
-                thisweekString = Helpers.getDateString(thisweek);
-                somedayString = Helpers.getDateString(someday);
-
-                // Update the database and models according to the new date properties.
-                if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
-                    config.lastCarriedOverFrom = Helpers.getDate(-1, today);
-                }
-                Storage.copyRecurrings();
-                setCurrentProject(config.currentProject);
-
-                updated = false;
-            }
-            // Start the next check once the next day is reached or in a minute if less.
-            interval = Math.max(tomorrow.getTime() - Date.now(), 60000);
+            refreshDates();
         }
     }
 
@@ -280,11 +250,41 @@ ApplicationWindow
         for (var i in entries) archiveModel.append(entries[i]);
     }
 
+    // Resets all date properties after a date change. The force parameter can be used to force a model refresh.
+    function refreshDates(force) {
+        var oldToday = todayString;
+
+        today = Helpers.getDate(0);
+        todayString = Helpers.getDateString(today);
+
+        // If the date did not change, do not update anything else.
+        if (!force && oldToday === todayString) {
+            return;
+        }
+
+        tomorrow = Helpers.getDate(1);
+        thisweek = Helpers.getDate(0, new Date("8888-01-01T00:00Z"));
+        someday = Helpers.getDate(0, new Date("9999-01-01T00:00Z"));
+        tomorrowString = Helpers.getDateString(tomorrow);
+        thisweekString = Helpers.getDateString(thisweek);
+        somedayString = Helpers.getDateString(someday);
+
+        // Update the database and models according to the new date properties.
+        if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
+            config.lastCarriedOverFrom = Helpers.getDate(-1, today);
+        }
+        Storage.copyRecurrings();
+        setCurrentProject(config.currentProject);
+    }
+
     Component.onCompleted: {
         About.VERSION_NUMBER = VERSION_NUMBER;
-        timer.start();
+        // Start with true to force a refresh on application startup.
+        refreshDates(true);
         projectsModel.clear();
         var projects = Storage.getProjects();
         for (var i in projects) projectsModel.append(projects[i]);
+        // Start the timer to check for date changes every hour.
+        timer.start();
     }
 }

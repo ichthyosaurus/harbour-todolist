@@ -192,4 +192,9 @@ CoverBackground {
             }
         }
     }
+
+    onStatusChanged: {
+        // Trigger the update check of the date values once the application is resumed.
+        refreshDates();
+    }
 }
