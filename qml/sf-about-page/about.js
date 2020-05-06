@@ -5,6 +5,7 @@
 
 
 var DEVELOPMENT = [
+    {label: "", values: ["Johannes Bachmann"]},
     // enable when there are other contributors
 ]
 
