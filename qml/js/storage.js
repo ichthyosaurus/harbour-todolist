@@ -243,7 +243,7 @@ function _prepareEntries(q) {
                      date: Helpers.getDate(0, new Date(item.date)),
                      entryState: parseInt(item.entryState, 10),
                      subState: parseInt(item.subState, 10),
-                     createdOn: new Date(item.createdOn),
+                     createdOn: Helpers.getDate(0, new Date(item.createdOn)),
                      weight: parseInt(item.weight, 10),
                      interval: parseInt(item.interval, 10),
                      project: parseInt(item.project, 10),
