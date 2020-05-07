@@ -12,15 +12,27 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu May 07 2020 Mirian Margiani <> 1.1.0-1
+- Contributions by CoanTeen (thank you!)
+    - Add support for keeping the app always opened
+    - Fix the planning date selection when added from cover page
+    - Use the local time to zero hour and minutes
+    - Do not duplicate section headers for entries from the database
+- Update Chinese (zh_CN) translation by dashinfantry (thank you!)
+- Fix "continue today" for archived entries
+- Update contributors page
+- Pre-select last selected category when adding from cover page
+- Reset last selected category to 'today' when switching projects
+
 * Fri Apr 24 2020 Mirian Margiani <> 1.0.2-1
-- Add Swedish translation by eson57
+- Add Swedish (sv) translation by eson57 (thank you!)
 
 * Wed Apr 22 2020 Mirian Margiani <> 1.0.1-1
 - Move "About" and "Show old entries" to the top pulley menu
 - Reduce visual glitching when quickly scrolling down a long list while the last section is closed
 - Fix section open state being unreliably reset when changing project
 - Only load archived entries when they are needed
-- Add zh_CN translation by dashinfantry
+- Add Chinese (zh_CN) translation by dashinfantry (thank you!)
 
 * Sun Apr 19 2020 Mirian Margiani <> 1.0.0-1
 - initial public release
