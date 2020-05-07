@@ -239,6 +239,7 @@ ApplicationWindow
             // if the requested project is not available, reset it to the default project
             setCurrentProject(defaultProjectId);
         } else {
+            lastSelectedCategory = today;
             currentProjectName = project.name;
             startupComplete = false;
             archiveModel.clear();
