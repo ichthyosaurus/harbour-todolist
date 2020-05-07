@@ -175,10 +175,11 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
             onTriggered: {
-                var dialog = pageStack.push(Qt.resolvedUrl("../pages/AddItemDialog.qml"), { date: main.today },
+                var dialog = pageStack.push(Qt.resolvedUrl("../pages/AddItemDialog.qml"), { date: lastSelectedCategory },
                                             PageStackAction.Immediate)
                 dialog.accepted.connect(function() {
                     addItem(dialog.date, dialog.text.trim(), dialog.description.trim());
+                    lastSelectedCategory = dialog.date
                 });
                 main.activate();
             }
