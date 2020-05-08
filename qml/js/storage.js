@@ -196,9 +196,9 @@ function getRecurrings(forProject) {
     return res;
 }
 
-function addRecurring(startDate, entryState, intervalDays, project, text, description) {
+function addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday) {
     simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?, ?)', [
-                    Helpers.getDateString(startDate), "",
+                    Helpers.getDateString(startDate), (addForToday === true ? todayString : ""),
                     Number(entryState), Number(intervalDays),
                     project, text, description
                 ])

@@ -161,11 +161,16 @@ ApplicationWindow
         var entryState = EntryState.todo;
         intervalDays = Storage.defaultFor(intervalDays, 1);
         var project = config.currentProject;
-        startDate = Storage.defaultFor(startDate, new Date(NaN));
-        if (isNaN(startDate.valueOf())) startDate = today;
+        startDate = Helpers.getDate(0, Storage.defaultFor(startDate, today));
 
-        var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description);
+        var addForToday = false;
+        var daysDiff = Math.round((startDate.getTime() - today.getTime()) / 24 / 3600 / 1000)
 
+        if (startDate.getTime() <= today.getTime() && daysDiff % intervalDays === 0) {
+            addForToday = true;
+        }
+
+        var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday);
         if (entryId === undefined) {
             console.error("failed to save new recurring item", text, intervalDays);
             return;
@@ -174,6 +179,11 @@ ApplicationWindow
         recurringsModel.append({entryId: entryId, startDate: startDate, entryState: entryState,
                                 intervalDays: intervalDays, project: project,
                                 text: text, description: description});
+
+        if (addForToday) {
+            addItem(today, text.trim(), description.trim(),
+                    entryState, EntrySubState.today, today, intervalDays);
+        }
     }
 
     function updateRecurring(which, startDate, entryState, intervalDays, text, description) {
