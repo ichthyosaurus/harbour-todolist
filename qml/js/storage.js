@@ -336,19 +336,20 @@ function carryOverFrom(fromDate) {
 
 function copyRecurrings() {
     var whereClause = '(entryState = ?) AND (lastCopiedTo != ? OR lastCopiedTo is null) AND ' +
-        '(julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0';
+        '(date(startDate, "localtime") <= date(?, "localtime")) AND ' +
+        '((julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0)';
 
     var mainResult = simpleQuery(
         'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description) ' +
             'SELECT ?, 0, 0, ?, 1, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
-        [todayString, todayString, EntryState.todo, todayString, todayString]
+        [todayString, todayString, EntryState.todo, todayString, todayString, todayString]
     );
 
     var updateResult = 0;
     if (mainResult !== undefined && mainResult.rowsAffected > 0) {
         // only update if something was copied
         updateResult = simpleQuery('UPDATE recurrings SET lastCopiedTo=? WHERE ' + whereClause,
-            [todayString, EntryState.todo, todayString, todayString]
+            [todayString, EntryState.todo, todayString, todayString, todayString]
         );
     }
 
