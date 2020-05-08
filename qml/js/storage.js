@@ -312,7 +312,7 @@ function carryOverFrom(fromDate) {
     fromDate = defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
     var fromDateString = Helpers.getDateString(fromDate)
 
-    // copy all entry with entryState = todo and subState = today, that are older than today
+    // copy all entries with entryState = todo and subState = today, that are older than today
     // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
     var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
         SELECT date("now", "localtime"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
