@@ -335,7 +335,7 @@ function carryOverFrom(fromDate) {
 }
 
 function copyRecurrings() {
-    var whereClause = '(entryState = ?) AND lastCopiedTo != ? AND ' +
+    var whereClause = '(entryState = ?) AND (lastCopiedTo != ? OR lastCopiedTo is null) AND ' +
         '(julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0';
 
     var mainResult = simpleQuery(
