@@ -12,6 +12,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri May 08 2020 Mirian Margiani <> 1.1.1-1
+- Fix new recurring entries not being copied when they are due
+- Do not copy recurring entries that start in the future
+- Make sure new recurring entries are directly added for 'today' if necessary
+
 * Thu May 07 2020 Mirian Margiani <> 1.1.0-1
 - Contributions by CoanTeen (thank you!)
     - Add support for keeping the app always opened
@@ -35,4 +40,4 @@
 - Add Chinese (zh_CN) translation by dashinfantry (thank you!)
 
 * Sun Apr 19 2020 Mirian Margiani <> 1.0.0-1
-- initial public release
+- Initial public release
