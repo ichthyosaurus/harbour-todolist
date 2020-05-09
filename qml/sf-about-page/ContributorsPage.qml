@@ -15,7 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with sf-about-page.  If not, see <http://www.gnu.org/licenses/>.
  *
- * FILE VERSION: 1.1 (2020-04-24)
+ * *** CHANGELOG: ***
+ *
+ * 2020-04-25:
+ * - remove version numbers, use changelog instead
+ * - backwards-incompatible changes are marked with "[breaking]"
+ * - allow all page orientations (effective value is limited by ApplicationWindow.allowedOrientations)
+ *
+ * 2020-04-24:
+ * - hide empty groups
+ *
+ * 2020-04-17:
+ * - initial release
  *
  */
 
@@ -30,6 +41,8 @@ import Sailfish.Silica 1.0
  *
  */
 Page {
+    allowedOrientations: Orientation.All
+
     property var development: []  // list of lists:
                                   // e.g.: [ {label: qsTr("Programming"), values: ["Jane Doe", "John Doe"]},
                                   //         {label: qsTr("Icon Desing"), values: ["Some Body", "Bodhi Sam"]}

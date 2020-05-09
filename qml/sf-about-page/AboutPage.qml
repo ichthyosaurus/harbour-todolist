@@ -15,7 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with sf-about-page.  If not, see <http://www.gnu.org/licenses/>.
  *
- * FILE VERSION: 1.0 (2020-04-17)
+ * *** CHANGELOG: ***
+ *
+ * 2020-05-09:
+ * - remove appName property (makes translations easier)
+ *
+ * 2020-04-25:
+ * - remove version numbers, use changelog instead
+ * - backwards-incompatible changes are marked with "[breaking]"
+ *
+ * 2020-04-24 [breaking]:
+ * - make 'data' fields more usable as 'extra info' fields
+ *
+ * 2020-04-18:
+ * - highlight missing version number
+ *
+ * 2020-04-17:
+ * - initial release
  *
  */
 
@@ -26,17 +42,18 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property string appName: "this app"  // the name of your app
-    property string iconPath: ""         // e.g. "/usr/share/icons/hicolor/172x172/apps/harbour-jammy.png"
-    property string versionNumber: "1.0" // e.g. 'VERSION_NUMBER' if you configured it via C++
-    property string description: ""      // a rich text description of your app
-    property string author: ""           // the main author(s) or maintainer(s)
-    property string dataInformation: ""  // if your app uses data from an external provider, add e.g. copyright
-                                         // info here
-    property string dataLink: ""         // a link to the website of an external provider
-    property string dataLinkText: ""     // custom button text
-    property string sourcesLink: ""      // where users can get your app's source code
-    property string sourcesText: ""      // custom button text, e.g. qsTr("Sources on GitHub")
+    property string iconPath: ""          // e.g. "/usr/share/icons/hicolor/172x172/apps/harbour-jammy.png"
+    property string versionNumber: "??"   // e.g. 'VERSION_NUMBER' if you configured it via C++
+    property string description: ""       // a rich text description of your app
+    property string author: ""            // the main author(s) or maintainer(s)
+    property string extraInfoTitle: ""    // section to show extra info
+                                          // e.g. use qsTr("Data"), if your app uses data from an external provider
+    property string extraInfoText: ""     // if your app uses data from an external provider, add e.g. copyright
+                                          // info here
+    property string extraInfoLink: ""     // e.g. a link to the website of an external provider
+    property string extraInfoLinkText: "" // custom button text
+    property string sourcesLink: ""       // where users can get your app's source code
+    property string sourcesText: ""       // custom button text, e.g. qsTr("Sources on GitHub")
 
     property bool enableContributorsPage: false // whether to enable 'ContributorsPage.qml'
     property var contribDevelopment: []
@@ -55,7 +72,7 @@ Page {
             id: column
 
             PageHeader {
-                title: qsTr("About %1").arg(appName)
+                title: qsTr("About this app")
             }
 
             width: parent.width
@@ -126,29 +143,29 @@ Page {
                 }
             }
 
-            Item { width: parent.width; height: Theme.paddingMedium; visible: (dataInformation || dataLink) }
+            Item { width: parent.width; height: Theme.paddingMedium; visible: (extraInfoText || extraInfoLink) }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Data")
+                text: extraInfoTitle
                 color: Theme.secondaryHighlightColor
                 font.pixelSize: Theme.fontSizeLarge
-                visible: dataInformation || dataLink
+                visible: extraInfoText || extraInfoLink
             }
             Label {
                 x: 2*Theme.horizontalPageMargin
                 width: parent.width - 2*x
-                visible: dataInformation ? true : false
-                text: '<style type="text/css">A { color: "#ffffff"; }</style>' + dataInformation
+                visible: extraInfoText ? true : false
+                text: '<style type="text/css">A { color: "#ffffff"; }</style>' + extraInfoText
                 wrapMode: Text.Wrap
                 textFormat: Text.RichText
                 horizontalAlignment: Text.AlignHCenter
                 font.pixelSize: Theme.fontSizeMedium
             }
             Button {
-                visible: dataLink ? true : false
+                visible: extraInfoLink ? true : false
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: dataLinkText ? dataLinkText : qsTr("Website")
-                onClicked: { Qt.openUrlExternally(dataLink) }
+                text: extraInfoLinkText ? extraInfoLinkText : qsTr("Website")
+                onClicked: { Qt.openUrlExternally(extraInfoLink) }
             }
 
             Item { width: parent.width; height: Theme.paddingMedium }

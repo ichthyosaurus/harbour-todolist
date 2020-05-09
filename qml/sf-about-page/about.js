@@ -37,16 +37,17 @@ var _NOT_YET_NEEDED = [
 
 var VERSION_NUMBER // set in main.qml's Component.onCompleted
 var APPINFO = {
-    appName: qsTr("Todo List"),
     iconPath: "../images/harbour-todolist.png",
     description: qsTr("A simple tool for planning what to do next."),
     author: "Mirian Margiani",
-    dataInformation: "",  // if your app uses data from an external provider, add e.g. copyright
-                          // info here
-    dataLink: "",         // a link to the website of an external provider
-    dataLinkText: "",     // custom button text
     sourcesLink: "https://github.com/ichthyosaurus/harbour-todolist",
     sourcesText: qsTr("Sources on GitHub"),
+
+    extraInfoTitle: "",   // section to show extra info
+                          // e.g. use qsTr("Data"), if your app uses data from an external provider
+    extraInfoText: "",    // add e.g. copyright info here, if your app uses data from an external provider
+    extraInfoLink: "",    // e.g. a link to the website of an external provider
+    extraInfoLinkText: "", // custom button text
 
     enableContributorsPage: true, // whether to enable 'ContributorsPage.qml'
     contribDevelopment: DEVELOPMENT,
