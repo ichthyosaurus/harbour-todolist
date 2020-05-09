@@ -4,10 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>About %1</source>
-        <translation>O %1</translation>
-    </message>
-    <message>
         <source>Version %1</source>
         <translation>Wersja %1</translation>
     </message>
@@ -32,16 +28,16 @@
         <translation>&lt;i&gt;pokaż licencję &lt;/i&gt;</translation>
     </message>
     <message>
-        <source>Data</source>
-        <translation>Dane</translation>
-    </message>
-    <message>
         <source>Website</source>
         <translation>Strona internetowa</translation>
     </message>
     <message>
         <source>Source Code</source>
         <translation>Kod źródłowy</translation>
+    </message>
+    <message>
+        <source>About this app</source>
+        <translation>O tej aplikacji</translation>
     </message>
 </context>
 <context>
@@ -160,13 +156,6 @@
     </message>
 </context>
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation>Lista rzeczy do zrobienia</translation>
-    </message>
-</context>
-<context>
     <name>EditItemDialog</name>
     <message>
         <source>Edit entry</source>
@@ -194,6 +183,7 @@
         <translation>
             <numerusform>%n dzień</numerusform>
             <numerusform>%n dni</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -469,28 +459,24 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <source>Todo List</source>
-        <translation>Lista rzeczy do zrobienia</translation>
-    </message>
-    <message>
         <source>Show old entries</source>
         <translation>Pokaż stare wpisy</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O Tofo list</translation>
+        <translation type="unfinished">O tej aplikacji</translation>
     </message>
     <message>
         <source>Note</source>
         <translation>Notatka</translation>
     </message>
     <message>
-        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
-        <translation>Przesuń w lewo, aby dodać wpisy cykliczne. Możesz określić interwał, w którym będą one automatycznie dodawane do bieżącej listy czynności do wykonania.</translation>
-    </message>
-    <message>
         <source>Add entry</source>
         <translation>Dodaj wpis</translation>
+    </message>
+    <message>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
+        <translation>Przesuń w lewo, aby dodać wpisy cykliczne. Możesz określić interwał, w którym będą one automatycznie dodawane do bieżącej listy czynności do wykonania.</translation>
     </message>
 </context>
 <context>
@@ -506,10 +492,6 @@
     <message>
         <source>German</source>
         <translation>niemiecki</translation>
-    </message>
-    <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
     </message>
     <message>
         <source>A simple tool for planning what to do next.</source>
@@ -531,32 +513,41 @@
         <source>Swedish</source>
         <translation>szwedzki</translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <translation>polski</translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
-    <message>
-        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
-        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
-    </message>
-    <message>
-        <source>hh&apos;:&apos;mm</source>
-        <translation>hh&apos;:&apos;mm</translation>
-    </message>
-    <message>
-        <source>ddd d MMM yyyy</source>
-        <translation>ddd d MMM yyyy</translation>
-    </message>
-    <message>
-        <source>d MMM yyyy</source>
-        <translation>d MMM yyyy</translation>
-    </message>
     <message>
         <source>Database Error</source>
         <translation>Błąd bazy danych</translation>
     </message>
     <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
+        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
+        <comment>date format including date and time but no weekday</comment>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+    </message>
+    <message>
+        <source>hh&apos;:&apos;mm</source>
+        <comment>format for times</comment>
+        <translation>hh&apos;:&apos;mm</translation>
+    </message>
+    <message>
+        <source>ddd d MMM yyyy</source>
+        <comment>date format including weekday</comment>
+        <translation>ddd d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>d MMM yyyy</source>
+        <comment>date format without weekday</comment>
+        <translation>d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>To-do List</source>
+        <comment>the app&apos;s name</comment>
+        <translation>Lista rzeczy do zrobienia</translation>
     </message>
 </context>
 <context>

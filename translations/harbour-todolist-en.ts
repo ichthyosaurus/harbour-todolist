@@ -4,10 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>About %1</source>
-        <translation>About %1</translation>
-    </message>
-    <message>
         <source>Version %1</source>
         <translation>Version %1</translation>
     </message>
@@ -32,16 +28,16 @@
         <translation>&lt;i&gt;show license &lt;/i&gt;</translation>
     </message>
     <message>
-        <source>Data</source>
-        <translation>Data</translation>
-    </message>
-    <message>
         <source>Website</source>
         <translation>Website</translation>
     </message>
     <message>
         <source>Source Code</source>
         <translation>Source Code</translation>
+    </message>
+    <message>
+        <source>About this app</source>
+        <translation>About this app</translation>
     </message>
 </context>
 <context>
@@ -157,13 +153,6 @@
     <message>
         <source>Translations</source>
         <translation>Translations</translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
     </message>
 </context>
 <context>
@@ -469,10 +458,6 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
-    </message>
-    <message>
         <source>Show old entries</source>
         <translation>Show old entries</translation>
     </message>
@@ -485,12 +470,12 @@
         <translation>Note</translation>
     </message>
     <message>
-        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
-        <translation>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</translation>
-    </message>
-    <message>
         <source>Add entry</source>
         <translation>Add entry</translation>
+    </message>
+    <message>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
+        <translation>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</translation>
     </message>
 </context>
 <context>
@@ -506,10 +491,6 @@
     <message>
         <source>German</source>
         <translation>German</translation>
-    </message>
-    <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
     </message>
     <message>
         <source>A simple tool for planning what to do next.</source>
@@ -531,32 +512,41 @@
         <source>Swedish</source>
         <translation>Swedish</translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <translation>Polish</translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
-    <message>
-        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
-        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
-    </message>
-    <message>
-        <source>hh&apos;:&apos;mm</source>
-        <translation>hh&apos;:&apos;mm</translation>
-    </message>
-    <message>
-        <source>ddd d MMM yyyy</source>
-        <translation>ddd d MMM yyyy</translation>
-    </message>
-    <message>
-        <source>d MMM yyyy</source>
-        <translation>d MMM yyyy</translation>
-    </message>
     <message>
         <source>Database Error</source>
         <translation>Database Error</translation>
     </message>
     <message>
-        <source>Todo List</source>
-        <translation>Todo List</translation>
+        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
+        <comment>date format including date and time but no weekday</comment>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+    </message>
+    <message>
+        <source>hh&apos;:&apos;mm</source>
+        <comment>format for times</comment>
+        <translation>hh&apos;:&apos;mm</translation>
+    </message>
+    <message>
+        <source>ddd d MMM yyyy</source>
+        <comment>date format including weekday</comment>
+        <translation>ddd d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>d MMM yyyy</source>
+        <comment>date format without weekday</comment>
+        <translation>d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>To-do List</source>
+        <comment>the app&apos;s name</comment>
+        <translation>To-do List</translation>
     </message>
 </context>
 <context>

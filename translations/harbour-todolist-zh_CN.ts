@@ -4,10 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>About %1</source>
-        <translation>关于 %1</translation>
-    </message>
-    <message>
         <source>Version %1</source>
         <translation>版本 %1</translation>
     </message>
@@ -32,16 +28,16 @@
         <translation>&lt;i&gt;显示许可协议 &lt;/i&gt;</translation>
     </message>
     <message>
-        <source>Data</source>
-        <translation>数据</translation>
-    </message>
-    <message>
         <source>Website</source>
         <translation>网站</translation>
     </message>
     <message>
         <source>Source Code</source>
         <translation>源代码</translation>
+    </message>
+    <message>
+        <source>About this app</source>
+        <translation type="unfinished">关于</translation>
     </message>
 </context>
 <context>
@@ -160,13 +156,6 @@
     </message>
 </context>
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation>待办列表</translation>
-    </message>
-</context>
-<context>
     <name>EditItemDialog</name>
     <message>
         <source>Edit entry</source>
@@ -191,7 +180,7 @@
     <message numerus="yes">
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>每 %n 天</numerusform>
         </translation>
     </message>
@@ -468,10 +457,6 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <source>Todo List</source>
-        <translation>待办列表</translation>
-    </message>
-    <message>
         <source>Show old entries</source>
         <translation>显示旧事项</translation>
     </message>
@@ -484,12 +469,12 @@
         <translation>笔记</translation>
     </message>
     <message>
-        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
-        <translation>左滑以添加重复事项。你可以指定自动添加到当前待办列表中的时间间隔。</translation>
-    </message>
-    <message>
         <source>Add entry</source>
         <translation>添加事项</translation>
+    </message>
+    <message>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
+        <translation>左滑以添加重复事项。你可以指定自动添加到当前待办列表中的时间间隔。</translation>
     </message>
 </context>
 <context>
@@ -505,10 +490,6 @@
     <message>
         <source>German</source>
         <translation>德语</translation>
-    </message>
-    <message>
-        <source>Todo List</source>
-        <translation>待办列表</translation>
     </message>
     <message>
         <source>A simple tool for planning what to do next.</source>
@@ -530,31 +511,40 @@
         <source>Swedish</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
-    <message>
-        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
-        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
-    </message>
-    <message>
-        <source>hh&apos;:&apos;mm</source>
-        <translation>hh&apos;:&apos;mm</translation>
-    </message>
-    <message>
-        <source>ddd d MMM yyyy</source>
-        <translation>ddd d MMM yyyy</translation>
-    </message>
-    <message>
-        <source>d MMM yyyy</source>
-        <translation>d MMM yyyy</translation>
-    </message>
     <message>
         <source>Database Error</source>
         <translation>数据库错误</translation>
     </message>
     <message>
-        <source>Todo List</source>
+        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
+        <comment>date format including date and time but no weekday</comment>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+    </message>
+    <message>
+        <source>hh&apos;:&apos;mm</source>
+        <comment>format for times</comment>
+        <translation>hh&apos;:&apos;mm</translation>
+    </message>
+    <message>
+        <source>ddd d MMM yyyy</source>
+        <comment>date format including weekday</comment>
+        <translation>ddd d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>d MMM yyyy</source>
+        <comment>date format without weekday</comment>
+        <translation>d MMM yyyy</translation>
+    </message>
+    <message>
+        <source>To-do List</source>
+        <comment>the app&apos;s name</comment>
         <translation>待办列表</translation>
     </message>
 </context>

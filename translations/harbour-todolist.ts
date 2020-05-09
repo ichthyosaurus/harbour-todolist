@@ -4,10 +4,6 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>About %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Version %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -32,15 +28,15 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Source Code</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About this app</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -160,13 +156,6 @@
     </message>
 </context>
 <context>
-    <name>CoverPage</name>
-    <message>
-        <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>EditItemDialog</name>
     <message>
         <source>Edit entry</source>
@@ -192,7 +181,6 @@
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -469,10 +457,6 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <source>Todo List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show old entries</source>
         <translation type="unfinished"></translation>
     </message>
@@ -485,11 +469,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current todo list.</source>
+        <source>Add entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add entry</source>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -505,10 +489,6 @@
     </message>
     <message>
         <source>German</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Todo List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -531,31 +511,40 @@
         <source>Swedish</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Polish</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>harbour-todolist</name>
-    <message>
-        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>hh&apos;:&apos;mm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ddd d MMM yyyy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>d MMM yyyy</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Database Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Todo List</source>
+        <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
+        <comment>date format including date and time but no weekday</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hh&apos;:&apos;mm</source>
+        <comment>format for times</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ddd d MMM yyyy</source>
+        <comment>date format including weekday</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>d MMM yyyy</source>
+        <comment>date format without weekday</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To-do List</source>
+        <comment>the app&apos;s name</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
