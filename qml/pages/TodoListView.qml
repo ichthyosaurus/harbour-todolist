@@ -55,7 +55,7 @@ TodoList {
                 wrapMode: Text.WordWrap
                 color: Theme.highlightColor
                 text: qsTr("Swipe left to add recurring entries. You can specify an interval "
-                           + "in which they will be added automatically to the current todo list.")
+                           + "in which they will be added automatically to the current to-do list.")
             }
         }
     }
