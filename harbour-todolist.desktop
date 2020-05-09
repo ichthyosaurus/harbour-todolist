@@ -11,5 +11,8 @@ Name=harbour-todolist
 # abbreviated by the system. As a rule-of-thumb, around 15 Latin characters
 # should be the limit. If your language uses a different script than Latin,
 # please test it before submitting your translation.
-Name[de]=Todo-Liste
-Name[en]=Todo List
+Name[de]=To-do-Liste
+Name[en]=To-do List
+Name[sv]=To-do List
+Name[pl]=To-do List
+Name[zh_CN]=待办列表
