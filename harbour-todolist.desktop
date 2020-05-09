@@ -4,10 +4,12 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-todolist
 Exec=harbour-todolist
 Name=harbour-todolist
-# translation example:
-# your app name in German locale (de)
-#
-# Remember to comment out the following line, if you do not want to use
-# a different app name in German locale (de).
+
+# TRANSLATORS
+# Please add a new line for your locale below, and translate the name. This is
+# the name shown in the launcher menu. The name has to be short enough not to be
+# abbreviated by the system. As a rule-of-thumb, around 15 Latin characters
+# should be the limit. If your language uses a different script than Latin,
+# please test it before submitting your translation.
 Name[de]=Todo-Liste
 Name[en]=Todo List

@@ -16,8 +16,18 @@
 # along with harbour-todolist.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# NOTICE:
-#
+# TRANSLATORS
+# If you added a new translation catalog, please append its file name to this
+# list. Just copy the last line and modify it as needed.
+TRANSLATIONS += translations/harbour-todolist-en.ts \
+    translations/harbour-todolist-de.ts \
+    translations/harbour-todolist-zh_CN.ts \
+    translations/harbour-todolist-sv.ts \
+    translations/harbour-todolist-pl.ts \
+
+
+include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
+
 # Application name defined in TARGET has a corresponding QML filename.
 # If name defined in TARGET is changed, the following needs to be done
 # to match new name:
@@ -26,9 +36,6 @@
 #   - desktop filename must be changed
 #   - icon definition filename in desktop file must be changed
 #   - translation filenames have to be changed
-
-include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
-
 TARGET = harbour-todolist
 
 CONFIG += sailfishapp c++11
@@ -58,7 +65,3 @@ DISTFILES += qml/sf-about-page/*.qml \
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-todolist-en.ts \
-    translations/harbour-todolist-de.ts \
-    translations/harbour-todolist-zh_CN.ts \
-    translations/harbour-todolist-sv.ts
