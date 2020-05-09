@@ -49,10 +49,10 @@ ApplicationWindow
     property string thisweekString: Helpers.getDateString(thisweek)
     property string somedayString: Helpers.getDateString(someday)
 
-    readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'")
-    readonly property string timeFormat: qsTr("hh':'mm")
-    readonly property string fullDateFormat: qsTr("ddd d MMM yyyy")
-    readonly property string shortDateFormat: qsTr("d MMM yyyy")
+    readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'", "date format including date and time but no weekday")
+    readonly property string timeFormat: qsTr("hh':'mm", "format for times")
+    readonly property string fullDateFormat: qsTr("ddd d MMM yyyy", "date format including weekday")
+    readonly property string shortDateFormat: qsTr("d MMM yyyy", "date format without weekday")
 
     signal fakeNavigateLeft()
     signal fakeNavigateRight()
