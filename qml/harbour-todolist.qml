@@ -49,6 +49,7 @@ ApplicationWindow
     property string thisweekString: Helpers.getDateString(thisweek)
     property string somedayString: Helpers.getDateString(someday)
 
+    readonly property string appName: qsTr("Todo List", "the app's name")
     readonly property string dateTimeFormat: qsTr("d MMM yyyy '('hh':'mm')'", "date format including date and time but no weekday")
     readonly property string timeFormat: qsTr("hh':'mm", "format for times")
     readonly property string fullDateFormat: qsTr("ddd d MMM yyyy", "date format including weekday")
@@ -65,7 +66,7 @@ ApplicationWindow
         id: dbErrorNotification
         appIcon: "image://theme/icon-lock-warning"
         previewSummary: qsTr("Database Error")
-        appName: qsTr("Todo List")
+        appName: main.appName
 
         // previewBody, summary, and body have to be provided by Storage
         previewBody: "" // short error description

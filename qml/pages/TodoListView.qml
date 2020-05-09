@@ -31,7 +31,7 @@ TodoList {
 
     header: FakeNavigationHeader {
         title: currentProjectName
-        description: qsTr("Todo List")
+        description: appName
         showNavigation: showFakeNavigation
     }
 

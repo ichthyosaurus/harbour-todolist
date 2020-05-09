@@ -115,7 +115,7 @@ CoverBackground {
             Label {
                 width: parent.width; horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere; font.pixelSize: Theme.fontSizeLarge
-                text: qsTr("Todo List")
+                text: appName
                 color: Theme.highlightColor
                 opacity: 1.0
             }
