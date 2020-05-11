@@ -464,7 +464,7 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">O tej aplikacji</translation>
+        <translation>O tej aplikacji</translation>
     </message>
     <message>
         <source>Note</source>
