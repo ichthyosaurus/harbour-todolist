@@ -183,7 +183,7 @@
         <translation>
             <numerusform>%n dzień</numerusform>
             <numerusform>%n dni</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n dni</numerusform>
         </translation>
     </message>
 </context>
