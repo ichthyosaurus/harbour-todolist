@@ -94,6 +94,10 @@
         <source>Project</source>
         <translation>项目</translation>
     </message>
+    <message>
+        <source>Enable predictive text</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddRecurringDialog</name>
