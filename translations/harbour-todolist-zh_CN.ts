@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>About this app</source>
-        <translation type="unfinished">关于</translation>
+        <translation>关于该软件</translation>
     </message>
 </context>
 <context>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Enable predictive text</source>
-        <translation type="unfinished"></translation>
+        <translation>输入预计内容</translation>
     </message>
 </context>
 <context>
@@ -509,15 +509,15 @@
     </message>
     <message>
         <source>Chinese</source>
-        <translation type="unfinished"></translation>
+        <translation>汉语</translation>
     </message>
     <message>
         <source>Swedish</source>
-        <translation type="unfinished"></translation>
+        <translation>瑞典语</translation>
     </message>
     <message>
         <source>Polish</source>
-        <translation type="unfinished"></translation>
+        <translation>波兰语</translation>
     </message>
 </context>
 <context>
