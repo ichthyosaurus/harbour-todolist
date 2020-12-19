@@ -13,16 +13,17 @@
 # - Summary of changes
 
 * Sat May 09 2020 Mirian Margiani <> 1.1.2-1
+* Sat May 09 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.2-1
 - Add Polish (pl) translation by atlochowski (thank you!)
 - Fix a typo in the app's name
 - Improve documentation on Github
 
-* Fri May 08 2020 Mirian Margiani <> 1.1.1-1
+* Fri May 08 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.1-1
 - Fix new recurring entries not being copied when they are due
 - Do not copy recurring entries that start in the future
 - Make sure new recurring entries are directly added for 'today' if necessary
 
-* Thu May 07 2020 Mirian Margiani <> 1.1.0-1
+* Thu May 07 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.0-1
 - Contributions by CoanTeen (thank you!)
     - Add support for keeping the app always opened
     - Fix the planning date selection when added from cover page
@@ -34,15 +35,15 @@
 - Pre-select last selected category when adding from cover page
 - Reset last selected category to 'today' when switching projects
 
-* Fri Apr 24 2020 Mirian Margiani <> 1.0.2-1
+* Fri Apr 24 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.0.2-1
 - Add Swedish (sv) translation by eson57 (thank you!)
 
-* Wed Apr 22 2020 Mirian Margiani <> 1.0.1-1
+* Wed Apr 22 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.0.1-1
 - Move "About" and "Show old entries" to the top pulley menu
 - Reduce visual glitching when quickly scrolling down a long list while the last section is closed
 - Fix section open state being unreliably reset when changing project
 - Only load archived entries when they are needed
 - Add Chinese (zh_CN) translation by dashinfantry (thank you!)
 
-* Sun Apr 19 2020 Mirian Margiani <> 1.0.0-1
+* Sun Apr 19 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.0.0-1
 - Initial public release
