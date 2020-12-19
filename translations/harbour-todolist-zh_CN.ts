@@ -21,7 +21,7 @@
     </message>
     <message>
         <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
-        <translation>&gt;&lt;i&gt;显示贡献者 &lt;/i&gt;</translation>
+        <translation>&lt;i&gt;显示贡献者 &lt;/i&gt;</translation>
     </message>
     <message>
         <source>&lt;i&gt;show license &lt;/i&gt;</source>
@@ -501,7 +501,7 @@
     </message>
     <message>
         <source>Sources on GitHub</source>
-        <translation>源代码位于 GiHub</translation>
+        <translation>源代码位于 GitHub</translation>
     </message>
     <message>
         <source>Icon Design</source>
