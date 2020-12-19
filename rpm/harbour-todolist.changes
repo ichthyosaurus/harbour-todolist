@@ -12,7 +12,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sat May 09 2020 Mirian Margiani <> 1.1.2-1
+* Sat Dec 19 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.3-1
+- Fix some tiny typos
+- Rebuild with latest SDK and add i486 target
+
 * Sat May 09 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.2-1
 - Add Polish (pl) translation by atlochowski (thank you!)
 - Fix a typo in the app's name
