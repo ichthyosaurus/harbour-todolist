@@ -19,6 +19,7 @@
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
+// import Sailfish.Silica.private 1.0 as Private
 import "../components"
 
 Dialog {
@@ -121,6 +122,17 @@ Dialog {
                         if (canAccept) accept();
                     }
                 }
+
+                // Error message: 'Unable to create a directory for the auto fill database.'
+                // The AutoFill component is nowhere to be found, not even as an entry in
+                // a qmldir file. It is probably defined in some plugin; it is part of the
+                // private API anyway.
+                // Note: if this component becomes publicly available, we should set different
+                // keys for the different types of items (item, recurring, project).
+                // Private.AutoFill {
+                    // id: nameAutoFill
+                    // key: "todolist.itemName"
+                // }
             }
 
             TextSwitch {
