@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>About this app</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om den här appen</translation>
     </message>
 </context>
 <context>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Enable predictive text</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera textförutsägelse</translation>
     </message>
 </context>
 <context>
@@ -550,7 +550,7 @@
     <message>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>Att-göra-lista</translation>
     </message>
 </context>
 <context>
