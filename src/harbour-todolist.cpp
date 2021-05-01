@@ -19,6 +19,7 @@
 
 #include <QtQuick>
 #include <sailfishapp.h>
+#include "requires_defines.h"
 
 int main(int argc, char *argv[])
 {
@@ -36,7 +37,8 @@ int main(int argc, char *argv[])
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
     QScopedPointer<QQuickView> view(SailfishApp::createView());
-    view->rootContext()->setContextProperty("VERSION_NUMBER", QString(VERSION_NUMBER));
+    view->rootContext()->setContextProperty("APP_VERSION", QString(APP_VERSION));
+    view->rootContext()->setContextProperty("APP_RELEASE", QString(APP_RELEASE));
     view->setSource(SailfishApp::pathToMainQml());
     view->show();
     return app->exec();

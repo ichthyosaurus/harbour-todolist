@@ -37,12 +37,9 @@ include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
 #   - icon definition filename in desktop file must be changed
 #   - translation filenames have to be changed
 TARGET = harbour-todolist
-
 CONFIG += sailfishapp
 
 SOURCES += src/harbour-todolist.cpp
-DEFINES += VERSION_NUMBER=\\\"$$(VERSION_NUMBER)\\\"
-
 DISTFILES += qml/harbour-todolist.qml \
     qml/cover/CoverPage.qml \
     qml/pages/*.qml \
@@ -65,3 +62,8 @@ DISTFILES += qml/sf-about-page/*.qml \
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
+
+# Note: version number is configured in yaml
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+DEFINES += APP_RELEASE=\\\"$$RELEASE\\\"
+include(libs/cached-defines.pri)

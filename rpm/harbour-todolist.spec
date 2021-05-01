@@ -35,10 +35,11 @@ A simple todo list manager with support for multiple projects.
 
 %build
 # >> build pre
-export VERSION_NUMBER=%{version}
 # << build pre
 
-%qmake5 
+%qmake5  \
+    VERSION=%{version} \
+    RELEASE=%{release}
 
 make %{?_smp_mflags}
 
