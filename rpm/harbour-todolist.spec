@@ -10,7 +10,7 @@ Name:       harbour-todolist
 # << macros
 
 Summary:    A simple todo list manager
-Version:    1.1.4
+Version:    1.2.0
 Release:    1
 Group:      Applications/Productivity
 License:    GPLv3
