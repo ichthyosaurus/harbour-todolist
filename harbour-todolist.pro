@@ -61,7 +61,7 @@ CONFIG += sailfishapp_i18n
 
 # Select Opal modules
 CONFIG += opal-about
-include(libs/opal-modules.pri)
+include(libs/opal-use-modules.pri)
 
 # Note: version number is configured in yaml
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
