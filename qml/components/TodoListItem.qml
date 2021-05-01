@@ -28,6 +28,7 @@ TodoListBaseItem {
     infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState !== EntrySubState.today)
     title: model.text
     description: model.description
+    project: model.project
 
     property bool isArchived: date.getTime() < today.getTime()
     editable: !isArchived

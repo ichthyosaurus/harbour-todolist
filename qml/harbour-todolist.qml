@@ -38,6 +38,7 @@ ApplicationWindow
 
     property bool startupComplete: false
     property string currentProjectName: ""
+    property int currentProjectId: defaultProjectId
     property date lastSelectedCategory: today
 
     property date today: Helpers.getDate(0)
@@ -252,6 +253,7 @@ ApplicationWindow
         } else {
             lastSelectedCategory = today;
             currentProjectName = project.name;
+            currentProjectId = project.entryId;
             startupComplete = false;
             archiveModel.clear();
             currentEntriesModel.clear();

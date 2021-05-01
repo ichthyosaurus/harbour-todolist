@@ -29,9 +29,10 @@ Dialog {
     property date date: new Date(NaN)
     property alias text: textField.text
     property alias description: descriptionField.text
+    property int project: currentProjectId
     property bool descriptionEnabled: true
     property alias predictiveHintsEnabled: predictionSwitch.checked
-    property alias showProject: project.visible
+    property alias showProject: projectBox.visible
 
     default property alias contentColumn: column.children
     property alias titleText: titleLabel.text
@@ -91,7 +92,7 @@ Dialog {
             }
 
             ComboBox {
-                id: project
+                id: projectBox
                 width: parent.width
                 label: qsTr("Project")
                 currentIndex: 0

@@ -29,6 +29,7 @@ ListItem {
 
     property string title: ""
     property string description: ""
+    property int project: currentProjectId
     property string extraDeleteWarning: ""
     property bool infoMarkerEnabled: false
     property bool editable: true
@@ -61,7 +62,7 @@ ListItem {
             recurringStartDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date(NaN),
             recurringInitialIntervalDays: model[intervalProperty] !== undefined ? model[intervalProperty] : 0,
             extraDeleteWarning: extraDeleteWarning,
-            showProject: editableShowProject,
+            showProject: editableShowProject, project: project,
             titleText: editableTitleText
         });
         dialog.accepted.connect(function() {
