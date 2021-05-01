@@ -50,7 +50,7 @@ ListItem {
     signal markItemAs(var which, var mainState, var subState)
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
-    signal saveItemTexts(var which, var newText, var newDescription, var newProject)
+    signal saveItemDetails(var which, var newText, var newDescription, var newProject)
     signal saveItemRecurring(var which, var interval, var startDate)
     signal deleteThisItem(var which)
 
@@ -69,7 +69,7 @@ ListItem {
             if (dialog.requestDeletion) {
                 deleteThisItem(index);
             } else {
-                saveItemTexts(index, dialog.text.trim(), dialog.description.trim(), dialog.project);
+                saveItemDetails(index, dialog.text.trim(), dialog.description.trim(), dialog.project);
                 if (editableInterval) saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate);
             }
         });

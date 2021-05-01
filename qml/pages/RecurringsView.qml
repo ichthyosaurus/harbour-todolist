@@ -77,7 +77,7 @@ SilicaListView {
         editableTitleText: qsTr("Edit recurring entry")
 
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
-        onSaveItemTexts: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
+        onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
         onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
         onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
         onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")

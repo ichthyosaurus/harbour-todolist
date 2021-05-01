@@ -71,7 +71,7 @@ SilicaListView {
         highlighted: main.configuration.currentProject === entryId
 
         onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
-        onSaveItemTexts: main.updateProject(view.model.mapToSource(which), newText, undefined);
+        onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
         onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
         onMoveAndMarkItem: console.log("error: cannot 'move' project")
         extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
