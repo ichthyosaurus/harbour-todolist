@@ -32,18 +32,20 @@ AboutPageBase {
     versionNumber: APP_VERSION
     releaseNumber: APP_RELEASE
     description: qsTr("A simple tool for planning what to do next.")
-    author: "Mirian Margiani"
+    maintainer: "Mirian Margiani"
     sourcesUrl: "https://github.com/ichthyosaurus/harbour-todolist"
-    licenses: [
-        License {
-            spdxId: "GPL-3.0-or-later"
-            // customShortText: "This is free software: you are free to change and redistribute it. " +
-            //                  "There is NO WARRANTY, to the extent permitted by law."
-            forComponents: ["harbour-todolist", "Opal.About"]
+
+    licenses: License { spdxId: "GPL-3.0-or-later" }
+    attributions: [
+        Attribution {
+            name: "Opal.About"
+            entries: ["2018-2021 Mirian Margiani"]
+            licenses: License { spdxId: "GPL-3.0-or-later" }
         },
-        License {
-            spdxId: "MIT"
-            forComponents: ["SortFilterProxyModel"]
+        Attribution {
+            name: "SortFilterProxyModel"
+            entries: ["2016 Pierre-Yves Siret"]
+            licenses: License { spdxId: "MIT" }
         }
     ]
 
@@ -69,19 +71,6 @@ AboutPageBase {
                 ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
                 ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]}/*,
                 ContributionGroup { title: qsTr("English"); entries: ["Mirian Margiani"]}*/
-            ]
-        },
-        ContributionSection {
-            title: qsTr("Third party libraries")
-            groups: [
-                ContributionGroup {
-                    title: "SortFilterProxyModel"
-                    entries: ["Pierre-Yves Siret"]
-                },
-                ContributionGroup {
-                    title: "Opal.About"
-                    entries: ["Mirian Margiani"]
-                }
             ]
         }
     ]
