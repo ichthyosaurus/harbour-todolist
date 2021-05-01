@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     view->rootContext()->setContextProperty("APP_VERSION", QString(APP_VERSION));
     view->rootContext()->setContextProperty("APP_RELEASE", QString(APP_RELEASE));
+    view->engine()->addImportPath(SailfishApp::pathTo(OPAL_IMPORT_PATH).toString());
     view->setSource(SailfishApp::pathToMainQml());
     view->show();
     return app->exec();
