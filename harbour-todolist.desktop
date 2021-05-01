@@ -16,3 +16,7 @@ Name[en]=To-do List
 Name[sv]=To-do List
 Name[pl]=To-do List
 Name[zh_CN]=待办列表
+
+[X-HarbourBackup]
+BackupPathList=.local/share/harbour-todolist/
+# BackupConfigList=/apps/harbour-todolist/
