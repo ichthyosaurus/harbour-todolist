@@ -4,13 +4,16 @@
 # SPDX-FileCopyrightText: 2021 Mirian Margiani
 #
 # Include this file in your main PRO file and add the modules you want to use to
-# the CONFIG variable.
+# the CONFIG variable. Include the file after defining translations.
 #
 # Make sure to disable "RPM provides" in the spec file by adding the following
 # in the "# >> macros" section:
 #       %define __provides_exclude_from ^%{_datadir}/.*$
 #
-# See https://github.com/Pretty-SFOS/opal/blob/master/snippets/opal-use-modules.md
+# And add the import path in C++:
+#       view->engine()->addImportPath(SailfishApp::pathTo(OPAL_IMPORT_PATH).toString());
+#
+# See https://github.com/Pretty-SFOS/opal/blob/main/snippets/opal-use-modules.md
 # for up-to-date documentation.
 #
 
@@ -26,24 +29,19 @@ OPAL_TR_PATH = libs/opal-translations
 # ------------------------------------------------------------------------------
 # Available modules - no configuration required
 
+# To be used for setting the import path in main(...).
+DEFINES += OPAL_IMPORT_PATH=\\\"$$OPAL_PATH\\\"
+
 # activate with: CONFIG += opal-about
 opal-about {
-    OPAL_TRANSLATIONS += $$files($$absolute_path($$OPAL_TR_PATH, $$_PRO_FILE_PWD_)/opal-about-*.ts)
-    DISTFILES += \
-        $$OPAL_PATH/Opal/About/*.qml \
-        $$OPAL_PATH/Opal/About/qmldir \
-        $$OPAL_PATH/Opal/About/private/*.qml \
-        $$OPAL_PATH/Opal/About/private/qmldir
+    OPAL_TRANSLATIONS += $$files($$absolute_path($$OPAL_TR_PATH, $$_PRO_FILE_PWD_)/opal-about/opal-about-*.ts)
+    DISTFILES += $$files($$absolute_path($$OPAL_PATH, $$_PRO_FILE_PWD_)/Opal/About, true)
 }
 
 # activate with: CONFIG += opal-tabbar
 opal-tabbar {
-    OPAL_TRANSLATIONS += $$files($$absolute_path($$OPAL_TR_PATH, $$_PRO_FILE_PWD_)/opal-tabbar-*.ts)
-    DISTFILES += \
-        $$OPAL_PATH/Opal/TabBar/*.qml \
-        $$OPAL_PATH/Opal/TabBar/qmldir \
-        $$OPAL_PATH/Opal/TabBar/private/*.qml \
-        $$OPAL_PATH/Opal/TabBar/private/qmldir
+    OPAL_TRANSLATIONS += $$files($$absolute_path($$OPAL_TR_PATH, $$_PRO_FILE_PWD_)/opal-tabbar/opal-tabbar-*.ts)
+    DISTFILES += $$files($$absolute_path($$OPAL_PATH, $$_PRO_FILE_PWD_)/Opal/TabBar, true)
 }
 
 # ------------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+# Store this file to keep track of packaged module versions.
+# It is not necessary to include this in your app's final RPM package.
+module: Opal.About (opal-about)
+version: 0.2.0 (git:0aeab9d)
+description: This module provides <i>AboutPageBase</i> for building customizable application information pages.
+author: ichthyosaurus
+license: GPL-3.0-or-later
+sources: https://github.com/Pretty-SFOS/opal-about

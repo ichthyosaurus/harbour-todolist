@@ -43,12 +43,12 @@
         <translation>Källkod</translation>
     </message>
     <message>
-        <source>show details</source>
-        <translation>visa detaljer</translation>
-    </message>
-    <message>
         <source>Contributors</source>
         <translation>Deltagare</translation>
+    </message>
+    <message>
+        <source>show details</source>
+        <translation>visa detaljer</translation>
     </message>
     <message numerus="yes">
         <source>License(s)</source>
@@ -61,9 +61,29 @@
         <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Donations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Översättning</translation>
+    </message>
+    <message>
+        <source>Note: please check the source code for most accurate information.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Acknowledgements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thank you!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
-    <name>Opal.About.i18n</name>
+    <name>Opal.About.Common</name>
     <message>
         <source>Development</source>
         <translation>Utveckling</translation>
@@ -79,10 +99,6 @@
     <message>
         <source>Icon Design</source>
         <translation>Ikondesign</translation>
-    </message>
-    <message>
-        <source>Third party libraries</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Swedish</source>
@@ -119,6 +135,53 @@
     <message>
         <source>Norwegian</source>
         <translation>Norska</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>Data License(s)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Third-party libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data License</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If you want to support my work, you can buy me a cup of coffee.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can support this project by contributing, or by donating using any of these services.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Donations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Latvian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Your contributions to translations or code would be most welcome.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Estonian</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Terms of Use</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,34 +1,14 @@
 /*
  * This file is part of opal-about.
- * Copyright (C) 2020  Mirian Margiani
- *
+ * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * opal-about is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * opal-about is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with opal-about.  If not, see <http://www.gnu.org/licenses/>.
- *
- * *** CHANGELOG: ***
- *
- * 2020-08-22:
- * - initial release
- *
  */
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
-    id: item
+    id: root
     spacing: 0
     width: parent.width
     height: childrenRect.height
@@ -36,7 +16,7 @@ Column {
     property alias title: _titleLabel.text
     property string text: ""
     property string showMoreLabel: qsTranslate("Opal.About", "show details")
-    property alias button: _button
+    property list<InfoButton> buttons
     property alias backgroundItem: _bgItem
     property alias enabled: _bgItem.enabled
 
@@ -44,6 +24,8 @@ Column {
     property alias _titleItem: _titleLabel
     property alias _textItem: _textLabel
     property alias _showMoreLabelItem: _showMoreLabel
+
+    property list<DonationService> __donationButtons
 
     BackgroundItem {
         id: _bgItem
@@ -62,12 +44,12 @@ Column {
             Label {
                 id: _titleLabel
                 width: parent.width
-                horizontalAlignment: Text.AlignHCenter
+                horizontalAlignment: Text.AlignRight
                 wrapMode: Text.Wrap
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeLarge
+                font.pixelSize: Theme.fontSizeMedium
                 visible: text !== ""
                 height: visible ? implicitHeight + Theme.paddingSmall : 0
+                color: Theme.highlightColor
             }
 
             Item {
@@ -79,24 +61,25 @@ Column {
             Column {
                 width: parent.width
                 spacing: Theme.paddingMedium
-                visible: item.text !== ""
+                visible: root.text !== ""
 
                 Label {
                     id: _textLabel
                     width: parent.width
-                    horizontalAlignment: Text.AlignHCenter
+                    horizontalAlignment: Text.AlignLeft
                     wrapMode: Text.Wrap
                     text: '<style type="text/css">A { color: "' +
-                          String(Theme.primaryColor) +
-                          '"; }</style>' + item.text
+                          String(palette.secondaryColor) +
+                          '"; }</style>' + root.text
                     textFormat: Text.RichText
+                    palette.primaryColor: Theme.highlightColor
                 }
 
                 Row {
                     id: showMoreRow
                     anchors.right: parent.right
                     spacing: Theme.paddingSmall
-                    visible: item.enabled && showMoreLabel !== ""
+                    visible: root.enabled && showMoreLabel !== ""
                     height: visible ? _showMoreLabel.height : 0
 
                     Label {
@@ -113,20 +96,46 @@ Column {
 
             Item {
                 width: 1
-                height: item.text !== "" ? Theme.paddingMedium : 0
+                height: root.text !== "" ? Theme.paddingMedium : 0
             }
         }
     }
 
     Item {
         width: 1
-        height: _button.visible ? Theme.paddingMedium : 0
+        height: (buttons.length > 0 || __donationButtons.length > 0)
+                ? Theme.paddingMedium : 0
     }
 
-    Button {
-        id: _button
-        anchors.horizontalCenter: parent.horizontalCenter
-        visible: text !== ""
-        height: visible ? implicitHeight : 0
+    Column {
+        width: parent.width
+        height: childrenRect.height
+        spacing: Theme.paddingMedium
+
+        Repeater {
+            model: buttons
+            delegate: Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width / 4 * 3
+                height: visible ? implicitHeight : 0
+
+                visible: modelData.text !== '' && modelData.enabled === true
+                text: modelData.text
+                onClicked: modelData.clicked()
+            }
+        }
+
+        Repeater {
+            model: __donationButtons
+            delegate: Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width / 4 * 3
+                height: visible ? implicitHeight : 0
+
+                visible: modelData.name !== '' && modelData.url !== ''
+                text: modelData.name
+                onClicked: Qt.openUrlExternally(modelData.url)
+            }
+        }
     }
 }

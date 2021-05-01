@@ -1,54 +1,21 @@
 /*
  * This file is part of opal-about.
- * Copyright (C) 2020  Mirian Margiani
- *
+ * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * opal-about is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * opal-about is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with opal-about.  If not, see <http://www.gnu.org/licenses/>.
- *
- * *** CHANGELOG: ***
- *
- * 2020-08-22 [breaking]:
- * - packaged as part of Opal
- * - renamed to opal-about
- * - restructured and refactored
- *
- * 2020-04-25:
- * - remove version numbers, use changelog instead
- * - backwards-incompatible changes are marked with "[breaking]"
- *
- * 2020-04-17:
- * - initial release
- *
  */
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Opal.About 1.0
+import ".."
 
-/*
- * This page is automatically made available through AboutPage.qml.
- *
- * You don't have to configure this file. It will load the Rich Text
- * formatted license text from the file 'license.html'. The example
- * license included in the opal-about repository is the GNU GPL v3.
- * You can simply replace the 'license.html' file to use a different license.
- *
- */
 Page {
+    id: root
     allowedOrientations: Orientation.All
     property list<License> licenses
+    property list<Attribution> attributions
+    property bool enableSourceHint: true
+    property alias pageDescription: pageHeader.description
+    property string appName
 
     SilicaFlickable {
         anchors.fill: parent
@@ -58,66 +25,44 @@ Page {
         Column {
             id: column
             width: parent.width
-            PageHeader { title: qsTranslate("Opal.About", "License(s)", "", licenses.length) }
+            spacing: Theme.paddingMedium
+
+            PageHeader {
+                id: pageHeader
+                title: qsTranslate("Opal.About", "License(s)", "", licenses.length+attributions.length)
+                description: appName
+            }
+
+            Label {
+                visible: enableSourceHint
+                width: parent.width - 2*Theme.horizontalPageMargin
+                height: visible ? implicitHeight + Theme.paddingLarge : 0
+                anchors.horizontalCenter: parent.horizontalCenter
+                horizontalAlignment: Text.AlignLeft
+                wrapMode: Text.Wrap
+                font.pixelSize: Theme.fontSizeExtraSmall
+                color: Theme.highlightColor
+                text: qsTranslate("Opal.About", "Note: please check the source code for most accurate information.")
+            }
+
+            LicenseListPart {
+                visible: root.licenses.length > 0
+                title: appName
+                headerVisible: appName !== '' && pageDescription !== appName
+                licenses: root.licenses
+                initiallyExpanded: root.licenses.length === 1 && root.attributions.length === 0
+            }
 
             Repeater {
-                model: licenses
-                delegate: Column {
-                    width: parent.width - 2*Theme.horizontalPageMargin
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    spacing: Theme.paddingSmall
-
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignRight
-                        wrapMode: Text.Wrap
-                        font.pixelSize: Theme.fontSizeSmall
-                        textFormat: Text.PlainText
-                        color: Theme.highlightColor
-                        text: modelData.name !== "" ? modelData.name : modelData.spdxId
-                    }
-
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignRight
-                        wrapMode: Text.Wrap
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        textFormat: Text.PlainText
-                        color: Theme.secondaryHighlightColor
-                        text: modelData.forComponents.join(', ')
-                        visible: modelData.forComponents.length > 0
-                    }
-
-                    Label {
-                        width: parent.width
-                        horizontalAlignment: Text.AlignRight
-                        wrapMode: Text.Wrap
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        textFormat: Text.PlainText
-                        color: Theme.secondaryColor
-                        text: modelData.spdxId
-                        visible: modelData.name !== ""
-                    }
-
-                    Item { width: 1; height: 1 }
-
-                    Label {
-                        property bool error: modelData.error === true || modelData.fullText === ""
-                        width: parent.width
-                        wrapMode: Text.Wrap
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        textFormat: error ? Text.RichText : Text.PlainText
-                        color: Theme.primaryColor
-
-                        text: error ? '<style type="text/css">A { color: "' +
-                                      String(Theme.primaryColor) +
-                                      '"; }</style>' + qsTranslate("Opal.About", "Please refer to <a href='%1'>%1</a>").arg(
-                                          "https://spdx.org/licenses/%1.html".arg(modelData.spdxId))
-                                    : modelData.fullText
-                        onLinkActivated: Qt.openUrlExternally(link)
-                    }
-
-                    Item { width: 1; height: 1.5*Theme.paddingLarge }
+                model: attributions
+                delegate: LicenseListPart {
+                    title: modelData.name
+                    headerVisible: title !== '' && pageDescription !== title
+                    licenses: modelData.licenses
+                    extraTexts: modelData.entries
+                    initiallyExpanded: root.licenses.length === 0 &&
+                                       root.attributions.length === 1 &&
+                                       root.attributions[0].licenses.length === 1
                 }
             }
         }

@@ -1,47 +1,41 @@
 /*
  * This file is part of opal-about.
- * Copyright (C) 2020  Mirian Margiani
- *
+ * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * opal-about is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * opal-about is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with opal-about.  If not, see <http://www.gnu.org/licenses/>.
- *
- * *** CHANGELOG: ***
- *
- * 2020-08-22 [breaking]:
- * - packaged as part of Opal
- *
- * 2020-04-25:
- * - remove version numbers, use changelog instead
- * - backwards-incompatible changes are marked with "[breaking]"
- *
- * 2020-04-17:
- * - initial release
- *
  */
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
 
-Repeater {
-    id: base
+BackgroundItem {
+    id: root
     property string label
     property var values
+    property bool activeLastValue: false
 
-    model: values.length
-    delegate: DetailItem {
-        label: index === 0 ? base.label : ""
-        value: base.values[index]
+    enabled: activeLastValue
+    width: parent.width
+    height: column.height
+
+    Column {
+        id: column
+        width: parent.width
+        spacing: 0
+
+        Repeater {
+            model: values.length
+            delegate: DetailItem {
+                // NOTE It is not possible to allow links here.
+                label: index === 0 ? root.label : ""
+                value: root.values[index]
+                palette {
+                    secondaryHighlightColor: Theme.secondaryHighlightColor
+                    highlightColor: (index === values.length-1 && activeLastValue) ?
+                                        (root.highlighted ? Theme.secondaryHighlightColor :
+                                                            Theme.secondaryColor) :
+                                        Theme.highlightColor
+                }
+            }
+        }
     }
 }
