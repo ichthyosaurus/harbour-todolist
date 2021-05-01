@@ -35,10 +35,6 @@
         <source>German</source>
         <translation>German</translation>
     </message>
-    <message>
-        <source>Third party libraries</source>
-        <translation>Third party libraries</translation>
-    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
@@ -198,6 +194,10 @@
         <translation>show contributors</translation>
     </message>
     <message>
+        <source>Donations</source>
+        <translation>Donations</translation>
+    </message>
+    <message>
         <source>License</source>
         <translation>License</translation>
     </message>
@@ -213,6 +213,10 @@
         </translation>
     </message>
     <message>
+        <source>Translations</source>
+        <translation>Translations</translation>
+    </message>
+    <message>
         <source>Source Code</source>
         <translation>Source Code</translation>
     </message>
@@ -224,6 +228,14 @@
         <source>Contributors</source>
         <translation>Contributors</translation>
     </message>
+    <message>
+        <source>Acknowledgements</source>
+        <translation>Acknowledgements</translation>
+    </message>
+    <message>
+        <source>Thank you!</source>
+        <translation>Thank you!</translation>
+    </message>
     <message numerus="yes">
         <source>License(s)</source>
         <translation>
@@ -232,12 +244,16 @@
         </translation>
     </message>
     <message>
+        <source>Note: please check the source code for most accurate information.</source>
+        <translation>Note: please check the source code for most accurate information.</translation>
+    </message>
+    <message>
         <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
         <translation>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
-    <name>Opal.About.i18n</name>
+    <name>Opal.About.Common</name>
     <message>
         <source>Development</source>
         <translation>Development</translation>
@@ -251,12 +267,35 @@
         <translation>Translations</translation>
     </message>
     <message>
+        <source>Donations</source>
+        <translation>Donations</translation>
+    </message>
+    <message>
         <source>Icon Design</source>
         <translation>Icon Design</translation>
     </message>
     <message>
-        <source>Third party libraries</source>
-        <translation>Third party libraries</translation>
+        <source>Third-party libraries</source>
+        <translation>Third-party libraries</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Data License</source>
+        <translation>Data License</translation>
+    </message>
+    <message numerus="yes">
+        <source>Data License(s)</source>
+        <translation>
+            <numerusform>Data License</numerusform>
+            <numerusform>Data Licenses</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Terms of Use</source>
+        <translation>Terms of Use</translation>
     </message>
     <message>
         <source>Swedish</source>
@@ -293,6 +332,26 @@
     <message>
         <source>Norwegian</source>
         <translation>Norwegian</translation>
+    </message>
+    <message>
+        <source>Latvian</source>
+        <translation>Latvian</translation>
+    </message>
+    <message>
+        <source>Estonian</source>
+        <translation>Estonian</translation>
+    </message>
+    <message>
+        <source>If you want to support my work, you can buy me a cup of coffee.</source>
+        <translation>If you want to support my work, you can buy me a cup of coffee.</translation>
+    </message>
+    <message>
+        <source>You can support this project by contributing, or by donating using any of these services.</source>
+        <translation>You can support this project by contributing, or by donating using any of these services.</translation>
+    </message>
+    <message>
+        <source>Your contributions to translations or code would be most welcome.</source>
+        <translation>Your contributions to translations or code would be most welcome.</translation>
     </message>
 </context>
 <context>

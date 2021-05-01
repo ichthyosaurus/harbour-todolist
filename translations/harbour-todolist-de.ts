@@ -35,10 +35,6 @@
         <source>German</source>
         <translation>Deutsch</translation>
     </message>
-    <message>
-        <source>Third party libraries</source>
-        <translation>Externe Bibliotheken</translation>
-    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
@@ -198,6 +194,10 @@
         <translation>Mitwirkende zeigen</translation>
     </message>
     <message>
+        <source>Donations</source>
+        <translation>Spenden</translation>
+    </message>
+    <message>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
@@ -213,6 +213,10 @@
         </translation>
     </message>
     <message>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
+    </message>
+    <message>
         <source>Source Code</source>
         <translation>Quellcode</translation>
     </message>
@@ -224,6 +228,14 @@
         <source>Contributors</source>
         <translation>Mitwirkende</translation>
     </message>
+    <message>
+        <source>Acknowledgements</source>
+        <translation>Danksagungen</translation>
+    </message>
+    <message>
+        <source>Thank you!</source>
+        <translation>Vielen Dank!</translation>
+    </message>
     <message numerus="yes">
         <source>License(s)</source>
         <translation>
@@ -232,12 +244,16 @@
         </translation>
     </message>
     <message>
+        <source>Note: please check the source code for most accurate information.</source>
+        <translation>Hinweis: Bitte prüfen Sie den Quellcode für alle Einzelheiten.</translation>
+    </message>
+    <message>
         <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
         <translation>Bitte beachten Sie &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
-    <name>Opal.About.i18n</name>
+    <name>Opal.About.Common</name>
     <message>
         <source>Development</source>
         <translation>Entwicklung</translation>
@@ -251,12 +267,35 @@
         <translation>Übersetzungen</translation>
     </message>
     <message>
+        <source>Donations</source>
+        <translation>Spenden</translation>
+    </message>
+    <message>
         <source>Icon Design</source>
         <translation>Icon-Design</translation>
     </message>
     <message>
-        <source>Third party libraries</source>
+        <source>Third-party libraries</source>
         <translation>Externe Bibliotheken</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Daten</translation>
+    </message>
+    <message>
+        <source>Data License</source>
+        <translation>Daten-Lizenz</translation>
+    </message>
+    <message numerus="yes">
+        <source>Data License(s)</source>
+        <translation>
+            <numerusform>Daten-Lizenz</numerusform>
+            <numerusform>Daten-Lizenzen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Terms of Use</source>
+        <translation>Nutzungsbedingungen</translation>
     </message>
     <message>
         <source>Swedish</source>
@@ -293,6 +332,26 @@
     <message>
         <source>Norwegian</source>
         <translation>Norwegisch</translation>
+    </message>
+    <message>
+        <source>Latvian</source>
+        <translation>Lettisch</translation>
+    </message>
+    <message>
+        <source>Estonian</source>
+        <translation>Estnisch</translation>
+    </message>
+    <message>
+        <source>If you want to support my work, you can buy me a cup of coffee.</source>
+        <translation>Sie können mir gerne einen Kaffee spendieren, wenn Sie meine Arbeit unterstützen möchten.</translation>
+    </message>
+    <message>
+        <source>You can support this project by contributing, or by donating using any of these services.</source>
+        <translation>Sie können dieses Projekt durch Ihre Mitarbeit oder durch eine Spende über einen dieser Dienste unterstützen.</translation>
+    </message>
+    <message>
+        <source>Your contributions to translations or code would be most welcome.</source>
+        <translation>Ihre Mitarbeit bei Übersetzungen oder der Programmierung wäre eine große Hilfe.</translation>
     </message>
 </context>
 <context>
