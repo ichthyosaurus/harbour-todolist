@@ -1,6 +1,6 @@
 /*
  * This file is part of harbour-todolist.
- * Copyright (C) 2020  Mirian Margiani
+ * Copyright (C) 2020-2021  Mirian Margiani
  *
  * harbour-todolist is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
