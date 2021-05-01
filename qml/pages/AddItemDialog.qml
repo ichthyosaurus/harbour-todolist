@@ -69,6 +69,29 @@ Dialog {
             }
 
             ComboBox {
+                id: projectBox
+                width: parent.width
+                label: qsTr("Project")
+                onCurrentItemChanged: {
+                    if (!currentItem) return;
+                    project = currentItem.entryId;
+                }
+
+                menu: ContextMenu {
+                    Repeater {
+                        model: projectsModel
+                        MenuItem {
+                            text: model.name
+                            property int entryId: model.entryId
+                            Component.onCompleted: {
+                                if (entryId === project) projectBox.currentIndex = index;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ComboBox {
                 width: parent.width
                 label: qsTr("Scheduled for")
                 visible: currentIndex >= 0
@@ -89,29 +112,6 @@ Dialog {
 
                 onCurrentItemChanged: {
                     dialog.date = currentItem.date;
-                }
-            }
-
-            ComboBox {
-                id: projectBox
-                width: parent.width
-                label: qsTr("Project")
-                onCurrentItemChanged: {
-                    if (!currentItem) return;
-                    project = currentItem.entryId;
-                }
-
-                menu: ContextMenu {
-                    Repeater {
-                        model: projectsModel
-                        MenuItem {
-                            text: model.name
-                            property int entryId: model.entryId
-                            Component.onCompleted: {
-                                if (entryId === project) projectBox.currentIndex = index;
-                            }
-                        }
-                    }
                 }
             }
 
