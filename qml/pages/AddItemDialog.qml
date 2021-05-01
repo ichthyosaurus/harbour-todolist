@@ -95,11 +95,22 @@ Dialog {
                 id: projectBox
                 width: parent.width
                 label: qsTr("Project")
-                currentIndex: 0
-                enabled: false
+                onCurrentItemChanged: {
+                    if (!currentItem) return;
+                    project = currentItem.entryId;
+                }
 
                 menu: ContextMenu {
-                    MenuItem { text: currentProjectName }
+                    Repeater {
+                        model: projectsModel
+                        MenuItem {
+                            text: model.name
+                            property int entryId: model.entryId
+                            Component.onCompleted: {
+                                if (entryId === project) projectBox.currentIndex = index;
+                            }
+                        }
+                    }
                 }
             }
 
