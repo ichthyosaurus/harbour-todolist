@@ -95,8 +95,8 @@
         <translation>Project</translation>
     </message>
     <message>
-        <source>Enable predictive text</source>
-        <translation type="unfinished"></translation>
+        <source>Enable predictive text input</source>
+        <translation>Enable predictive text input</translation>
     </message>
 </context>
 <context>

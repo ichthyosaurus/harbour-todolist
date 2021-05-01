@@ -95,7 +95,7 @@
         <translation>项目</translation>
     </message>
     <message>
-        <source>Enable predictive text</source>
+        <source>Enable predictive text input</source>
         <translation>输入预计内容</translation>
     </message>
 </context>

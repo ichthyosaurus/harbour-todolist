@@ -137,7 +137,7 @@ Dialog {
 
             TextSwitch {
                 id: predictionSwitch
-                text: qsTr("Enable predictive text")
+                text: qsTr("Enable predictive text input")
                 checked: true
             }
 

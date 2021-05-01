@@ -95,7 +95,7 @@
         <translation>Projekt</translation>
     </message>
     <message>
-        <source>Enable predictive text</source>
+        <source>Enable predictive text input</source>
         <translation>Aktivera textförutsägelse</translation>
     </message>
 </context>
