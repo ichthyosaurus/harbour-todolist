@@ -1,11 +1,21 @@
-# harbour-todolist
+<!--
+SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+SPDX-License-Identifier: GFDL-1.3-or-later
+-->
 
-*for SailfishOS*
+![To-do List banner](icon-src/banner.png)
+
+# To-do List for Sailfish OS
+
+<!-- [![Translations](https://hosted.weblate.org/widgets/harbour-todolist/-/translations/svg-badge.svg)](https://hosted.weblate.org/projects/harbour-todolist/translations/) -->
+[![Source code license](https://img.shields.io/badge/source_code-GPL--3.0--or--later-yellowdarkgreen)](https://github.com/ichthyosaurus/harbour-todolist/tree/main/LICENSES)
+[![REUSE status](https://api.reuse.software/badge/github.com/ichthyosaurus/harbour-todolist)](https://api.reuse.software/info/github.com/ichthyosaurus/harbour-todolist)
+[![Development status](https://img.shields.io/badge/development-active-blue)](https://github.com/ichthyosaurus/harbour-todolist)
+<!-- [![Liberapay donations](https://img.shields.io/liberapay/receives/ichthyosaurus)](https://liberapay.com/ichthyosaurus) -->
 
 A simple to-do list manager for keeping track of what has to be done next.
 
-
-**Features:**
+### Features
 
 - multiple projects
 - recurring entries
@@ -13,6 +23,22 @@ A simple to-do list manager for keeping track of what has to be done next.
 - four categories: today, tomorrow, this week, someday
 - archive of all past entries
 
+#### Planned features
+
+- auto-completion and suggestions when adding new entries
+- import and export
+- support for Markdown formatting
+- notifications for recurring tasks
+- searching past and present tasks
+- meta-projects
+- finer control over recurring entries (e.g. repeat at the n-th of every month)
+- option to sort entries manually
+
+## Help and support
+
+You are welcome to leave a comment on
+[OpenRepos](https://openrepos.net/content/ichthyosaurus/todolist) or
+in the Jolla store.
 
 ## Contributing
 
@@ -58,39 +84,33 @@ Please do not forget to add yourself to the list of contributors in
 
 ## Development
 
-Check-out this repository and update submodules:
+1. Check-out this repository and update submodules:
 
-    git clone https://github.com/ichthyosaurus/harbour-todolist.git todolist
-    cd todolist
-    git submodule update --init --recursive
+        git clone https://github.com/ichthyosaurus/harbour-todolist.git todolist
+        cd todolist
+        git submodule update --init --recursive
 
-Add the line `#include <QtQml>` at the top of the follow files:
+2. Add the line `#include <QtQml>` at the top of the following files:
 
-    libs/SortFilterProxyModel/filters/filtersqmltypes.cpp
-    libs/SortFilterProxyModel/sorters/sortersqmltypes.cpp
+        libs/SortFilterProxyModel/filters/filtersqmltypes.cpp
+        libs/SortFilterProxyModel/sorters/sortersqmltypes.cpp
 
-Open the project in the SailfishOS IDE, modify, build.
-
+3. Open `harbour-todolist.pro` in Sailfish OS IDE (Qt Creator for Sailfish)
+4. To run on emulator, select the `i486` target and press the run button
+5. To build for the device, select the `armv7hl` target and deploy all,
+   the RPM packages will be in the RPMS folder
 
 ## License
 
-Copyright (C) 2020  Mirian Margiani
+> Copyright (C) 2020-2021  Mirian Margiani
 
-`harbour-todolist` is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-`harbour-todolist` is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with `harbour-todolist`.  If not, see <http://www.gnu.org/licenses/>.
-
+`harbour-todolist` is Free Software released under the terms of the
+[GNU General Public License v3 (or later)](https://spdx.org/licenses/GPL-3.0-or-later.html).
 The source code is available [on Github](https://github.com/ichthyosaurus/harbour-todolist).
+All documentation is released under the terms of the
+[GNU Free Documentation License v1.3 (or later)](https://spdx.org/licenses/GFDL-1.3-or-later.html).
 
+This project follows the [REUSE specification](https://api.reuse.software/info/github.com/ichthyosaurus/harbour-todolist).
 
 ### Acknowledgements
 
