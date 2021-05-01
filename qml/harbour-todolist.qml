@@ -121,14 +121,14 @@ ApplicationWindow
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
         if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
         if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
-        if (project === undefined) project = currentEntriesModel.getProperty(which, "project");
 
         var item = currentEntriesModel.get(which);
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
-                            project, item.text, item.description);
+                            (project === undefined ? item.project : project),
+                            item.text, item.description);
 
-        if (project !== item.project) {
+        if (project !== undefined && project !== item.project) {
             // Switch to the new project if it was changed.
             // This reloads all entries, so we don't have to manually update
             // the item in currentEntriesModel.
