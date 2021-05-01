@@ -25,7 +25,7 @@ TRANSLATIONS += translations/harbour-todolist-en.ts \
     translations/harbour-todolist-sv.ts \
     translations/harbour-todolist-pl.ts \
 
-
+CONFIG += c++11
 include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
 
 # Application name defined in TARGET has a corresponding QML filename.
@@ -38,7 +38,7 @@ include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
 #   - translation filenames have to be changed
 TARGET = harbour-todolist
 
-CONFIG += sailfishapp c++11
+CONFIG += sailfishapp
 
 SOURCES += src/harbour-todolist.cpp
 DEFINES += VERSION_NUMBER=\\\"$$(VERSION_NUMBER)\\\"
