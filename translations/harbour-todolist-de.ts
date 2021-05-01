@@ -4,40 +4,40 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <source>Version %1</source>
-        <translation>Version %1</translation>
-    </message>
-    <message>
         <source>Development</source>
         <translation>Entwicklung</translation>
     </message>
     <message>
-        <source>Author</source>
-        <translation>Autor</translation>
+        <source>A simple tool for planning what to do next.</source>
+        <translation>Eine einfache Anwendung zum kurzfristigen Planen.</translation>
     </message>
     <message>
-        <source>License</source>
-        <translation>Lizenz</translation>
+        <source>Programming</source>
+        <translation>Programmierung</translation>
     </message>
     <message>
-        <source>&lt;i&gt;show contributors &lt;/i&gt;</source>
-        <translation>&lt;i&gt;Mitwirkende anzeigen &lt;/i&gt;</translation>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
     </message>
     <message>
-        <source>&lt;i&gt;show license &lt;/i&gt;</source>
-        <translation>&lt;i&gt;Lizenz anzeigen &lt;/i&gt;</translation>
+        <source>Polish</source>
+        <translation>Polnisch</translation>
     </message>
     <message>
-        <source>Website</source>
-        <translation>Webseite</translation>
+        <source>Swedish</source>
+        <translation>Schwedisch</translation>
     </message>
     <message>
-        <source>Source Code</source>
-        <translation>Quellcode</translation>
+        <source>Chinese</source>
+        <translation>Chinesisch</translation>
     </message>
     <message>
-        <source>About this app</source>
-        <translation>Über diese App</translation>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
+        <source>Third party libraries</source>
+        <translation>Externe Bibliotheken</translation>
     </message>
 </context>
 <context>
@@ -145,21 +145,6 @@
     </message>
 </context>
 <context>
-    <name>ContributorsPage</name>
-    <message>
-        <source>Contributors</source>
-        <translation>Mitwirkende</translation>
-    </message>
-    <message>
-        <source>Development</source>
-        <translation>Entwicklung</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <translation>Übersetzungen</translation>
-    </message>
-</context>
-<context>
     <name>EditItemDialog</name>
     <message>
         <source>Edit entry</source>
@@ -191,10 +176,123 @@
     </message>
 </context>
 <context>
-    <name>LicensePage</name>
+    <name>Opal.About</name>
+    <message>
+        <source>About</source>
+        <translation>Über</translation>
+    </message>
+    <message>
+        <source>Version %1</source>
+        <translation>Version %1</translation>
+    </message>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>show contributors</source>
+        <translation>Mitwirkende zeigen</translation>
+    </message>
     <message>
         <source>License</source>
         <translation>Lizenz</translation>
+    </message>
+    <message>
+        <source>This is proprietary software. All rights reserved.</source>
+        <translation>Dies ist geschützte Software. Alle Rechte vorbehalten.</translation>
+    </message>
+    <message numerus="yes">
+        <source>show license(s)</source>
+        <translation>
+            <numerusform>Lizenz zeigen</numerusform>
+            <numerusform>Lizenzen zeigen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Source Code</source>
+        <translation>Quellcode</translation>
+    </message>
+    <message>
+        <source>show details</source>
+        <translation>Details zeigen</translation>
+    </message>
+    <message>
+        <source>Contributors</source>
+        <translation>Mitwirkende</translation>
+    </message>
+    <message numerus="yes">
+        <source>License(s)</source>
+        <translation>
+            <numerusform>Lizenz</numerusform>
+            <numerusform>Lizenzen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
+        <translation>Bitte beachten Sie &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>Opal.About.i18n</name>
+    <message>
+        <source>Development</source>
+        <translation>Entwicklung</translation>
+    </message>
+    <message>
+        <source>Programming</source>
+        <translation>Programmierung</translation>
+    </message>
+    <message>
+        <source>Translations</source>
+        <translation>Übersetzungen</translation>
+    </message>
+    <message>
+        <source>Icon Design</source>
+        <translation>Icon-Design</translation>
+    </message>
+    <message>
+        <source>Third party libraries</source>
+        <translation>Externe Bibliotheken</translation>
+    </message>
+    <message>
+        <source>Swedish</source>
+        <translation>Schwedisch</translation>
+    </message>
+    <message>
+        <source>Polish</source>
+        <translation>Polnisch</translation>
+    </message>
+    <message>
+        <source>German</source>
+        <translation>Deutsch</translation>
+    </message>
+    <message>
+        <source>French</source>
+        <translation>Französisch</translation>
+    </message>
+    <message>
+        <source>Chinese</source>
+        <translation>Chinesisch</translation>
+    </message>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
+    <message>
+        <source>Italian</source>
+        <translation>Italienisch</translation>
+    </message>
+    <message>
+        <source>Finnish</source>
+        <translation>Finnisch</translation>
+    </message>
+    <message>
+        <source>Norwegian</source>
+        <translation>Norwegisch</translation>
     </message>
 </context>
 <context>
@@ -480,45 +578,6 @@
     <message>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
         <translation>Wischen Sie nach links um wiederkehrende Einträge hinzuzufügen. Sie können dann angeben, alle wieviel Tage der Eintrag automatisch zur aktuellen To-do-Liste hinzugefügt wird.</translation>
-    </message>
-</context>
-<context>
-    <name>about</name>
-    <message>
-        <source>Programming</source>
-        <translation>Programmierung</translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation>Englisch</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>Deutsch</translation>
-    </message>
-    <message>
-        <source>A simple tool for planning what to do next.</source>
-        <translation>Eine einfache Anwendung zum kurzfristigen Planen.</translation>
-    </message>
-    <message>
-        <source>Sources on GitHub</source>
-        <translation>Quellcode auf GitHub</translation>
-    </message>
-    <message>
-        <source>Icon Design</source>
-        <translation>Icon-Design</translation>
-    </message>
-    <message>
-        <source>Chinese</source>
-        <translation>Chinesisch</translation>
-    </message>
-    <message>
-        <source>Swedish</source>
-        <translation>Schwedisch</translation>
-    </message>
-    <message>
-        <source>Polish</source>
-        <translation>Polnisch</translation>
     </message>
 </context>
 <context>
