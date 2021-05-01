@@ -1,21 +1,26 @@
 /*
- * This file is part of sf-about-page.
+ * This file is part of opal-about.
  * Copyright (C) 2020  Mirian Margiani
  *
- * sf-about-page is free software: you can redistribute it and/or modify
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
+ * opal-about is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * sf-about-page is distributed in the hope that it will be useful,
+ * opal-about is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with sf-about-page.  If not, see <http://www.gnu.org/licenses/>.
+ * along with opal-about.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *** CHANGELOG: ***
+ *
+ * 2020-08-22 [breaking]:
+ * - packaged as part of Opal
  *
  * 2020-04-25:
  * - remove version numbers, use changelog instead

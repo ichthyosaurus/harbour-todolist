@@ -1,0 +1,4 @@
+module Opal.About.private
+ContributorsPage 1.0 ContributorsPage.qml
+LicensePage 1.0 LicensePage.qml
+DetailList 1.0 DetailList.qml

@@ -55,15 +55,15 @@ DISTFILES += qml/harbour-todolist.qml \
     translations/*.ts \
     harbour-todolist.desktop
 
-DISTFILES += qml/sf-about-page/*.qml \
-    qml/sf-about-page/license.html \
-    qml/sf-about-page/about.js
-
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
 
+# Select Opal modules
+CONFIG += opal-about
+include(libs/opal-modules.pri)
+
 # Note: version number is configured in yaml
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += APP_RELEASE=\\\"$$RELEASE\\\"
-include(libs/cached-defines.pri)
+include(libs/opal-cached-defines.pri)

@@ -6,6 +6,7 @@
 Name:       harbour-todolist
 
 # >> macros
+%define __provides_exclude_from ^%{_datadir}/.*$
 # << macros
 
 Summary:    A simple todo list manager

@@ -38,7 +38,7 @@ To add or update a translation, please follow these steps:
    base file [translations/harbour-todolist.ts](translations/harbour-todolist.ts).
    Then add the new translation to [harbour-todolist.pro](harbour-todolist.pro). You will
    find instructions at the top of the file.
-2. Add yourself to the list of contributors in [qml/sf-about-page/about.js](qml/sf-about-page/about.js).
+2. Add yourself to the list of contributors in [qml/pages/AboutPage.qml](qml/pages/AboutPage.qml).
    You will find instructions in the file.
 3. Translate the app's name in [harbour-todolist.desktop](harbour-todolist.desktop).
    You will find instructions in the file.
@@ -53,7 +53,7 @@ translate the app's name.
 ### Other contributions
 
 Please do not forget to add yourself to the list of contributors in
-[qml/sf-about-page/about.js](qml/sf-about-page/about.js)!
+[qml/pages/AboutPage.qml](qml/pages/AboutPage.qml)!
 
 
 ## Development

@@ -1,0 +1,6 @@
+module Opal.About
+AboutPageBase 1.0 AboutPageBase.qml
+License 1.0 License.qml
+InfoSection 1.0 InfoSection.qml
+ContributionSection 1.0 ContributionSection.qml
+ContributionGroup 1.0 ContributionGroup.qml

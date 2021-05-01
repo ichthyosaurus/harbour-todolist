@@ -20,7 +20,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
-import "../sf-about-page/about.js" as About
 import "../components"
 import "../constants" 1.0
 
@@ -86,7 +85,7 @@ TodoList {
     PullDownMenu {
         MenuItem {
             text: qsTr("About")
-            onClicked: About.pushAboutPage(pageStack)
+            onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
         }
         MenuItem {
             text: qsTr("Show old entries")
