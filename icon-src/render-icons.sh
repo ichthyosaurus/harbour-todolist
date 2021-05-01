@@ -1,53 +1,29 @@
 #!/bin/bash
 #
-# This file is part of harbour-todolist.
-# Copyright (C) 2020  Mirian Margiani
+# This file is part of Opal and has been released into the public domain.
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Mirian Margiani
 #
-# harbour-todolist is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# harbour-todolist is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with harbour-todolist.  If not, see <http://www.gnu.org/licenses/>.
-#
+# See https://github.com/Pretty-SFOS/opal/blob/master/snippets/opal-render-icons.md
+# for documentation.
 
-echo "rendering app icon..."
+# Run this script from the same directory where your icon sources are located,
+# e.g. <app>/icon-src.
 
-postfix=""
-root="../icons"
-appicons=(harbour-todolist)
-for i in 86 108 128 172; do
-    mkdir -p "$root/${i}x$i"
+source ../libs/opal-render-icons.sh
+cFORCE=false
 
-    for a in "${appicons[@]}"; do
-        if [[ ! "$a.svg" -nt "$root/${i}x$i/$a$postfix.png" ]]; then
-            echo "nothing to do for $a at ${i}x$i"
-            continue
-        fi
+cNAME="app icons"
+cITEMS=(harbour-todolist)
+cRESOLUTIONS=(86 108 128 172)
+cTARGETS=(../icons/RESXxRESY)
+render_batch
 
-        inkscape -z -e "$root/${i}x$i/$a$postfix.png" -w "$i" -h "$i" "$a.svg"
-    done
-done
-
-
-echo "rendering status icons..."
-
-root="../qml/images"
-files=(icon-todo@112 icon-ignored@112 icon-done@112 harbour-todolist@256
-       icon-todo-small@24 icon-ignored-small@24 icon-done-small@24)
-mkdir -p "$root"
-
-for img in "${files[@]}"; do
-    if [[ ! "${img%@*}.svg" -nt "$root/${img%@*}.png" ]]; then
-        echo "nothing to do for '${img%@*}.svg'"
-        continue
-    fi
-
-    inkscape -z -e "$root/${img%@*}.png" -w "${img#*@}" -h "${img#*@}" "${img%@*}.svg"
-done
+cNAME="status icons"
+cITEMS=({icon-todo,icon-ignored,icon-done}@112
+        {icon-todo,icon-ignored,icon-done}-small@24
+        harbour-todolist@256
+)
+cRESOLUTIONS=(F1)
+cTARGETS=(../qml/images)
+render_batch
