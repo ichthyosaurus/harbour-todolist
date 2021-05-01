@@ -122,11 +122,19 @@ ApplicationWindow
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
         if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
         if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
+        if (project === undefined) project = currentEntriesModel.getProperty(which, "project");
 
         var item = currentEntriesModel.get(which);
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
-                            item.project, item.text, item.description);
+                            project, item.text, item.description);
+
+        if (project !== item.project) {
+            // Switch to the new project if it was changed.
+            // This reloads all entries, so we don't have to manually update
+            // the item in currentEntriesModel.
+            setCurrentProject(project);
+        }
     }
 
     // Delete an entry from the database and from currentEntriesModel. This is not intended to be used
@@ -194,10 +202,18 @@ ApplicationWindow
         if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);
         if (text !== undefined) recurringsModel.setProperty(which, "text", text);
         if (description !== undefined) recurringsModel.setProperty(which, "description", description);
+        if (project === undefined) project = currentEntriesModel.getProperty(which, "project");
 
         var item = recurringsModel.get(which);
         Storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
-                                item.project, item.text, item.description);
+                                project, item.text, item.description);
+
+        if (project !== item.project) {
+            // Switch to the new project if it was changed.
+            // This reloads all entries, so we don't have to manually update
+            // the item in recurringsModel.
+            setCurrentProject(project);
+        }
     }
 
     function deleteRecurring(which) {
