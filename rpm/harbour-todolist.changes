@@ -1,3 +1,7 @@
+# This file is part of harbour-todolist.
+# SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
 # Rename this file as harbour-todolist.changes to include changelog
 # entries in your RPM file.
 #
