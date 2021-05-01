@@ -117,7 +117,7 @@ ApplicationWindow
 
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
-    function updateItem(which, entryState, subState, text, description) {
+    function updateItem(which, entryState, subState, text, description, project) {
         if (entryState !== undefined) currentEntriesModel.setProperty(which, "entryState", entryState);
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
         if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
@@ -188,7 +188,7 @@ ApplicationWindow
         }
     }
 
-    function updateRecurring(which, startDate, entryState, intervalDays, text, description) {
+    function updateRecurring(which, startDate, entryState, intervalDays, text, description, project) {
         if (startDate !== undefined) recurringsModel.setProperty(which, "startDate", startDate);
         if (entryState !== undefined) recurringsModel.setProperty(which, "entryState", entryState);
         if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);

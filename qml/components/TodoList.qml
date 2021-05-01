@@ -44,7 +44,7 @@ SilicaListView {
             updateItem(sourceIndex, mainState, subState);
             main.copyItemTo(sourceIndex, copyToDate);
         }
-        onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription);
+        onSaveItemTexts: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription, newProject);
         onDeleteThisItem: deleteItem(view.model.mapToSource(which))
         onMoveAndMarkItem: {
             var sourceIndex = view.model.mapToSource(which);
