@@ -35,6 +35,10 @@
         <source>German</source>
         <translation>niemiecki</translation>
     </message>
+    <message>
+        <source>Norwegian</source>
+        <translation type="unfinished">norweski</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>

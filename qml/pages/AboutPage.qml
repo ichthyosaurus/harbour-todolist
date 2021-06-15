@@ -86,7 +86,8 @@ AboutPageBase {
                 ContributionGroup { title: qsTr("Polish"); entries: ["atlochowski"] },
                 ContributionGroup { title: qsTr("Swedish"); entries: ["Åke Engelbrektson"]},
                 ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
-                ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]}/*,
+                ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]},
+                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]}/*,
                 ContributionGroup { title: qsTr("English"); entries: ["Mirian Margiani"]}*/
             ]
         }

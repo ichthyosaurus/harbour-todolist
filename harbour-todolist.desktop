@@ -17,6 +17,7 @@ Name=harbour-todolist
 # please test it before submitting your translation.
 Name[de]=To-do-Liste
 Name[en]=To-do List
+Name[no]=Gjeremålsliste
 Name[sv]=To-do List
 Name[pl]=To-do List
 Name[zh_CN]=待办列表

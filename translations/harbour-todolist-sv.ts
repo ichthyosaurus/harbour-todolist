@@ -35,6 +35,10 @@
         <source>German</source>
         <translation>Tyska</translation>
     </message>
+    <message>
+        <source>Norwegian</source>
+        <translation type="unfinished">Norska</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
