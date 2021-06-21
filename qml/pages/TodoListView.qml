@@ -30,8 +30,8 @@ TodoList {
     property int showFakeNavigation: FakeNavigation.None
 
     header: FakeNavigationHeader {
-        title: currentProjectName
-        description: appName
+        title: appName
+        description: currentProjectName
         showNavigation: showFakeNavigation
     }
 
