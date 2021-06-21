@@ -118,7 +118,7 @@ ListItem {
                 width: parent.width
 
                 Label {
-                    width: parent.width-intervalLabel.width-hasInfoLabel.width
+                    width: parent.width-intervalLabel.width-infoLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
@@ -127,7 +127,7 @@ ListItem {
                 }
 
                 Label {
-                    id: hasInfoLabel
+                    id: infoLabel
                     horizontalAlignment: Text.AlignRight
                     visible: infoMarkerEnabled
                     width: visible ? Theme.iconSizeExtraSmall : 0

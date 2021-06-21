@@ -31,6 +31,12 @@ SilicaListView {
     VerticalScrollDecorator { flickable: view }
     property int showFakeNavigation: FakeNavigation.None
 
+    header: FakeNavigationHeader {
+        title: qsTr("Recurring Entries")
+        description: currentProjectName
+        showNavigation: showFakeNavigation
+    }
+
     SortFilterProxyModel {
         id: filteredModel
         sourceModel: recurringsModel
@@ -40,12 +46,6 @@ SilicaListView {
             RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
         ]
-    }
-
-    header: FakeNavigationHeader {
-        title: qsTr("Recurring Entries")
-        description: currentProjectName
-        showNavigation: showFakeNavigation
     }
 
     PullDownMenu {
