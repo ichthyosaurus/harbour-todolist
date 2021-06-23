@@ -78,7 +78,6 @@ SilicaListView {
         extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 
         editableShowProject: false
-        editableTitleText: qsTr("Edit project")
 
         customClickHandlingEnabled: true
         showMenuOnPressAndHold: true

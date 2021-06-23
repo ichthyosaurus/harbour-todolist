@@ -25,24 +25,21 @@ import "../components"
 AddItemDialog {
     id: baseDialog
     allowedOrientations: Orientation.All
-    date: new Date(NaN)
-    titleText: qsTr("Edit entry")
-
-    descriptionEnabled: true
 
     property bool showRecurring: false
     property bool editableRecurring: true
-
     property alias recurringStartDate: startDateButton.startDate
     property int recurringIntervalDays: intervalCombo.currentItem.value
     property int recurringInitialIntervalDays: 1
-
     property string extraDeleteWarning: ""
-
     // After ConfirmDeleteDialog was accepted,
     // this dialog will be accepted too, and requestDeletion
     // will be set to true. The parent then has to finish deleting the item.
     property bool requestDeletion: false
+
+    date: new Date(NaN)                 // NOTE: looks redundant? Already defined in AddItemDialog
+    descriptionEnabled: true
+    dialogHeaderAction: qsTr("Save")
 
     IntervalCombo {
         id: intervalCombo

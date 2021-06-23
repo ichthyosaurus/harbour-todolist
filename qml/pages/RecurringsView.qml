@@ -75,7 +75,6 @@ SilicaListView {
         intervalStartProperty: "startDate"
 
         editableShowProject: true
-        editableTitleText: qsTr("Edit recurring entry")
 
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
         onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);

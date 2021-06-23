@@ -34,9 +34,9 @@ Dialog {
     property bool descriptionEnabled: true
     property alias predictiveHintsEnabled: predictionSwitch.checked
     property alias showProject: projectBox.visible
+    property string dialogHeaderAction: qsTr("Add")
 
     default property alias contentColumn: column.children
-    property alias titleText: titleLabel.text
 
     canAccept: text !== ""
 
@@ -52,20 +52,8 @@ Dialog {
             spacing: 0
 
             DialogHeader {
-                acceptText: qsTr("Save")
+                acceptText: dialogHeaderAction
                 cancelText: qsTr("Cancel")
-            }
-
-            Label {
-                id: titleLabel
-                anchors {
-                    left: parent.left; right: parent.right;
-                    leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
-                }
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeLarge
-                color: Theme.highlightColor
-                text: qsTr("Add an entry")
             }
 
             ComboBox {
