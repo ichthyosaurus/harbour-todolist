@@ -39,7 +39,6 @@ ListItem {
     property bool customClickHandlingEnabled: false
 
     property bool editableShowProject: true
-    property string editableTitleText: qsTr("Edit entry")
 
     property bool alwaysShowInterval: false
     property bool editableInterval: false
@@ -63,8 +62,7 @@ ListItem {
             recurringStartDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date(NaN),
             recurringInitialIntervalDays: model[intervalProperty] !== undefined ? model[intervalProperty] : 0,
             extraDeleteWarning: extraDeleteWarning,
-            showProject: editableShowProject, project: project,
-            titleText: editableTitleText
+            showProject: editableShowProject, project: project
         });
         dialog.accepted.connect(function() {
             if (dialog.requestDeletion) {
@@ -118,7 +116,7 @@ ListItem {
                 width: parent.width
 
                 Label {
-                    width: parent.width-intervalLabel.width-hasInfoLabel.width
+                    width: parent.width-intervalLabel.width-infoLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
@@ -127,7 +125,7 @@ ListItem {
                 }
 
                 Label {
-                    id: hasInfoLabel
+                    id: infoLabel
                     horizontalAlignment: Text.AlignRight
                     visible: infoMarkerEnabled
                     width: visible ? Theme.iconSizeExtraSmall : 0
