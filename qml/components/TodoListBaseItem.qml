@@ -40,7 +40,6 @@ ListItem {
 
     property bool editableShowProject: true
 
-    property bool alwaysShowInterval: false
     property bool editableInterval: false
     property string intervalProperty: "interval"
     property string intervalStartProperty: "date"
@@ -72,6 +71,14 @@ ListItem {
                 if (editableInterval) saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate);
             }
         });
+    }
+
+    function isRecurring() {
+        return model[intervalProperty] > 0
+    }
+
+    function daysBetweenDates(lastDate, firstDate) {
+        return (lastDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24)
     }
 
     showMenuOnPressAndHold: customClickHandlingEnabled ? undefined : false
@@ -108,7 +115,7 @@ ListItem {
         Column {
             id: textColumn
             anchors.top: parent.top
-            width: parent.width-statusIcon.width-spacing
+            width: parent.width - statusIcon.width - spacing
 
             Spacer { height: Theme.paddingMedium }
 
@@ -116,7 +123,7 @@ ListItem {
                 width: parent.width
 
                 Label {
-                    width: parent.width-intervalLabel.width-infoLabel.width
+                    width: parent.width - recurringIcon.width - ageLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
@@ -125,30 +132,35 @@ ListItem {
                 }
 
                 Label {
-                    id: infoLabel
+                    id: ageLabel
                     horizontalAlignment: Text.AlignRight
-                    visible: infoMarkerEnabled
-                    width: visible ? Theme.iconSizeExtraSmall : 0
-                    text: "⭑"
-                    color: Theme.highlightColor
-                    opacity: Theme.opacityHigh
-                }
-
-                Label {
-                    id: intervalLabel
-                    visible: (alwaysShowInterval || model[intervalProperty] > 0)
-                    text: model[intervalProperty] !== undefined ? model[intervalProperty] : ""
-                    color: Theme.highlightColor
-                    opacity: Theme.opacityHigh
+                    visible: !isRecurring()
                     width: visible ? implicitWidth : 0
+                    text: "age: " + daysBetweenDates(date, createdOn) + "d"
+                    font.pixelSize: Theme.fontSizeTiny
+                    color: Theme.highlightColor
+                    opacity: Theme.opacityHigh
 
                     Rectangle {
                         visible: parent.visible
                         anchors.centerIn: parent
-                        width: parent.width+Theme.paddingSmall; height: parent.height
-                        radius: 20
+                        width: parent.width + Theme.paddingMedium
+                        height: parent.height + Theme.paddingSmall
+                        radius: 50
                         color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
                     }
+                }
+
+                HighlightImage {
+                    id: recurringIcon
+                    visible: isRecurring()
+                    opacity: Theme.opacityHigh
+                    highlighted: item.highlighted
+                    width: visible ? implicitWidth : 0
+                    height: width
+                    color: Theme.primaryColor
+                    // from: https://feathericons.com/
+                    source: "../images/refresh-cw.svg"
                 }
             }
 

@@ -26,7 +26,7 @@ import "../js/helpers.js" as Helpers
 TodoListBaseItem {
     id: item
     descriptionEnabled: true
-    infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState !== EntrySubState.today)
+    infoMarkerEnabled: true
     title: model.text
     description: model.description
     project: model.project

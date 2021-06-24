@@ -69,7 +69,6 @@ SilicaListView {
         title: model.text
         description: model.description
 
-        alwaysShowInterval: true
         editableInterval: true
         intervalProperty: "intervalDays"
         intervalStartProperty: "startDate"
