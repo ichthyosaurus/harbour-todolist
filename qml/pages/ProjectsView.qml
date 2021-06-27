@@ -67,7 +67,6 @@ SilicaListView {
         editable: true
         deletable: entryId !== defaultProjectId
         descriptionEnabled: false
-        infoMarkerEnabled: false
         title: model.name
         highlighted: main.configuration.currentProject === entryId
 

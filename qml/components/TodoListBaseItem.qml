@@ -32,7 +32,6 @@ ListItem {
     property string description: ""
     property int project: currentProjectId
     property string extraDeleteWarning: ""
-    property bool infoMarkerEnabled: false
     property bool editable: true
     property bool deletable: true
     property bool descriptionEnabled: true

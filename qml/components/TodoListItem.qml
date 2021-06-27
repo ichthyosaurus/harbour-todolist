@@ -26,7 +26,6 @@ import "../js/helpers.js" as Helpers
 TodoListBaseItem {
     id: item
     descriptionEnabled: true
-    infoMarkerEnabled: true
     title: model.text
     description: model.description
     project: model.project
@@ -116,43 +115,9 @@ TodoListBaseItem {
             }
             MenuItem {
                 enabled: false
-                visible: editable || infoMarkerEnabled
+                visible: editable
                 text: {
                     var text = "";
-
-                    if (infoMarkerEnabled) {
-                        text = qsTr("⭑ %1, %2")
-
-                        if (createdOn.getTime() === date.getTime()) {
-                            text = text.arg(isToday ? qsTr("from today") : qsTr("from this day"));
-                        } else if (createdOn.getTime() === Helpers.getDate(-1, date).getTime()) {
-                            text = text.arg(isToday ? qsTr("from yesterday") : qsTr("from last day"));
-                        } else if (createdOn.getTime() === Helpers.getDate(-1, today).getTime()) {
-                            text = text.arg(qsTr("from yesterday"));
-                        } else {
-                            text = text.arg(qsTr("from earlier"));
-                        }
-
-                        if (entryState === EntryState.todo) {
-                            if (subState === EntrySubState.today) {
-                                if (!isSomeday) text = text.arg(isToday ? qsTr("for today") : qsTr("for this day"))
-                                else text = text.arg(qsTr("for someday later"))
-                            } else text = text.arg(qsTr("carried over"))
-                        } else if (entryState === EntryState.ignored) {
-                            if (subState === EntrySubState.today) text = text.arg(isToday ? qsTr("ignored today") : qsTr("ignored this day"))
-                            else if (subState === EntrySubState.tomorrow) text = text.arg(isToday ? qsTr("to be done tomorrow") : qsTr("to be done next day"))
-                            else if (subState === EntrySubState.thisweek) text = text.arg(qsTr("to be done later this week"))
-                            else if (subState === EntrySubState.someday) text = text.arg(qsTr("to be done someday later"))
-                        } else if (entryState === EntryState.done) {
-                            if (subState === EntrySubState.today) text = text.arg(isToday ? qsTr("done today") : qsTr("done this day"))
-                            else if (subState === EntrySubState.tomorrow) text = text.arg(isToday ? qsTr("continue tomorrow") : qsTr("continue next day"))
-                            else if (subState === EntrySubState.thisweek) text = text.arg(qsTr("continue later this week"))
-                            else if (subState === EntrySubState.someday) text = text.arg(qsTr("continue someday later"))
-                        }
-
-                        if (editable) text += "\n"
-                    }
-
                     if (editable) text += qsTr("press and hold to edit or delete")
                     return text;
                 }
