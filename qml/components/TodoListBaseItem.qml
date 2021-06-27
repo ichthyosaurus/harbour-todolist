@@ -136,7 +136,7 @@ ListItem {
                     horizontalAlignment: Text.AlignRight
                     visible: !isRecurring()
                     width: visible ? implicitWidth : 0
-                    text: "age: " + daysBetweenDates(date, createdOn) + "d"
+                    text: "age: " + daysBetweenDates(main.today, createdOn) + "d"
                     font.pixelSize: Theme.fontSizeTiny
                     color: Theme.highlightColor
                     opacity: Theme.opacityHigh
