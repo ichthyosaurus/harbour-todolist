@@ -67,7 +67,6 @@ SilicaListView {
         editable: true
         deletable: entryId !== defaultProjectId
         descriptionEnabled: false
-        infoMarkerEnabled: false
         title: model.name
         highlighted: main.configuration.currentProject === entryId
 
@@ -78,7 +77,6 @@ SilicaListView {
         extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 
         editableShowProject: false
-        editableTitleText: qsTr("Edit project")
 
         customClickHandlingEnabled: true
         showMenuOnPressAndHold: true
