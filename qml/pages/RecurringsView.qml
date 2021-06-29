@@ -33,7 +33,6 @@ SilicaListView {
 
     header: FakeNavigationHeader {
         title: qsTr("Recurring Entries")
-        description: currentProjectName
         showNavigation: showFakeNavigation
     }
 

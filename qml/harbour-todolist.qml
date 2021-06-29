@@ -82,6 +82,7 @@ ApplicationWindow
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
         property int currentProject
+        property var activeProjects: []
     }
 
     Timer {
@@ -238,7 +239,6 @@ ApplicationWindow
     function updateProject(which, name, entryState) {
         if (name !== undefined) {
             projectsModel.setProperty(which, "name", name);
-            currentProjectName = name;
         }
         if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
         var item = projectsModel.get(which);
@@ -268,25 +268,38 @@ ApplicationWindow
             // if the requested project is not available, reset it to the default project
             setCurrentProject(defaultProjectId);
         } else {
-            lastSelectedCategory = today;
-            currentProjectName = project.name;
             currentProjectId = project.entryId;
-            startupComplete = false;
-            archiveModel.clear();
-            currentEntriesModel.clear();
-            var entries = Storage.getEntries(config.currentProject);
-            for (var i in entries) currentEntriesModel.append(entries[i]);
-            startupComplete = true;
-
-            recurringsModel.clear();
-            entries = Storage.getRecurrings(config.currentProject);
-            for (i in entries) recurringsModel.append(entries[i]);
+            updateProjectEntries()
         }
     }
 
+    function updateProjectEntries() {
+        startupComplete = false;
+        lastSelectedCategory = today;
+
+        currentEntriesModel.clear();
+        recurringsModel.clear();
+        archiveModel.clear();
+
+        config.activeProjects.forEach(function (projId, index) {
+            Storage.getEntries(projId).forEach(function (entry, index) {
+                currentEntriesModel.append(entry)
+            })
+            Storage.getRecurrings(projId).forEach(function (entry, index) {
+                recurringsModel.append(entry)
+            })
+        })
+
+        startupComplete = true;
+
+    }
+
     function loadArchive() {
-        var entries = Storage.getArchivedEntries(config.currentProject);
-        for (var i in entries) archiveModel.append(entries[i]);
+        config.activeProjects.forEach(function(projId, index) {
+            Storage.getArchivedEntries(projId).forEach(function(entry, index) {
+                archiveModel.append(entry)
+            })
+        })
     }
 
     // Resets all date properties after a date change. The force parameter can be used to force a model refresh.

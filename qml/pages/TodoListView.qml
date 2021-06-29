@@ -31,7 +31,6 @@ TodoList {
 
     header: FakeNavigationHeader {
         title: appName
-        description: currentProjectName
         showNavigation: showFakeNavigation
     }
 
