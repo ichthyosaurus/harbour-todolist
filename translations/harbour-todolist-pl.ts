@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished">norweski</translation>
+        <translation>norweski</translation>
     </message>
 </context>
 <context>
@@ -96,7 +96,7 @@
     </message>
     <message>
         <source>Enable predictive text input</source>
-        <translation type="unfinished"></translation>
+        <translation>Włącz predykcję tekstu</translation>
     </message>
 </context>
 <context>
@@ -240,7 +240,7 @@
     </message>
     <message>
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>Darowizny</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -248,15 +248,15 @@
     </message>
     <message>
         <source>Note: please check the source code for most accurate information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uwaga: sprawdź kod źródłowy, aby uzyskać najdokładniejsze informacje. </translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="unfinished"></translation>
+        <translation>Podziękowanie</translation>
     </message>
     <message>
         <source>Thank you!</source>
-        <translation type="unfinished"></translation>
+        <translation>Dziękuję!</translation>
     </message>
 </context>
 <context>
