@@ -223,6 +223,10 @@ ApplicationWindow
         recurringsModel.remove(which);
     }
 
+    function getProject(projectId) {
+        return Storage.getProject(projectId)
+    }
+
     function addProject(name, entryState) {
         entryState = Storage.defaultFor(entryState, EntryState.todo);
         name = Storage.defaultFor(name, "")

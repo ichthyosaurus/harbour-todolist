@@ -122,7 +122,7 @@ ListItem {
                 width: parent.width
 
                 Label {
-                    width: parent.width - recurringIcon.width - ageLabel.width
+                    width: parent.width - recurringIcon.width - projectLabel.width - ageLabel.width
                     text: title
                     font.pixelSize: Theme.fontSizeMedium
                     textFormat: Text.PlainText
@@ -132,9 +132,9 @@ ListItem {
 
                 Label {
                     id: ageLabel
-                    horizontalAlignment: Text.AlignRight
+                    horizontalAlignment: Text.AlignHCenter
                     visible: !isRecurring()
-                    width: visible ? implicitWidth : 0
+                    width: visible ? implicitWidth + Theme.paddingMedium : 0
                     text: "age: " + daysBetweenDates(main.today, createdOn) + "d"
                     font.pixelSize: Theme.fontSizeTiny
                     color: Theme.highlightColor
@@ -143,7 +143,7 @@ ListItem {
                     Rectangle {
                         visible: parent.visible
                         anchors.centerIn: parent
-                        width: parent.width + Theme.paddingMedium
+                        width: parent.width
                         height: parent.height + Theme.paddingSmall
                         radius: 50
                         color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
@@ -160,6 +160,24 @@ ListItem {
                     color: Theme.primaryColor
                     // from: https://feathericons.com/
                     source: "../images/refresh-cw.svg"
+                }
+
+                Label {
+                    id: projectLabel
+                    horizontalAlignment: Text.AlignHCenter
+                    width: implicitWidth + Theme.paddingMedium
+                    text: main.getProject(project).name
+                    font.pixelSize: Theme.fontSizeTiny
+                    color: Theme.highlightColor
+                    opacity: Theme.opacityHigh
+
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: parent.width
+                        height: parent.height + Theme.paddingSmall
+                        radius: 50
+                        color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
+                    }
                 }
             }
 
