@@ -31,6 +31,11 @@ SilicaListView {
     VerticalScrollDecorator { flickable: view }
     property int showFakeNavigation: FakeNavigation.None
 
+    header: FakeNavigationHeader {
+        title: qsTr("Recurring Entries")
+        showNavigation: showFakeNavigation
+    }
+
     SortFilterProxyModel {
         id: filteredModel
         sourceModel: recurringsModel
@@ -40,12 +45,6 @@ SilicaListView {
             RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
         ]
-    }
-
-    header: FakeNavigationHeader {
-        title: qsTr("Recurring Entries")
-        description: currentProjectName
-        showNavigation: showFakeNavigation
     }
 
     PullDownMenu {
@@ -65,17 +64,14 @@ SilicaListView {
     delegate: TodoListBaseItem {
         editable: true
         descriptionEnabled: true
-        infoMarkerEnabled: false
         title: model.text
         description: model.description
 
-        alwaysShowInterval: true
         editableInterval: true
         intervalProperty: "intervalDays"
         intervalStartProperty: "startDate"
 
         editableShowProject: true
-        editableTitleText: qsTr("Edit recurring entry")
 
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
         onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);

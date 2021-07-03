@@ -25,14 +25,14 @@ import "../js/helpers.js" as Helpers
 
 AddItemDialog {
     allowedOrientations: Orientation.All
-    date: new Date(NaN)
-    descriptionEnabled: true
-    titleText: qsTr("Add a recurring entry")
 
     property bool enableStartDate: true
     property alias startDate: startDateButton.startDate
     property int intervalDays: intervalCombo.currentItem.value
     property int defaultInterval: 1
+
+    date: new Date(NaN)         // NOTE: redundant? Set already in the parent component?
+    descriptionEnabled: true
 
     IntervalCombo {
         id: intervalCombo
@@ -42,7 +42,6 @@ AddItemDialog {
     StartDateButton {
         id: startDateButton
         startDate: main.today
-
         enabled: enableStartDate && intervalCombo.currentIndex !== 0
     }
 }
