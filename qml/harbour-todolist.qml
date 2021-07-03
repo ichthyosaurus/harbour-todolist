@@ -117,6 +117,37 @@ ApplicationWindow
                             text: task, description: description});
     }
 
+    function addNormalTask(forDate, task, description, projectId, entryState, subState, createdOn, interval) {
+        entryState = Storage.defaultFor(entryState, EntryState.todo);
+        subState = Storage.defaultFor(subState, EntrySubState.today);
+        createdOn = Storage.defaultFor(createdOn, forDate);
+        var weight = 1;
+        interval = Storage.defaultFor(interval, 0);
+
+        // NOTE: make a new version of addEntry that returns the latest entry as an object
+        var entryId = Storage.addEntry(
+            forDate, entryState, subState, createdOn, weight, interval, projectId, task, description);
+
+        if (entryId === undefined) {
+            console.error("failed to save new item", forDate, task);
+            return;
+        }
+
+        // NOTE: the obejct as returned by above note can then be added directly as-is here
+        currentEntriesModel.append({
+            entryId: entryId,
+            date: forDate,
+            entryState: entryState,
+            subState: subState,
+            createdOn: createdOn,
+            weight: weight,
+            interval: interval,
+            project: projectId,
+            text: task,
+            description: description
+        });
+    }
+
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function updateItem(which, entryState, subState, text, description, project) {
