@@ -37,7 +37,6 @@ SilicaListView {
                 var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
                     date: new Date(NaN),
                     descriptionEnabled: false,
-                    titleText: qsTr("Add a project"),
                     showProject: false
                 })
                 dialog.accepted.connect(function() {
