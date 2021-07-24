@@ -66,7 +66,7 @@ SilicaListView {
         return main.configuration.activeProjects.indexOf(projectId) !== -1
     }
 
-    delegate: ProjectListItem {
+    delegate: ProjectsListItem {
         id: item
         deletable: entryId !== defaultProjectId
         title: model.name
