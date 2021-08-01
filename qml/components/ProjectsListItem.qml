@@ -35,8 +35,6 @@ ListItem {
     property bool editable: true
     property bool deletable: true
     property bool descriptionEnabled: false
-    property bool customClickHandlingEnabled: true
-
     property bool editableShowProject: false
     property bool editableInterval: false
     property string intervalProperty: "interval"
@@ -50,7 +48,7 @@ ListItem {
     signal saveItemDetails(var which, var newText, var newDescription, var newProject)
     signal deleteThisItem(var which)
 
-    showMenuOnPressAndHold: true
+    showMenuOnPressAndHold: false
 
     function startEditing() {
         var dialog = pageStack.push(Qt.resolvedUrl("../pages/EditItemDialog.qml"), {
@@ -76,7 +74,7 @@ ListItem {
     }
 
     Connections {
-        target: customClickHandlingEnabled ? null : item
+        target: item
         onPressAndHold: if (editable) startEditing();
         onClicked: menu ? openMenu() : {}
     }
