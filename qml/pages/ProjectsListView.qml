@@ -92,6 +92,10 @@ SilicaListView {
         menu: Component {
             ContextMenu {
                 MenuItem {
+                    text: qsTr("tasks")
+                    onClicked: pageStack.push(Qt.resolvedUrl("ProjectTasksPage.qml"), {projectId: entryId})
+                }
+                MenuItem {
                     visible: entryState !== EntryState.todo
                     text: qsTr("mark as active")
                     onClicked: markItemAs(index, EntryState.todo, undefined)

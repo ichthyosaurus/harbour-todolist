@@ -75,8 +75,7 @@ ListItem {
 
     Connections {
         target: item
-        onPressAndHold: if (editable) startEditing();
-        onClicked: menu ? openMenu() : {}
+        onPressAndHold: menu ? openMenu() : {}
     }
 
     Row {
