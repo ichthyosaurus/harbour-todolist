@@ -28,14 +28,18 @@ TodoList {
     id: todoList
     model: filteredModel
     property int showFakeNavigation: FakeNavigation.None
+    property int projectId
 
     header: FakeNavigationHeader {
-        title: appName
+        title: projectId ? qsTr("Tasks for project: ") + projectId : appName
         showNavigation: showFakeNavigation
     }
 
     function addItem() {
-        var dialog = pageStack.push(addComponent, { date: lastSelectedCategory })
+        var dialog = pageStack.push(addComponent, {
+            date: lastSelectedCategory,
+            project: projectId ? projectId : currentProjectId
+        })
         dialog.accepted.connect(function() {
             main.addNormalTask(dialog.date, dialog.text.trim(), dialog.description.trim(), dialog.project);
             main.lastSelectedCategory = dialog.date
@@ -76,10 +80,17 @@ TodoList {
             }
         ]
 
-        filters: ValueFilter {
-            roleName: "_isYoung"
-            value: true
-        }
+        filters: [
+            ValueFilter {
+                roleName: "_isYoung"
+                value: true
+            },
+            ValueFilter {
+                enabled: projectId
+                roleName: "project"
+                value: projectId
+            }
+        ]
     }
 
     PullDownMenu {
