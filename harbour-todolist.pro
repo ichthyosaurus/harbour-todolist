@@ -61,9 +61,7 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 CONFIG += sailfishapp_i18n
 
-# Select Opal modules
-CONFIG += opal-about
-include(libs/opal-use-modules.pri)
+QML_IMPORT_PATH += qml/modules
 
 # Note: version number is configured in yaml
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
