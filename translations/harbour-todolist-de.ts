@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Norwegian</source>
-        <translation type="unfinished">Norwegisch</translation>
+        <translation>Norwegisch</translation>
     </message>
 </context>
 <context>
@@ -190,6 +190,10 @@
         <translation>Entwicklung</translation>
     </message>
     <message>
+        <source>Homepage</source>
+        <translation>Webseite</translation>
+    </message>
+    <message>
         <source>Author</source>
         <translation>Autor</translation>
     </message>
@@ -240,6 +244,10 @@
         <source>Thank you!</source>
         <translation>Vielen Dank!</translation>
     </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
     <message numerus="yes">
         <source>License(s)</source>
         <translation>
@@ -254,6 +262,26 @@
     <message>
         <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
         <translation>Bitte beachten Sie &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <source>Download license texts</source>
+        <translation>Lizenztexte herunterladen</translation>
+    </message>
+    <message>
+        <source>External Link</source>
+        <translation>Externer Link</translation>
+    </message>
+    <message>
+        <source>Open in browser</source>
+        <translation>Im Browser öffnen</translation>
+    </message>
+    <message>
+        <source>Copied to clipboard: %1</source>
+        <translation>In die Zwischenablage kopiert: %1</translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation>In die Zwischenablage kopieren</translation>
     </message>
 </context>
 <context>
@@ -356,6 +384,28 @@
     <message>
         <source>Your contributions to translations or code would be most welcome.</source>
         <translation>Ihre Mitarbeit bei Übersetzungen oder der Programmierung wäre eine große Hilfe.</translation>
+    </message>
+    <message>
+        <source>Author</source>
+        <translation>Autor</translation>
+    </message>
+    <message numerus="yes">
+        <source>Author(s)</source>
+        <translation>
+            <numerusform>Autor·in</numerusform>
+            <numerusform>Autor·innen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation>Maintainer·in</translation>
+    </message>
+    <message numerus="yes">
+        <source>Maintainer(s)</source>
+        <translation>
+            <numerusform>Maintainer·in</numerusform>
+            <numerusform>Maintainer·innen</numerusform>
+        </translation>
     </message>
 </context>
 <context>

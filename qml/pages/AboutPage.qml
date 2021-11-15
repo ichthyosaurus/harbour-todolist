@@ -43,26 +43,29 @@ import Opal.About 1.0
 
 AboutPageBase {
     id: page
-    allowedOrientations: Orientation.All
     appName: main.appName
     iconSource: Qt.resolvedUrl("../images/harbour-todolist.png")
     versionNumber: APP_VERSION
     releaseNumber: APP_RELEASE
     description: qsTr("A simple tool for planning what to do next.")
-    maintainer: "Mirian Margiani"
+    mainAttributions: "2020-2021 Mirian Margiani"
     sourcesUrl: "https://github.com/ichthyosaurus/harbour-todolist"
+    homepageUrl: "https://openrepos.net/content/ichthyosaurus/todolist"
 
     licenses: License { spdxId: "GPL-3.0-or-later" }
     attributions: [
         Attribution {
-            name: "Opal.About"
-            entries: ["2018-2021 Mirian Margiani"]
-            licenses: License { spdxId: "GPL-3.0-or-later" }
-        },
-        Attribution {
             name: "SortFilterProxyModel"
             entries: ["2016 Pierre-Yves Siret"]
             licenses: License { spdxId: "MIT" }
+            sources: "https://github.com/oKcerG/SortFilterProxyModel"
+        },
+        Attribution {
+            name: "Opal.About"
+            entries: "2018-2021 Mirian Margiani"
+            licenses: License { spdxId: "GPL-3.0-or-later"}
+            sources: "https://github.com/Pretty-SFOS/opal-about"
+            homepage: "https://github.com/Pretty-SFOS/opal"
         }
     ]
 
@@ -87,8 +90,8 @@ AboutPageBase {
                 ContributionGroup { title: qsTr("Swedish"); entries: ["Åke Engelbrektson"]},
                 ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
                 ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]},
-                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]}/*,
-                ContributionGroup { title: qsTr("English"); entries: ["Mirian Margiani"]}*/
+                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]},
+                ContributionGroup { title: qsTr("Polish"); entries: ["likot180"]}
             ]
         }
     ]
