@@ -1,25 +1,39 @@
-/*
- * This file is part of opal-about.
- * SPDX-FileCopyrightText: 2021 Mirian Margiani
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+//@ This file is part of opal-about.
+//@ https://github.com/Pretty-SFOS/opal-about
+//@ SPDX-FileCopyrightText: 2021 Mirian Margiani
+//@ SPDX-License-Identifier: GPL-3.0-or-later
 
 var LOG_SCOPE = '[Opal.About]'
 
-function sendError(spdxId) {
+function getShortText(origShortText, spdxId) {
+
+
+    if (!!origShortText) return origShortText
+
+    if (/^[AL]?GPL-/.test(spdxId)) {
+        return "This is free software: you are welcome to redistribute it under certain conditions. " +
+               "There is NO WARRANTY, to the extent permitted by law."
+    }
+
+    return origShortText
+}
+
+function sendError(spdxId, shortText) {
     WorkerScript.sendMessage({
         spdxId: spdxId,
         name: "",
         fullText: "",
+        shortText: shortText,
         error: true
     });
 }
 
-function sendSuccess(spdxId, name, fullText) {
+function sendSuccess(spdxId, name, fullText, shortText) {
     WorkerScript.sendMessage({
         spdxId: spdxId,
         name: name,
         fullText: fullText,
+        shortText: shortText,
         error: false
     });
 }
@@ -46,31 +60,30 @@ function request(type, url, onSuccess, onFailure, postData) {
     }
 }
 
-function loadRemote(spdxId, localUrl, remoteUrl) {
+function loadRemote(spdxId, localUrl, remoteUrl, origShortText) {
     request("GET", remoteUrl, function(xhr) {
         try {
             var o = JSON.parse(xhr.responseText);
             if (!o || typeof o !== "object") throw 1;
             console.log(LOG_SCOPE, "license loaded remotely from", remoteUrl);
-            sendSuccess(spdxId, o['name'], o['licenseText']);
+            sendSuccess(spdxId, o['name'], o['licenseText'],
+                        getShortText(origShortText, spdxId));
 
             request("PUT", localUrl, function(x){
                 console.log(LOG_SCOPE, "saved license with status", x.status, "to", localUrl);
             }, function(x){}, xhr.responseText);
-        }
-        catch (e) {
+        } catch (e) {
             console.log(LOG_SCOPE, "failed to load license remotely from", remoteUrl);
-            sendError(spdxId);
+            sendError(spdxId, getShortText(origShortText, spdxId));
         }
     }, function(xhr) {
         console.log(LOG_SCOPE, "failed to load license remotely from", remoteUrl);
-        sendError(spdxId);
+        sendError(spdxId, getShortText(origShortText, spdxId));
     });
 }
 
 WorkerScript.onMessage = function(message) {
     if (message.spdxId === undefined || message.spdxId === "") {
-        error = true;
         console.error(LOG_SCOPE, "cannot load license without spdx id");
         sendError("");
         return;
@@ -81,12 +94,24 @@ WorkerScript.onMessage = function(message) {
             var o = JSON.parse(xhr.responseText);
             if (!o || typeof o !== "object") throw 1;
             console.log(LOG_SCOPE, "license loaded locally from", message.localUrl);
-            sendSuccess(message.spdxId, o['name'], o['licenseText']);
-        }
-        catch (e) {
-            loadRemote(message.spdxId, message.localUrl, message.remoteUrl);
+            sendSuccess(message.spdxId, o['name'], o['licenseText'],
+                        getShortText(message.shortText, message.spdxId));
+        } catch (e) {
+            if (!!message.online) {
+                loadRemote(message.spdxId, message.localUrl, message.remoteUrl, message.shortText);
+            } else {
+                console.log(LOG_SCOPE, "license not cached at "+message.localUrl+
+                            ", skipping download in offline mode");
+                sendError(message.spdxId, getShortText(message.shortText, message.spdxId));
+            }
         }
     }, function(xhr) {
-        loadRemote(message.spdxId, message.localUrl, message.remoteUrl);
+        if (!!message.online) {
+            loadRemote(message.spdxId, message.localUrl, message.remoteUrl, message.shortText);
+        } else {
+            console.log(LOG_SCOPE, "license not cached at "+message.localUrl+
+                        ", skipping download in offline mode");
+            sendError(message.spdxId, getShortText(message.shortText, message.spdxId));
+        }
     });
 }

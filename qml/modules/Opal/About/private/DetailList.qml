@@ -1,8 +1,7 @@
-/*
- * This file is part of opal-about.
- * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+//@ This file is part of opal-about.
+//@ https://github.com/Pretty-SFOS/opal-about
+//@ SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+//@ SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.2
 import Sailfish.Silica 1.0
@@ -25,7 +24,7 @@ BackgroundItem {
         Repeater {
             model: values.length
             delegate: DetailItem {
-                // NOTE It is not possible to allow links here.
+
                 label: index === 0 ? root.label : ""
                 value: root.values[index]
                 palette {

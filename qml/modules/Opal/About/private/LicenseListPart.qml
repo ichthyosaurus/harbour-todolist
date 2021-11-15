@@ -1,8 +1,7 @@
-/*
- * This file is part of opal-about.
- * SPDX-FileCopyrightText: 2021 Mirian Margiani
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+//@ This file is part of opal-about.
+//@ https://github.com/Pretty-SFOS/opal-about
+//@ SPDX-FileCopyrightText: 2021 Mirian Margiani
+//@ SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
@@ -15,8 +14,11 @@ Column {
     property var extraTexts: []
     property bool initiallyExpanded: false
 
-    // Acknowledgements without licenses should be shown
-    // on the contributors page but not on the licenses page.
+    property string homepage: ''
+    property string sources: ''
+
+
+
     visible: licenses.length > 0
     width: parent.width
     height: childrenRect.height
@@ -36,6 +38,22 @@ Column {
         font.pixelSize: Theme.fontSizeSmall
         color: Theme.highlightColor
         bottomPadding: Theme.paddingSmall
+    }
+
+    ButtonLayout {
+        visible: homepage !== '' || sources !== ''
+
+        Button {
+            visible: homepage !== ''
+            text: qsTranslate("Opal.About", "Homepage")
+            onClicked: pageStack.push("ExternalUrlPage.qml", {'externalUrl': homepage})
+        }
+
+        Button {
+            visible: sources !== ''
+            text: qsTranslate("Opal.About", "Source Code")
+            onClicked: pageStack.push("ExternalUrlPage.qml", {'externalUrl': sources})
+        }
     }
 
     Repeater {
@@ -101,28 +119,49 @@ Column {
 
             Item {
                 id: licenseTextContainer
-                height: licenseColumn.expanded ? licenseTextLabel.height : 0
+                height: licenseColumn.expanded ? textLoader.height : 0
                 width: parent.width - 2*Theme.horizontalPageMargin
                 anchors.horizontalCenter: parent.horizontalCenter
                 opacity: height > 0 ? 1.0 : 0.0
                 Behavior on opacity { FadeAnimation { duration: 150 } }
                 clip: true
 
-                Label {
-                    id: licenseTextLabel
-                    property bool error: modelData.error === true || modelData.fullText === ""
-                    width: parent.width
-                    wrapMode: Text.Wrap
-                    font.pixelSize: Theme.fontSizeExtraSmall
-                    textFormat: error ? Text.RichText : Text.PlainText
-                    color: Theme.highlightColor
+                Loader {
+                    id: textLoader
+                    asynchronous: true
+                    sourceComponent: Component {
+                        Column {
+                            width: licenseTextContainer.width
+                            spacing: Theme.paddingMedium
 
-                    text: error ? '<style type="text/css">A { color: "' +
-                                  String(Theme.primaryColor) +
-                                  '"; }</style>' + qsTranslate("Opal.About", "Please refer to <a href='%1'>%1</a>").arg(
-                                      "https://spdx.org/licenses/%1.html".arg(modelData.spdxId))
-                                : modelData.fullText
-                    onLinkActivated: Qt.openUrlExternally(link)
+                            Label {
+                                visible: modelData.customShortText !== ''
+                                text: modelData.customShortText + ' ―'
+                                width: parent.width
+                                wrapMode: Text.Wrap
+                                font.pixelSize: Theme.fontSizeSmall
+                                textFormat: Text.StyledText
+                                palette.primaryColor: Theme.highlightColor
+                                linkColor: Theme.primaryColor
+                                onLinkActivated: pageStack.push("ExternalUrlPage.qml", {'externalUrl': link})
+                            }
+
+                            Label {
+                                id: licenseTextLabel
+                                property bool error: modelData.error === true || modelData.fullText === ""
+                                width: parent.width
+                                wrapMode: Text.Wrap
+                                font.pixelSize: Theme.fontSizeExtraSmall
+                                textFormat: error ? Text.StyledText : Text.PlainText
+                                palette.primaryColor: Theme.highlightColor
+                                linkColor: Theme.primaryColor
+                                onLinkActivated: pageStack.push("ExternalUrlPage.qml", {'externalUrl': link})
+                                text: error ? qsTranslate("Opal.About", "Please refer to <a href='%1'>%1</a>").arg(
+                                                  "https://spdx.org/licenses/%1.html".arg(modelData.spdxId))
+                                            : modelData.fullText
+                            }
+                        }
+                    }
                 }
             }
         }

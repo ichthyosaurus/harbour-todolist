@@ -9,3 +9,6 @@ liverunner*
 DBs
 dist
 icon-src/raw
+
+libs/opal-docs
+libs/opal-translations

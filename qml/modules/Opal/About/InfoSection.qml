@@ -1,11 +1,11 @@
-/*
- * This file is part of opal-about.
- * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+//@ This file is part of opal-about.
+//@ https://github.com/Pretty-SFOS/opal-about
+//@ SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+//@ SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+
 
 Column {
     id: root
@@ -13,16 +13,34 @@ Column {
     width: parent.width
     height: childrenRect.height
 
+
     property alias title: _titleLabel.text
+
+
     property string text: ""
+
+
+    property string smallPrint: ""
+
+
     property string showMoreLabel: qsTranslate("Opal.About", "show details")
+
+
     property list<InfoButton> buttons
-    property alias backgroundItem: _bgItem
+
+
     property alias enabled: _bgItem.enabled
 
+
     default property alias contentItem: _contents.children
+
+
+    signal clicked
+
+    property alias _backgroundItem: _bgItem
     property alias _titleItem: _titleLabel
     property alias _textItem: _textLabel
+    property alias _smallPrintItem: _smallPrintLabel
     property alias _showMoreLabelItem: _showMoreLabel
 
     property list<DonationService> __donationButtons
@@ -34,12 +52,16 @@ Column {
         width: parent.width
         height: column.height
 
+        onClicked: root.clicked()
+
         Column {
             id: column
             width: parent.width - 2*Theme.horizontalPageMargin
             height: childrenRect.height
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: 0
+
+            Item { width: 1; height: Theme.paddingSmall }
 
             Label {
                 id: _titleLabel
@@ -65,14 +87,26 @@ Column {
 
                 Label {
                     id: _textLabel
+                    visible: root.text !== ''
                     width: parent.width
                     horizontalAlignment: Text.AlignLeft
                     wrapMode: Text.Wrap
-                    text: '<style type="text/css">A { color: "' +
-                          String(palette.secondaryColor) +
-                          '"; }</style>' + root.text
-                    textFormat: Text.RichText
+                    text: root.text
+                    textFormat: Text.StyledText
+                    linkColor: palette.secondaryColor
                     palette.primaryColor: Theme.highlightColor
+                }
+
+                Label {
+                    id: _smallPrintLabel
+                    visible: smallPrint !== ''
+                    width: parent.width
+                    horizontalAlignment: Text.AlignLeft
+                    wrapMode: Text.Wrap
+                    text: smallPrint
+                    textFormat: Text.StyledText
+                    palette.primaryColor: Theme.highlightColor
+                    font.pixelSize: Theme.fontSizeSmall
                 }
 
                 Row {
@@ -84,12 +118,13 @@ Column {
 
                     Label {
                         id: _showMoreLabel
-                        textFormat: Text.StyledText; font.pixelSize: Theme.fontSizeExtraSmall
+                        font.pixelSize: Theme.fontSizeExtraSmall
+                        textFormat: Text.StyledText
                         text: "<i>%1</i>".arg(showMoreLabel)
                     }
                     Label {
                         anchors.verticalCenter: _showMoreLabel.verticalCenter
-                        text: " \u2022 \u2022 \u2022" // three dots
+                        text: " \u2022 \u2022 \u2022"
                     }
                 }
             }
@@ -134,7 +169,7 @@ Column {
 
                 visible: modelData.name !== '' && modelData.url !== ''
                 text: modelData.name
-                onClicked: Qt.openUrlExternally(modelData.url)
+                onClicked: pageStack.push("private/ExternalUrlPage.qml", {'externalUrl': modelData.url})
             }
         }
     }
