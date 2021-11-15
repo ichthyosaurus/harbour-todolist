@@ -86,12 +86,11 @@ AboutPageBase {
         ContributionSection {
             title: qsTr("Translations")
             groups: [
-                ContributionGroup { title: qsTr("Polish"); entries: ["atlochowski"] },
+                ContributionGroup { title: qsTr("Polish"); entries: ["atlochowski", "likot180"] },
                 ContributionGroup { title: qsTr("Swedish"); entries: ["Åke Engelbrektson"]},
                 ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
                 ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]},
-                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]},
-                ContributionGroup { title: qsTr("Polish"); entries: ["likot180"]}
+                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]}
             ]
         }
     ]
