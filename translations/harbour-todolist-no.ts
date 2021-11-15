@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US">
+<TS version="2.1" language="nb_NO" sourcelanguage="en_US">
 <context>
     <name>AboutPage</name>
     <message>
@@ -71,10 +71,6 @@
         <translation>Legg til</translation>
     </message>
     <message>
-        <source>Planlegg for</source>
-        <translation>Plan</translation>
-    </message>
-    <message>
         <source>today</source>
         <translation>i dag</translation>
     </message>
@@ -97,6 +93,10 @@
     <message>
         <source>Enable predictive text input</source>
         <translation>Aktiver tekstforsalg</translation>
+    </message>
+    <message>
+        <source>Scheduled for</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -163,13 +163,13 @@
     </message>
     <message>
         <source>once</source>
-        <comment>intervall for gjentakande hendingar</comment>
-        <translation>ein gong</translation>
+        <comment>interval for recurring entries</comment>
+        <translation type="unfinished">ein gong</translation>
     </message>
     <message numerus="yes">
         <source>every %n day(s)</source>
-        <comment>interval for gjentakande hendingar</comment>
-        <translation>
+        <comment>interval for recurring entries</comment>
+        <translation type="unfinished">
             <numerusform>kvar %n dag</numerusform>
             <numerusform>kvar %n:e dag</numerusform>
         </translation>
@@ -190,20 +190,12 @@
         <translation>Utvikling</translation>
     </message>
     <message>
-        <source>Author</source>
-        <translation>Utviklar</translation>
-    </message>
-    <message>
         <source>show contributors</source>
         <translation>vis bidragsytar</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Lisens</translation>
-    </message>
-    <message>
-        <source>This is proprietary software. All rights reserved.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <source>show license(s)</source>
@@ -255,6 +247,34 @@
         <source>Note: please check the source code for most accurate information.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Homepage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>External Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copied to clipboard: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Download license texts</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Opal.About.Common</name>
@@ -268,92 +288,6 @@
     </message>
     <message>
         <source>Your contributions to translations or code would be most welcome.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Development</source>
-        <translation>Utvikling</translation>
-    </message>
-    <message>
-        <source>Programming</source>
-        <translation>Programmering</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <translation>Omsetjingar</translation>
-    </message>
-    <message>
-        <source>Donations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon Design</source>
-        <translation>Ikondesign</translation>
-    </message>
-    <message>
-        <source>Third-party libraries</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Data License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <source>Data License(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Terms of Use</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Swedish</source>
-        <translation>Svensk</translation>
-    </message>
-    <message>
-        <source>Polish</source>
-        <translation>Polsk</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>Tysk</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>Fransk</translation>
-    </message>
-    <message>
-        <source>Chinese</source>
-        <translation>Kinesisk</translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation>Engelsk</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>Italiensk</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>Finsk</translation>
-    </message>
-    <message>
-        <source>Norwegian</source>
-        <translation>Norsk</translation>
-    </message>
-    <message>
-        <source>Latvian</source>
-        <translation>Latvisk</translation>
-    </message>
-    <message>
-        <source>Estonian</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

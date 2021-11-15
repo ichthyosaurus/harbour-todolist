@@ -194,10 +194,6 @@
         <translation>Homepage</translation>
     </message>
     <message>
-        <source>Author</source>
-        <translation>Author</translation>
-    </message>
-    <message>
         <source>show contributors</source>
         <translation>show contributors</translation>
     </message>
@@ -208,10 +204,6 @@
     <message>
         <source>License</source>
         <translation>License</translation>
-    </message>
-    <message>
-        <source>This is proprietary software. All rights reserved.</source>
-        <translation>This is proprietary software. All rights reserved.</translation>
     </message>
     <message numerus="yes">
         <source>show license(s)</source>
@@ -287,93 +279,6 @@
 <context>
     <name>Opal.About.Common</name>
     <message>
-        <source>Development</source>
-        <translation>Development</translation>
-    </message>
-    <message>
-        <source>Programming</source>
-        <translation>Programming</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <translation>Translations</translation>
-    </message>
-    <message>
-        <source>Donations</source>
-        <translation>Donations</translation>
-    </message>
-    <message>
-        <source>Icon Design</source>
-        <translation>Icon Design</translation>
-    </message>
-    <message>
-        <source>Third-party libraries</source>
-        <translation>Third-party libraries</translation>
-    </message>
-    <message>
-        <source>Data</source>
-        <translation>Data</translation>
-    </message>
-    <message>
-        <source>Data License</source>
-        <translation>Data License</translation>
-    </message>
-    <message numerus="yes">
-        <source>Data License(s)</source>
-        <translation>
-            <numerusform>Data License</numerusform>
-            <numerusform>Data Licenses</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Terms of Use</source>
-        <translation>Terms of Use</translation>
-    </message>
-    <message>
-        <source>Swedish</source>
-        <translation>Swedish</translation>
-    </message>
-    <message>
-        <source>Polish</source>
-        <translation>Polish</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>German</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>French</translation>
-    </message>
-    <message>
-        <source>Chinese</source>
-        <translation>Chinese</translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation>English</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>Italian</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>Finnish</translation>
-    </message>
-    <message>
-        <source>Norwegian</source>
-        <translation>Norwegian</translation>
-    </message>
-    <message>
-        <source>Latvian</source>
-        <translation>Latvian</translation>
-    </message>
-    <message>
-        <source>Estonian</source>
-        <translation>Estonian</translation>
-    </message>
-    <message>
         <source>If you want to support my work, you can buy me a cup of coffee.</source>
         <translation>If you want to support my work, you can buy me a cup of coffee.</translation>
     </message>
@@ -384,28 +289,6 @@
     <message>
         <source>Your contributions to translations or code would be most welcome.</source>
         <translation>Your contributions to translations or code would be most welcome.</translation>
-    </message>
-    <message>
-        <source>Author</source>
-        <translation>Author</translation>
-    </message>
-    <message numerus="yes">
-        <source>Author(s)</source>
-        <translation>
-            <numerusform>Author</numerusform>
-            <numerusform>Authors</numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Maintainer</source>
-        <translation>Maintainer</translation>
-    </message>
-    <message numerus="yes">
-        <source>Maintainer(s)</source>
-        <translation>
-            <numerusform>Maintainer</numerusform>
-            <numerusform>Maintainers</numerusform>
-        </translation>
     </message>
 </context>
 <context>

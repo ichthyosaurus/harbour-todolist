@@ -191,20 +191,12 @@
         <translation>Rozwój</translation>
     </message>
     <message>
-        <source>Author</source>
-        <translation>Autor</translation>
-    </message>
-    <message>
         <source>show contributors</source>
         <translation>pokaż współtwórców</translation>
     </message>
     <message>
         <source>License</source>
         <translation>Licencja</translation>
-    </message>
-    <message>
-        <source>This is proprietary software. All rights reserved.</source>
-        <translation>To jest zastrzeżone oprogramowanie. Wszelkie prawa zastrzeżone.</translation>
     </message>
     <message numerus="yes">
         <source>show license(s)</source>
@@ -290,78 +282,6 @@
 <context>
     <name>Opal.About.Common</name>
     <message>
-        <source>Development</source>
-        <translation>Rozwój</translation>
-    </message>
-    <message>
-        <source>Programming</source>
-        <translation>Programowanie</translation>
-    </message>
-    <message>
-        <source>Translations</source>
-        <translation>Tłumaczenia</translation>
-    </message>
-    <message>
-        <source>Icon Design</source>
-        <translation>Projekt ikon</translation>
-    </message>
-    <message>
-        <source>Swedish</source>
-        <translation>szwedzki</translation>
-    </message>
-    <message>
-        <source>Polish</source>
-        <translation>polski</translation>
-    </message>
-    <message>
-        <source>German</source>
-        <translation>niemiecki</translation>
-    </message>
-    <message>
-        <source>French</source>
-        <translation>francuski</translation>
-    </message>
-    <message>
-        <source>Chinese</source>
-        <translation>chiński</translation>
-    </message>
-    <message>
-        <source>English</source>
-        <translation>angielski</translation>
-    </message>
-    <message>
-        <source>Italian</source>
-        <translation>włoski</translation>
-    </message>
-    <message>
-        <source>Finnish</source>
-        <translation>fiński</translation>
-    </message>
-    <message>
-        <source>Norwegian</source>
-        <translation>norweski</translation>
-    </message>
-    <message>
-        <source>Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <source>Data License(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Third-party libraries</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Data License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>If you want to support my work, you can buy me a cup of coffee.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -370,48 +290,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Donations</source>
-        <translation>Darowizny</translation>
-    </message>
-    <message>
-        <source>Latvian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Your contributions to translations or code would be most welcome.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Estonian</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Terms of Use</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Author</source>
-        <translation>Autor</translation>
-    </message>
-    <message numerus="yes">
-        <source>Author(s)</source>
-        <translation type="unfinished">
-            <numerusform>Autor</numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Maintainer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message numerus="yes">
-        <source>Maintainer(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
     </message>
 </context>
 <context>
