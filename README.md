@@ -95,6 +95,8 @@ Please do not forget to add yourself to the list of contributors in
         libs/SortFilterProxyModel/filters/filtersqmltypes.cpp
         libs/SortFilterProxyModel/sorters/sortersqmltypes.cpp
 
+        sed -i '1i #include <QtQml>' libs/SortFilterProxyModel/{filters/filtersqmltypes,sorters/sortersqmltypes}.cpp
+
 3. Open `harbour-todolist.pro` in Sailfish OS IDE (Qt Creator for Sailfish)
 4. To run on emulator, select the `i486` target and press the run button
 5. To build for the device, select the `armv7hl` target and deploy all,
