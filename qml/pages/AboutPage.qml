@@ -75,7 +75,7 @@ AboutPageBase {
             groups: [
                 ContributionGroup {
                     title: qsTr("Programming")
-                    entries: ["Mirian Margiani", "Johannes Bachmann"]
+                    entries: ["Mirian Margiani", "Johannes Bachmann", "Øystein S. Haaland"]
                 }/*,
                 ContributionGroup {
                     title: qsTr("Icon Design")
