@@ -13,7 +13,7 @@
 #    }
 
 module: Opal.About (opal-about)
-version: 0.5.0 (git:ea2b111)
+version: 0.6.0 (git:3e51daa)
 description: This module provides <i>AboutPageBase</i> for building customizable application information pages.
 maintainers: ichthyosaurus
 attribution: 2018-2021 Mirian Margiani

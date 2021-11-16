@@ -16,13 +16,16 @@ Page {
     property string appName: ""
 
 
-    property string iconSource: ""
+    property string appIcon: ""
 
 
-    property string versionNumber: ""
+    property string appVersion: ""
 
 
-    property string releaseNumber: "1"
+    property string appRelease: "1"
+
+
+    property string appReleaseType: ""
 
 
     property string description: ""
@@ -136,7 +139,7 @@ Page {
                 width: Theme.itemSizeExtraLarge
                 height: Theme.itemSizeExtraLarge
                 fillMode: Image.PreserveAspectFit
-                source: iconSource
+                source: appIcon
                 verticalAlignment: Image.AlignVCenter
             }
 
@@ -156,11 +159,18 @@ Page {
 
                 Label {
                     width: parent.width
-                    visible: String(versionNumber !== "")
-                    text: qsTranslate("Opal.About", "Version %1").arg(
-                              (String(releaseNumber) == "1") ?
-                                  versionNumber :
-                                  versionNumber+"-"+releaseNumber)
+                    visible: String(appVersion !== "")
+                    text: {
+                        var versionString = appVersion
+                        if (appRelease != "" && appRelease != "1") versionString += "-" + appRelease
+
+                        if (appReleaseType == "") {
+                            return qsTranslate("Opal.About", "Version %1").arg(versionString)
+                        } else {
+                            return qsTranslate("Opal.About", "Version %1 (%2)").arg(versionString).arg(appReleaseType)
+                        }
+                    }
+                    wrapMode: Text.Wrap
                     color: Theme.secondaryHighlightColor
                     font.pixelSize: Theme.fontSizeMedium
                     horizontalAlignment: Text.AlignHCenter

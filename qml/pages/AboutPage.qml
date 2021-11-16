@@ -44,9 +44,9 @@ import Opal.About 1.0
 AboutPageBase {
     id: page
     appName: main.appName
-    iconSource: Qt.resolvedUrl("../images/harbour-todolist.png")
-    versionNumber: APP_VERSION
-    releaseNumber: APP_RELEASE
+    appIcon: Qt.resolvedUrl("../images/harbour-todolist.png")
+    appVersion: APP_VERSION
+    appRelease: APP_RELEASE
     description: qsTr("A simple tool for planning what to do next.")
     mainAttributions: "2020-2021 Mirian Margiani"
     sourcesUrl: "https://github.com/ichthyosaurus/harbour-todolist"
