@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+SPDX-FileCopyrightText: 2020-2022 Mirian Margiani
 SPDX-License-Identifier: GFDL-1.3-or-later
 -->
 
@@ -104,7 +104,7 @@ Please do not forget to add yourself to the list of contributors in
 
 ## License
 
-> Copyright (C) 2020-2021  Mirian Margiani
+> Copyright (C) 2020-2022  Mirian Margiani
 
 `harbour-todolist` is Free Software released under the terms of the
 [GNU General Public License v3 (or later)](https://spdx.org/licenses/GPL-3.0-or-later.html).
