@@ -1,22 +1,7 @@
 /*
  * This file is part of harbour-todolist.
- *
- * SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
- *
+ * SPDX-FileCopyrightText: 2020-2022 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * harbour-todolist is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * harbour-todolist is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <https://www.gnu.org/licenses/>.
- *
  */
 
 /*
@@ -48,7 +33,7 @@ AboutPageBase {
     appVersion: APP_VERSION
     appRelease: APP_RELEASE
     description: qsTr("A simple tool for planning what to do next.")
-    mainAttributions: "2020-2021 Mirian Margiani"
+    mainAttributions: "2020-2022 Mirian Margiani"
     sourcesUrl: "https://github.com/ichthyosaurus/harbour-todolist"
     homepageUrl: "https://openrepos.net/content/ichthyosaurus/todolist"
 
@@ -60,13 +45,7 @@ AboutPageBase {
             licenses: License { spdxId: "MIT" }
             sources: "https://github.com/oKcerG/SortFilterProxyModel"
         },
-        Attribution {
-            name: "Opal.About"
-            entries: "2018-2021 Mirian Margiani"
-            licenses: License { spdxId: "GPL-3.0-or-later"}
-            sources: "https://github.com/Pretty-SFOS/opal-about"
-            homepage: "https://github.com/Pretty-SFOS/opal"
-        }
+        OpalAboutAttribution { }
     ]
 
     contributionSections: [
