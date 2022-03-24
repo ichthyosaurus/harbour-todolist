@@ -16,14 +16,18 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sat May 01 2021 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.2.0-1
-- Update all translations, with a few strings fixed and clarified
-- Fix marking and moving entries
-- Add support for MyBackup
-- Add option to move entries to another project when editing
-- Add new "About" page using Opal.About
-- Reduce package size by shrinking icon files
-- Improve licensing: the project is now 'reuse'-compliant (cf. https://reuse.software/spec/)
+* Thu Mar 24 2022 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.2.0-1
+- all translations updated with a few strings fixed and clarified
+- added translations: Norwegian
+- updated translations: Polish
+- fixed marking and moving entries
+- added a new Sailjail profile ("Documents" permission required for import and export)
+- added support for My Backup
+- added an option to move entries to another project when editing
+- added a new "About" page using Opal.About
+- reduced package size by shrinking icon files
+- improved licensing: the project is now 'reuse'-compliant (cf. https://reuse.software/spec/)
+- new known bug: marking recurring entries as "done" is not possible
 
 * Mon Dec 21 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.4-1
 - Update Swedish translation by eson57 (thank you!)
