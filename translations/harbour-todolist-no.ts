@@ -39,13 +39,13 @@
         <source>Norwegian</source>
         <translation>Norsk</translation>
     </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
-    <message>
-        <source>Save</source>
-        <translation>Lagre</translation>
-    </message>
     <message>
         <source>Enter title</source>
         <translation>Skriv tittel</translation>
@@ -65,10 +65,6 @@
     <message>
         <source>Cancel</source>
         <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Add an entry</source>
-        <translation>Legg til</translation>
     </message>
     <message>
         <source>today</source>
@@ -98,12 +94,9 @@
         <source>Scheduled for</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>AddRecurringDialog</name>
     <message>
-        <source>Add a recurring entry</source>
-        <translation>Legg til gjentakande innslag</translation>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -147,12 +140,12 @@
 <context>
     <name>EditItemDialog</name>
     <message>
-        <source>Edit entry</source>
-        <translation>Endre gjeremål</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Slett</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Lagre</translation>
     </message>
 </context>
 <context>
@@ -164,12 +157,12 @@
     <message>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">ein gong</translation>
+        <translation>ein gong</translation>
     </message>
     <message numerus="yes">
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
+        <translation>
             <numerusform>kvar %n dag</numerusform>
             <numerusform>kvar %n:e dag</numerusform>
         </translation>
@@ -275,6 +268,10 @@
         <source>Download license texts</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Version %1 (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Opal.About.Common</name>
@@ -337,10 +334,6 @@
         <source>Add a project</source>
         <translation>Legg til ein prosjekt</translation>
     </message>
-    <message>
-        <source>Edit project</source>
-        <translation>Endre prosjekt</translation>
-    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -377,19 +370,15 @@
         <translation>Denne sida vil liste alle gjentakande oppføringar.</translation>
     </message>
     <message>
-        <source>Edit recurring entry</source>
-        <translation>Endre gjentakande oppføring</translation>
-    </message>
-    <message>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished">Trykk og hald for å endre eller slette</translation>
+        <translation>Trykk og hald for å endre eller slette</translation>
     </message>
 </context>
 <context>
     <name>StartDateButton</name>
     <message>
         <source>Starting at</source>
-        <translation type="unfinished">Byrjar</translation>
+        <translation>Byrjar</translation>
     </message>
 </context>
 <context>
@@ -417,13 +406,6 @@
     <message>
         <source>This week</source>
         <translation>Denne veka</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Edit entry</source>
-        <translation>Endre oppføring</translation>
     </message>
 </context>
 <context>
@@ -546,7 +528,7 @@
     </message>
     <message>
         <source>to be done later this week</source>
-        <translation type="unfinished">Å gjere seinare denne veka</translation>
+        <translation>Å gjere seinare denne veka</translation>
     </message>
     <message>
         <source>continue someday later</source>
@@ -688,7 +670,7 @@
     </message>
     <message>
         <source>Updating reference entries failed.</source>
-        <translation type="unfinished">Oppdatering av referanse-oppføringar feila.</translation>
+        <translation>Oppdatering av referanse-oppføringar feila.</translation>
     </message>
 </context>
 </TS>

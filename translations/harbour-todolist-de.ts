@@ -39,13 +39,13 @@
         <source>Norwegian</source>
         <translation>Norwegisch</translation>
     </message>
+    <message>
+        <source>English</source>
+        <translation>Englisch</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
-    <message>
-        <source>Save</source>
-        <translation>Speichern</translation>
-    </message>
     <message>
         <source>Enter title</source>
         <translation>Titel eingeben</translation>
@@ -65,10 +65,6 @@
     <message>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
-    </message>
-    <message>
-        <source>Add an entry</source>
-        <translation>Eintrag hinzufügen</translation>
     </message>
     <message>
         <source>Scheduled for</source>
@@ -98,12 +94,9 @@
         <source>Enable predictive text input</source>
         <translation>Eingabevervollständigung aktivieren</translation>
     </message>
-</context>
-<context>
-    <name>AddRecurringDialog</name>
     <message>
-        <source>Add a recurring entry</source>
-        <translation>Wiederholten Eintrag hinzufügen</translation>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -147,12 +140,12 @@
 <context>
     <name>EditItemDialog</name>
     <message>
-        <source>Edit entry</source>
-        <translation>Eintrag bearbeiten</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Speichern</translation>
     </message>
 </context>
 <context>
@@ -275,6 +268,10 @@
         <source>Copy to clipboard</source>
         <translation>In die Zwischenablage kopieren</translation>
     </message>
+    <message>
+        <source>Version %1 (%2)</source>
+        <translation>Version %1 (%2)</translation>
+    </message>
 </context>
 <context>
     <name>Opal.About.Common</name>
@@ -337,10 +334,6 @@
         <source>Add a project</source>
         <translation>Projekt hinzufügen</translation>
     </message>
-    <message>
-        <source>Edit project</source>
-        <translation>Projekt bearbeiten</translation>
-    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -375,10 +368,6 @@
     <message>
         <source>This page will show a list of all recurring entries.</source>
         <translation>Auf dieser Seite werden alle automatisch wiederholten Einträge angezeigt.</translation>
-    </message>
-    <message>
-        <source>Edit recurring entry</source>
-        <translation>Wiederholten Eintrag bearbeiten</translation>
     </message>
     <message>
         <source>press and hold to edit or delete</source>
@@ -417,13 +406,6 @@
     <message>
         <source>This week</source>
         <translation>Diese Woche</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Edit entry</source>
-        <translation>Eintrag bearbeiten</translation>
     </message>
 </context>
 <context>

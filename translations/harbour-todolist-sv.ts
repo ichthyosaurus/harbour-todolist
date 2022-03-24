@@ -39,13 +39,13 @@
         <source>Norwegian</source>
         <translation>Norska</translation>
     </message>
+    <message>
+        <source>English</source>
+        <translation>Engelska</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
-    <message>
-        <source>Save</source>
-        <translation>Spara</translation>
-    </message>
     <message>
         <source>Enter title</source>
         <translation>Ange titel</translation>
@@ -65,10 +65,6 @@
     <message>
         <source>Cancel</source>
         <translation>Avbryt</translation>
-    </message>
-    <message>
-        <source>Add an entry</source>
-        <translation>Lägg till en post</translation>
     </message>
     <message>
         <source>Scheduled for</source>
@@ -98,12 +94,9 @@
         <source>Enable predictive text input</source>
         <translation>Aktivera textförutsägelse</translation>
     </message>
-</context>
-<context>
-    <name>AddRecurringDialog</name>
     <message>
-        <source>Add a recurring entry</source>
-        <translation>Lägg till en återkommande post</translation>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -147,12 +140,12 @@
 <context>
     <name>EditItemDialog</name>
     <message>
-        <source>Edit entry</source>
-        <translation>Redigera post</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Spara</translation>
     </message>
 </context>
 <context>
@@ -225,11 +218,11 @@
     </message>
     <message>
         <source>Please refer to &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Se &lt;a href=&apos;%1&apos;&gt;%1&lt;/a&gt;</translation>
     </message>
     <message>
         <source>Donations</source>
-        <translation type="unfinished"></translation>
+        <translation>Donationer</translation>
     </message>
     <message>
         <source>Translations</source>
@@ -237,58 +230,62 @@
     </message>
     <message>
         <source>Note: please check the source code for most accurate information.</source>
-        <translation type="unfinished"></translation>
+        <translation>OBS! Kontrollera källkoden för mer information.</translation>
     </message>
     <message>
         <source>Acknowledgements</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekräftelser</translation>
     </message>
     <message>
         <source>Thank you!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tack!</translation>
     </message>
     <message>
         <source>External Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Extern länk</translation>
     </message>
     <message>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna i webbläsaren</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera till urklipp</translation>
     </message>
     <message>
         <source>Download license texts</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladda ner licenstexter</translation>
     </message>
     <message>
         <source>Homepage</source>
-        <translation type="unfinished"></translation>
+        <translation>Hemsida</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation type="unfinished"></translation>
+        <translation>Detaljerad information</translation>
     </message>
     <message>
         <source>Copied to clipboard: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierat till urklipp: %1</translation>
+    </message>
+    <message>
+        <source>Version %1 (%2)</source>
+        <translation>Version %1 (%2)</translation>
     </message>
 </context>
 <context>
     <name>Opal.About.Common</name>
     <message>
         <source>If you want to support my work, you can buy me a cup of coffee.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om du vill stödja mitt arbete, kan du bjuda mig på en kopp kaffe.</translation>
     </message>
     <message>
         <source>You can support this project by contributing, or by donating using any of these services.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan stödja det här projektet genom kodbidrag eller genom att donera med någon av dessa tjänster.</translation>
     </message>
     <message>
         <source>Your contributions to translations or code would be most welcome.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditt bidrag till översättningar eller kod är mycket välkomna.</translation>
     </message>
 </context>
 <context>
@@ -337,10 +334,6 @@
         <source>Add a project</source>
         <translation>Lägg till ett projekt</translation>
     </message>
-    <message>
-        <source>Edit project</source>
-        <translation>Redigera projekt</translation>
-    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -375,10 +368,6 @@
     <message>
         <source>This page will show a list of all recurring entries.</source>
         <translation>Denna sida visar en lista över alla återkommande poster.</translation>
-    </message>
-    <message>
-        <source>Edit recurring entry</source>
-        <translation>Lägg till återkommande post</translation>
     </message>
     <message>
         <source>press and hold to edit or delete</source>
@@ -417,13 +406,6 @@
     <message>
         <source>This week</source>
         <translation>Denna vecka</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Edit entry</source>
-        <translation>Redigera post</translation>
     </message>
 </context>
 <context>

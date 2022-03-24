@@ -39,13 +39,13 @@
         <source>Norwegian</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Enter title</source>
         <translation type="unfinished"></translation>
@@ -64,10 +64,6 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add an entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -98,11 +94,8 @@
         <source>Enable predictive text input</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>AddRecurringDialog</name>
     <message>
-        <source>Add a recurring entry</source>
+        <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -147,11 +140,11 @@
 <context>
     <name>EditItemDialog</name>
     <message>
-        <source>Edit entry</source>
+        <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Delete</source>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -272,6 +265,10 @@
         <source>Download license texts</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Version %1 (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Opal.About.Common</name>
@@ -334,10 +331,6 @@
         <source>Add a project</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Edit project</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -371,10 +364,6 @@
     </message>
     <message>
         <source>This page will show a list of all recurring entries.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit recurring entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -413,13 +402,6 @@
     </message>
     <message>
         <source>This week</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Edit entry</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

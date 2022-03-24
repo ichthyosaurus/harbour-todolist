@@ -39,13 +39,13 @@
         <source>Norwegian</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
-    <message>
-        <source>Save</source>
-        <translation>保存</translation>
-    </message>
     <message>
         <source>Enter title</source>
         <translation>输入标题</translation>
@@ -65,10 +65,6 @@
     <message>
         <source>Cancel</source>
         <translation>取消</translation>
-    </message>
-    <message>
-        <source>Add an entry</source>
-        <translation>添加一则事项</translation>
     </message>
     <message>
         <source>Scheduled for</source>
@@ -98,12 +94,9 @@
         <source>Enable predictive text input</source>
         <translation>输入预计内容</translation>
     </message>
-</context>
-<context>
-    <name>AddRecurringDialog</name>
     <message>
-        <source>Add a recurring entry</source>
-        <translation>添加一则重复事项</translation>
+        <source>Add</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -147,12 +140,12 @@
 <context>
     <name>EditItemDialog</name>
     <message>
-        <source>Edit entry</source>
-        <translation>编辑事项</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>删除</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
     </message>
 </context>
 <context>
@@ -230,7 +223,7 @@
     </message>
     <message>
         <source>Translations</source>
-        <translation type="unfinished">翻译</translation>
+        <translation>翻译</translation>
     </message>
     <message>
         <source>Note: please check the source code for most accurate information.</source>
@@ -270,6 +263,10 @@
     </message>
     <message>
         <source>Download license texts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -334,10 +331,6 @@
         <source>Add a project</source>
         <translation>添加一个项目</translation>
     </message>
-    <message>
-        <source>Edit project</source>
-        <translation>编辑项目</translation>
-    </message>
 </context>
 <context>
     <name>RecurringsView</name>
@@ -372,10 +365,6 @@
     <message>
         <source>This page will show a list of all recurring entries.</source>
         <translation>该页会显示所有重复事项。</translation>
-    </message>
-    <message>
-        <source>Edit recurring entry</source>
-        <translation>编辑重复事项</translation>
     </message>
     <message>
         <source>press and hold to edit or delete</source>
@@ -414,13 +403,6 @@
     <message>
         <source>This week</source>
         <translation>本周</translation>
-    </message>
-</context>
-<context>
-    <name>TodoListBaseItem</name>
-    <message>
-        <source>Edit entry</source>
-        <translation>编辑事项</translation>
     </message>
 </context>
 <context>
