@@ -16,6 +16,12 @@ c__FOR_RENDER_LIB__="0.3.0"
 source ../libs/opal-render-icons.sh
 cFORCE=false
 
+for i in raw/*.svg; do
+    if [[ "$i" -nt "${i#raw/}" ]]; then
+        scour "$i" > "${i#raw/}"
+    fi
+done
+
 cNAME="app icons"
 cITEMS=(harbour-todolist)
 cRESOLUTIONS=(86 108 128 172)
