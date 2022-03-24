@@ -14,7 +14,7 @@ Release: 1
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
 Group: Applications/Productivity
 URL: https://github.com/ichthyosaurus/harbour-todolist
-License: GPLv3
+License: GPL-3.0-or-later
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:

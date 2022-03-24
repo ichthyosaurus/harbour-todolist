@@ -13,7 +13,7 @@ Summary:    A simple todo list manager
 Version:    1.2.0
 Release:    1
 Group:      Applications/Productivity
-License:    GPLv3
+License:    GPL-3.0-or-later
 URL:        https://github.com/ichthyosaurus/harbour-todolist
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-todolist.yaml
