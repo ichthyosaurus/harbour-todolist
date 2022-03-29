@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-#ifdef QT_QML_DEBUG
+//#ifdef QT_QML_DEBUG
 #include <QtQuick>
-#endif
+//#endif
 
 #include <sailfishapp.h>
 #include "requires_defines.h"
