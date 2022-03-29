@@ -23,10 +23,15 @@ Description: |
   A simple todo list manager with support for multiple projects.
 
 Configure: none
+
 Builder: qmake5
+
 QMakeOptions:
   - VERSION=%{version}
   - RELEASE=%{release}
+
+Macros:
+  - __provides_exclude_from;^%{_datadir}/.*$
 
 # This section specifies build dependencies that are resolved using pkgconfig.
 # This is the preferred way of specifying build dependencies for your package.
