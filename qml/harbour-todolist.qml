@@ -203,9 +203,10 @@ ApplicationWindow
         if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);
         if (text !== undefined) recurringsModel.setProperty(which, "text", text);
         if (description !== undefined) recurringsModel.setProperty(which, "description", description);
-        if (project === undefined) project = currentEntriesModel.getProperty(which, "project");
 
         var item = recurringsModel.get(which);
+        if (project === undefined) project = item.project;
+
         Storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
                                 project, item.text, item.description);
 
