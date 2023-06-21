@@ -2,6 +2,4 @@
 # SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-EntryState 1.0 EntryState.js
-EntrySubState 1.0 EntrySubState.js
 FakeNavigation 1.0 FakeNavigation.js

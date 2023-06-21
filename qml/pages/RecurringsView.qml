@@ -21,6 +21,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
+import Harbour.Todolist 1.0
 import "../components"
 import "../js/helpers.js" as Helpers
 import "../constants" 1.0
@@ -77,8 +78,8 @@ SilicaListView {
         editableShowProject: true
 
         onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
-        onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
-        onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
+        onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, undefined,
+                                                  newText, newDescription, newProject);
         onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
         onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
         extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
@@ -86,19 +87,19 @@ SilicaListView {
         menu: Component {
             ContextMenu {
                 MenuItem {
-                    visible: entryState !== EntryState.todo
+                    visible: entryState !== Entry.TODO
                     text: qsTr("mark as active")
-                    onClicked: markItemAs(index, EntryState.todo, undefined)
+                    onClicked: markItemAs(index, Entry.TODO, undefined)
                 }
                 MenuItem {
-                    visible: entryState !== EntryState.ignored
+                    visible: entryState !== Entry.IGNORED
                     text: qsTr("mark as halted")
-                    onClicked: markItemAs(index, EntryState.ignored, undefined)
+                    onClicked: markItemAs(index, Entry.IGNORED, undefined)
                 }
                 MenuItem {
-                    visible: entryState !== EntryState.done
+                    visible: entryState !== Entry.DONE
                     text: qsTr("mark as done")
-                    onClicked: markItemAs(index, EntryState.done, undefined)
+                    onClicked: markItemAs(index, Entry.DONE, undefined)
                 }
                 MenuItem {
                     enabled: false

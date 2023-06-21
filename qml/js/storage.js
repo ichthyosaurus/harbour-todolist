@@ -26,11 +26,10 @@
 // anywhere other than in harbour-todolist.qml.
 
 .import QtQuick.LocalStorage 2.0 as LS
-.import "../constants/EntryState.js" as EntryState
-.import "../constants/EntrySubState.js" as EntrySubState
 .import "helpers.js" as Helpers
 
-function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
+var EntryState = {todo = 0, ignored = 1, done = 2};
+var EntrySubState = {today = 0, tomorrow = 1, thisweek = 2, someday = 3};
 
 function error(summary, details) {
     details = details.toString();
@@ -97,7 +96,7 @@ function doInit(db) {
 function simpleQuery(query, values/*, getSelectedCount*/) {
     var db = getDatabase();
     var res = undefined;
-    values = defaultFor(values, []);
+    values = Helpers.defaultFor(values, []);
 
     if (!query) {
         error(qsTr("Empty database query"), qsTr("This is a programming error. Please file a bug report."))
@@ -132,7 +131,7 @@ function getProjects() {
 }
 
 function getProject(entryId) {
-    entryId = defaultFor(entryId, defaultProjectId);
+    entryId = Helpers.defaultFor(entryId, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM projects WHERE rowid=? LIMIT 1;', [entryId]);
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
@@ -175,7 +174,7 @@ function deleteProject(entryId) {
 }
 
 function getRecurrings(forProject) {
-    forProject = defaultFor(forProject, defaultProjectId);
+    forProject = Helpers.defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM recurrings WHERE project=?;', [forProject]);
     var res = []
 
@@ -255,13 +254,13 @@ function _prepareEntries(q) {
 }
 
 function getEntries(forProject) {
-    forProject = defaultFor(forProject, defaultProjectId);
+    forProject = Helpers.defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date >= ?;', [forProject, todayString]);
     return _prepareEntries(q);
 }
 
 function getArchivedEntries(forProject) {
-    forProject = defaultFor(forProject, defaultProjectId);
+    forProject = Helpers.defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
     return _prepareEntries(q);
 }
@@ -308,7 +307,7 @@ function deleteEntry(entryId) {
 }
 
 function carryOverFrom(fromDate) {
-    fromDate = defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
+    fromDate = Helpers.defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
     var fromDateString = Helpers.getDateString(fromDate)
 
     // copy all entries with entryState = todo and subState = today, that are older than today
