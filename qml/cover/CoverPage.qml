@@ -22,8 +22,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
+import Harbour.Todolist 1.0
 import "../components"
-import "../constants" 1.0
 
 CoverBackground {
     SortFilterProxyModel {
@@ -43,17 +43,17 @@ CoverBackground {
                 }
                 ValueFilter {
                     roleName: "subState"
-                    value: EntrySubState.today
+                    value: Entry.TODAY
                 }
             },
             AnyOf {
                 ValueFilter {
                     roleName: "entryState"
-                    value: EntryState.todo
+                    value: Entry.TODO
                 }
                 ValueFilter {
                     roleName: "entryState"
-                    value: EntryState.ignored
+                    value: Entry.IGNORED
                 }
             }
         ]
@@ -86,9 +86,9 @@ CoverBackground {
                 anchors { top: parent.top; topMargin: Theme.paddingSmall }
                 color: Theme.primaryColor
                 source: {
-                    if (entryState === EntryState.todo) "../images/icon-todo-small.png"
-                    else if (entryState === EntryState.ignored) "../images/icon-ignored-small.png"
-                    else if (entryState === EntryState.done) "../images/icon-done-small.png"
+                    if (entryState === Entry.TODO) "../images/icon-todo-small.png"
+                    else if (entryState === Entry.IGNORED) "../images/icon-ignored-small.png"
+                    else if (entryState === Entry.DONE) "../images/icon-done-small.png"
                 }
             }
 

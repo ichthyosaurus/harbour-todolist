@@ -20,7 +20,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../constants" 1.0
+import Harbour.Todolist 1.0
 
 ListItem {
     id: item
@@ -51,7 +51,8 @@ ListItem {
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
     signal saveItemDetails(var which, var newText, var newDescription, var newProject)
-    signal saveItemRecurring(var which, var interval, var startDate)
+    signal saveItemRecurring(var which, var interval, var startDate,
+                             var newText, var newDescription, var newProject)
     signal deleteThisItem(var which)
 
     function startEditing() {
@@ -67,9 +68,11 @@ ListItem {
         dialog.accepted.connect(function() {
             if (dialog.requestDeletion) {
                 deleteThisItem(index);
+            } else if (editableInterval) {
+                saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate,
+                                  dialog.text.trim(), dialog.description.trim(), dialog.project);
             } else {
                 saveItemDetails(index, dialog.text.trim(), dialog.description.trim(), dialog.project);
-                if (editableInterval) saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate);
             }
         });
     }
@@ -170,36 +173,36 @@ ListItem {
     states: [
         State {
             name: "todo"
-            when: _isArchivedEntry === false && entryState === EntryState.todo
+            when: _isArchivedEntry === false && entryState === Entry.TODO
             PropertyChanges { target: statusIcon; source: "../images/icon-todo.png"; opacity: Theme.opacityHigh }
         },
         State {
             name: "ignored"
-            when: _isArchivedEntry === false && entryState === EntryState.ignored
+            when: _isArchivedEntry === false && entryState === Entry.IGNORED
             PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityHigh }
         },
         State {
             name: "done"
-            when: _isArchivedEntry === false && entryState === EntryState.done
+            when: _isArchivedEntry === false && entryState === Entry.DONE
             PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityLow }
         },
         State {
             name: "todoArchived"
-            when: _isArchivedEntry === true && entryState === EntryState.todo
+            when: _isArchivedEntry === true && entryState === Entry.TODO
             PropertyChanges { target: statusIcon; source: "../images/icon-todo.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityLow }
         },
         State {
             name: "ignoredArchived"
-            when: _isArchivedEntry === true && entryState === EntryState.ignored
+            when: _isArchivedEntry === true && entryState === Entry.IGNORED
             PropertyChanges { target: statusIcon; source: "../images/icon-ignored.png"; }
             PropertyChanges { target: row; opacity: Theme.opacityHigh }
         },
         State {
             name: "doneArchived"
-            when: _isArchivedEntry === true && entryState === EntryState.done
+            when: _isArchivedEntry === true && entryState === Entry.DONE
             PropertyChanges { target: statusIcon; source: "../images/icon-done.png"; opacity: Theme.opacityHigh }
         }
     ]

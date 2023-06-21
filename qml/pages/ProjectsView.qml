@@ -21,6 +21,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import SortFilterProxyModel 0.2
+import Harbour.Todolist 1.0
 import "../components"
 import "../constants" 1.0
 
@@ -90,19 +91,19 @@ SilicaListView {
         menu: Component {
             ContextMenu {
                 MenuItem {
-                    visible: entryState !== EntryState.todo
+                    visible: entryState !== Entry.TODO
                     text: qsTr("mark as active")
-                    onClicked: markItemAs(index, EntryState.todo, undefined)
+                    onClicked: markItemAs(index, Entry.TODO, undefined)
                 }
                 MenuItem {
-                    visible: entryState !== EntryState.ignored
+                    visible: entryState !== Entry.IGNORED
                     text: qsTr("mark as halted")
-                    onClicked: markItemAs(index, EntryState.ignored, undefined)
+                    onClicked: markItemAs(index, Entry.IGNORED, undefined)
                 }
                 MenuItem {
-                    visible: entryState !== EntryState.done
+                    visible: entryState !== Entry.DONE
                     text: qsTr("mark as finished")
-                    onClicked: markItemAs(index, EntryState.done, undefined)
+                    onClicked: markItemAs(index, Entry.DONE, undefined)
                 }
                 MenuItem {
                     visible: editable

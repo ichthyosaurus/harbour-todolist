@@ -27,7 +27,8 @@ TRANSLATIONS += translations/harbour-todolist-en.ts \
     translations/harbour-todolist-pl.ts \
     translations/harbour-todolist-no.ts \
 
-CONFIG += c++11
+CONFIG += c++11 link_pkgconfig
+PKGCONFIG += KF5CalendarCore libmkcal-qt5
 include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
 
 # Application name defined in TARGET has a corresponding QML filename.
@@ -41,7 +42,9 @@ include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)
 TARGET = harbour-todolist
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-todolist.cpp
+SOURCES += src/harbour-todolist.cpp \
+    src/storage.cpp
+HEADERS += src/storage.h
 DISTFILES += qml/harbour-todolist.qml \
     qml/cover/CoverPage.qml \
     qml/pages/*.qml \

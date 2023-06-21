@@ -31,3 +31,5 @@ function getDate(offset, baseDate) {
 function getDateString(date) {
     return new Date(date).toLocaleString(Qt.locale(), "yyyy-MM-dd");
 }
+
+function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }

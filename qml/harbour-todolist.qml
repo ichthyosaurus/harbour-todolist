@@ -23,8 +23,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Nemo.Configuration 1.0
 import Nemo.Notifications 1.0
-import "constants" 1.0
-import "js/storage.js" as Storage
+import Harbour.Todolist 1.0
 import "js/helpers.js" as Helpers
 import "pages"
 
@@ -38,8 +37,8 @@ ApplicationWindow
     property alias configuration: config
 
     property bool startupComplete: false
-    property string currentProjectName: ""
-    property int currentProjectId: defaultProjectId
+    readonly property string currentProjectName: storage.currentProject.name
+    readonly property int currentProjectId: storage.currentProject.entryId
     property date lastSelectedCategory: today
 
     property date today: Helpers.getDate(0)
@@ -94,18 +93,47 @@ ApplicationWindow
         }
     }
 
+    Storage {
+        id: storage
+        currentProjectId: config.currentProject
+        onEntriesChanged: {
+            startupComplete = false;
+            archiveModel.clear();
+            currentEntriesModel.clear();
+            var items = entries
+            for (var i in items) {
+                currentEntriesModel.append({entryId: items[i].entryId,
+                    date: items[i].date, entryState: items[i].entryState,
+                    subState: items[i].subState, createdOn: items[i].createdOn,
+                    weight: items[i].weight,
+                    interval: items[i].interval, project: items[i].project,
+                    text: items[i].text, description: items[i].description});
+            }
+            recurringsModel.clear();
+            var items = recurringEntries
+            for (i in items) {
+                recurringsModel.append({entryId: items[i].entryId,
+                    startDate: items[i].createdOn, entryState: items[i].entryState,
+                    intervalDays: items[i].interval,
+                    project: items[i].project,
+                    text: items[i].text, description: items[i].description});
+            }
+            startupComplete = true;
+        }
+    }
+
     function addItem(forDate, task, description, entryState, subState, createdOn, interval) {
-        entryState = Storage.defaultFor(entryState, EntryState.todo);
-        subState = Storage.defaultFor(subState, EntrySubState.today);
-        createdOn = Storage.defaultFor(createdOn, forDate);
+        entryState = Helpers.defaultFor(entryState, Entry.TODO);
+        subState = Helpers.defaultFor(subState, Entry.TODAY);
+        createdOn = Helpers.defaultFor(createdOn, forDate);
         var weight = 1;
-        interval = Storage.defaultFor(interval, 0);
+        interval = Helpers.defaultFor(interval, 0);
         var project = config.currentProject;
 
-        var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
+        var entryId = storage.addEntry(forDate, entryState, subState, createdOn,
                                        weight, interval, project, task, description);
 
-        if (entryId === undefined) {
+        if (entryId.length === 0) {
             console.error("failed to save new item", forDate, task);
             return;
         }
@@ -125,7 +153,7 @@ ApplicationWindow
         if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
 
         var item = currentEntriesModel.get(which);
-        Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
+        storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
                             (project === undefined ? item.project : project),
                             item.text, item.description);
@@ -141,7 +169,7 @@ ApplicationWindow
     // Delete an entry from the database and from currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function deleteItem(which) {
-        Storage.deleteEntry(currentEntriesModel.get(which).entryId);
+        storage.deleteEntry(currentEntriesModel.get(which).entryId);
         currentEntriesModel.remove(which);
     }
 
@@ -149,9 +177,9 @@ ApplicationWindow
     // for archived entries, as the archive should be immutable.
     function copyItemTo(which, copyToDate) {
         var item = currentEntriesModel.get(which);
-        copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
+        copyToDate = Helpers.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
-                EntryState.todo, EntrySubState.today, item.createdOn);
+                Entry.TODO, Entry.TODAY, item.createdOn);
     }
 
     // Move an entry in the database and in currentEntriesModel. This is not intended to be used
@@ -159,7 +187,7 @@ ApplicationWindow
     function moveItemTo(which, moveToDate) {
         var item = currentEntriesModel.get(which);
 
-        if (Storage.defaultFor(moveToDate, "fail") === "fail") {
+        if (Helpers.defaultFor(moveToDate, "fail") === "fail") {
             console.log("error: failed to move item", which, moveToDate);
         }
 
@@ -169,35 +197,20 @@ ApplicationWindow
     }
 
     function addRecurring(text, description, intervalDays, startDate) {
-        var entryState = EntryState.todo;
-        intervalDays = Storage.defaultFor(intervalDays, 1);
+        var entryState = Entry.TODO;
+        intervalDays = Helpers.defaultFor(intervalDays, 1);
         var project = config.currentProject;
-        startDate = Helpers.getDate(0, Storage.defaultFor(startDate, today));
+        startDate = Helpers.getDate(0, Helpers.defaultFor(startDate, today));
 
-        var addForToday = false;
-        var daysDiff = Math.round((startDate.getTime() - today.getTime()) / 24 / 3600 / 1000)
-
-        if (startDate.getTime() <= today.getTime() && daysDiff % intervalDays === 0) {
-            addForToday = true;
-        }
-
-        var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday);
-        if (entryId === undefined) {
+        var entryId = storage.addRecurring(startDate, entryState, intervalDays, project, text, description);
+        if (entryId.length === 0) {
             console.error("failed to save new recurring item", text, intervalDays);
             return;
-        }
-
-        recurringsModel.append({entryId: entryId, startDate: startDate, entryState: entryState,
-                                intervalDays: intervalDays, project: project,
-                                text: text, description: description});
-
-        if (addForToday) {
-            addItem(today, text.trim(), description.trim(),
-                    entryState, EntrySubState.today, today, intervalDays);
         }
     }
 
     function updateRecurring(which, startDate, entryState, intervalDays, text, description, project) {
+        console.log(which)
         if (startDate !== undefined) recurringsModel.setProperty(which, "startDate", startDate);
         if (entryState !== undefined) recurringsModel.setProperty(which, "entryState", entryState);
         if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);
@@ -207,26 +220,20 @@ ApplicationWindow
         var item = recurringsModel.get(which);
         if (project === undefined) project = item.project;
 
-        Storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
+        storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
                                 project, item.text, item.description);
-
-        if (project !== item.project) {
-            // Switch to the new project if it was changed.
-            // This reloads all entries, so we don't have to manually update
-            // the item in recurringsModel.
-            setCurrentProject(project);
-        }
     }
 
     function deleteRecurring(which) {
-        Storage.deleteRecurring(recurringsModel.get(which).entryId);
+        var item = recurringsModel.get(which);
+        storage.deleteRecurring(item.entryId);
         recurringsModel.remove(which);
     }
 
     function addProject(name, entryState) {
-        entryState = Storage.defaultFor(entryState, EntryState.todo);
-        name = Storage.defaultFor(name, "")
-        var entryId = Storage.addProject(name, entryState);
+        entryState = Helpers.defaultFor(entryState, Entry.TODO);
+        name = Helpers.defaultFor(name, "")
+        var entryId = storage.addProject(name, entryState);
 
         if (entryId === undefined) {
             console.error("failed to save new project", name, entryState);
@@ -237,13 +244,10 @@ ApplicationWindow
     }
 
     function updateProject(which, name, entryState) {
-        if (name !== undefined) {
-            projectsModel.setProperty(which, "name", name);
-            currentProjectName = name;
-        }
+        if (name !== undefined) projectsModel.setProperty(which, "name", name);
         if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
         var item = projectsModel.get(which);
-        Storage.updateProject(item.entryId, item.name, item.entryState);
+        storage.updateProject(item.entryId, item.name, item.entryState);
     }
 
     function deleteProject(which) {
@@ -256,38 +260,25 @@ ApplicationWindow
             return;
         }
 
-        Storage.deleteProject(item.entryId);
+        storage.deleteProject(item.entryId);
         projectsModel.remove(which);
     }
 
     function setCurrentProject(entryId) {
-        entryId = Storage.defaultFor(entryId, defaultProjectId);
-        config.currentProject = entryId;
-        var project = Storage.getProject(config.currentProject);
-
-        if (project === undefined) {
-            // if the requested project is not available, reset it to the default project
-            setCurrentProject(defaultProjectId);
-        } else {
-            lastSelectedCategory = today;
-            currentProjectName = project.name;
-            currentProjectId = project.entryId;
-            startupComplete = false;
-            archiveModel.clear();
-            currentEntriesModel.clear();
-            var entries = Storage.getEntries(config.currentProject);
-            for (var i in entries) currentEntriesModel.append(entries[i]);
-            startupComplete = true;
-
-            recurringsModel.clear();
-            entries = Storage.getRecurrings(config.currentProject);
-            for (i in entries) recurringsModel.append(entries[i]);
-        }
+        config.currentProject = Helpers.defaultFor(entryId, defaultProjectId);
+        lastSelectedCategory = today;
     }
 
     function loadArchive() {
-        var entries = Storage.getArchivedEntries(config.currentProject);
-        for (var i in entries) archiveModel.append(entries[i]);
+        var entries = storage.archivedEntries;
+        for (var i in entries)  {
+                archiveModel.append({entryId: entries[i].entryId,
+                    date: entries[i].date, entryState: entries[i].entryState,
+                    subState: entries[i].subState, createdOn: entries[i].createdOn,
+                    weight: entries[i].weight,
+                    interval: entries[i].interval, project: entries[i].project,
+                    text: entries[i].text, description: entries[i].description});
+        };
     }
 
     // Resets all date properties after a date change. The force parameter can be used to force a model refresh.
@@ -310,10 +301,9 @@ ApplicationWindow
         somedayString = Helpers.getDateString(someday);
 
         // Update the database and models according to the new date properties.
-        if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
+        if (storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
         }
-        Storage.copyRecurrings();
         setCurrentProject(config.currentProject);
     }
 
@@ -321,8 +311,11 @@ ApplicationWindow
         // Start with true to force a refresh on application startup.
         refreshDates(true);
         projectsModel.clear();
-        var projects = Storage.getProjects();
-        for (var i in projects) projectsModel.append(projects[i]);
+        for (var p in storage.projects) {
+            projectsModel.append({entryId: storage.projects[p].entryId,
+                name: storage.projects[p].name,
+                entryState: storage.projects[p].state});
+        }
         // Start the timer to check for date changes every hour.
         timer.start();
     }

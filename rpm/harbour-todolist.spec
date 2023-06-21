@@ -10,7 +10,7 @@ Name:       harbour-todolist
 %define __provides_exclude_from ^%{_datadir}/.*$
 
 Summary:    A simple todo list manager
-Version:    1.2.0
+Version:    1.3.0
 Release:    1
 Group:      Applications/Productivity
 License:    GPL-3.0-or-later
@@ -19,6 +19,8 @@ Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-todolist.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
+BuildRequires:  pkgconfig(libmkcal-qt5)
+BuildRequires:  pkgconfig(KF5CalendarCore)
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
