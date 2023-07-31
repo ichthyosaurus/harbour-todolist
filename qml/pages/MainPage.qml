@@ -35,7 +35,7 @@ Page {
             showFakeNavigation: FakeNavigation.Both
         }
 
-        ProjectsView { // right, index 1, offset 2
+        ProjectsListView { // right, index 1, offset 2
             width: parent.width; height: parent.height
             showFakeNavigation: FakeNavigation.Left
         }

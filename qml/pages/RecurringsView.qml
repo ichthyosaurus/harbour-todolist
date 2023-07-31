@@ -33,7 +33,6 @@ SilicaListView {
 
     header: FakeNavigationHeader {
         title: qsTr("Recurring Entries")
-        description: currentProjectName
         showNavigation: showFakeNavigation
     }
 
@@ -65,11 +64,9 @@ SilicaListView {
     delegate: TodoListBaseItem {
         editable: true
         descriptionEnabled: true
-        infoMarkerEnabled: false
         title: model.text
         description: model.description
 
-        alwaysShowInterval: true
         editableInterval: true
         intervalProperty: "intervalDays"
         intervalStartProperty: "startDate"

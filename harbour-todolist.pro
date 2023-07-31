@@ -43,6 +43,7 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-todolist.cpp
 DISTFILES += qml/harbour-todolist.qml \
+    qml/components/ProjectListItem.qml \
     qml/cover/CoverPage.qml \
     qml/pages/*.qml \
     qml/components/*.qml \
