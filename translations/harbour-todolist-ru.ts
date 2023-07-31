@@ -43,6 +43,10 @@
         <source>English</source>
         <translation>Английский</translation>
     </message>
+    <message>
+        <source>Russian</source>
+        <translation>Русский</translation>
+    </message>
 </context>
 <context>
     <name>AddItemDialog</name>
