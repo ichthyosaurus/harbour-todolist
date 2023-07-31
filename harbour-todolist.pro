@@ -25,6 +25,7 @@ TRANSLATIONS += translations/harbour-todolist-en.ts \
     translations/harbour-todolist-zh_CN.ts \
     translations/harbour-todolist-sv.ts \
     translations/harbour-todolist-pl.ts \
+    translations/harbour-todolist-ru.ts \
     translations/harbour-todolist-no.ts \
 
 CONFIG += c++11
