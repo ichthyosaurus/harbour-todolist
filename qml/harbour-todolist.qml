@@ -82,6 +82,7 @@ ApplicationWindow
         path: "/apps/harbour-todolist"
         property date lastCarriedOverFrom
         property int currentProject
+        property var activeProjects: []
     }
 
     Timer {
@@ -114,6 +115,37 @@ ApplicationWindow
                             subState: subState, createdOn: createdOn, weight: weight,
                             interval: interval, project: project,
                             text: task, description: description});
+    }
+
+    function addNormalTask(forDate, task, description, projectId, entryState, subState, createdOn, interval) {
+        entryState = Storage.defaultFor(entryState, EntryState.todo);
+        subState = Storage.defaultFor(subState, EntrySubState.today);
+        createdOn = Storage.defaultFor(createdOn, forDate);
+        var weight = 1;
+        interval = Storage.defaultFor(interval, 0);
+
+        // NOTE: make a new version of addEntry that returns the latest entry as an object
+        var entryId = Storage.addEntry(
+            forDate, entryState, subState, createdOn, weight, interval, projectId, task, description);
+
+        if (entryId === undefined) {
+            console.error("failed to save new item", forDate, task);
+            return;
+        }
+
+        // NOTE: the obejct as returned by above note can then be added directly as-is here
+        currentEntriesModel.append({
+            entryId: entryId,
+            date: forDate,
+            entryState: entryState,
+            subState: subState,
+            createdOn: createdOn,
+            weight: weight,
+            interval: interval,
+            project: projectId,
+            text: task,
+            description: description
+        });
     }
 
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used
@@ -223,6 +255,10 @@ ApplicationWindow
         recurringsModel.remove(which);
     }
 
+    function getProject(projectId) {
+        return Storage.getProject(projectId)
+    }
+
     function addProject(name, entryState) {
         entryState = Storage.defaultFor(entryState, EntryState.todo);
         name = Storage.defaultFor(name, "")
@@ -239,7 +275,6 @@ ApplicationWindow
     function updateProject(which, name, entryState) {
         if (name !== undefined) {
             projectsModel.setProperty(which, "name", name);
-            currentProjectName = name;
         }
         if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
         var item = projectsModel.get(which);
@@ -269,25 +304,38 @@ ApplicationWindow
             // if the requested project is not available, reset it to the default project
             setCurrentProject(defaultProjectId);
         } else {
-            lastSelectedCategory = today;
-            currentProjectName = project.name;
             currentProjectId = project.entryId;
-            startupComplete = false;
-            archiveModel.clear();
-            currentEntriesModel.clear();
-            var entries = Storage.getEntries(config.currentProject);
-            for (var i in entries) currentEntriesModel.append(entries[i]);
-            startupComplete = true;
-
-            recurringsModel.clear();
-            entries = Storage.getRecurrings(config.currentProject);
-            for (i in entries) recurringsModel.append(entries[i]);
+            updateProjectEntries()
         }
     }
 
+    function updateProjectEntries() {
+        startupComplete = false;
+        lastSelectedCategory = today;
+
+        currentEntriesModel.clear();
+        recurringsModel.clear();
+        archiveModel.clear();
+
+        config.activeProjects.forEach(function (projId, index) {
+            Storage.getEntries(projId).forEach(function (entry, index) {
+                currentEntriesModel.append(entry)
+            })
+            Storage.getRecurrings(projId).forEach(function (entry, index) {
+                recurringsModel.append(entry)
+            })
+        })
+
+        startupComplete = true;
+
+    }
+
     function loadArchive() {
-        var entries = Storage.getArchivedEntries(config.currentProject);
-        for (var i in entries) archiveModel.append(entries[i]);
+        config.activeProjects.forEach(function(projId, index) {
+            Storage.getArchivedEntries(projId).forEach(function(entry, index) {
+                archiveModel.append(entry)
+            })
+        })
     }
 
     // Resets all date properties after a date change. The force parameter can be used to force a model refresh.

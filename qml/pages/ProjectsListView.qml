@@ -30,6 +30,27 @@ SilicaListView {
     VerticalScrollDecorator { flickable: view }
     property int showFakeNavigation: FakeNavigation.None
 
+    PullDownMenu {
+        MenuItem {
+            text: qsTr("Add project")
+            onClicked: {
+                var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
+                    date: new Date(NaN),
+                    descriptionEnabled: false,
+                    showProject: false
+                })
+                dialog.accepted.connect(function() {
+                    main.addProject(dialog.text.trim());
+                });
+            }
+        }
+    }
+
+    header: FakeNavigationHeader {
+        title: qsTr("Projects")
+        showNavigation: showFakeNavigation
+    }
+
     SortFilterProxyModel {
         id: filteredModel
         sourceModel: projectsModel
@@ -39,37 +60,17 @@ SilicaListView {
         ]
     }
 
-    header: FakeNavigationHeader {
-        title: qsTr("Projects")
-        showNavigation: showFakeNavigation
-    }
-
-    PullDownMenu {
-        MenuItem {
-            text: qsTr("Add project")
-            onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
-                                                date: new Date(NaN), descriptionEnabled: false,
-                                                titleText: qsTr("Add a project"),
-                                                showProject: false
-                                            })
-                dialog.accepted.connect(function() {
-                    main.addProject(dialog.text.trim());
-                });
-            }
-        }
-    }
-
     footer: Spacer { }
 
-    delegate: TodoListBaseItem {
+    function projectIsActive(projectId) {
+        return main.configuration.activeProjects.indexOf(projectId) !== -1
+    }
+
+    delegate: ProjectsListItem {
         id: item
-        editable: true
         deletable: entryId !== defaultProjectId
-        descriptionEnabled: false
-        infoMarkerEnabled: false
         title: model.name
-        highlighted: main.configuration.currentProject === entryId
+        highlighted: projectIsActive(entryId)
 
         onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
         onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
@@ -77,18 +78,23 @@ SilicaListView {
         onMoveAndMarkItem: console.log("error: cannot 'move' project")
         extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 
-        editableShowProject: false
-
-        customClickHandlingEnabled: true
-        showMenuOnPressAndHold: true
         onClicked: {
-            if (main.configuration.currentProject !== entryId) {
-                main.setCurrentProject(entryId);
+            var projIndex = main.configuration.activeProjects.indexOf(entryId)
+            if (projIndex === -1) {
+                main.configuration.activeProjects.push(entryId)
+            } else {
+                main.configuration.activeProjects.splice(projIndex, 1)
             }
+            item.highlighted = projectIsActive(entryId)
+            main.updateProjectEntries()
         }
 
         menu: Component {
             ContextMenu {
+                MenuItem {
+                    text: qsTr("tasks")
+                    onClicked: pageStack.push(Qt.resolvedUrl("ProjectTasksPage.qml"), {projectId: entryId})
+                }
                 MenuItem {
                     visible: entryState !== EntryState.todo
                     text: qsTr("mark as active")

@@ -34,11 +34,8 @@ ListItem {
     property string extraDeleteWarning: ""
     property bool editable: true
     property bool deletable: true
-    property bool descriptionEnabled: true
-    property bool customClickHandlingEnabled: false
-
-    property bool editableShowProject: true
-
+    property bool descriptionEnabled: false
+    property bool editableShowProject: false
     property bool editableInterval: false
     property string intervalProperty: "interval"
     property string intervalStartProperty: "date"
@@ -49,18 +46,22 @@ ListItem {
     signal copyAndMarkItem(var which, var mainState, var subState, var copyToDate)
     signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
     signal saveItemDetails(var which, var newText, var newDescription, var newProject)
-    signal saveItemRecurring(var which, var interval, var startDate)
     signal deleteThisItem(var which)
+
+    showMenuOnPressAndHold: false
 
     function startEditing() {
         var dialog = pageStack.push(Qt.resolvedUrl("../pages/EditItemDialog.qml"), {
-            text: title, description: description, descriptionEnabled: descriptionEnabled,
+            text: title,
+            description: description,
+            descriptionEnabled: descriptionEnabled,
             showRecurring: model[intervalProperty] !== undefined,
             editableRecurring: editableInterval,
             recurringStartDate: model[intervalStartProperty] !== undefined ? model[intervalStartProperty] : new Date(NaN),
             recurringInitialIntervalDays: model[intervalProperty] !== undefined ? model[intervalProperty] : 0,
             extraDeleteWarning: extraDeleteWarning,
-            showProject: editableShowProject, project: project
+            showProject: editableShowProject,
+            project: project
         });
         dialog.accepted.connect(function() {
             if (dialog.requestDeletion) {
@@ -72,19 +73,9 @@ ListItem {
         });
     }
 
-    function isRecurring() {
-        return model[intervalProperty] > 0
-    }
-
-    function daysBetweenDates(lastDate, firstDate) {
-        return (lastDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24)
-    }
-
-    showMenuOnPressAndHold: customClickHandlingEnabled ? undefined : false
     Connections {
-        target: customClickHandlingEnabled ? null : item
-        onPressAndHold: if (editable) startEditing();
-        onClicked: menu ? openMenu() : {}
+        target: item
+        onPressAndHold: menu ? openMenu() : {}
     }
 
     Row {
@@ -118,75 +109,10 @@ ListItem {
 
             Spacer { height: Theme.paddingMedium }
 
-            Row {
-                width: parent.width
-
-                Label {
-                    width: parent.width - recurringIcon.width - projectLabel.width - ageLabel.width
-                    text: title
-                    font.pixelSize: Theme.fontSizeMedium
-                    textFormat: Text.PlainText
-                    wrapMode: Text.WordWrap
-                    elide: Text.ElideNone
-                }
-
-                Label {
-                    id: ageLabel
-                    horizontalAlignment: Text.AlignHCenter
-                    visible: !isRecurring()
-                    width: visible ? implicitWidth + Theme.paddingMedium : 0
-                    text: "age: " + daysBetweenDates(main.today, createdOn) + "d"
-                    font.pixelSize: Theme.fontSizeTiny
-                    color: Theme.highlightColor
-                    opacity: Theme.opacityHigh
-
-                    Rectangle {
-                        visible: parent.visible
-                        anchors.centerIn: parent
-                        width: parent.width
-                        height: parent.height + Theme.paddingSmall
-                        radius: 50
-                        color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
-                    }
-                }
-
-                HighlightImage {
-                    id: recurringIcon
-                    visible: isRecurring()
-                    opacity: Theme.opacityHigh
-                    highlighted: item.highlighted
-                    width: visible ? implicitWidth : 0
-                    height: width
-                    color: Theme.primaryColor
-                    // from: https://feathericons.com/
-                    source: "../images/refresh-cw.svg"
-                }
-
-                Label {
-                    id: projectLabel
-                    horizontalAlignment: Text.AlignHCenter
-                    width: implicitWidth + Theme.paddingMedium
-                    text: main.getProject(project).name
-                    font.pixelSize: Theme.fontSizeTiny
-                    color: Theme.highlightColor
-                    opacity: Theme.opacityHigh
-
-                    Rectangle {
-                        anchors.centerIn: parent
-                        width: parent.width
-                        height: parent.height + Theme.paddingSmall
-                        radius: 50
-                        color: Theme.rgba(Theme.highlightColor, Theme.opacityLow)
-                    }
-                }
-            }
-
             Label {
-                visible: descriptionEnabled && description !== ""
-                opacity: Theme.opacityHigh
                 width: parent.width
-                text: description
-                font.pixelSize: Theme.fontSizeSmall
+                text: title
+                font.pixelSize: Theme.fontSizeMedium
                 textFormat: Text.PlainText
                 wrapMode: Text.WordWrap
                 elide: Text.ElideNone
