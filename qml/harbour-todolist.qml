@@ -57,6 +57,16 @@ ApplicationWindow {
     _defaultPageOrientations: Orientation.All
     allowedOrientations: Orientation.All
 
+    A.ChangelogNews {
+        changelogList: Qt.resolvedUrl("Changelog.qml")
+    }
+
+    M.AskForSupport {
+        contents: Component {
+            MySupportDialog {}
+        }
+    }
+
     Notification {
         id: dbErrorNotification
         appIcon: "image://theme/icon-lock-warning"
