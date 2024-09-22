@@ -23,7 +23,7 @@ Name[zh_CN]=待办列表
 Name[ru]=Список дел
 
 [X-Sailjail]
-Permissions=Documents
+Permissions=
 OrganizationName=harbour-todolist
 ApplicationName=harbour-todolist
 
