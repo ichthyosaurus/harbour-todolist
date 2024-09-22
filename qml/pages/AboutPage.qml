@@ -61,12 +61,10 @@ A.AboutPageBase {
             sources: "https://github.com/oKcerG/SortFilterProxyModel"
         },
         OpalAboutAttribution {},
-        OpalSupportMeAttribution {}
-
-        // OpalDelegatesAttribution {},
-        // OpalSmartScrollbarAttribution {},
-        // OpalMenuSwitchAttribution {},
-        // OpalComboDataAttribution {}
+        OpalSupportMeAttribution {},
+        OpalDelegatesAttribution {},
+        OpalSmartScrollbarAttribution {},
+        OpalMenuSwitchAttribution {}
     ]
 
     contributionSections: [
