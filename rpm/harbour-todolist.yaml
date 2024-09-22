@@ -1,12 +1,9 @@
 # This file is part of harbour-todolist.
-# SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
+# SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 Name: harbour-todolist
 Summary: A simple todo list manager
-
-# This line gets lost after version bumps:
-#   %define __provides_exclude_from ^%{_datadir}/.*$
 Version: 1.2.0
 Release: 1
 
@@ -15,23 +12,22 @@ Release: 1
 Group: Applications/Productivity
 URL: https://github.com/ichthyosaurus/harbour-todolist
 License: GPL-3.0-or-later
+
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  A simple todo list manager with support for multiple projects.
+  A simple to-do list manager with support for multiple projects.
 
 Configure: none
-
 Builder: qmake5
-
 QMakeOptions:
-  - VERSION=%{version}
-  - RELEASE=%{release}
+    - VERSION=%{version}
+    - RELEASE=%{release}
 
 Macros:
-  - __provides_exclude_from;^%{_datadir}/.*$
+    - __provides_exclude_from;^%{_datadir}/.*$
 
 # This section specifies build dependencies that are resolved using pkgconfig.
 # This is the preferred way of specifying build dependencies for your package.
