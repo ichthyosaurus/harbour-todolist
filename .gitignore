@@ -1,14 +1,19 @@
 # This file is part of harbour-todolist.
-# SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText: Mirian Margiani
 
-build*
-*.user
+*.user*
 *~
-liverunner*
-DBs
-dist
-icon-src/raw
+*.~*
+.directory
+.gitignore
+build*
+dist-old*
+tmp*
+icons-src/raw
+TODO
 
-libs/opal-docs
+databases/
+
 libs/opal-translations
+libs/opal-docs

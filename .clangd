@@ -12,7 +12,7 @@ CompileFlags:
         - -isystem/usr/include/qt5/QtCore
         - -isystem/usr/include/qt5/QtNetwork
         - -isystem/usr/include/qt5/QtQuick
-        - -isystem/opt/sfos/mersdk/targets/SailfishOS-3.4.0.24-armv7hl.default/usr/include/sailfishapp/
+        - -isystem/opt/sfos/mersdk/targets/SailfishOS-4.5.0.18-armv7hl.default/usr/include/sailfishapp/
 
 # Diagnostics:
 #     ClangTidy:
