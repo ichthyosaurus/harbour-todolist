@@ -46,7 +46,16 @@ ApplicationWindow {
 
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
-    allowedOrientations: defaultAllowedOrientations
+
+    // We have to explicitly set the \c _defaultPageOrientations property
+    // to \c Orientation.All so the page stack's default placeholder page
+    // will be allowed to be in landscape mode. (The default value is
+    // \c Orientation.Portrait.) Without this setting, pushing multiple pages
+    // to the stack using \c animatorPush() while in landscape mode will cause
+    // the view to rotate back and forth between orientations.
+    // [as of 2021-02-17, SFOS 3.4.0.24, sailfishsilica-qt5 version 1.1.110.3-1.33.3.jolla]
+    _defaultPageOrientations: Orientation.All
+    allowedOrientations: Orientation.All
 
     Notification {
         id: dbErrorNotification
