@@ -60,10 +60,10 @@ A.AboutPageBase {
             licenses: A.License { spdxId: "MIT" }
             sources: "https://github.com/oKcerG/SortFilterProxyModel"
         },
-        OpalAboutAttribution {}
+        OpalAboutAttribution {},
+        OpalSupportMeAttribution {}
 
         // OpalDelegatesAttribution {},
-        // OpalSupportMeAttribution {},
         // OpalSmartScrollbarAttribution {},
         // OpalMenuSwitchAttribution {},
         // OpalComboDataAttribution {}
