@@ -4,28 +4,55 @@ Upstream-Contact: Mirian Margiani <mixosaurus+ichthyo@pm.me>
 Source: https://github.com/ichthyosaurus/harbour-todolist
 
 Files: translations/*
-Copyright: 2020-2021 harbour-todolist translations contributors
+Copyright: 2020-2024 harbour-todolist translations contributors
 License: GPL-3.0-or-later
 
-Files: libs/opal-translations/opal-about/*
-Copyright: 2020-2021 opal-about contributors
-License: GPL-3.0-or-later
-
-Files: libs/module_opal-*.txt
-Copyright: 2020-2021 opal contributors
-License: GPL-3.0-or-later
-
-Files: rpm/harbour-todolist.spec
-Copyright: harbour-todolist contributors
+Files: rpm/harbour-*.spec
+Copyright: Mirian Margiani
 License: GPL-3.0-or-later
 Comment: This file is generated from [this file's name].yaml and shares copyright with it.
 
-Files: icons/* qml/images/*
+Files: icons/* qml/images/* dist/harbour-*.png
 Copyright: Mirian Margiani
 License: CC-BY-SA-4.0
-Comment: These files are generated from the sources at icon-src/*.
+Comment: These files are generated from the sources at icons-src/*.
 
 Files: icon-src/*
 Copyright: Mirian Margiani
 License: CC-BY-SA-4.0
 Comment: These files contain proper Dublin Core licensing metadata.
+
+Files: dist/screenshots-*/*.png dist/screenshots-*/*.jpg dist/screenshots-*/*.webp
+Copyright: Mirian Margiani
+License: CC-BY-NC-SA-4.0
+Comment: These files are screenshots of the running application.
+
+Files: dist/packages/*.rpm
+Copyright: Mirian Margiani
+License: GPL-3.0-or-later
+Comment: These files are generated packages.
+
+Files: dist/banner.svg
+Copyright: Mirian Margiani
+License: CC-BY-NC-SA-4.0
+Comment: This file contains proper Dublin Core licensing metadata.
+
+Files: dist/banner*.png
+Copyright: Mirian Margiani
+License: CC-BY-NC-SA-4.0
+Comment: These files are generated from banner.svg and share copyright with it.
+
+Files: dist/ambience.orig.jpg
+Copyright: Mylène Larnaud
+License: LicenseRef-Unsplash
+Comment: https://unsplash.com/de/fotos/TeNP4a_hJzQ
+
+Files: dist/ambience.jpg
+Copyright: Mylène Larnaud, texts blurred by Mirian Margiani
+License: LicenseRef-Unsplash
+Comment: https://unsplash.com/de/fotos/TeNP4a_hJzQ
+
+Files: .gitmodules libs/SortFilterProxyModel.patch
+Copyright: Mirian Margiani
+License: CC0-1.0
+Comment: These files have been released into the public domain.
