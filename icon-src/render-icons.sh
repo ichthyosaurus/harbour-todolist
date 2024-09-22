@@ -2,14 +2,14 @@
 #
 # This file is part of Opal and has been released into the public domain.
 # SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: 2021 Mirian Margiani
+# SPDX-FileCopyrightText: 2021-2023 Mirian Margiani
 #
 # See https://github.com/Pretty-SFOS/opal/blob/main/snippets/opal-render-icons.md
 # for documentation.
 #
-# @@@ keep this line: based on template v0.3.0
+# @@@ keep this line: based on template v1.0.0
 #
-c__FOR_RENDER_LIB__="0.3.0"
+c__FOR_RENDER_LIB__="1.0.0"
 
 # Run this script from the same directory where your icon sources are located,
 # e.g. <app>/icon-src.
@@ -22,8 +22,10 @@ for i in raw/*.svg; do
     fi
 done
 
+cMY_APP=harbour-todolist
+
 cNAME="app icons"
-cITEMS=(harbour-todolist)
+cITEMS=("$cMY_APP")
 cRESOLUTIONS=(86 108 128 172)
 cTARGETS=(../icons/RESXxRESY)
 render_batch
@@ -31,8 +33,23 @@ render_batch
 cNAME="status icons"
 cITEMS=({icon-todo,icon-ignored,icon-done}@112
         {icon-todo,icon-ignored,icon-done}@24++-small
-        harbour-todolist@256
+        "$cMY_APP@256"
 )
 cRESOLUTIONS=(F1)
 cTARGETS=(../qml/images)
+render_batch
+
+cNAME="store icon"
+cITEMS=("$cMY_APP")
+cRESOLUTIONS=(172)
+cTARGETS=(../dist)
+render_batch
+
+cNAME="banner image"
+cITEMS=(../dist/banner)
+cRESOLUTIONS=(
+    1080x540++-large
+    540x270++-small
+)
+cTARGETS=(../dist)
 render_batch
