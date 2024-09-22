@@ -6,7 +6,7 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-todolist
 Exec=harbour-todolist
-Name=harbour-todolist
+Name=To-do List
 
 # TRANSLATORS
 # Please add a new line for your locale below, and translate the name. This is
