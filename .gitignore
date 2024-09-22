@@ -10,7 +10,7 @@
 build*
 dist-old*
 tmp*
-icons-src/raw
+icon-src/raw
 TODO
 
 databases/
