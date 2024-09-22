@@ -23,55 +23,76 @@
  */
 
 import QtQuick 2.0
-import Sailfish.Silica 1.0
-import Opal.About 1.0
+import Sailfish.Silica 1.0 as S
+import Opal.About 1.0 as A
+import "../modules/Opal/Attributions"
 
-AboutPageBase {
+A.AboutPageBase {
     id: page
+
     appName: main.appName
-    appIcon: Qt.resolvedUrl("../images/harbour-todolist.png")
+    appIcon: Qt.resolvedUrl("../images/%1.png".arg("harbour-" + Qt.application.name))
     appVersion: APP_VERSION
     appRelease: APP_RELEASE
-    description: qsTr("A simple tool for planning what to do next.")
-    mainAttributions: "2020-2022 Mirian Margiani"
-    sourcesUrl: "https://github.com/ichthyosaurus/harbour-todolist"
-    homepageUrl: "https://openrepos.net/content/ichthyosaurus/todolist"
 
-    licenses: License { spdxId: "GPL-3.0-or-later" }
+    allowDownloadingLicenses: false
+    sourcesUrl: "https://github.com/ichthyosaurus/%1".arg("harbour-" + Qt.application.name)
+    homepageUrl: "https://forum.sailfishos.org/t/apps-by-ichthyosaurus/15753"
+    translationsUrl: "https://hosted.weblate.org/projects/%1".arg("harbour-" + Qt.application.name)
+    changelogList: Qt.resolvedUrl("../Changelog.qml")
+    licenses: A.License { spdxId: "GPL-3.0-or-later" }
+
+    donations.text: donations.defaultTextCoffee
+    donations.services: [
+        A.DonationService {
+            name: "Liberapay"
+            url: "https://liberapay.com/ichthyosaurus"
+        }
+    ]
+
+    description: qsTr("A simple tool for planning what to do next.")
+    mainAttributions: "2020-%1 Mirian Margiani".arg((new Date()).getFullYear())
+
     attributions: [
-        Attribution {
+        A.Attribution {
             name: "SortFilterProxyModel"
             entries: ["2016 Pierre-Yves Siret"]
-            licenses: License { spdxId: "MIT" }
+            licenses: A.License { spdxId: "MIT" }
             sources: "https://github.com/oKcerG/SortFilterProxyModel"
         },
-        OpalAboutAttribution { }
+        OpalAboutAttribution {}
+
+        // OpalDelegatesAttribution {},
+        // OpalSupportMeAttribution {},
+        // OpalSmartScrollbarAttribution {},
+        // OpalMenuSwitchAttribution {},
+        // OpalComboDataAttribution {}
     ]
 
     contributionSections: [
-        ContributionSection {
+        A.ContributionSection {
             title: qsTr("Development")
             groups: [
-                ContributionGroup {
+                A.ContributionGroup {
                     title: qsTr("Programming")
                     entries: ["Mirian Margiani", "Johannes Bachmann", "Øystein S. Haaland"]
                 }/*,
-                ContributionGroup {
+                A.ContributionGroup {
                     title: qsTr("Icon Design")
                     entries: ["Mirian Margiani"]
                 }*/
             ]
         },
-        ContributionSection {
+        A.ContributionSection {
             title: qsTr("Translations")
             groups: [
-                ContributionGroup { title: qsTr("Polish"); entries: ["atlochowski", "likot180"] },
-                ContributionGroup { title: qsTr("Swedish"); entries: ["Åke Engelbrektson"]},
-                ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
-                ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]},
-                ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]},
-                ContributionGroup { title: qsTr("English"); entries: ["Mirian Margiani"]},
-                ContributionGroup { title: qsTr("Russian"); entries: ["Nikolay Sinyov"]}
+                A.ContributionGroup { title: qsTr("Polish"); entries: ["atlochowski", "likot180"] },
+                A.ContributionGroup { title: qsTr("Swedish"); entries: ["Åke Engelbrektson"]},
+                A.ContributionGroup { title: qsTr("Chinese"); entries: ["dashinfantry"]},
+                A.ContributionGroup { title: qsTr("German"); entries: ["Mirian Margiani"]},
+                A.ContributionGroup { title: qsTr("Norwegian"); entries: ["Øystein S. Haaland"]},
+                A.ContributionGroup { title: qsTr("English"); entries: ["Mirian Margiani"]},
+                A.ContributionGroup { title: qsTr("Russian"); entries: ["Nikolay Sinyov"]}
             ]
         }
     ]
