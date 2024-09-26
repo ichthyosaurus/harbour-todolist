@@ -25,7 +25,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-A simple todo list manager with support for multiple projects.
+A simple to-do list manager with support for multiple projects.
 
 
 %prep
