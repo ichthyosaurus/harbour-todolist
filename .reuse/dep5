@@ -3,7 +3,7 @@ Upstream-Name: harbour-todolist
 Upstream-Contact: Mirian Margiani <mixosaurus+ichthyo@pm.me>
 Source: https://github.com/ichthyosaurus/harbour-todolist
 
-Files: translations/*
+Files: translations/* TRANSLATORS.json
 Copyright: 2020-2024 harbour-todolist translations contributors
 License: GPL-3.0-or-later
 
