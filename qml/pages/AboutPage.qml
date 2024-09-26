@@ -1,6 +1,6 @@
 /*
  * This file is part of harbour-todolist.
- * SPDX-FileCopyrightText: 2020-2022 Mirian Margiani
+ * SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
@@ -24,14 +24,14 @@ A.AboutPageBase {
     id: page
 
     appName: main.appName
-    appIcon: Qt.resolvedUrl("../images/%1.png".arg("harbour-" + Qt.application.name))
+    appIcon: Qt.resolvedUrl("../images/%1.png".arg(Qt.application.name))
     appVersion: APP_VERSION
     appRelease: APP_RELEASE
 
     allowDownloadingLicenses: false
-    sourcesUrl: "https://github.com/ichthyosaurus/%1".arg("harbour-" + Qt.application.name)
+    sourcesUrl: "https://github.com/ichthyosaurus/%1".arg(Qt.application.name)
     homepageUrl: "https://forum.sailfishos.org/t/apps-by-ichthyosaurus/15753"
-    translationsUrl: "https://hosted.weblate.org/projects/%1".arg("harbour-" + Qt.application.name)
+    translationsUrl: "https://hosted.weblate.org/projects/%1".arg(Qt.application.name)
     changelogList: Qt.resolvedUrl("../Changelog.qml")
     licenses: A.License { spdxId: "GPL-3.0-or-later" }
 
