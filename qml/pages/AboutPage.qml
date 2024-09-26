@@ -75,6 +75,54 @@ A.AboutPageBase {
             ]
         },
         //>>> GENERATED LIST OF TRANSLATION CREDITS
+        A.ContributionSection {
+            title: qsTr("Translations")
+            groups: [
+                A.ContributionGroup {
+                    title: qsTr("Swedish")
+                    entries: [
+                        "Åke Engelbrektson"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("Russian")
+                    entries: [
+                        "Nikolay Sinyov"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("Polish")
+                    entries: [
+                        "atlochowski",
+                        "likot180"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("Norwegian Bokmål")
+                    entries: [
+                        "Øystein S. Haaland"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("German")
+                    entries: [
+                        "Mirian Margiani"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("English")
+                    entries: [
+                        "Mirian Margiani"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("Chinese")
+                    entries: [
+                        "dashinfantry"
+                    ]
+                }
+            ]
+        }
         //<<< GENERATED LIST OF TRANSLATION CREDITS
     ]
 
