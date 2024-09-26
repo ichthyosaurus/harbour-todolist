@@ -2,6 +2,64 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="sk" sourcelanguage="en_US">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="65"/>
+        <source>Development</source>
+        <translation>Vývoj</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <source>Programming</source>
+        <translation>Programovanie</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="79"/>
+        <source>Translations</source>
+        <translation>Preklady</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="82"/>
+        <source>Swedish</source>
+        <translation>Švédčina</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="88"/>
+        <source>Russian</source>
+        <translation>Ruština</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="94"/>
+        <source>Polish</source>
+        <translation>Poľština</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="101"/>
+        <source>Norwegian Bokmål</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="107"/>
+        <source>German</source>
+        <translation>Nemčina</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="113"/>
+        <source>English</source>
+        <translation>Angličtina</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="119"/>
+        <source>Chinese</source>
+        <translation>Čínština</translation>
+    </message>
+</context>
+<context>
     <name>AddItemDialog</name>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
@@ -282,10 +340,10 @@
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="134"/>
         <source>show license(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>zobraziť licenciu</numerusform>
+            <numerusform>zobraziť licencie</numerusform>
+            <numerusform>zobraziť licencií</numerusform>
         </translation>
     </message>
     <message>
@@ -309,10 +367,10 @@
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="31"/>
         <source>License(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Licencia</numerusform>
+            <numerusform>Licencie</numerusform>
+            <numerusform>Licencií</numerusform>
         </translation>
     </message>
     <message>
@@ -418,12 +476,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>External Link</source>
-        <translation type="unfinished">Externý odkaz</translation>
+        <translation>Externý odkaz</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Otvoriť v prehliadači</translation>
+        <translation>Otvoriť v prehliadači</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
@@ -433,12 +491,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation type="unfinished">Kopírovať do schránky: %1</translation>
+        <translation>Kopírovať do schránky: %1</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="41"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopírovať do schránky</translation>
+        <translation>Kopírovať do schránky</translation>
     </message>
 </context>
 <context>

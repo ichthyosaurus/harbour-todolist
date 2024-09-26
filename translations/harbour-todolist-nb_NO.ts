@@ -2,6 +2,64 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="nb_NO" sourcelanguage="en_US">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="65"/>
+        <source>Development</source>
+        <translation>Utvikling</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="68"/>
+        <source>Programming</source>
+        <translation>Programmering</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="79"/>
+        <source>Translations</source>
+        <translation>Oversettelser</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="82"/>
+        <source>Swedish</source>
+        <translation>Svensk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="88"/>
+        <source>Russian</source>
+        <translation>Russisk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="94"/>
+        <source>Polish</source>
+        <translation>Polsk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="101"/>
+        <source>Norwegian Bokmål</source>
+        <translation>Norsk bokmål</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="107"/>
+        <source>German</source>
+        <translation>Tysk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="113"/>
+        <source>English</source>
+        <translation>Engelsk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="119"/>
+        <source>Chinese</source>
+        <translation>Kinesisk</translation>
+    </message>
+</context>
+<context>
     <name>AddItemDialog</name>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
@@ -415,12 +473,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>External Link</source>
-        <translation type="unfinished">Ekstern lenke</translation>
+        <translation>Ekstern lenke</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open in browser</source>
-        <translation type="unfinished">Åpne i nettleser</translation>
+        <translation>Åpne i nettleser</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
@@ -430,12 +488,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation type="unfinished">Kopiert til utklippstavlen: %1</translation>
+        <translation>Kopiert til utklippstavlen: %1</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="41"/>
         <source>Copy to clipboard</source>
-        <translation type="unfinished">Kopier til utklippstavlen</translation>
+        <translation>Kopier til utklippstavlen</translation>
     </message>
 </context>
 <context>
