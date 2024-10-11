@@ -261,6 +261,11 @@ function getEntries(forProject) {
 }
 
 function getArchivedEntries(forProject) {
+    // TODO time this!
+    //   - is the query slow?
+    //   - is preparing entries slow?
+    //  If only preparing is slow, it could be moved to a workerscript
+    //  storage.js could be a library again if har.qml simply registers some callbacks on startup
     forProject = defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
     return _prepareEntries(q);
