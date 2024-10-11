@@ -9,7 +9,7 @@
 #       to the "attributions" list property of the “About” page.
 
 module: Opal.SmartScrollbar (opal-smartscrollbar)
-version: 1.0.0 (git:d56069b)
+version: 1.0.0 (git:2f2ad8c)
 description: This module provides a Harbour-compatible smart scroll bar for long lists.
 maintainers: Mirian Margiani
 attribution: 2024 Mirian Margiani

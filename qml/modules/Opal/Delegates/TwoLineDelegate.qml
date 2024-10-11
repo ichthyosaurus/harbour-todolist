@@ -6,7 +6,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 PaddedDelegate{id:root
-minContentHeight:Theme.itemSizeMedium
+minContentHeight:Theme.itemSizeMedium-padding.effectiveTop-padding.effectiveBottom
 centeredContainer:contentColumn
 property string text
 property string description

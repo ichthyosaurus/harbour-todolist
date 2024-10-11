@@ -15,7 +15,7 @@ value:0
 }wrapMode:Text.NoWrap
 truncationMode:TruncationMode.Fade
 states:[State{name:"wrapped"
-when:root.wrapped
+when:root.wrapped||text.indexOf("\n")>-1
 PropertyChanges{target:root
 wrapMode:Text.Wrap
 elide:Text.ElideNone

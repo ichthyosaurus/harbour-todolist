@@ -11,3 +11,4 @@ TwoLineDelegate 1.0 TwoLineDelegate.qml
 ThreeLineDelegate 1.0 ThreeLineDelegate.qml
 DelegateIconItem 1.0 DelegateIconItem.qml
 DelegateInfoItem 1.0 DelegateInfoItem.qml
+DelegateIconButton 1.0 DelegateIconButton.qml
