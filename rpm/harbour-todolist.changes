@@ -9,18 +9,29 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Oct 11 2024 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.3.0-1
+- This is mainly a maintenance release to bring the app back into shape for future development
+- Updated translations: Swedish, Norwegian, Russian, Polish,
+- Added support page for donating and contributing
+- Dropped all Sailjail permissions
+- Fixed changing the state of recurring entries
+- Fixed pages so that all screen orientations are allowed now
+- Fixed app details on about page
+- Updated translator credits (now directly from Weblate)
+- Updated packaging and did lots of general maintenance
+
 * Thu Mar 24 2022 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.2.0-1
-- all translations updated with a few strings fixed and clarified
-- added translations: Norwegian
-- updated translations: Polish
-- fixed marking and moving entries
-- added a new Sailjail profile ("Documents" permission required for import and export)
-- added support for My Backup
-- added an option to move entries to another project when editing
-- added a new "About" page using Opal.About
-- reduced package size by shrinking icon files
-- improved licensing: the project is now 'reuse'-compliant (cf. https://reuse.software/spec/)
-- new known bug: marking recurring entries as "done" is not possible
+- All translations updated with a few strings fixed and clarified
+- Added translations: Norwegian
+- Updated translations: Polish
+- Fixed marking and moving entries
+- Added a new Sailjail profile ("Documents" permission required for import and export)
+- Added support for My Backup
+- Added an option to move entries to another project when editing
+- Added a new "About" page using Opal.About
+- Reduced package size by shrinking icon files
+- Improved licensing: the project is now 'reuse'-compliant (cf. https://reuse.software/spec/)
+- New known bug: marking recurring entries as "done" is not possible
 
 * Mon Dec 21 2020 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.1.4-1
 - Update Swedish translation by eson57 (thank you!)

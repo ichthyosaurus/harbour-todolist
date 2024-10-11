@@ -9,6 +9,21 @@ import "modules/Opal/About"
 
 ChangelogList {
     ChangelogItem {
+        version: "1.3.0-1"
+        date: "2024-10-11"
+        paragraphs: [
+            "- This is mainly a maintenance release to bring the app back into shape for future development<br>" +
+            "- Updated translations: Swedish, Norwegian, Russian, Polish,<br>" +
+            "- Added support page for donating and contributing<br>" +
+            "- Dropped all Sailjail permissions<br>" +
+            "- Fixed changing the state of recurring entries<br>" +
+            "- Fixed pages so that all screen orientations are allowed now<br>" +
+            "- Fixed app details on about page<br>" +
+            "- Updated translator credits (now directly from Weblate)<br>" +
+            "- Updated packaging and did lots of general maintenance"
+        ]
+    }
+    ChangelogItem {
         version: "1.2.0-1"
         date: "2022-03-24"
         paragraphs: [
