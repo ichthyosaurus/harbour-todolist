@@ -29,10 +29,32 @@ TodoList {
     model: filteredModel
     property int showFakeNavigation: FakeNavigation.None
 
-    header: FakeNavigationHeader {
-        title: appName
-        description: currentProjectName
-        showNavigation: showFakeNavigation
+    header: Column {
+        width: parent.width
+
+        FakeNavigationHeader {
+            title: appName
+            description: currentProjectName
+            showNavigation: showFakeNavigation
+        }
+
+        TodoListItemAdder {
+            id: adder
+            forDate: main.today
+            leftItem: null
+            onApplied: {
+                textField.forceActiveFocus()
+                focusTimer.restart()
+            }
+
+            Timer {
+                id: focusTimer
+                interval: 80
+                onTriggered: {
+                    adder.textField.forceActiveFocus()
+                }
+            }
+        }
     }
 
     function addItem() {
@@ -74,6 +96,17 @@ TodoList {
             ExpressionRole {
                 name: "_isYoung"
                 expression: model.date >= today
+            },
+            ExpressionRole {
+                name: "category"
+                expression: {
+                    var string = new Date(model.date).toLocaleString(Qt.locale(), "yyyy-MM-dd")
+                    if (string == main.todayString) "today"
+                    else if (string == main.tomorrowString) "tomorrow"
+                    else if (string == main.thisweekString) "thisweek"
+                    else if (string == main.somedayString) "someday"
+                    else ""
+                 }
             }
         ]
 

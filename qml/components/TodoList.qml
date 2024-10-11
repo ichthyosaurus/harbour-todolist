@@ -32,6 +32,12 @@ SilicaListView {
     property var closedSections: defaultClosedSections.slice()
     signal sectionToggled(var whichSection)
 
+    property string _firstSection: ''
+    readonly property bool _firstIsToday: _firstSection === 'today'
+    readonly property bool _firstIsTomorrow: _firstSection === 'tomorrow'
+    readonly property bool _firstIsThisWeek: _firstSection === 'thisweek'
+    readonly property bool _firstIsSomeday: _firstSection === 'someday'
+
     Connections {
         target: main.configuration
         onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
@@ -84,6 +90,10 @@ SilicaListView {
             target: view
             onSectionToggled: if (whichSection === sectionString) showHideAnimation.duration = 200
         }
+
+        Component.onCompleted: {
+            if (index === 0) _firstSection = category
+        }
     }
 
     section {
@@ -96,6 +106,19 @@ SilicaListView {
             property bool isThisWeek: sectionString === thisweekString
             property bool isSomeday: sectionString === somedayString
             property bool open: (closedSections.indexOf(sectionString) === -1)
+
+//            TodoListItemAdder {
+//                visible: !((_firstIsToday && parent.isToday) ||
+//                         (_firstIsTomorrow && parent.isTomorrow) ||
+//                         (_firstIsThisWeek && parent.isThisWeek) ||
+//                         (_firstIsSomeday && parent.isSomeday))
+//                forDate: {
+//                    if (parent.isToday) main.today
+//                    if (parent.isTomorrow) main.tomorrow
+//                    if (parent.isThisWeek) main.thisweek
+//                    if (parent.isSomeday) main.someday
+//                }
+//            }
 
             Spacer { height: Theme.paddingLarge }
 
