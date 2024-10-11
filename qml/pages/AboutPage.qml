@@ -1,4 +1,4 @@
-/*
+s/*
  * This file is part of harbour-todolist.
  * SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -45,6 +45,7 @@ A.AboutPageBase {
 
     description: qsTr("A simple tool for planning what to do next.")
     mainAttributions: "2020-%1 Mirian Margiani".arg((new Date()).getFullYear())
+    autoAddOpalAttributions: true
 
     attributions: [
         A.Attribution {
@@ -52,12 +53,7 @@ A.AboutPageBase {
             entries: ["2016 Pierre-Yves Siret"]
             licenses: A.License { spdxId: "MIT" }
             sources: "https://github.com/oKcerG/SortFilterProxyModel"
-        },
-        OpalAboutAttribution {},
-        OpalSupportMeAttribution {},
-        OpalDelegatesAttribution {},
-        OpalSmartScrollbarAttribution {},
-        OpalMenuSwitchAttribution {}
+        }
     ]
 
     contributionSections: [
