@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl_PL" sourcelanguage="en_US">
+<TS version="2.1" language="ab" sourcelanguage="en_US">
 <context>
     <name>AboutPage</name>
     <message>
@@ -11,32 +11,32 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="65"/>
         <source>Development</source>
-        <translation>Rozwój</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="68"/>
         <source>Programming</source>
-        <translation>Programowanie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="79"/>
         <source>Translations</source>
-        <translation>Tłumaczenia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="82"/>
         <source>Swedish</source>
-        <translation>szwedzki</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="88"/>
         <source>Russian</source>
-        <translation>rosyjski</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="94"/>
         <source>Polish</source>
-        <translation>polski</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="101"/>
@@ -46,17 +46,17 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="107"/>
         <source>German</source>
-        <translation>niemiecki</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="113"/>
         <source>English</source>
-        <translation>angielski</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="119"/>
         <source>Chinese</source>
-        <translation>chiński</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -64,62 +64,62 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation>Wprowadź tytuł</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation>Tytuł</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation>Wprowadź opcjonalny opis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation>Anuluj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation>Zaplanowane na</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation>dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation>jutro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation>ten tydzień</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation>kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation>Projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation>Włącz predykcję tekstu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
@@ -132,17 +132,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="64"/>
         <source>Archived Entries</source>
-        <translation>Zarchiwizowane wpisy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="86"/>
         <source>No entries yet</source>
-        <translation>Brak wpisów</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="87"/>
         <source>This page will show a list of all old entries.</source>
-        <translation>Ta strona pokaże listę wszystkich starych wpisów.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -158,27 +158,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation>Tekst</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation>Anuluj</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -199,12 +199,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -212,22 +212,21 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation>cykliczny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation>jeden raz</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation>
-            <numerusform>%n dzień</numerusform>
-            <numerusform>%n dni</numerusform>
-            <numerusform>%n dni</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -236,7 +235,7 @@
     <message>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="119"/>
         <source>License text</source>
-        <translation>Tekst licencji</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -254,12 +253,12 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="22"/>
         <source>Translate on Weblate</source>
-        <translation>Tłumacz na Weblate</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="23"/>
         <source>Help with translating this app in as many languages as possible.</source>
-        <translation>Pomóż z tłumaczeniem tej aplikacji do jak największej ilości języków.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="30"/>
@@ -279,7 +278,7 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="40"/>
         <source>This project is built with love and passion by a single developer in their spare time, and is provided to you free of charge.</source>
-        <translation>Ten projekt został zbudowany z miłości i pasji przez jednego programistę w wolnym czasie i jest dostępny dla ciebie za darmo.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="46"/>
@@ -307,43 +306,42 @@
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="56"/>
         <source>About</source>
-        <translation>O tej aplikacji</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="85"/>
         <source>Version %1</source>
-        <translation>Wersja %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="101"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="33"/>
         <source>Development</source>
-        <translation>Rozwój</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="104"/>
         <source>show contributors</source>
-        <translation>pokaż współtwórców</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
-        <translation>Dziennik zmian</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
         <source>License</source>
-        <translation>Licencja</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="135"/>
         <source>show license(s)</source>
-        <translation>
-            <numerusform>pokaż licencję</numerusform>
-            <numerusform>pokaż licencje</numerusform>
-            <numerusform>pokaż licencje</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -352,71 +350,50 @@
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="25"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="50"/>
         <source>Source Code</source>
-        <translation>Kod źródłowy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/InfoSection.qml" line="15"/>
         <source>show details</source>
-        <translation>pokaż szczegóły</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="23"/>
         <source>Contributors</source>
-        <translation>Współtwórcy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>License(s)</source>
-        <translation>
-            <numerusform>Licencja</numerusform>
-            <numerusform>Licencje</numerusform>
-            <numerusform>Licencji</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="124"/>
         <source>Donations</source>
-        <translation>Darowizny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="112"/>
         <source>Translations</source>
-        <translation>Tłumaczenia</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
-        <source>Note: please check the source code for most accurate information.</source>
-        <translation>Uwaga: sprawdź kod źródłowy, aby uzyskać najdokładniejsze informacje.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="39"/>
         <source>Acknowledgements</source>
-        <translation>Podziękowanie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="11"/>
         <source>Thank you!</source>
-        <translation>Dziękuję!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="15"/>
-        <source>External Link</source>
-        <translation>Link Zewnętrzny</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="32"/>
-        <source>Open in browser</source>
-        <translation>Otwórz w przeglądarce</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="41"/>
-        <source>Copy to clipboard</source>
-        <translation>Kopiuj do schowka</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
-        <source>Download license texts</source>
-        <translation>Pobierz tekst licencji</translation>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
+        <source>Note: please check the source code for most accurate information.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="106"/>
@@ -424,28 +401,48 @@
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="47"/>
         <source>Homepage</source>
-        <translation>Strona główna</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="15"/>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="15"/>
+        <source>External Link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="32"/>
+        <source>Open in browser</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation>Skopiowano do schowka: %1</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="41"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
+        <source>Download license texts</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
         <source>News</source>
-        <translation>Nowości</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="62"/>
         <source>Changes since version %1</source>
-        <translation>Zmiany od wersji %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="120"/>
@@ -476,27 +473,27 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>External Link</source>
-        <translation>Link Zewnętrzny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open in browser</source>
-        <translation>Otwórz w przeglądarce</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open externally</source>
-        <translation>Otwórz za pomocą innej aplikacji</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation>Skopiowano do schowka: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="41"/>
         <source>Copy to clipboard</source>
-        <translation>Kopiuj do schowka</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -504,57 +501,57 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="43"/>
         <source>Projects</source>
-        <translation>Projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="49"/>
         <source>Add project</source>
-        <translation>Dodaj projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="78"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation>Wszystkie wpisy należące do tego projektu zostaną usunięte!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
         <source>mark as active</source>
-        <translation>oznacz jako aktywne</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="99"/>
         <source>mark as halted</source>
-        <translation>oznacz jako wstrzymane</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="104"/>
         <source>mark as finished</source>
-        <translation>oznacz jako zakończone</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="109"/>
         <source>edit or delete</source>
-        <translation>edytuj lub usuń</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="109"/>
         <source>edit</source>
-        <translation>edytuj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>No entries</source>
-        <translation>Brak wpisów</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="124"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation>To nie powinno być możliwe. Najprawdopodobniej wystąpił błąd bazy danych.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="53"/>
         <source>Add a project</source>
-        <translation>Dodaj projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -562,47 +559,47 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="35"/>
         <source>Recurring Entries</source>
-        <translation>Wpisy cykliczne</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="53"/>
         <source>Add recurring entry</source>
-        <translation>Dodaj wpis cykliczny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="84"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation>Nie spowoduje to usunięcia wpisów z mocą wsteczną.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="90"/>
         <source>mark as active</source>
-        <translation>oznacz jako aktywne</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="95"/>
         <source>mark as halted</source>
-        <translation>oznacz jako wstrzymane</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="100"/>
         <source>mark as done</source>
-        <translation>oznacz jako zakończone</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="122"/>
         <source>No entries yet</source>
-        <translation>Brak wpisów</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="123"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation>Ta strona pokaże listę wszystkich cyklicznych wpisów.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="105"/>
         <source>press and hold to edit or delete</source>
-        <translation>dotknij i przytrzymaj, aby edytować lub usunąć</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -610,7 +607,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation>Zaczynający się</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -628,12 +625,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="11"/>
         <source>Thank you for your support!</source>
-        <translation>Dziękujemy za twoje wsparcie!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="55"/>
         <source>Remind me later</source>
-        <translation>Przypomnij mi później</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
@@ -646,32 +643,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="146"/>
         <source>Today</source>
-        <translation>Dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="147"/>
         <source>Tomorrow</source>
-        <translation>Jutro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="200"/>
         <source>No entries yet</source>
-        <translation>Brak wpisów</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="201"/>
         <source>Pull down to add entries</source>
-        <translation>Przeciągnij w dół, aby dodać wpis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="149"/>
         <source>Someday</source>
-        <translation>Kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="148"/>
         <source>This week</source>
-        <translation>W tym tygodniu</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -679,146 +676,146 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="46"/>
         <source>continue today</source>
-        <translation>kontynuuj dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="52"/>
         <source>done</source>
-        <translation>zrobione</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="61"/>
         <source>done for today, continue tomorrow</source>
-        <translation>zakończone na dzisiaj, kontynuuj jutro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="108"/>
         <source>ignore</source>
-        <translation>ignoruj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="78"/>
         <location filename="../qml/components/TodoListItem.qml" line="148"/>
         <source>continue tomorrow</source>
-        <translation>kontynuuj jutro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="114"/>
         <source>not completely done yet</source>
-        <translation>jeszcze nie skończone</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="124"/>
         <source>⭑ %1, %2</source>
-        <translation>⭑ %1, %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="127"/>
         <source>from today</source>
-        <translation>od dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="129"/>
         <location filename="../qml/components/TodoListItem.qml" line="131"/>
         <source>from yesterday</source>
-        <translation>od wczoraj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="133"/>
         <source>from earlier</source>
-        <translation>od wcześniej</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="138"/>
         <source>for today</source>
-        <translation>na dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="140"/>
         <source>carried over</source>
-        <translation>przeniesione</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="142"/>
         <source>ignored today</source>
-        <translation>zignorowane dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>to be done tomorrow</source>
-        <translation>do zrobienia jutro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="147"/>
         <source>done today</source>
-        <translation>zrobione dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="156"/>
         <source>press and hold to edit or delete</source>
-        <translation>dotknij i przytrzymaj, aby edytować lub usunąć</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="101"/>
         <source>move to someday later</source>
-        <translation>przesuń na kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="78"/>
         <location filename="../qml/components/TodoListItem.qml" line="148"/>
         <source>continue next day</source>
-        <translation>kontynuuj następnego dnia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="127"/>
         <source>from this day</source>
-        <translation>od tego dnia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="129"/>
         <source>from last day</source>
-        <translation>od ostatniego dnia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="138"/>
         <source>for this day</source>
-        <translation>na ten dzień</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="139"/>
         <source>for someday later</source>
-        <translation>na kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="142"/>
         <source>ignored this day</source>
-        <translation>zignorowane na ten dzień</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>to be done next day</source>
-        <translation>do zrobienia następnego dnia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="145"/>
         <source>to be done someday later</source>
-        <translation>do zrobienia kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="147"/>
         <source>done this day</source>
-        <translation>zrobione tego dnia</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="68"/>
         <source>handle today</source>
-        <translation>poradzić sobie dzisiaj</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="91"/>
         <location filename="../qml/components/TodoListItem.qml" line="149"/>
         <source>continue later this week</source>
-        <translation>kontynuuj w tym tygodniu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="91"/>
@@ -828,12 +825,12 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="144"/>
         <source>to be done later this week</source>
-        <translation>do zrobienia w tym tygodniu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="150"/>
         <source>continue someday later</source>
-        <translation>kontynuuj kiedyś</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -841,27 +838,27 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="125"/>
         <source>Show old entries</source>
-        <translation>Pokaż stare wpisy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="121"/>
         <source>About</source>
-        <translation>O tej aplikacji</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="71"/>
         <source>Note</source>
-        <translation>Notatka</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="129"/>
         <source>Add entry</source>
-        <translation>Dodaj wpis</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="79"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation>Przesuń w lewo, aby dodać wpisy cykliczne. Możesz określić interwał, w którym będą one automatycznie dodawane do bieżącej listy czynności do wykonania.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -869,37 +866,37 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="75"/>
         <source>Database Error</source>
-        <translation>Błąd bazy danych</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="41"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="42"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation>hh&apos;:&apos;mm</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="43"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation>ddd d MMM yyyy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="44"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation>d MMM yyyy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="40"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation>Lista rzeczy do zrobienia</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -907,54 +904,54 @@
     <message>
         <location filename="../qml/js/storage.js" line="90"/>
         <source>Default</source>
-        <translation>Domyślny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="93"/>
         <source>Failed to initialize database</source>
-        <translation>Nie można zainicjować bazy danych</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="103"/>
         <source>Empty database query</source>
-        <translation>Puste zapytanie do bazy danych</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="103"/>
         <source>This is a programming error. Please file a bug report.</source>
-        <translation>To jest programistyczny błąd. Proszę zgłosić błąd.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="110"/>
         <source>Database access failed</source>
-        <translation>Dostęp do bazy danych nie powiódł się</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="155"/>
         <source>Failed to update project</source>
-        <translation>Nie udało się zaktualizować projektu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="155"/>
         <location filename="../qml/js/storage.js" line="166"/>
         <source>No internal project ID was provided.</source>
-        <translation>Nie podano wewnętrznego identyfikatora projektu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="166"/>
         <location filename="../qml/js/storage.js" line="169"/>
         <source>Failed to delete project</source>
-        <translation>Nie udało się usunąć projektu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="169"/>
         <source>The default project cannot be deleted.</source>
-        <translation>Domyślnego projektu nie można usunąć.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="289"/>
         <source>Failed to update entry</source>
-        <translation>Nie udało się zaktualizować wpisu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="212"/>
@@ -962,54 +959,54 @@
         <location filename="../qml/js/storage.js" line="289"/>
         <location filename="../qml/js/storage.js" line="308"/>
         <source>No internal entry ID was provided.</source>
-        <translation>Nie podano wewnętrznego identyfikatora wpisu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="332"/>
         <location filename="../qml/js/storage.js" line="333"/>
         <source>Failed to carry over old entries</source>
-        <translation>Nie udało się przenieść starych wpisów</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="332"/>
         <source>Copying old entries failed.</source>
-        <translation>Kopiowanie starych wpisów nie powiodło się.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="333"/>
         <source>Updating old entries failed.</source>
-        <translation>Aktualizacja starych wpisów nie powiodła się.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="212"/>
         <source>Failed to update recurring entry</source>
-        <translation>Nie udało się zaktualizować wpisu cyklicznego</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="228"/>
         <source>Failed to delete recurring entry</source>
-        <translation>Nie udało się usunąć wpisu cyklicznego</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="308"/>
         <source>Failed to delete entry</source>
-        <translation>Nie udało się usunąć wpisu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="361"/>
         <location filename="../qml/js/storage.js" line="362"/>
         <source>Failed to update recurring entries</source>
-        <translation>Nie udało się zaktualizować wpisów cyklicznych</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="361"/>
         <source>Copying new entries failed.</source>
-        <translation>Kopiowanie nowych wpisów nie powiodło się.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="362"/>
         <source>Updating reference entries failed.</source>
-        <translation>Aktualizacja wpisów referencyjnych nie powiodła się.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

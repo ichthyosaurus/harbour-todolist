@@ -305,53 +305,53 @@
 <context>
     <name>Opal.About</name>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="55"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="56"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="84"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="85"/>
         <source>Version %1</source>
         <translation>Версия %1</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="100"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="22"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="101"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="24"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="33"/>
         <source>Development</source>
         <translation>Разработка</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="105"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="51"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="57"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="106"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="18"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="47"/>
         <source>Homepage</source>
         <translation>Домашняя страница</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="103"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="104"/>
         <source>show contributors</source>
         <translation>Показать контрибьютеров</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="108"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
         <translation>Список изменений</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="123"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="124"/>
         <source>Donations</source>
         <translation>Пожертвования</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="129"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
         <source>License</source>
         <translation>Лицензия</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="134"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="135"/>
         <source>show license(s)</source>
         <translation>
             <numerusform>Показать лицензию</numerusform>
@@ -360,14 +360,14 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="111"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="112"/>
         <source>Translations</source>
         <translation>Переводы</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="114"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="50"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="58"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="115"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="17"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="25"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="50"/>
         <source>Source Code</source>
         <translation>Исходный код</translation>
@@ -378,28 +378,28 @@
         <translation>Показать детали</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="21"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="23"/>
         <source>Contributors</source>
         <translation>Контрибьютеры</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="37"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="39"/>
         <source>Acknowledgements</source>
         <translation>Благодарности</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="44"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="11"/>
         <source>Thank you!</source>
         <translation>Спасибо вам!</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="48"/>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="15"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>Details</source>
         <translation>Подробно</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>License(s)</source>
         <translation>
             <numerusform>Лицензия</numerusform>
@@ -408,12 +408,12 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="41"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
         <source>Note: please check the source code for most accurate information.</source>
         <translation>Примечание: для получения наиболее точной информации обращайтесь к исходному коду.</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="25"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
         <source>Download license texts</source>
         <translation>Загрузить тексты лицензий</translation>
     </message>
@@ -438,12 +438,12 @@
         <translation>Скопировать в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="60"/>
+        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
         <source>News</source>
         <translation>Новости</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
+        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="62"/>
         <source>Changes since version %1</source>
         <translation>Изменения начиная с версии %1</translation>
     </message>
@@ -644,32 +644,32 @@
 <context>
     <name>TodoList</name>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="123"/>
+        <location filename="../qml/components/TodoList.qml" line="146"/>
         <source>Today</source>
         <translation>Сегодня</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="124"/>
+        <location filename="../qml/components/TodoList.qml" line="147"/>
         <source>Tomorrow</source>
         <translation>Завтра</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="126"/>
+        <location filename="../qml/components/TodoList.qml" line="149"/>
         <source>Someday</source>
         <translation>Когда-нибудь</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="177"/>
+        <location filename="../qml/components/TodoList.qml" line="200"/>
         <source>No entries yet</source>
         <translation>Записей еще нет</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="178"/>
+        <location filename="../qml/components/TodoList.qml" line="201"/>
         <source>Pull down to add entries</source>
         <translation>Потяните вниз, чтобы добавить записи</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="125"/>
+        <location filename="../qml/components/TodoList.qml" line="148"/>
         <source>This week</source>
         <translation>На этой неделе</translation>
     </message>
@@ -839,27 +839,27 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="92"/>
+        <location filename="../qml/pages/TodoListView.qml" line="125"/>
         <source>Show old entries</source>
         <translation>Показать старые записи</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="88"/>
+        <location filename="../qml/pages/TodoListView.qml" line="121"/>
         <source>About</source>
         <translation>О приложении</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="49"/>
+        <location filename="../qml/pages/TodoListView.qml" line="71"/>
         <source>Note</source>
         <translation>Примечание</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="96"/>
+        <location filename="../qml/pages/TodoListView.qml" line="129"/>
         <source>Add entry</source>
         <translation>Добавить запись</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="57"/>
+        <location filename="../qml/pages/TodoListView.qml" line="79"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
         <translation>Проведите пальцем влево, чтобы добавить повторяющиеся записи. Можно указать интервал, через который они будут автоматически добавляться в текущий список дел.</translation>
     </message>
@@ -867,36 +867,36 @@
 <context>
     <name>harbour-todolist</name>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="73"/>
+        <location filename="../qml/harbour-todolist.qml" line="75"/>
         <source>Database Error</source>
         <translation>Ошибка базы данных</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="38"/>
+        <location filename="../qml/harbour-todolist.qml" line="40"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
         <translation>Список дел</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="39"/>
+        <location filename="../qml/harbour-todolist.qml" line="41"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
         <translation>d. MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="40"/>
+        <location filename="../qml/harbour-todolist.qml" line="42"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
         <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="41"/>
+        <location filename="../qml/harbour-todolist.qml" line="43"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
         <translation>ddd, d. MMM yyyy</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="42"/>
+        <location filename="../qml/harbour-todolist.qml" line="44"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
         <translation>d. MMM yyyy</translation>
@@ -959,8 +959,8 @@
     <message>
         <location filename="../qml/js/storage.js" line="212"/>
         <location filename="../qml/js/storage.js" line="228"/>
-        <location filename="../qml/js/storage.js" line="284"/>
-        <location filename="../qml/js/storage.js" line="303"/>
+        <location filename="../qml/js/storage.js" line="289"/>
+        <location filename="../qml/js/storage.js" line="308"/>
         <source>No internal entry ID was provided.</source>
         <translation>Внутренний идентификатор входа не был указан.</translation>
     </message>
@@ -970,44 +970,44 @@
         <translation>Не удалось удалить повторяющуюся запись</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="284"/>
+        <location filename="../qml/js/storage.js" line="289"/>
         <source>Failed to update entry</source>
         <translation>Не удалось обновить запись</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="303"/>
+        <location filename="../qml/js/storage.js" line="308"/>
         <source>Failed to delete entry</source>
         <translation>Не удалось удалить запись</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="327"/>
-        <location filename="../qml/js/storage.js" line="328"/>
+        <location filename="../qml/js/storage.js" line="332"/>
+        <location filename="../qml/js/storage.js" line="333"/>
         <source>Failed to carry over old entries</source>
         <translation>Не удалось перенести старые записи</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="327"/>
+        <location filename="../qml/js/storage.js" line="332"/>
         <source>Copying old entries failed.</source>
         <translation>Копирование старых записей не удалось.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="328"/>
+        <location filename="../qml/js/storage.js" line="333"/>
         <source>Updating old entries failed.</source>
         <translation>Обновление старых записей не удалось.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="356"/>
-        <location filename="../qml/js/storage.js" line="357"/>
+        <location filename="../qml/js/storage.js" line="361"/>
+        <location filename="../qml/js/storage.js" line="362"/>
         <source>Failed to update recurring entries</source>
         <translation>Не удалось обновить повторяющиеся записи</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="356"/>
+        <location filename="../qml/js/storage.js" line="361"/>
         <source>Copying new entries failed.</source>
         <translation>Копирование новых записей не удалось.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="357"/>
+        <location filename="../qml/js/storage.js" line="362"/>
         <source>Updating reference entries failed.</source>
         <translation>Не удалось обновить ссылки на записи.</translation>
     </message>

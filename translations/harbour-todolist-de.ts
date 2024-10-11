@@ -304,53 +304,53 @@
 <context>
     <name>Opal.About</name>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="55"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="56"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="84"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="85"/>
         <source>Version %1</source>
         <translation>Version %1</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="100"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="22"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="101"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="24"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="33"/>
         <source>Development</source>
         <translation>Entwicklung</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="105"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="51"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="57"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="106"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="18"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="47"/>
         <source>Homepage</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="103"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="104"/>
         <source>show contributors</source>
         <translation>Mitwirkende zeigen</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="108"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
         <translation>Änderungsverlauf</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="123"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="124"/>
         <source>Donations</source>
         <translation>Spenden</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="129"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
         <source>License</source>
         <translation>Lizenz</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="134"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="135"/>
         <source>show license(s)</source>
         <translation>
             <numerusform>Lizenz zeigen</numerusform>
@@ -358,14 +358,14 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="111"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="112"/>
         <source>Translations</source>
         <translation>Übersetzungen</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="114"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="50"/>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="58"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="115"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="17"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="25"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="50"/>
         <source>Source Code</source>
         <translation>Quellcode</translation>
@@ -376,28 +376,28 @@
         <translation>Details zeigen</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="21"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="23"/>
         <source>Contributors</source>
         <translation>Mitwirkende</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="37"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="39"/>
         <source>Acknowledgements</source>
         <translation>Danksagungen</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="44"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="11"/>
         <source>Thank you!</source>
         <translation>Vielen Dank!</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="48"/>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="15"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="31"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>License(s)</source>
         <translation>
             <numerusform>Lizenz</numerusform>
@@ -405,12 +405,12 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="41"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
         <source>Note: please check the source code for most accurate information.</source>
         <translation>Hinweis: Bitte prüfen Sie den Quellcode für alle Einzelheiten.</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="25"/>
+        <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
         <source>Download license texts</source>
         <translation>Lizenztexte herunterladen</translation>
     </message>
@@ -435,12 +435,12 @@
         <translation>In die Zwischenablage kopieren</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="60"/>
+        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
         <source>News</source>
         <translation>Neuigkeiten</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
+        <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="62"/>
         <source>Changes since version %1</source>
         <translation>Änderungen seit Version %1</translation>
     </message>
@@ -641,32 +641,32 @@
 <context>
     <name>TodoList</name>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="123"/>
+        <location filename="../qml/components/TodoList.qml" line="146"/>
         <source>Today</source>
         <translation>Heute</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="124"/>
+        <location filename="../qml/components/TodoList.qml" line="147"/>
         <source>Tomorrow</source>
         <translation>Morgen</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="177"/>
+        <location filename="../qml/components/TodoList.qml" line="200"/>
         <source>No entries yet</source>
         <translation>Noch keine Einträge</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="178"/>
+        <location filename="../qml/components/TodoList.qml" line="201"/>
         <source>Pull down to add entries</source>
         <translation>Herunterziehen, um Einträge hinzuzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="126"/>
+        <location filename="../qml/components/TodoList.qml" line="149"/>
         <source>Someday</source>
         <translation>Irgendwann</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="125"/>
+        <location filename="../qml/components/TodoList.qml" line="148"/>
         <source>This week</source>
         <translation>Diese Woche</translation>
     </message>
@@ -836,27 +836,27 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="92"/>
+        <location filename="../qml/pages/TodoListView.qml" line="125"/>
         <source>Show old entries</source>
         <translation>Alte Einträge anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="88"/>
+        <location filename="../qml/pages/TodoListView.qml" line="121"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="49"/>
+        <location filename="../qml/pages/TodoListView.qml" line="71"/>
         <source>Note</source>
         <translation>Anmerkung</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="96"/>
+        <location filename="../qml/pages/TodoListView.qml" line="129"/>
         <source>Add entry</source>
         <translation>Eintrag hinzufügen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="57"/>
+        <location filename="../qml/pages/TodoListView.qml" line="79"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
         <translation>Wischen Sie nach links um wiederkehrende Einträge hinzuzufügen. Sie können dann angeben, alle wieviel Tage der Eintrag automatisch zur aktuellen To-do-Liste hinzugefügt wird.</translation>
     </message>
@@ -864,36 +864,36 @@
 <context>
     <name>harbour-todolist</name>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="73"/>
+        <location filename="../qml/harbour-todolist.qml" line="75"/>
         <source>Database Error</source>
         <translation>Datenbank-Fehler</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="39"/>
+        <location filename="../qml/harbour-todolist.qml" line="41"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
         <translation>d. MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="40"/>
+        <location filename="../qml/harbour-todolist.qml" line="42"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
         <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="41"/>
+        <location filename="../qml/harbour-todolist.qml" line="43"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
         <translation>ddd, d. MMM yyyy</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="42"/>
+        <location filename="../qml/harbour-todolist.qml" line="44"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
         <translation>d. MMM yyyy</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="38"/>
+        <location filename="../qml/harbour-todolist.qml" line="40"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
         <translation>To-do-Liste</translation>
@@ -949,31 +949,31 @@
         <translation>Das Standard-Projekt kann nicht gelöscht werden.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="284"/>
+        <location filename="../qml/js/storage.js" line="289"/>
         <source>Failed to update entry</source>
         <translation>Der Eintrag konnte nicht aktualisiert werden</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="212"/>
         <location filename="../qml/js/storage.js" line="228"/>
-        <location filename="../qml/js/storage.js" line="284"/>
-        <location filename="../qml/js/storage.js" line="303"/>
+        <location filename="../qml/js/storage.js" line="289"/>
+        <location filename="../qml/js/storage.js" line="308"/>
         <source>No internal entry ID was provided.</source>
         <translation>Es wurde keine interne Eintrags-ID angegeben.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="327"/>
-        <location filename="../qml/js/storage.js" line="328"/>
+        <location filename="../qml/js/storage.js" line="332"/>
+        <location filename="../qml/js/storage.js" line="333"/>
         <source>Failed to carry over old entries</source>
         <translation>Die alten Einträge konnten nicht auf heute übertragen werden</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="327"/>
+        <location filename="../qml/js/storage.js" line="332"/>
         <source>Copying old entries failed.</source>
         <translation>Das Kopieren der alten Einträge ist fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="328"/>
+        <location filename="../qml/js/storage.js" line="333"/>
         <source>Updating old entries failed.</source>
         <translation>Das Aktualisieren der alten Einträge ist fehlgeschlagen.</translation>
     </message>
@@ -988,23 +988,23 @@
         <translation>Der wiederholte Eintrag konnte nicht gelöscht werden</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="303"/>
+        <location filename="../qml/js/storage.js" line="308"/>
         <source>Failed to delete entry</source>
         <translation>Der Eintrag konnte nicht gelöscht werden</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="356"/>
-        <location filename="../qml/js/storage.js" line="357"/>
+        <location filename="../qml/js/storage.js" line="361"/>
+        <location filename="../qml/js/storage.js" line="362"/>
         <source>Failed to update recurring entries</source>
         <translation>Die wiederholten Einträge konnten nicht aktualisiert werden</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="356"/>
+        <location filename="../qml/js/storage.js" line="361"/>
         <source>Copying new entries failed.</source>
         <translation>Das Kopieren der neuen Einträge ist fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="357"/>
+        <location filename="../qml/js/storage.js" line="362"/>
         <source>Updating reference entries failed.</source>
         <translation>Die Referenzeinträge konnten nicht aktualisiert werden.</translation>
     </message>
