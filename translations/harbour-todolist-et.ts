@@ -2,6 +2,64 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="et" sourcelanguage="en_US">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="45"/>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="60"/>
+        <source>Development</source>
+        <translation>Arendus</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="63"/>
+        <source>Programming</source>
+        <translation>Koodi kirjutamine</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="74"/>
+        <source>Translations</source>
+        <translation>Tõlked</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="77"/>
+        <source>Swedish</source>
+        <translation>rootsi</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="83"/>
+        <source>Russian</source>
+        <translation>vene</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="89"/>
+        <source>Polish</source>
+        <translation>poola</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
+        <source>Norwegian Bokmål</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="102"/>
+        <source>German</source>
+        <translation>saksa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="108"/>
+        <source>English</source>
+        <translation>inglise</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="114"/>
+        <source>Chinese</source>
+        <translation>hiina</translation>
+    </message>
+</context>
+<context>
     <name>AddItemDialog</name>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
