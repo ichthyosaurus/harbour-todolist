@@ -9,6 +9,14 @@ import "modules/Opal/About"
 
 ChangelogList {
     ChangelogItem {
+        version: "1.3.1-1"
+        date: "2024-10-12"
+        paragraphs: [
+            "- Fixed an issue that broke the “About” page<br>" +
+            "- Fixed translations to get some lost strings back"
+        ]
+    }
+    ChangelogItem {
         version: "1.3.0-1"
         date: "2024-10-11"
         paragraphs: [
