@@ -1,4 +1,4 @@
-s/*
+/*
  * This file is part of harbour-todolist.
  * SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
  * SPDX-License-Identifier: GPL-3.0-or-later
