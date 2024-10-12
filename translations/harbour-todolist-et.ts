@@ -4,14 +4,14 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="45"/>
-        <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/AboutPage.qml" line="60"/>
         <source>Development</source>
         <translation>Arendus</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="45"/>
+        <source>A simple tool for planning what to do next.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
@@ -24,11 +24,6 @@
         <translation>Tõlked</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="77"/>
-        <source>Swedish</source>
-        <translation>rootsi</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/AboutPage.qml" line="83"/>
         <source>Russian</source>
         <translation>vene</translation>
@@ -39,9 +34,19 @@
         <translation>poola</translation>
     </message>
     <message>
+        <location filename="../qml/pages/AboutPage.qml" line="77"/>
+        <source>Swedish</source>
+        <translation>rootsi</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>Norwegian Bokmål</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="114"/>
+        <source>Chinese</source>
+        <translation>hiina</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="102"/>
@@ -52,11 +57,6 @@
         <location filename="../qml/pages/AboutPage.qml" line="108"/>
         <source>English</source>
         <translation>inglise</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AboutPage.qml" line="114"/>
-        <source>Chinese</source>
-        <translation>hiina</translation>
     </message>
 </context>
 <context>
