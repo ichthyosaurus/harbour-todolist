@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alat sederhana untuk merencanakan apa yang harus dilakukan selanjutnya.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>Norwegian Bokmål</source>
-        <translation type="unfinished"></translation>
+        <translation>Bokmål Norwegia</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="114"/>
@@ -64,42 +64,42 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation type="unfinished"></translation>
+        <translation>Masukkan Judul</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation type="unfinished"></translation>
+        <translation>Masukkan deskripsi opsional</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Deskripsi</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Dijadwalkan pada</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>hari ini</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>besok</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
