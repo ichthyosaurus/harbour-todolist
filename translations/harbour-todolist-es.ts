@@ -521,7 +521,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="99"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>marcar como detenido</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="104"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="95"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>marcar como detenida</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="100"/>
@@ -723,7 +723,7 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="133"/>
         <source>from earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>anterior</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="138"/>
@@ -794,12 +794,12 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>to be done next day</source>
-        <translation type="unfinished">para hacerse el día siguiente</translation>
+        <translation>al día siguiente</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="145"/>
         <source>to be done someday later</source>
-        <translation type="unfinished">para hacerse algún día más adelante</translation>
+        <translation>se hará algún día</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="147"/>
@@ -820,12 +820,12 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="91"/>
         <source>handle later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>a finales de esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="144"/>
         <source>to be done later this week</source>
-        <translation type="unfinished">para hacerse más adelante esta semana</translation>
+        <translation>a finales de esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="150"/>
@@ -848,7 +848,7 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="71"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="129"/>
@@ -858,7 +858,7 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="79"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished">Deslizar hacia la izquierda para añadir entradas recurrentes. Puedes indicar un intervalo en el que se añadirán automáticamente a la lista to-do actual.</translation>
+        <translation>Desliza el dedo hacia la izquierda para añadir entradas recurrentes. Puedes especificar un intervalo en el que se añadirán automáticamente a la lista de tareas actuales.</translation>
     </message>
 </context>
 <context>
@@ -896,7 +896,7 @@
         <location filename="../qml/harbour-todolist.qml" line="40"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>To-do List</translation>
     </message>
 </context>
 <context>
