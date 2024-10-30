@@ -465,6 +465,8 @@ ApplicationWindow {
         thisweekString = Helpers.getDateString(thisweek);
         somedayString = Helpers.getDateString(someday);
 
+        Storage.todayString = todayString
+
         // Update the database and models according to the new date properties.
         if (Storage.carryOverFrom(config.lastCarriedOverFrom)) {
             config.lastCarriedOverFrom = Helpers.getDate(-1, today);
