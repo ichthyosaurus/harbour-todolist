@@ -114,8 +114,7 @@ TodoListBaseItem {
                 text: qsTr("not completely done yet")
                 onClicked: markItemAs(index, EntryState.todo, subState);
             }
-            MenuItem {
-                enabled: false
+            MenuLabel {
                 visible: editable || infoMarkerEnabled
                 text: {
                     var text = "";
@@ -156,10 +155,6 @@ TodoListBaseItem {
                     if (editable) text += qsTr("press and hold to edit or delete")
                     return text;
                 }
-                font.pixelSize: Theme.fontSizeSmall
-                truncationMode: TruncationMode.Fade
-                _elideText: false
-                _fadeText: true
             }
         }
     }
