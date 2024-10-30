@@ -25,16 +25,31 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="83"/>
+        <source>Spanish</source>
+        <translation>espagnol</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="90"/>
         <source>Russian</source>
         <translation>russe</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="89"/>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>Polish</source>
         <translation>polonais</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="137"/>
+        <location filename="../qml/pages/AboutPage.qml" line="109"/>
+        <source>Indonesian</source>
+        <translation>indonésien</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="121"/>
+        <source>Estonian</source>
+        <translation>estonien</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
         <translation type="unfinished"></translation>
     </message>
@@ -44,22 +59,22 @@
         <translation>suédois</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="96"/>
+        <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Bokmål</source>
         <translation>norvégien (Bokmål)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="114"/>
+        <location filename="../qml/pages/AboutPage.qml" line="133"/>
         <source>Chinese</source>
         <translation>chinois</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="102"/>
+        <location filename="../qml/pages/AboutPage.qml" line="115"/>
         <source>German</source>
         <translation>allemand</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="108"/>
+        <location filename="../qml/pages/AboutPage.qml" line="127"/>
         <source>English</source>
         <translation>anglais</translation>
     </message>
@@ -155,7 +170,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/AskForSupport.qml" line="11"/>
         <source>Please take a moment to consider if you can contribute to this project in one way or another.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merci de prendre le temps d&apos;envisager si vous pouvez contribuer à ce projet d&apos;une manière ou d&apos;une autre.</translation>
     </message>
 </context>
 <context>

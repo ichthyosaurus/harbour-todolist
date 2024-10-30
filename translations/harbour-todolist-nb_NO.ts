@@ -25,16 +25,31 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="83"/>
+        <source>Spanish</source>
+        <translation>Spansk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="90"/>
         <source>Russian</source>
         <translation>Russisk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="89"/>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>Polish</source>
         <translation>Polsk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="137"/>
+        <location filename="../qml/pages/AboutPage.qml" line="109"/>
+        <source>Indonesian</source>
+        <translation>Indonesisk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="121"/>
+        <source>Estonian</source>
+        <translation>Estisk</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
         <translation type="unfinished"></translation>
     </message>
@@ -44,22 +59,22 @@
         <translation>Svensk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="96"/>
+        <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Bokmål</source>
         <translation>Norsk bokmål</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="114"/>
+        <location filename="../qml/pages/AboutPage.qml" line="133"/>
         <source>Chinese</source>
         <translation>Kinesisk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="102"/>
+        <location filename="../qml/pages/AboutPage.qml" line="115"/>
         <source>German</source>
         <translation>Tysk</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="108"/>
+        <location filename="../qml/pages/AboutPage.qml" line="127"/>
         <source>English</source>
         <translation>Engelsk</translation>
     </message>
