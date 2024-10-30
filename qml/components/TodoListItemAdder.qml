@@ -49,8 +49,8 @@ PaddedDelegate {
                 else textField.focus = false
             }
             EnterKey.iconSource: root.canApply ?
-                                     "image://theme/icon-m-add" :
-                                     "image://theme/icon-m-enter-close"
+                 "../images/icon-m-enter-add.png" :
+                 "image://theme/icon-m-enter-close"
             onActiveFocusChanged: textFieldFocusChanged(activeFocus)
         }
     }

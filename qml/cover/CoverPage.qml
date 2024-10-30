@@ -81,9 +81,9 @@ CoverBackground {
                 anchors { top: parent.top; topMargin: Theme.paddingSmall }
                 color: Theme.primaryColor
                 source: {
-                    if (entryState === EntryState.todo) "../images/icon-todo-small.png"
-                    else if (entryState === EntryState.ignored) "../images/icon-ignored-small.png"
-                    else if (entryState === EntryState.done) "../images/icon-done-small.png"
+                    if (entryState === EntryState.todo) "../images/icon-cover-todo.png"
+                    else if (entryState === EntryState.ignored) "../images/icon-cover-ignored.png"
+                    else if (entryState === EntryState.done) "../images/icon-cover-done.png"
                 }
             }
 
