@@ -165,6 +165,67 @@ DB.dbMigrations = [
 
         DB.makeTableSortable(tx, '_recurrings', 'seq')
     }],
+    [4, function(tx){
+        // This version cleans up the tasks table.
+        // Added columns: explicit rowid
+        // Changed columns: weight can be null, moved to the end, populated
+
+        // Important: *lower* weight -> further to the *bottom* of the list
+        // That's why the row number is calculated by ordering descendingly.
+        // It is counterintuitive but it makes adding entries easier, they
+        // can just get weight = 0.
+
+        tx.executeSql('\
+            CREATE TABLE entries_temp(
+                rowid INTEGER PRIMARY KEY,
+                date STRING NOT NULL,
+                entryState INTEGER NOT NULL,
+                subState INTEGER NOT NULL,
+                createdOn STRING NOT NULL,
+                interval INTEGER NOT NULL,
+                project INTEGER NOT NULL,
+                text TEXT NOT NULL,
+                description TEXT,
+                weight INTEGER
+        );')
+
+        tx.executeSql('\
+            INSERT INTO entries_temp(
+                rowid,
+                date,
+                entryState,
+                subState,
+                createdOn,
+                interval,
+                project,
+                text,
+                description,
+                weight
+            ) SELECT
+                rowid,
+                date,
+                entryState,
+                subState,
+                createdOn,
+                interval,
+                project,
+                text,
+                description,
+                (ROW_NUMBER() OVER(
+                    PARTITION BY date
+                    ORDER BY
+                        date DESC,
+                        entryState DESC,
+                        weight DESC,
+                        rowid DESC
+                ) - 1
+            )
+            FROM entries
+        ;')
+
+        tx.executeSql('DROP TABLE entries;')
+        tx.executeSql('ALTER TABLE entries_temp RENAME TO entries;')
+    }]
 
     // add new versions here...
     //
