@@ -35,10 +35,6 @@ DB.dbName = "harbour-todolist"
 DB.dbDescription = "Todo List Data"
 DB.dbSize = 1000000
 
-// disable vacuuming because it would reset
-// project rowids which would break entries
-DB.enableAutoMaintenance = false
-
 DB.dbMigrations = [
     // Database versions do not correspond to app versions.
 
@@ -74,6 +70,48 @@ DB.dbMigrations = [
                 rowid, name, entryState
             ) VALUES (?, ?, ?)',
             [defaultProjectId, qsTr("Default"), 0])
+    }],
+    [2, function(tx){
+        // This version introduces support for vacuuming the
+        // database, and adds sorting to the projects table.
+        //
+        // The rowid column is created explicitly here because
+        // it is used as foreign key in other tables. Autoincrement
+        // is not necessary because all data referencing a project
+        // is deleted when the project is deleted.
+        //
+        // https://sqlite.org/lang_createtable.html#rowid
+        // https://sqlite.org/autoinc.html
+        // https://sqlite.org/lang_vacuum.html
+
+        DB.createSettingsTable(tx)
+
+        tx.executeSql('\
+            CREATE TABLE IF NOT EXISTS projects_temp(
+                rowid INTEGER PRIMARY KEY,
+                name TEXT NOT NULL,
+                entryState INTEGER NOT NULL,
+                seq INTEGER NOT NULL
+        );')
+
+        tx.executeSql('\
+            INSERT INTO projects_temp(
+                rowid,
+                name,
+                entryState,
+                seq
+            ) SELECT
+                rowid,
+                name,
+                entryState,
+                (ROW_NUMBER() OVER(ORDER BY rowid))
+            FROM projects
+        ;')
+
+        tx.executeSql('DROP TABLE projects;')
+        tx.executeSql('ALTER TABLE projects_temp RENAME TO _projects;')
+
+        DB.makeTableSortable(tx, '_projects', 'seq')
     }],
 
     // add new versions here...
