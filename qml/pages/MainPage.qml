@@ -17,6 +17,7 @@ Page {
         anchors.fill: parent
         currentIndex: 1
         tabBarPosition: Qt.AlignBottom
+        tabBarVisible: !main.hideTabBar
         cacheSize: 10
 
         Tab {

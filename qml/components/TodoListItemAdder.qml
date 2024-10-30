@@ -36,6 +36,13 @@ PaddedDelegate {
     rightItemAlignment: Qt.AlignTop
     padding.topBottom: 0
 
+    Binding {
+        target: main
+        property: "hideTabBar"
+        value: _textField.activeFocus
+        when: !!_textField.activeFocus
+    }
+
     Column {
         id: contentContainer
         width: parent.width

@@ -48,6 +48,10 @@ ApplicationWindow {
     property date lastSelectedCategory: today
     property bool loading: false
 
+    // set this to true if the virtual keyboard is visible
+    // on the main page, e.g. when adding a new item
+    property bool hideTabBar: false
+
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
     property date thisweek: Helpers.getDate(0, new Date("8888-01-01T00:00Z"))
