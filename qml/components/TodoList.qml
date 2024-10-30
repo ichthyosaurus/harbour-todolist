@@ -48,7 +48,7 @@ SilicaListView {
         onDeleteThisItem: main.deleteItem(which)
         onMoveAndMarkItem: {
             // changes index
-            main.moveAndMarkItemTo(moveToDate, mainState, subState)
+            main.moveAndMarkItemTo(which, moveToDate, mainState, subState)
         }
 
         // To prevent a visual glitch when scrolling down a long list of items
