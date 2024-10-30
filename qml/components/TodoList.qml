@@ -40,14 +40,15 @@ SilicaListView {
 
         onMarkItemAs: updateItem(which, mainState, subState)
         onCopyAndMarkItem: {
-            updateItem(which, mainState, subState)
             main.copyItemTo(which, copyToDate)
-        }
-        onSaveItemDetails: updateItem(which, undefined, undefined, newText, newDescription, newProject)
-        onDeleteThisItem: deleteItem(which)
-        onMoveAndMarkItem: {
+            // update changes index, must be called last!
             updateItem(which, mainState, subState)
-            moveItemTo(which, moveToDate)
+        }
+        onSaveItemDetails: main.updateItem(which, undefined, undefined, newText, newDescription, newProject)
+        onDeleteThisItem: main.deleteItem(which)
+        onMoveAndMarkItem: {
+            // changes index
+            main.moveAndMarkItemTo(moveToDate, mainState, subState)
         }
 
         // To prevent a visual glitch when scrolling down a long list of items

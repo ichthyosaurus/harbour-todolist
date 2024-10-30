@@ -372,7 +372,8 @@ ApplicationWindow {
         }
     }
 
-    function addItem(forDate, task, description, entryState, subState, createdOn, interval) {
+    function addItem(forDate, task, description,
+                     entryState, subState, createdOn, interval) {
         entryState = Storage.defaultFor(entryState, EntryState.Todo);
         subState = Storage.defaultFor(subState, EntrySubState.Today);
         createdOn = Storage.defaultFor(createdOn, forDate);
@@ -392,6 +393,8 @@ ApplicationWindow {
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function updateItem(which, entryState, subState, text, description, project) {
+        // WARNING: this function changes the item's index. The index passed
+        // as "which" will no longer be valid after calling this function!
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
         if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
         if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
@@ -439,13 +442,36 @@ ApplicationWindow {
         var item = currentEntriesModel.get(which)
 
         if (Storage.defaultFor(moveToDate, "fail") === "fail") {
-            console.log("error: failed to move item", which, moveToDate)
+            console.error("failed to move item", which, moveToDate)
+            return
         }
 
         var text = item.text
         var description = item.description
         var entryState = item.entryState
         var subState = item.subState
+        var createdOn = item.createdOn
+
+        deleteItem(which)  // adding will change indexes, so delete first
+        addItem(moveToDate, text, description,
+                entryState, subState, createdOn)
+    }
+
+    function moveAndMarkItemTo(which, moveToDate, entryState, subState) {
+        // WARNING: this function changes indices!
+
+        var item = currentEntriesModel.get(which)
+
+        if (Storage.defaultFor(moveToDate, "fail") === "fail") {
+            console.error("failed to move item", which, moveToDate)
+            return
+        }
+
+        if (entryState === undefined) subState = item.entryState
+        if (subState === undefined) subState = item.subState
+
+        var text = item.text
+        var description = item.description
         var createdOn = item.createdOn
 
         deleteItem(which)  // adding will change indexes, so delete first
