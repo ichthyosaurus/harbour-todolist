@@ -586,7 +586,7 @@ function copyRecurrings() {
 
     var mainResult = simpleQuery(
         'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description) ' +
-            'SELECT ?, 0, 0, ?, 1, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
+            'SELECT ?, 0, 0, ?, 0, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
         [todayString, todayString, EntryState.todo, todayString, todayString, todayString]
     );
 

@@ -192,7 +192,7 @@ ApplicationWindow {
         entryState = Storage.defaultFor(entryState, EntryState.Todo);
         subState = Storage.defaultFor(subState, EntrySubState.Today);
         createdOn = Storage.defaultFor(createdOn, forDate);
-        var weight = 1;
+        var weight = 0;
         interval = Storage.defaultFor(interval, 0);
         var project = config.currentProject;
 
