@@ -236,10 +236,13 @@ ApplicationWindow {
 
     // Delete an entry from the database and from currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
-    function deleteItem(which) {
-        var rowid = currentEntriesModel.get(which).entryId
-        Storage.deleteEntry(rowid)
-        currentEntriesModel.removeItem(which)
+    function deleteItem(index, rowid) {
+        index = Helpers.indexForRowid(currentEntriesModel, rowid, index)
+
+        if (index >= 0) {
+            Storage.deleteEntry(rowid)
+            currentEntriesModel.removeItem(index)
+        }
     }
 
     // Copy an entry in the database and in currentEntriesModel. This is not intended to be used
@@ -268,7 +271,7 @@ ApplicationWindow {
         var subState = item.subState
         var createdOn = item.createdOn
 
-        deleteItem(which)  // adding will change indexes, so delete first
+        deleteItem(which, item.entryId)  // adding will change indexes, so delete first
         addItem(moveToDate, text, description,
                 entryState, subState, createdOn)
     }
@@ -290,7 +293,7 @@ ApplicationWindow {
         var description = item.description
         var createdOn = item.createdOn
 
-        deleteItem(which)  // adding will change indexes, so delete first
+        deleteItem(which, item.entryId)  // adding will change indexes, so delete first
         addItem(moveToDate, text, description,
                 entryState, subState, createdOn)
     }
@@ -348,10 +351,13 @@ ApplicationWindow {
         }
     }
 
-    function deleteRecurring(which) {
-        var rowid = recurringsModel.get(which).entryId
-        Storage.deleteRecurring(rowid)
-        recurringsModel.removeItem(which)
+    function deleteRecurring(index, rowid) {
+        index = Helpers.indexForRowid(recurringsModel, rowid, index)
+
+        if (index >= 0) {
+            Storage.deleteRecurring(rowid)
+            recurringsModel.removeItem(index)
+        }
     }
 
     function addProject(name, entryState) {
@@ -376,9 +382,7 @@ ApplicationWindow {
         Storage.updateProject(item.entryId, item.name, item.entryState)
     }
 
-    function deleteProject(which) {
-        var rowid = projectsModel.get(which).entryId
-
+    function deleteProject(index, rowid) {
         if (rowid === config.currentProject) {
             setCurrentProject(defaultProjectId)
         } else if (rowid === defaultProjectId) {
@@ -386,8 +390,12 @@ ApplicationWindow {
             return
         }
 
-        Storage.deleteProject(rowid)
-        projectsModel.removeItem(which)
+        index = Helpers.indexForRowid(projectsModel, rowid, index)
+
+        if (index >= 0) {
+            Storage.deleteProject(rowid)
+            projectsModel.removeItem(index)
+        }
     }
 
     function setCurrentProject(entryId) {

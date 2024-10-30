@@ -103,7 +103,7 @@ TabItem {
             onMarkItemAs: main.updateRecurring(which, undefined, mainState);
             onSaveItemDetails: main.updateRecurring(which, undefined, undefined, undefined, newText, newDescription, newProject);
             onSaveItemRecurring: main.updateRecurring(which, startDate, undefined, interval, undefined, undefined);
-            onDeleteThisItem: main.deleteRecurring(which)
+            onDeleteThisItem: main.deleteRecurring(which, rowid)
             onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
             extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
 

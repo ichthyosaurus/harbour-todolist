@@ -87,7 +87,7 @@ TabItem {
 
             onMarkItemAs: main.updateProject(which, undefined, mainState);
             onSaveItemDetails: main.updateProject(which, newText, undefined);
-            onDeleteThisItem: main.deleteProject(which)
+            onDeleteThisItem: main.deleteProject(which, rowid)
             onMoveAndMarkItem: console.log("error: cannot 'move' project")
             extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 

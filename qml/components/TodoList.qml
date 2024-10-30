@@ -45,7 +45,7 @@ SilicaListView {
             updateItem(which, mainState, subState)
         }
         onSaveItemDetails: main.updateItem(which, undefined, undefined, newText, newDescription, newProject)
-        onDeleteThisItem: main.deleteItem(which)
+        onDeleteThisItem: main.deleteItem(which, rowid)
         onMoveAndMarkItem: {
             // changes index
             main.moveAndMarkItemTo(which, moveToDate, mainState, subState)

@@ -60,7 +60,7 @@ TwoLineDelegate {
     signal moveAndMarkItem(var which, var mainState, var subState, var moveToDate)
     signal saveItemDetails(var which, var newText, var newDescription, var newProject)
     signal saveItemRecurring(var which, var interval, var startDate)
-    signal deleteThisItem(var which)
+    signal deleteThisItem(var which, var rowid)
 
     signal checkboxClicked(var mouse)
 
@@ -76,7 +76,7 @@ TwoLineDelegate {
         });
         dialog.accepted.connect(function() {
             if (dialog.requestDeletion) {
-                deleteThisItem(index);
+                deleteThisItem(index, entryId)
             } else {
                 saveItemDetails(index, dialog.text.trim(), dialog.description.trim(), dialog.project);
                 if (editableInterval) saveItemRecurring(index, dialog.recurringIntervalDays, dialog.recurringStartDate);
