@@ -18,6 +18,14 @@ QtObject {
     readonly property int firstDoneIndex: firstIgnoredIndex + ignoredCount
     readonly property int lastIndex: firstDoneIndex + doneCount - 1
 
+    function reset() {
+        todoCount = 0
+        ignoredCount = 0
+        doneCount = 0
+
+        // firstTodoIndex is bound by IndexedListModel
+    }
+
     function updateState(index, newState, sortHint) {
         // This *saves* to the database!
         //

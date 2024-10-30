@@ -110,7 +110,13 @@ ApplicationWindow {
                             messageObject.series)
                 loading = true
                 series = messageObject.series
-                _selectModel(messageObject).clear()
+                var model = _selectModel(messageObject)
+
+                if (model.hasOwnProperty('reset')) {
+                    model.reset()
+                } else {
+                    model.clear()
+                }
             } else if (messageObject.event === 'loadingEntriesBatch') {
                 if (messageObject.series !== series) {
                     console.log("[main] discarding loaded entries for " +
@@ -414,7 +420,7 @@ ApplicationWindow {
 
         // Start with true to force a refresh on application startup.
         refreshDates(true)
-        projectsModel.clear()
+        projectsModel.reset()
 
         var projects = Storage.getProjects()
         for (var i in projects) {

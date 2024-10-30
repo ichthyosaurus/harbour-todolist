@@ -9,6 +9,14 @@ ListModel {
     property bool withSubState // required
     property string rowidProperty: "entryId"  // required
 
+    function reset() {
+        clear()
+        todayPositions.reset()
+        tomorrowPositions.reset()
+        thisWeekPositions.reset()
+        somedayPositions.reset()
+    }
+
     function addItem(dict, sortHint, commit) {
         // This *only* saves the new position to the database.
         // The item *must* already be saved to the database
