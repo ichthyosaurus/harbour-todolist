@@ -30,11 +30,6 @@ CoverBackground {
         id: filteredModel
         sourceModel: status === Cover.Active ? currentEntriesModel : null
 
-        sorters: [
-            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "weight"; sortOrder: Qt.DescendingOrder }
-        ]
-
         filters: [
             AllOf {
                 ValueFilter {
