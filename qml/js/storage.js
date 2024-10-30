@@ -142,19 +142,27 @@ function error(summary, details) {
 }
 
 function getProjects() {
-    var q = simpleQuery('SELECT rowid, * FROM projects;', []);
+    var q = simpleQuery('\
+        SELECT rowid, *
+        FROM projects
+        ORDER BY
+            entryState ASC,
+            seq ASC
+    ;')
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
-        var item = q.rows.item(i);
+        var item = q.rows.item(i)
 
-        res.push({entryId: item.rowid,
-                     name: item.name,
-                     entryState: parseInt(item.entryState, 10),
-                 });
+        res.push({
+            entryId: item.rowid,
+            name: item.name,
+            entryState: parseInt(item.entryState, 10),
+            seq: parseInt(item.seq, 10),
+        })
     }
 
-    return res;
+    return res
 }
 
 function getProject(entryId) {
