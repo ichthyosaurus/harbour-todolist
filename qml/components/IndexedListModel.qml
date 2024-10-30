@@ -6,11 +6,13 @@ ListModel {
     id: root
 
     property string type  // required
-    property string rowidProperty  // required
     property bool withSubState // required
+    property string rowidProperty: "entryId"  // required
 
-    function addItem(dict, sortHint) {
-        // This does *not* save to the database!
+    function addItem(dict, sortHint, commit) {
+        // This *only* saves the new position to the database.
+        // The item *must* already be saved to the database
+        // before caling thing function!
         //
         // Pass a function(newItem, existingItem) as sortHint
         // to influence where the new item will be inserted.
@@ -50,6 +52,11 @@ ListModel {
 
         console.log("[model]", type, newIndex, JSON.stringify(dict))
         root.insert(newIndex, dict)
+
+        if (!!commit) {
+            // save the new position
+            moveItem(newIndex, newIndex, true)
+        }
     }
 
     function removeItem(index) {

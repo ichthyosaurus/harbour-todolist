@@ -22,12 +22,10 @@ ApplicationWindow {
     property ListModel currentEntriesModel: ListModel { }
     property IndexedListModel projectsModel: IndexedListModel {
         type: "projects"
-        rowidProperty: "entryId"
         withSubState: false
     }
     property IndexedListModel recurringsModel: IndexedListModel {
         type: "recurrings"
-        rowidProperty: "entryId"
         withSubState: false
 
         function sortHint(newItem, existingItem) {
@@ -276,7 +274,7 @@ ApplicationWindow {
             project, text, description, addForToday)
 
         if (!!newItem) {
-            recurringsModel.addItem(newItem, recurringsModel.sortHint)
+            recurringsModel.addItem(newItem, recurringsModel.sortHint, true)
         }
 
         if (addForToday) {
@@ -320,7 +318,7 @@ ApplicationWindow {
     function addProject(name, entryState) {
         var newProject = Storage.addProject(name, entryState)
         if (!!newProject) {
-            projectsModel.addItem(newProject)
+            projectsModel.addItem(newProject, null, true)
         }
     }
 
@@ -420,7 +418,7 @@ ApplicationWindow {
 
         var projects = Storage.getProjects()
         for (var i in projects) {
-            projectsModel.addItem(projects[i])
+            projectsModel.addItem(projects[i], null, false)
         }
 
         // Start the timer to check for date changes every hour.

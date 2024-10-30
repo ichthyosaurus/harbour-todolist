@@ -236,10 +236,6 @@ function moveItem(type, rowid, newIndex) {
     [newPosition, rowid])
 }
 
-function moveProject(rowid, newIndex) {
-    moveItem('project', rowid, newIndex)
-}
-
 function getProjects() {
     var q = simpleQuery('\
         SELECT rowid, *
