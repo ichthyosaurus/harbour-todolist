@@ -22,6 +22,14 @@ ApplicationWindow {
     property SortableTodoModel currentEntriesModel: SortableTodoModel {}
     property IndexedListModel projectsModel: IndexedListModel {
         type: "projects"
+
+        function countDueToday(change) {
+            if (!change) return
+            var idx = Helpers.indexForRowid(projectsModel, currentProjectId)
+            if (idx < 0 || !change) return
+            var current = get(idx).dueToday
+            setProperty(idx, 'dueToday', current + change)
+        }
     }
     property IndexedListModel recurringsModel: IndexedListModel {
         type: "recurrings"
@@ -203,6 +211,10 @@ ApplicationWindow {
 
         if (!!newItem) {
             currentEntriesModel.addItem(newItem, null, true)
+
+            if (Helpers.getDateString(forDate) === todayString) {
+                projectsModel.countDueToday(+1)
+            }
         }
     }
 
@@ -238,10 +250,15 @@ ApplicationWindow {
     // for archived entries, as the archive should be immutable.
     function deleteItem(index, rowid) {
         index = Helpers.indexForRowid(currentEntriesModel, rowid, index)
+        var dateString = currentEntriesModel.get(index).dateString
 
         if (index >= 0) {
             Storage.deleteEntry(rowid)
             currentEntriesModel.removeItem(index)
+
+            if (dateString === todayString) {
+                projectsModel.countDueToday(-1)
+            }
         }
     }
 
@@ -428,7 +445,8 @@ ApplicationWindow {
         Storage.loadArchive(config.currentProject, 'archive');
     }
 
-    // Resets all date properties after a date change. The force parameter can be used to force a model refresh.
+    // Resets all date properties after a date change.
+    // The force parameter can be used to force a model refresh.
     function refreshDates(force) {
         var oldToday = todayString;
 

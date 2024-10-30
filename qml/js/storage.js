@@ -301,10 +301,26 @@ function moveItem(type, rowid, newIndex) {
 
 function getProjects() {
     var q = simpleQuery('\
-        SELECT rowid, *
-        FROM projects
+        WITH z AS (
+            WITH x AS (
+                SELECT
+                    project,
+                    count(*) AS dueToday
+                FROM entries
+                WHERE entries.date = date(?)
+                    AND entries.entryState = 0
+                GROUP BY project
+            ) SELECT * FROM projects
+            LEFT JOIN x
+                ON x.project = projects.rowid
+        ) SELECT
+            rowid,
+            COALESCE(dueToday, 0) AS dueToday,
+            name,
+            entryState
+        FROM z
         ORDER BY seq ASC
-    ;')
+    ;', [todayString])
     var res = []
 
     for (var i = 0; i < q.rows.length; i++) {
@@ -314,6 +330,7 @@ function getProjects() {
             entryId: parseInt(item.rowid, 10),
             name: item.name,
             entryState: parseInt(item.entryState, 10),
+            dueToday: parseInt(item.dueToday, 10),
         })
     }
 

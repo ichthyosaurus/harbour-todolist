@@ -84,6 +84,8 @@ TabItem {
             deletable: entryId !== defaultProjectId
             descriptionEnabled: false
             infoMarkerEnabled: false
+            intervalProperty: "dueToday"
+            alwaysShowInterval: dueToday > 0
 
             onMarkItemAs: main.updateProject(which, undefined, mainState);
             onSaveItemDetails: main.updateProject(which, newText, undefined);
