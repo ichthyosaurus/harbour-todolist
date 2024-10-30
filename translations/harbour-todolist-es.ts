@@ -34,6 +34,11 @@
         <translation>Polaco</translation>
     </message>
     <message>
+        <location filename="../qml/pages/AboutPage.qml" line="137"/>
+        <source>View old entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Swedish</source>
         <translation>Sueco</translation>
@@ -130,17 +135,17 @@
 <context>
     <name>ArchivePage</name>
     <message>
-        <location filename="../qml/pages/ArchivePage.qml" line="64"/>
+        <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
         <translation>Entradas archivadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ArchivePage.qml" line="86"/>
+        <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
         <translation>No hay ninguna entrada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ArchivePage.qml" line="87"/>
+        <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
         <translation>Esta página mostrará una lista de todas las entradas antiguas.</translation>
     </message>
@@ -236,6 +241,24 @@
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="119"/>
         <source>License text</source>
         <translation>Texto de la licencia</translation>
+    </message>
+</context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="24"/>
+        <source>Recurrings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="30"/>
+        <source>To-do List</source>
+        <translation type="unfinished">To-do List</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="36"/>
+        <source>Projects</source>
+        <translation type="unfinished">Proyectos</translation>
     </message>
 </context>
 <context>
@@ -499,57 +522,62 @@
 <context>
     <name>ProjectsView</name>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="43"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="66"/>
         <source>Projects</source>
         <translation>Proyectos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="49"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="51"/>
         <source>Add project</source>
         <translation>Añadir proyecto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="78"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="47"/>
+        <source>Arrange entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProjectsView.qml" line="94"/>
         <source>All entries belonging to this project will be deleted!</source>
         <translation>¡Se eliminarán todas las entradas pertenecientes al proyecto!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="94"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="113"/>
         <source>mark as active</source>
         <translation>marcar como activa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="99"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="118"/>
         <source>mark as halted</source>
         <translation>marcar como detenido</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="104"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
         <translation>marcar como completada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="109"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit or delete</source>
         <translation>editar o eliminar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="109"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit</source>
         <translation>editar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="123"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="144"/>
         <source>No entries</source>
         <translation>No hay entradas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="124"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="145"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation>Esto no debería ser posible. Lo más probable es que haya ocurrido un error de base de datos.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="53"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="55"/>
         <source>Add a project</source>
         <translation>Añadir un proyecto</translation>
     </message>
@@ -557,47 +585,52 @@
 <context>
     <name>RecurringsView</name>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="35"/>
-        <source>Recurring Entries</source>
-        <translation>Entradas recurrentes</translation>
+        <location filename="../qml/pages/RecurringsView.qml" line="45"/>
+        <source>Arrange entries</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="53"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="49"/>
         <source>Add recurring entry</source>
         <translation>Añadir entrada recurrente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="84"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="73"/>
+        <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/RecurringsView.qml" line="108"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
         <translation>Esto &lt;i&gt;no&lt;/i&gt; eliminará las entradas con carácter retroactivo.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="90"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="114"/>
         <source>mark as active</source>
         <translation>marcar como activa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="95"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="119"/>
         <source>mark as halted</source>
         <translation>marcar como detenida</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="100"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="124"/>
         <source>mark as done</source>
         <translation>marcar como hecha</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="122"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="141"/>
         <source>No entries yet</source>
         <translation>Todavía no hay entradas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="123"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="142"/>
         <source>This page will show a list of all recurring entries.</source>
         <translation>Esta página mostrará una lista de las entradas recurrentes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="105"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="128"/>
         <source>press and hold to edit or delete</source>
         <translation>pulsa y mantén para editar o eliminar</translation>
     </message>
@@ -641,32 +674,32 @@
 <context>
     <name>TodoList</name>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="146"/>
+        <location filename="../qml/components/TodoList.qml" line="121"/>
         <source>Today</source>
         <translation>Hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="147"/>
+        <location filename="../qml/components/TodoList.qml" line="122"/>
         <source>Tomorrow</source>
         <translation>Mañana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="200"/>
+        <location filename="../qml/components/TodoList.qml" line="175"/>
         <source>No entries yet</source>
         <translation>Todavía no hay entradas</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="201"/>
+        <location filename="../qml/components/TodoList.qml" line="176"/>
         <source>Pull down to add entries</source>
         <translation>Arrastra hacia abajo para añadir entradas</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="149"/>
+        <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Someday</source>
         <translation>Algún día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="148"/>
+        <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>This week</source>
         <translation>Esta semana</translation>
     </message>
@@ -674,189 +707,218 @@
 <context>
     <name>TodoListItem</name>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="46"/>
+        <location filename="../qml/components/TodoListItem.qml" line="75"/>
         <source>continue today</source>
         <translation>continuar hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="52"/>
+        <location filename="../qml/components/TodoListItem.qml" line="81"/>
         <source>done</source>
         <translation>hecho</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="61"/>
+        <location filename="../qml/components/TodoListItem.qml" line="90"/>
         <source>done for today, continue tomorrow</source>
         <translation>terminado por hoy, continuar mañana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="108"/>
+        <location filename="../qml/components/TodoListItem.qml" line="137"/>
         <source>ignore</source>
         <translation>ignorar</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="78"/>
-        <location filename="../qml/components/TodoListItem.qml" line="148"/>
+        <location filename="../qml/components/TodoListItem.qml" line="107"/>
+        <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue tomorrow</source>
         <translation>continuar mañana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="114"/>
+        <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>not completely done yet</source>
         <translation>aún no está terminado</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="124"/>
+        <location filename="../qml/components/TodoListItem.qml" line="152"/>
         <source>⭑ %1, %2</source>
         <translation>⭑ %1, %2</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="127"/>
+        <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from today</source>
         <translation>desde hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="129"/>
-        <location filename="../qml/components/TodoListItem.qml" line="131"/>
+        <location filename="../qml/components/TodoListItem.qml" line="157"/>
+        <location filename="../qml/components/TodoListItem.qml" line="159"/>
         <source>from yesterday</source>
         <translation>desde ayer</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="133"/>
+        <location filename="../qml/components/TodoListItem.qml" line="161"/>
         <source>from earlier</source>
         <translation>anterior</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="138"/>
+        <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for today</source>
         <translation>para hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="140"/>
+        <location filename="../qml/components/TodoListItem.qml" line="168"/>
         <source>carried over</source>
         <translation>prorrogado</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="142"/>
+        <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored today</source>
         <translation>ignorado hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="143"/>
+        <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done tomorrow</source>
         <translation>para hacerse mañana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="147"/>
+        <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done today</source>
         <translation>hecho hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="156"/>
+        <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>press and hold to edit or delete</source>
         <translation>pulsa y mantén para editar o eliminar</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="101"/>
+        <location filename="../qml/components/TodoListItem.qml" line="130"/>
         <source>move to someday later</source>
         <translation>mover a algún día más adelante</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="78"/>
-        <location filename="../qml/components/TodoListItem.qml" line="148"/>
+        <location filename="../qml/components/TodoListItem.qml" line="107"/>
+        <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue next day</source>
         <translation>continuar el siguiente día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="127"/>
+        <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from this day</source>
         <translation>desde este día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="129"/>
+        <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <source>from last day</source>
         <translation>desde el último día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="138"/>
+        <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for this day</source>
         <translation>para este día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="139"/>
+        <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>for someday later</source>
         <translation>para algún día más adelante</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="142"/>
+        <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored this day</source>
         <translation>ignorado este día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="143"/>
+        <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done next day</source>
         <translation>al día siguiente</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="145"/>
+        <location filename="../qml/components/TodoListItem.qml" line="173"/>
         <source>to be done someday later</source>
         <translation>se hará algún día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="147"/>
+        <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done this day</source>
         <translation>hecho este día</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="68"/>
+        <location filename="../qml/components/TodoListItem.qml" line="97"/>
         <source>handle today</source>
         <translation>gestionar hoy</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="91"/>
-        <location filename="../qml/components/TodoListItem.qml" line="149"/>
+        <location filename="../qml/components/TodoListItem.qml" line="120"/>
+        <location filename="../qml/components/TodoListItem.qml" line="177"/>
         <source>continue later this week</source>
         <translation>continuar más adelante esta semana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="91"/>
+        <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <source>handle later this week</source>
         <translation>a finales de esta semana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="144"/>
+        <location filename="../qml/components/TodoListItem.qml" line="172"/>
         <source>to be done later this week</source>
         <translation>a finales de esta semana</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="150"/>
+        <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>continue someday later</source>
         <translation>continuar algún día más adelante</translation>
     </message>
 </context>
 <context>
+    <name>TodoListItemAdder</name>
+    <message>
+        <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
+        <source>Scheduled for</source>
+        <translation type="unfinished">Programado para</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
+        <source>today</source>
+        <translation type="unfinished">hoy</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
+        <source>tomorrow</source>
+        <translation type="unfinished">mañana</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
+        <source>this week</source>
+        <translation type="unfinished">esta semana</translation>
+    </message>
+    <message>
+        <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
+        <source>someday</source>
+        <translation type="unfinished">algún día</translation>
+    </message>
+</context>
+<context>
     <name>TodoListView</name>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="125"/>
-        <source>Show old entries</source>
-        <translation>Mostrar entradas antiguas</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TodoListView.qml" line="121"/>
-        <source>About</source>
-        <translation>Acerca de</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TodoListView.qml" line="71"/>
+        <location filename="../qml/pages/TodoListView.qml" line="60"/>
         <source>Note</source>
         <translation>Nota</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="129"/>
+        <location filename="../qml/pages/TodoListView.qml" line="76"/>
+        <source>About and Archive</source>
+        <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TodoListView.qml" line="83"/>
+        <source>Arrange entries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/TodoListView.qml" line="86"/>
         <source>Add entry</source>
         <translation>Añadir entrada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="79"/>
+        <location filename="../qml/pages/TodoListView.qml" line="68"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
         <translation>Desliza el dedo hacia la izquierda para añadir entradas recurrentes. Puedes especificar un intervalo en el que se añadirán automáticamente a la lista de tareas actuales.</translation>
     </message>
@@ -864,36 +926,46 @@
 <context>
     <name>harbour-todolist</name>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="75"/>
+        <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
         <translation>Error de base de datos</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="41"/>
+        <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
         <translation>d &apos;de&apos; MMM &apos;de&apos; yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="42"/>
+        <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
         <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="43"/>
+        <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
         <translation>ddd d &apos;de&apos; MMM &apos;de&apos; yyyy</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="44"/>
+        <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
         <translation>d &apos;de&apos; MMM &apos;de&apos; yyyy</translation>
     </message>
     <message>
-        <location filename="../qml/harbour-todolist.qml" line="40"/>
+        <location filename="../qml/harbour-todolist.qml" line="162"/>
+        <source>Internal error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-todolist.qml" line="163"/>
+        <source>An unknown worker message cannot be handled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
         <translation>To-do List</translation>
@@ -902,111 +974,107 @@
 <context>
     <name>storage</name>
     <message>
-        <location filename="../qml/js/storage.js" line="90"/>
+        <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
         <translation>Predeterminado</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="93"/>
-        <source>Failed to initialize database</source>
-        <translation>Error al inicializar la base de datos</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="103"/>
-        <source>Empty database query</source>
-        <translation>Vaciar consulta de base de datos</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="103"/>
-        <source>This is a programming error. Please file a bug report.</source>
-        <translation>Se trata de un error de programación. Por favor, envía un informe de error.</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="110"/>
-        <source>Database access failed</source>
-        <translation>Error de acceso a la base de datos</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="155"/>
+        <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
         <translation>Error al actualizar el proyecto</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="155"/>
-        <location filename="../qml/js/storage.js" line="166"/>
+        <location filename="../qml/js/storage.js" line="400"/>
+        <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
         <translation>No se facilitó ninguna identificación interna del proyecto.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="166"/>
-        <location filename="../qml/js/storage.js" line="169"/>
+        <location filename="../qml/js/storage.js" line="411"/>
+        <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
         <translation>Error al eliminar el proyecto</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="169"/>
+        <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
         <translation>No se puede eliminar el proyecto predeterminado.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="289"/>
+        <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
         <translation>Error al actualizar la entrada</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="212"/>
-        <location filename="../qml/js/storage.js" line="228"/>
-        <location filename="../qml/js/storage.js" line="289"/>
-        <location filename="../qml/js/storage.js" line="308"/>
+        <location filename="../qml/js/storage.js" line="481"/>
+        <location filename="../qml/js/storage.js" line="504"/>
+        <location filename="../qml/js/storage.js" line="632"/>
+        <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
         <translation>No se facilitó ninguna identificación interna de la entrada.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="332"/>
-        <location filename="../qml/js/storage.js" line="333"/>
+        <location filename="../qml/js/storage.js" line="392"/>
+        <location filename="../qml/js/storage.js" line="472"/>
+        <location filename="../qml/js/storage.js" line="614"/>
+        <source>Failed to save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="393"/>
+        <source>The new project “%1” could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="473"/>
+        <source>The new recurring entry “%1” could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="528"/>
+        <source>Database unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="529"/>
+        <source>The database worker is not ready.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="615"/>
+        <source>The new entry “%1” could not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/js/storage.js" line="718"/>
+        <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
         <translation>Error al prorrogar las entradas antiguas</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="332"/>
+        <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
         <translation>Error al copiar las entradas antiguas.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="333"/>
+        <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
         <translation>Error al actualizar las entradas antiguas.</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="212"/>
+        <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
         <translation>Error al actualizar la entrada recurrente</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="228"/>
+        <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
         <translation>Error al eliminar la entrada recurrente</translation>
     </message>
     <message>
-        <location filename="../qml/js/storage.js" line="308"/>
+        <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
         <translation>Error al eliminar la entrada</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="361"/>
-        <location filename="../qml/js/storage.js" line="362"/>
-        <source>Failed to update recurring entries</source>
-        <translation>Error al actualizar las entradas recurrentes</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="361"/>
-        <source>Copying new entries failed.</source>
-        <translation>Error al copiar las nuevas entradas.</translation>
-    </message>
-    <message>
-        <location filename="../qml/js/storage.js" line="362"/>
-        <source>Updating reference entries failed.</source>
-        <translation>Error al actualizar las referencias de las entradas.</translation>
     </message>
 </context>
 </TS>
