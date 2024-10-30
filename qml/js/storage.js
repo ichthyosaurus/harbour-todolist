@@ -422,28 +422,6 @@ function deleteRecurring(entryId) {
     simpleQuery('DELETE FROM recurrings WHERE rowid=?', [entryId]);
 }
 
-function _prepareEntries(q) {
-    var res = []
-
-    for (var i = 0; i < q.rows.length; i++) {
-        var item = q.rows.item(i);
-
-        res.push({entryId: item.rowid,
-                     date: Helpers.getDate(0, new Date(item.date)),
-                     entryState: parseInt(item.entryState, 10),
-                     subState: parseInt(item.subState, 10),
-                     createdOn: Helpers.getDate(0, new Date(item.createdOn)),
-                     weight: parseInt(item.weight, 10),
-                     interval: parseInt(item.interval, 10),
-                     project: parseInt(item.project, 10),
-                     text: item.text,
-                     description: item.description
-                 });
-    }
-
-    return res;
-}
-
 function _doProcessEntries(queryResult, targetModel) {
     if (!!worker) {
         console.time('[storage] processing entries')
