@@ -35,15 +35,23 @@ TwoLineDelegate {
     property string intervalStartProperty: "date"
 
     property bool _isArchivedEntry: typeof(_isOld) !== 'undefined' && !!_isOld
-    property real _contentOpacity: _isArchivedEntry ?
-        1.6-_baseOpacity : _baseOpacity
-    property real _baseOpacity: {
-        if (entryState === EntryState.Todo) {
-            1.0
-        } else if (entryState === EntryState.Ignored) {
-            0.7
-        } else if (entryState === EntryState.Done) {
-            0.6
+    property real _contentOpacity: {
+        if (_isArchivedEntry) {
+            if (entryState === EntryState.Todo) {
+                0.5
+            } else if (entryState === EntryState.Ignored) {
+                0.6
+            } else if (entryState === EntryState.Done) {
+                1.0
+            }
+        } else {
+            if (entryState === EntryState.Todo) {
+                1.0
+            } else if (entryState === EntryState.Ignored) {
+                0.6
+            } else if (entryState === EntryState.Done) {
+                0.5
+            }
         }
     }
 
