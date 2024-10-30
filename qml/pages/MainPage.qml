@@ -17,6 +17,7 @@ Page {
         anchors.fill: parent
         currentIndex: 1
         tabBarPosition: Qt.AlignBottom
+        cacheSize: 10
 
         Tab {
             title: qsTr("Recurrings")

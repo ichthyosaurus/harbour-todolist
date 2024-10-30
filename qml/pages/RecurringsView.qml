@@ -87,7 +87,7 @@ TabItem {
             editable: true
             descriptionEnabled: true
             infoMarkerEnabled: false
-            title: model.text
+            text: model.text
             description: model.description
 
             alwaysShowInterval: true

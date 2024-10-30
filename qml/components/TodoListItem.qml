@@ -25,21 +25,39 @@ import "../js/helpers.js" as Helpers
 
 TodoListBaseItem {
     id: item
+
+    readonly property bool isToday: date.getTime() === today.getTime()
+    readonly property bool isThisWeek: date.getTime() === thisweek.getTime()
+    readonly property bool isSomeday: date.getTime() === someday.getTime()
+
     descriptionEnabled: true
     infoMarkerEnabled: (createdOn.getTime() !== date.getTime() || subState !== EntrySubState.today)
-    title: model.text
+    text: model.text
     description: model.description
     project: model.project
 
     property bool isArchived: date.getTime() < today.getTime()
     editable: !isArchived
 
+    customClickHandlingEnabled: true
+    onClicked: openMenu()
+    showMenuOnPressAndHold: false
+    onPressAndHold: editable && startEditing()
+    onCheckboxClicked: {
+    function markDone() {
+        if (isSomeday || isThisWeek) {
+            moveAndMarkItem(index, EntryState.Done, subState, main.today)
+        } else {
+            markItemAs(index, EntryState.Done, subState)
+        }
+    }
+
+    function markContinue() {
+        markItemAs(index, EntryState.Todo, subState)
+    }
+
     menu: Component {
         ContextMenu {
-            property bool isToday: date.getTime() === today.getTime()
-            property bool isThisWeek: date.getTime() === thisweek.getTime()
-            property bool isSomeday: date.getTime() === someday.getTime()
-
             MenuItem {
                 visible: isArchived && (   entryState !== EntryState.todo
                                         || date.getTime() > main.configuration.lastCarriedOverFrom.getTime())
@@ -50,7 +68,7 @@ TodoListBaseItem {
                 visible:    editable && !isArchived
                          && entryState !== EntryState.done
                 text: qsTr("done")
-                onClicked: (isSomeday || isThisWeek) ?  moveAndMarkItem(index, EntryState.done, subState, today) : markItemAs(index, EntryState.done, subState);
+                onClicked: item.markDone()
             }
             MenuItem {
                 visible:    editable && !isArchived
@@ -112,7 +130,7 @@ TodoListBaseItem {
                 visible:    editable && !isArchived
                          && entryState === EntryState.done
                 text: qsTr("not completely done yet")
-                onClicked: markItemAs(index, EntryState.todo, subState);
+                onClicked: item.markContinue()
             }
             MenuLabel {
                 visible: editable || infoMarkerEnabled

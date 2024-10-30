@@ -132,12 +132,13 @@ TabItem {
 /*
         delegate: TodoListBaseItem {
             id: item
+            text: model.name
+            highlighted: down || main.configuration.currentProject === model.entryId
+
             editable: true
             deletable: entryId !== defaultProjectId
             descriptionEnabled: false
             infoMarkerEnabled: false
-            title: model.name
-            highlighted: main.configuration.currentProject === entryId
 
             onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
             onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
@@ -150,8 +151,8 @@ TabItem {
             customClickHandlingEnabled: true
             showMenuOnPressAndHold: true
             onClicked: {
-                if (main.configuration.currentProject !== entryId) {
-                    main.setCurrentProject(entryId);
+                if (main.configuration.currentProject !== model.entryId) {
+                    main.setCurrentProject(model.entryId)
                 }
             }
 

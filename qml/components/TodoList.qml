@@ -43,6 +43,8 @@ SilicaListView {
         onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
     }
 
+    cacheBuffer: 10 * Screen.height
+
     delegate: TodoListItem {
         id: listItem
         onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
