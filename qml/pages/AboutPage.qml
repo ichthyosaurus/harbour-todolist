@@ -80,6 +80,13 @@ A.AboutPageBase {
                     ]
                 },
                 A.ContributionGroup {
+                    title: qsTr("Spanish")
+                    entries: [
+                        "Kamborio",
+                        "gallegonovato"
+                    ]
+                },
+                A.ContributionGroup {
                     title: qsTr("Russian")
                     entries: [
                         "Nikolay Sinyov"
@@ -99,9 +106,21 @@ A.AboutPageBase {
                     ]
                 },
                 A.ContributionGroup {
+                    title: qsTr("Indonesian")
+                    entries: [
+                        "Reza Almanda"
+                    ]
+                },
+                A.ContributionGroup {
                     title: qsTr("German")
                     entries: [
                         "Mirian Margiani"
+                    ]
+                },
+                A.ContributionGroup {
+                    title: qsTr("Estonian")
+                    entries: [
+                        "Priit Jõerüüt"
                     ]
                 },
                 A.ContributionGroup {

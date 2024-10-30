@@ -1,5 +1,25 @@
 {
-  "weblate": [],
+  "weblate": [
+    {
+      "language": "Estonian",
+      "entries": [
+        "Priit Jõerüüt"
+      ]
+    },
+    {
+      "language": "Indonesian",
+      "entries": [
+        "Reza Almanda"
+      ]
+    },
+    {
+      "language": "Spanish",
+      "entries": [
+        "Kamborio",
+        "gallegonovato"
+      ]
+    }
+  ],
   "extra": [
     {
       "language": "Polish",
