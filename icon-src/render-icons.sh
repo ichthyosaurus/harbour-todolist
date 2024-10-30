@@ -33,6 +33,7 @@ render_batch
 cNAME="status icons"
 cITEMS=({icon-todo,icon-ignored,icon-done}@112
         {icon-todo,icon-ignored,icon-done}@24++-small
+        {icon-m-todo,icon-m-ignored,icon-m-done}@112
         "$cMY_APP@256"
 )
 cRESOLUTIONS=(F1)
