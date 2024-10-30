@@ -212,27 +212,6 @@ function loadRecurrings(forProject, targetModel) {
     _doProcessEntries(q, targetModel)
 }
 
-//function getRecurrings(forProject) {
-//    forProject = defaultFor(forProject, defaultProjectId);
-//    var q = simpleQuery('SELECT rowid, * FROM recurrings WHERE project=?;', [forProject]);
-//    var res = []
-
-//    for (var i = 0; i < q.rows.length; i++) {
-//        var item = q.rows.item(i);
-
-//        res.push({entryId: item.rowid,
-//                     startDate: new Date(item.startDate),
-//                     entryState: parseInt(item.entryState, 10),
-//                     intervalDays: parseInt(item.intervalDays, 10),
-//                     project: parseInt(item.project, 10),
-//                     text: item.text,
-//                     description: item.description
-//                 });
-//    }
-
-//    return res;
-//}
-
 function addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday) {
     simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?, ?)', [
                     Helpers.getDateString(startDate), (addForToday === true ? todayString : ""),
@@ -328,12 +307,6 @@ function loadEntries(forProject, targetModel) {
     _doProcessEntries(q, targetModel)
 }
 
-//function getEntries(forProject) {
-//    forProject = defaultFor(forProject, defaultProjectId);
-//    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date >= ?;', [forProject, todayString]);
-//    return _prepareEntries(q);
-//}
-
 function loadArchive(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
     var q = simpleQuery('\
@@ -347,27 +320,6 @@ function loadArchive(forProject, targetModel) {
     console.log("LOADING ARCHIVE")
     _doProcessEntries(q, targetModel)
 }
-
-//function getArchivedEntries(forProject) {
-//    // TODO time this!
-//    //   - is the query slow?
-//    //   - is preparing entries slow?
-//    //  If only preparing is slow, it could be moved to a workerscript
-//    //  storage.js could be a library again if har.qml simply registers some callbacks on startup
-//    console.time('pick project')
-//    forProject = defaultFor(forProject, defaultProjectId);
-//    console.timeEnd('pick project')
-
-//    console.time('query')
-//    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
-//    console.timeEnd('query')
-
-//    console.time('prepare')
-//    var ret = _prepareEntries(q);
-//    console.timeEnd('prepare')
-
-//    return ret
-//}
 
 function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {
     simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
