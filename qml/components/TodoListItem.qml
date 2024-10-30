@@ -73,13 +73,13 @@ TodoListBaseItem {
                 visible: isArchived && (   entryState !== EntryState.todo
                                         || date.getTime() > main.configuration.lastCarriedOverFrom.getTime())
                 text: qsTr("continue today")
-                onClicked: copyAndMarkItem(index, EntryState.todo, EntrySubState.tomorrow, today);
+                onDelayedClick: copyAndMarkItem(index, EntryState.todo, EntrySubState.tomorrow, today);
             }
             MenuItem {
                 visible:    editable && !isArchived
                          && entryState !== EntryState.done
                 text: qsTr("done")
-                onClicked: item.markDone()
+                onDelayedClick: item.markDone()
             }
             MenuItem {
                 visible:    editable && !isArchived
@@ -88,14 +88,14 @@ TodoListBaseItem {
                          && subState !== EntrySubState.tomorrow
                          && subState !== EntrySubState.thisweek
                 text: qsTr("done for today, continue tomorrow")
-                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, tomorrow);
+                onDelayedClick: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, tomorrow);
             }
             MenuItem {
                 visible:    editable && !isArchived
-                            && (isSomeday || isThisWeek)
-                            && (entryState === EntryState.todo || entryState === EntryState.ignored)
+                         && (isSomeday || isThisWeek)
+                         && (entryState === EntryState.todo || entryState === EntryState.ignored)
                 text: qsTr("handle today")
-                onClicked: moveAndMarkItem(index, EntryState.todo, EntrySubState.today, today);
+                onDelayedClick: moveAndMarkItem(index, EntryState.todo, EntrySubState.today, today);
             }
             MenuItem {
                 visible:    editable && !isArchived
@@ -105,7 +105,7 @@ TodoListBaseItem {
                          && subState !== EntrySubState.thisweek
                          && subState !== EntrySubState.someday
                 text: isToday ? qsTr("continue tomorrow") : qsTr("continue next day")
-                onClicked: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
+                onDelayedClick: copyAndMarkItem(index, EntryState.done, EntrySubState.tomorrow, Helpers.getDate(1, date));
             }
             MenuItem {
                 visible: {
@@ -118,8 +118,8 @@ TodoListBaseItem {
                     return false;
                 }
                 text: entryState !== EntryState.todo ? qsTr("continue later this week") : qsTr("handle later this week")
-                onClicked: (isSomeday || isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.thisweek, thisweek) :
-                                                       copyAndMarkItem(index, EntryState.ignored, EntrySubState.thisweek, thisweek); // "source" will be marked as ignored
+                onDelayedClick: (isSomeday || isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.thisweek, thisweek) :
+                                                            copyAndMarkItem(index, EntryState.ignored, EntrySubState.thisweek, thisweek); // "source" will be marked as ignored
             }
             MenuItem {
                 visible:    editable && !isArchived
@@ -128,20 +128,20 @@ TodoListBaseItem {
                          && entryState === EntryState.todo
                          && subState !== EntrySubState.tomorrow
                 text: qsTr("move to someday later")
-                onClicked: (isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.someday, someday) :
-                                          copyAndMarkItem(index, EntryState.ignored, EntrySubState.someday, someday); // "source" will be marked as ignored
+                onDelayedClick: (isThisWeek) ? moveAndMarkItem(index, EntryState.todo, EntrySubState.someday, someday) :
+                                               copyAndMarkItem(index, EntryState.ignored, EntrySubState.someday, someday); // "source" will be marked as ignored
             }
             MenuItem {
                 visible:    editable && !isArchived
                          && entryState === EntryState.todo
                 text: qsTr("ignore")
-                onClicked: (isSomeday || isThisWeek) ?  moveAndMarkItem(index, EntryState.ignored, EntrySubState.today, today) : markItemAs(index, EntryState.ignored, subState);
+                onDelayedClick: (isSomeday || isThisWeek) ?  moveAndMarkItem(index, EntryState.ignored, EntrySubState.today, today) : markItemAs(index, EntryState.ignored, subState);
             }
             MenuItem {
                 visible:    editable && !isArchived
                          && entryState === EntryState.done
                 text: qsTr("not completely done yet")
-                onClicked: item.markContinue()
+                onDelayedClick: item.markContinue()
             }
             MenuLabel {
                 visible: editable || infoMarkerEnabled
