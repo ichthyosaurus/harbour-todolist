@@ -231,6 +231,16 @@ ApplicationWindow {
         var item = currentEntriesModel.get(which);
 
         if (entryState !== undefined) {
+            if (item.dateString === todayString) {
+                if (item.entryState === EntryState.Todo &&
+                        entryState !== EntryState.Todo) {
+                    projectsModel.countDueToday(-1)
+                } else if (item.entryState !== EntryState.Todo &&
+                           entryState === EntryState.Todo) {
+                    projectsModel.countDueToday(+1)
+                }
+            }
+
             currentEntriesModel.updateState(which, entryState)
         }
 
