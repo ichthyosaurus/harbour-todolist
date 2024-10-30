@@ -28,7 +28,7 @@ QtObject {
     }
 
     function updateState(index, newState, sortHint) {
-        // This *saves* to the database!
+        // This *saves* the new position to the database!
         //
         // Pass a function(newItem, existingItem) as sortHint
         // to influence where the new item will be inserted.

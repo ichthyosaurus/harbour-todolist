@@ -16,9 +16,10 @@ ListModel {
     }
 
     function addItem(dict, sortHint, commit) {
-        // This *only* saves the new position to the database.
+        // This *only* saves the new position to the database
+        // if "commit" is true!
         // The item *must* already be saved to the database
-        // before caling thing function!
+        // before calling thing function!
         //
         // Pass a function(newItem, existingItem) as sortHint
         // to influence where the new item will be inserted.
@@ -130,7 +131,7 @@ ListModel {
     }
 
     function updateState(index, newState, sortHint) {
-        // This *saves* to the database!
+        // This *saves* the new position to the database!
         // This *changes* the item's index so the index passed
         // into this function will no longer point to the item!
         //
