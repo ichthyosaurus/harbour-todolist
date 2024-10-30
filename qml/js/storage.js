@@ -214,7 +214,8 @@ DB.dbMigrations = [
                 (ROW_NUMBER() OVER(
                     PARTITION BY
                         project,
-                        date
+                        date,
+                        entryState
                     ORDER BY
                         date DESC,
                         entryState DESC,
@@ -280,8 +281,6 @@ function moveItem(type, rowid, newIndex) {
 
     if (type === 'projects') {
         table = 'projects'
-    } else if (type === 'entries') {
-        table = 'entries'
     } else if (type === 'recurrings') {
         table = 'recurrings'
     } else {
@@ -507,17 +506,16 @@ function _doProcessEntries(queryResult, targetModel) {
 function loadEntries(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
 
-    // FIXME Why does ordering by date ASC cause everything
-    // to be in reverse?
     var q = simpleQuery('\
         SELECT rowid, *
         FROM entries
         WHERE project=?
             AND date >= ?
         ORDER BY
-            date DESC,
+            date ASC,
             entryState ASC,
-            weight DESC
+            weight DESC,
+            rowid ASC
     ;', [forProject, todayString])
 
     _doProcessEntries(q, targetModel)
@@ -574,6 +572,7 @@ function addEntry(date, entryState, subState, createdOn,
         return {
             entryId: rowid,
             date: date,
+            dateString: Helpers.getDateString(date),
             entryState: entryState,
             subState: subState,
             createdOn: createdOn,
@@ -590,6 +589,14 @@ function addEntry(date, entryState, subState, createdOn,
     }
 }
 
+function saveEntryWeight(rowid, newWeight) {
+    simpleQuery('\
+        UPDATE entries
+        SET weight = ?
+        WHERE rowid = ?
+    ', [newWeight, rowid])
+}
+
 function updateEntry(entryId, date, entryState, subState,
                      createdOn, weight, interval, project,
                      text, description) {
@@ -600,7 +607,7 @@ function updateEntry(entryId, date, entryState, subState,
     }
 
     simpleQuery('\
-        UPDATE _entries SET
+        UPDATE entries SET
             date=?, entryState=?, subState=?,
             createdOn=?, weight=?, interval=?,
             project=?, text=?, description=?

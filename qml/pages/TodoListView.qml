@@ -19,7 +19,7 @@ TabItem {
 
     TodoList {
         id: todoList
-        model: filteredModel
+        model: currentEntriesModel
         anchors.fill: parent
 
         header: Column {
@@ -70,34 +70,6 @@ TabItem {
                     text: qsTr("Swipe left to add recurring entries. You can specify an interval "
                                + "in which they will be added automatically to the current to-do list.")
                 }
-            }
-        }
-
-        SortFilterProxyModel {
-            id: filteredModel
-            sourceModel: currentEntriesModel
-
-            proxyRoles: [
-                ExpressionRole {
-                    name: "_isYoung"
-                    expression: model.date >= today
-                },
-                ExpressionRole {
-                    name: "category"
-                    expression: {
-                        var string = new Date(model.date).toLocaleString(Qt.locale(), "yyyy-MM-dd")
-                        if (string == main.todayString) "today"
-                        else if (string == main.tomorrowString) "tomorrow"
-                        else if (string == main.thisweekString) "thisweek"
-                        else if (string == main.somedayString) "someday"
-                        else ""
-                     }
-                }
-            ]
-
-            filters: ValueFilter {
-                roleName: "_isYoung"
-                value: true
             }
         }
 

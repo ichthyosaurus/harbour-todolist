@@ -110,6 +110,7 @@ function _convertRegularEntry(item) {
     return {
         entryId: item.rowid,
         date: _getDate(0, new Date(item.date)),
+        dateString: item.date,
         entryState: parseInt(item.entryState, 10),
         subState: parseInt(item.subState, 10),
         createdOn: _getDate(0, new Date(item.createdOn)),

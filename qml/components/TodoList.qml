@@ -21,45 +21,15 @@ SilicaListView {
     property var closedSections: defaultClosedSections.slice()
     signal sectionToggled(var whichSection)
 
-    property string _firstSection: ''
-    readonly property bool _firstIsToday: _firstSection === 'today'
-    readonly property bool _firstIsTomorrow: _firstSection === 'tomorrow'
-    readonly property bool _firstIsThisWeek: _firstSection === 'thisweek'
-    readonly property bool _firstIsSomeday: _firstSection === 'someday'
-
     Connections {
         target: main.configuration
         onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
     }
 
-    ViewDragHandler {
+    IndexedListDragHandler {
         id: viewDragHandler
         active: arrangeEntries
-        handleMove: false
         listView: view
-
-        onItemDropped: {
-            var draggedItem = view.model.get(currentIndex)
-            var targetItem = view.model.get(finalIndex)
-            var sourceIndex = view.model.mapToSource(currentIndex)
-
-            console.log("DROP", draggedItem.weight, targetItem.weight)
-
-            //listView.model.moveItem(currentIndex, finalIndex, true)
-        }
-
-        onItemMoved: {
-            var draggedItem = view.model.get(fromIndex)
-            var targetItem = view.model.get(toIndex)
-            var sourceIndex = view.model.mapToSource(fromIndex)
-
-
-            console.log("X-DRAG", draggedItem.weight, targetItem.weight)
-            view.model.sourceModel.setProperty(sourceIndex, 'weight', targetItem.weight-1)
-            console.log("Y-DRAG", draggedItem.weight, targetItem.weight)
-
-            //listView.model.moveItem(fromIndex, toIndex, false)
-        }
     }
 
     cacheBuffer: 5 * Screen.height
@@ -68,18 +38,16 @@ SilicaListView {
         id: listItem
         dragHandler: viewDragHandler
 
-        onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
+        onMarkItemAs: updateItem(which, mainState, subState)
         onCopyAndMarkItem: {
-            var sourceIndex = view.model.mapToSource(which);
-            updateItem(sourceIndex, mainState, subState);
-            main.copyItemTo(sourceIndex, copyToDate);
+            updateItem(which, mainState, subState)
+            main.copyItemTo(which, copyToDate)
         }
-        onSaveItemDetails: updateItem(view.model.mapToSource(which), undefined, undefined, newText, newDescription, newProject);
-        onDeleteThisItem: deleteItem(view.model.mapToSource(which))
+        onSaveItemDetails: updateItem(which, undefined, undefined, newText, newDescription, newProject)
+        onDeleteThisItem: deleteItem(which)
         onMoveAndMarkItem: {
-            var sourceIndex = view.model.mapToSource(which);
-            updateItem(sourceIndex, mainState, subState);
-            moveItemTo(sourceIndex, moveToDate)
+            updateItem(which, mainState, subState)
+            moveItemTo(which, moveToDate)
         }
 
         // To prevent a visual glitch when scrolling down a long list of items
@@ -113,14 +81,10 @@ SilicaListView {
             target: view
             onSectionToggled: if (whichSection === sectionString) showHideAnimation.duration = 200
         }
-
-        Component.onCompleted: {
-            if (index === 0) _firstSection = category
-        }
     }
 
     section {
-        property: 'date'
+        property: 'dateString'
         delegate: Column {
             width: parent.width
             property string sectionString: String(section).split("T")[0]
@@ -129,19 +93,6 @@ SilicaListView {
             property bool isThisWeek: sectionString === thisweekString
             property bool isSomeday: sectionString === somedayString
             property bool open: (closedSections.indexOf(sectionString) === -1)
-
-//            TodoListItemAdder {
-//                visible: !((_firstIsToday && parent.isToday) ||
-//                         (_firstIsTomorrow && parent.isTomorrow) ||
-//                         (_firstIsThisWeek && parent.isThisWeek) ||
-//                         (_firstIsSomeday && parent.isSomeday))
-//                forDate: {
-//                    if (parent.isToday) main.today
-//                    if (parent.isTomorrow) main.tomorrow
-//                    if (parent.isThisWeek) main.thisweek
-//                    if (parent.isSomeday) main.someday
-//                }
-//            }
 
             Spacer { height: Theme.paddingLarge }
 
