@@ -196,18 +196,16 @@ ApplicationWindow {
         interval = Storage.defaultFor(interval, 0);
         var project = config.currentProject;
 
-        var entryId = Storage.addEntry(forDate, entryState, subState, createdOn,
-                                       weight, interval, project, task, description);
+        var newItem = Storage.addEntry(
+            forDate, entryState, subState, createdOn,
+            weight, interval, project, task, description)
 
-        if (entryId === undefined) {
-            console.error("failed to save new item", forDate, task);
-            return;
+        if (newItem === undefined) {
+            console.error("failed to save new item", forDate, task)
+            return
+        } else {
+            currentEntriesModel.append(newItem)
         }
-
-        currentEntriesModel.append({entryId: entryId, date: forDate, entryState: entryState,
-                            subState: subState, createdOn: createdOn, weight: weight,
-                            interval: interval, project: project,
-                            text: task, description: description});
     }
 
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used

@@ -464,21 +464,58 @@ function loadArchive(forProject, targetModel) {
         ORDER BY date DESC
     ;', [forProject, todayString])
 
-    console.log("LOADING ARCHIVE")
     _doProcessEntries(q, targetModel)
 }
 
-function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {
-    simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+function addEntry(date, entryState, subState, createdOn,
+                  weight, interval, project, text, description) {
+    simpleQuery('\
+        INSERT INTO entries(
+            date,
+            entryState,
+            subState,
+            createdOn,
+            weight,
+            interval,
+            project,
+            text,
+            description
+        ) VALUES (
+            ?, ?, ?,
+            ?, ?, ?,
+            ?, ?, ?
+        )', [
         Helpers.getDateString(date),
-        Number(entryState), Number(subState),
+        Number(entryState),
+        Number(subState),
         Helpers.getDateString(createdOn),
-        weight, interval, project, text, description
+        weight,
+        interval,
+        project,
+        text,
+        description
     ])
 
-    var q = simpleQuery('SELECT rowid FROM entries ORDER BY rowid DESC LIMIT 1;', []);
-    if (q.rows.length > 0) return q.rows.item(0).rowid;
-    else return undefined;
+    var rowid = lastRowId('entries')
+
+    if (rowid !== undefined) {
+        return {
+            entryId: rowid,
+            date: date,
+            entryState: entryState,
+            subState: subState,
+            createdOn: createdOn,
+            weight: weight,
+            interval: interval,
+            project: project,
+            text: text,
+            description: description,
+        }
+    } else {
+        error(qsTr("Failed to save"),
+              qsTr("The new entry “%1” could not be saved.").arg(text))
+        return undefined
+    }
 }
 
 function updateEntry(entryId, date, entryState, subState, createdOn, weight, interval, project, text, description) {
