@@ -204,11 +204,9 @@ ApplicationWindow {
     }
     property IndexedListModel projectsModel: IndexedListModel {
         type: "projects"
-        withSubState: false
     }
     property IndexedListModel recurringsModel: IndexedListModel {
         type: "recurrings"
-        withSubState: false
 
         function sortHint(newItem, existingItem) {
             // sort items by interval by default

@@ -7,8 +7,9 @@ ListModel {
     id: root
 
     property string type  // required
-    property bool withSubState // required
     property string rowidProperty: "entryId"  // required
+
+    readonly property bool withSubState: false
 
     function reset() {
         clear()
