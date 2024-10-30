@@ -10,7 +10,7 @@ Name:       harbour-todolist
 %define __provides_exclude_from ^%{_datadir}/.*$
 
 Summary:    A simple todo list manager
-Version:    1.3.1
+Version:    2.0.0
 Release:    1
 Group:      Applications/Productivity
 License:    GPL-3.0-or-later
