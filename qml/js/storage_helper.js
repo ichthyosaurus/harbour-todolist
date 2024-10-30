@@ -371,7 +371,7 @@ function makeTableSortable(tx, tableName, orderColumn) {
         WHEN NEW.%3 BETWEEN 1 AND OLD.%3-1
         BEGIN
             UPDATE %2 SET %3 = NULL WHERE %3 = OLD.%3;
-            UPDATE %2 SET %3 = %3 + 1  WHERE %3 BETWEEN NEW.%3 AND OLD.%3;
+            UPDATE %2 SET %3 = %3 + 1 WHERE %3 BETWEEN NEW.%3 AND OLD.%3;
             UPDATE %2 SET %3 = NEW.%3 WHERE %3 IS NULL;
         END;
     '.arg(viewName).arg(tableName).arg(orderColumn))

@@ -315,13 +315,47 @@ ApplicationWindow {
     }
 
     function updateProject(which, name, entryState) {
+        var item = projectsModel.get(which)
+
         if (name !== undefined) {
-            projectsModel.setProperty(which, "name", name);
-            currentProjectName = name;
+            projectsModel.setProperty(which, "name", name)
+            currentProjectName = name
         }
-        if (entryState !== undefined) projectsModel.setProperty(which, "entryState", entryState);
-        var item = projectsModel.get(which);
-        Storage.updateProject(item.entryId, item.name, item.entryState);
+
+        if (entryState !== undefined) {
+            var state = item.entryState
+
+            if (state !== entryState) {
+                var newIndex = which
+                projectsModel.setProperty(which, "entryState", entryState)
+
+                if (entryState === EntryState.Todo) {
+                    newIndex = projectsModel.firstIgnoredIndex
+                               - (state < entryState ? 1 : 0)
+                    ++projectsModel.todoCount
+                } else if (entryState === EntryState.Ignored) {
+                    newIndex = projectsModel.firstDoneIndex
+                               - (state < entryState ? 1 : 0)
+                    ++projectsModel.ignoredCount
+                } else if (entryState === EntryState.Done) {
+                    newIndex = projectsModel.lastIndex
+                    ++projectsModel.doneCount
+                }
+
+                if (state === EntryState.Todo) {
+                    --projectsModel.todoCount
+                } else if (state === EntryState.Ignored) {
+                    --projectsModel.ignoredCount
+                } else if (state === EntryState.Done) {
+                    --projectsModel.doneCount
+                }
+
+                projectsModel.move(which, newIndex, 1)
+                Storage.moveProject(item.entryId, newIndex)
+            }
+        }
+
+        Storage.updateProject(item.entryId, item.name, item.entryState)
     }
 
     function deleteProject(which) {

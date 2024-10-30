@@ -158,9 +158,7 @@ function getProjects() {
     var q = simpleQuery('\
         SELECT rowid, *
         FROM projects
-        ORDER BY
-            entryState ASC,
-            seq ASC
+        ORDER BY seq ASC
     ;')
     var res = []
 
@@ -180,21 +178,40 @@ function getProjects() {
 
 function getProject(entryId) {
     entryId = defaultFor(entryId, defaultProjectId);
-    var q = simpleQuery('SELECT rowid, * FROM projects WHERE rowid=? LIMIT 1;', [entryId]);
+    var q = simpleQuery('\
+        SELECT rowid, *
+        FROM projects
+        WHERE rowid=?
+        LIMIT 1;', [entryId]);
+
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
-        return { entryId: item.rowid, name: item.name, entryState: parseInt(item.entryState, 10) };
+        return {
+            entryId: item.rowid,
+            name: item.name,
+            entryState: parseInt(item.entryState, 10),
+            seq: parseInt(item.seq, 10),
+        }
     } else {
         return undefined;
     }
 }
 
 function addProject(name, entryState) {
-    if (!name) return undefined;
-    simpleQuery('INSERT INTO projects VALUES (?, ?)', [name, Number(entryState)])
-    var q = simpleQuery('SELECT rowid FROM projects ORDER BY rowid DESC LIMIT 1;', []);
-    if (q.rows.length > 0) return q.rows.item(0).rowid;
-    else return undefined;
+    if (!name) {
+        return undefined
+    }
+
+    var q = simpleQuery('\
+        INSERT INTO projects(name, entryState)
+        VALUES (?, ?)',
+        [name, Number(entryState)])
+
+    if (q.insertId) {
+        return q.insertId
+    } else {
+        return undefined
+    }
 }
 
 function updateProject(entryId, name, entryState) {
