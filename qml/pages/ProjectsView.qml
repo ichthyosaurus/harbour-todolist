@@ -21,6 +21,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Opal.TabBar 1.0
+import Opal.Delegates 1.0
+import Opal.DragDrop 1.0
 import SortFilterProxyModel 0.2
 import "../components"
 import "../constants" 1.0
@@ -33,6 +35,7 @@ TabItem {
         id: view
         model: filteredModel
         anchors.fill: parent
+        cacheBuffer: 3 * Screen.height
 
         VerticalScrollDecorator { flickable: view }
 
@@ -50,12 +53,12 @@ TabItem {
                 text: qsTr("Add project")
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
-                                                    date: new Date(NaN), descriptionEnabled: false,
-                                                    titleText: qsTr("Add a project"),
-                                                    showProject: false
-                                                })
+                        date: new Date(NaN), descriptionEnabled: false,
+                        titleText: qsTr("Add a project"),
+                        showProject: false
+                    })
                     dialog.accepted.connect(function() {
-                        main.addProject(dialog.text.trim());
+                        main.addProject(dialog.text.trim())
                     });
                 }
             }
@@ -67,6 +70,66 @@ TabItem {
 
         footer: Spacer { }
 
+//        ViewDragHandler {
+//            id: viewDragHandler
+//            active: true
+//            listView: view
+//        }
+
+        delegate: TwoLineDelegate {
+            id: delegate
+            minContentHeight: Theme.itemSizeExtraSmall
+            padding.topBottom: 0
+            // dragHandler: viewDragHandler
+
+            property bool _isArchivedEntry: typeof(_isOld) !== 'undefined'
+                                            && _isOld === true
+            property real contentOpacity: _isArchivedEntry ?
+                1-baseOpacity : baseOpacity
+            property real baseOpacity: {
+                if (entryState === EntryState.Todo) {
+                    1.0
+                } else if (entryState === EntryState.Ignored) {
+                    0.7
+                } else if (entryState === EntryState.Done) {
+                    0.6
+                }
+            }
+
+            text: model.name
+            textLabel.opacity: contentOpacity
+            descriptionLabel.opacity: contentOpacity
+            highlighted: down || main.configuration.currentProject === model.entryId
+
+            leftItem: DelegateIconButton {
+                id: checkbox
+
+                Binding on highlighted {
+                    when: delegate.highlighted
+                    value: true
+                }
+
+                opacity: 0.7 * _delegate.contentOpacity
+                iconSize: Theme.iconSizeMedium
+                iconSource: {
+                    if (entryState === EntryState.Todo) {
+                        Qt.resolvedUrl("../images/icon-m-todo.png")
+                    } else if (entryState === EntryState.Ignored) {
+                        Qt.resolvedUrl("../images/icon-m-ignored.png")
+                    } else if (entryState === EntryState.Done) {
+                        Qt.resolvedUrl("../images/icon-m-done.png")
+                    }
+                }
+            }
+
+            onClicked: {
+                if (main.configuration.currentProject !== model.entryId) {
+                    main.setCurrentProject(model.entryId)
+                }
+            }
+        }
+
+/*
         delegate: TodoListBaseItem {
             id: item
             editable: true
@@ -117,6 +180,7 @@ TabItem {
                 }
             }
         }
+        */
 
         section {
             property: 'entryState'
