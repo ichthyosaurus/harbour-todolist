@@ -1,118 +1,106 @@
 /*
  * This file is part of harbour-todolist.
- *
- * SPDX-FileCopyrightText: 2020 Mirian Margiani
+ * SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
  * SPDX-FileCopyrightText: 2020 cage
- *
  * SPDX-License-Identifier: GPL-3.0-or-later
- *
- * harbour-todolist is free software: you can redistribute it and/or modify it under
- * the terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- *
- * harbour-todolist is distributed in the hope that it will be useful, but WITHOUT
- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with
- * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-// .pragma library
-// NOTE This can no longer be a library, because we need access to 'main.*' for
-// showing notifications directly from here. This means, that this script
-// is no longer shared between all QML components. Thus we MUST NOT include it
-// anywhere other than in harbour-todolist.qml.
-
-.import QtQuick.LocalStorage 2.0 as LS
+.pragma library
+.import "storage_helper.js" as DB
 .import "helpers.js" as Helpers
 .import "../constants/EntryState.js" as EntryState
 .import "../constants/EntrySubState.js" as EntrySubState
 
-function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
+//
+// BEGIN External configuration
+// These values must be populated in harbour-todolist.qml
+// as soon as possible after the app has been started.
+//
+
+var dbErrorNotification = null
+var worker = null
+var defaultProjectId = 1
+var todayString = ''
+
+
+//
+// BEGIN Database configuration
+//
+
+function dbOk() { return DB.dbOk }
+var isSameValue = DB.isSameValue
+var defaultFor = DB.defaultFor
+
+DB.dbName = "harbour-todolist"
+DB.dbDescription = "Todo List Data"
+DB.dbSize = 1000000
+
+// disable vacuuming because it would reset
+// project rowids which would break entries
+DB.enableAutoMaintenance = false
+
+DB.dbMigrations = [
+    // Database versions do not correspond to app versions.
+
+    [1, function(tx){
+        // Future versions must increase in integer steps.
+
+        tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
+            date STRING NOT NULL,
+            entryState INTEGER NOT NULL,
+            subState INTEGER NOT NULL,
+            createdOn STRING NOT NULL,
+            weight INTEGER NOT NULL,
+            interval INTEGER NOT NULL,
+            project INTEGER NOT NULL,
+            text TEXT NOT NULL,
+            description TEXT
+        );')
+        tx.executeSql('CREATE TABLE IF NOT EXISTS recurrings(\
+            startDate STRING NOT NULL,
+            lastCopiedTo STRING,
+            entryState INTEGER NOT NULL,
+            intervalDays INTEGER NOT NULL,
+            project INTEGER NOT NULL,
+            text TEXT NOT NULL,
+            description TEXT
+        );')
+        tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
+            name TEXT NOT NULL,
+            entryState INTEGER NOT NULL
+        );')
+        tx.executeSql('\
+            INSERT OR IGNORE INTO projects(
+                rowid, name, entryState
+            ) VALUES (?, ?, ?)',
+            [defaultProjectId, qsTr("Default"), 0])
+    }],
+
+    // add new versions here...
+    //
+    // remember: versions must be numeric, e.g. 0.1 but not 0.1.1
+    // important: increase versions in integer steps for this app
+]
+
+
+//
+// BEGIN App database functions
+//
+
+var simpleQuery = DB.simpleQuery
 
 function error(summary, details) {
     details = details.toString();
     console.error("Database error:", summary, details);
-    dbErrorNotification.previewBody = summary; // short error description
-    dbErrorNotification.summary = summary; // same as previewBody
-    dbErrorNotification.body = details; // details on the error
-    dbErrorNotification.publish();
-}
 
-var initialized = false
-
-function getDatabase() {
-    var db = LS.LocalStorage.openDatabaseSync("harbour-todolist", "1.0", "Todo List Data", 1000000);
-
-    if (!initialized) {
-        initialized = true;
-        doInit(db);
+    if (!!dbErrorNotification) {
+        dbErrorNotification.previewBody = summary // short error description
+        dbErrorNotification.summary = summary // same as previewBody
+        dbErrorNotification.body = details // details about the error
+        dbErrorNotification.publish()
+    } else {
+        console.log("note: db error notification is not available")
     }
-
-    return db;
-}
-
-function doInit(db) {
-    // Database tables: (primary key in all-caps)
-    // entries: ID, date, entryState, subState, createdOn, weight, interval, project, text, description
-    // recurrings: ID, startDate, lastCopiedTo, entryState, intervalDays, project, text, description
-    // projects: ID, name, entryState
-
-    try {
-        db.transaction(function(tx) {
-            tx.executeSql('CREATE TABLE IF NOT EXISTS entries(\
-                date STRING NOT NULL,
-                entryState INTEGER NOT NULL,
-                subState INTEGER NOT NULL,
-                createdOn STRING NOT NULL,
-                weight INTEGER NOT NULL,
-                interval INTEGER NOT NULL,
-                project INTEGER NOT NULL,
-                text TEXT NOT NULL,
-                description TEXT
-            );');
-            tx.executeSql('CREATE TABLE IF NOT EXISTS recurrings(\
-                startDate STRING NOT NULL,
-                lastCopiedTo STRING,
-                entryState INTEGER NOT NULL,
-                intervalDays INTEGER NOT NULL,
-                project INTEGER NOT NULL,
-                text TEXT NOT NULL,
-                description TEXT
-            );');
-            tx.executeSql('CREATE TABLE IF NOT EXISTS projects(\
-                name TEXT NOT NULL,
-                entryState INTEGER NOT NULL
-            );');
-            tx.executeSql('INSERT OR IGNORE INTO projects(rowid, name, entryState) VALUES(?, ?, ?)',
-                          [defaultProjectId, qsTr("Default"), 0]);
-        });
-    } catch(e) {
-        error(qsTr("Failed to initialize database"), e);
-    }
-}
-
-function simpleQuery(query, values/*, getSelectedCount*/) {
-    var db = getDatabase();
-    var res = undefined;
-    values = defaultFor(values, []);
-
-    if (!query) {
-        error(qsTr("Empty database query"), qsTr("This is a programming error. Please file a bug report."))
-        return undefined;
-    }
-
-    try {
-        db.transaction(function(tx) { res = tx.executeSql(query, values); });
-    } catch(e) {
-        error(qsTr("Database access failed"), e);
-        console.error("-> values=", values);
-        res = undefined;
-    }
-
-    return res;
 }
 
 function getProjects() {

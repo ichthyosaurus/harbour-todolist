@@ -81,6 +81,11 @@ ApplicationWindow {
         summary: "" // same as previewBody
         body: "" // details on the error
 
+        Component.onCompleted: {
+            Storage.dbErrorNotification = dbErrorNotification
+        }
+    }
+
     WorkerScript {
         id: worker
         source: "js/worker.js"
@@ -381,6 +386,9 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
+        Storage.defaultProjectId = defaultProjectId
+        Storage.todayString = todayString
+
         // Start with true to force a refresh on application startup.
         refreshDates(true);
         projectsModel.clear();
