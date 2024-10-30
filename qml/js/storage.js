@@ -340,10 +340,19 @@ function getProjects() {
 function getProject(entryId) {
     entryId = defaultFor(entryId, defaultProjectId);
     var q = simpleQuery('\
-        SELECT rowid, *
+        SELECT
+            rowid,
+            name,
+            entryState,
+            (SELECT count(*) FROM entries
+             WHERE entries.project = ?
+                AND entries.date = date(?)
+                AND entries.entryState = 0
+            ) AS dueToday
         FROM projects
-        WHERE rowid=?
-        LIMIT 1;', [entryId]);
+        WHERE rowid = ?
+        LIMIT 1
+    ;', [entryId, todayString, entryId])
 
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
@@ -351,6 +360,7 @@ function getProject(entryId) {
             entryId: parseInt(item.rowid, 10),
             name: item.name,
             entryState: parseInt(item.entryState, 10),
+            dueToday: parseInt(item.dueToday, 10),
         }
     } else {
         return undefined;

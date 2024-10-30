@@ -452,6 +452,11 @@ ApplicationWindow {
             startupComplete = false;
             archiveModel.clear();
 
+            var projectIndex = Helpers.indexForRowid(entryId)
+            if (projectIndex >= 0) {
+                projectsModel.setProperty(projectIndex, 'dueToday', project.dueToday)
+            }
+
             Storage.loadEntries(config.currentProject, 'entries');
             Storage.loadRecurrings(config.currentProject, 'recurrings');
             startupComplete = true;
