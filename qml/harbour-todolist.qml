@@ -212,7 +212,8 @@ ApplicationWindow {
         if (!!newItem) {
             currentEntriesModel.addItem(newItem, null, true)
 
-            if (Helpers.getDateString(forDate) === todayString) {
+            if (Helpers.getDateString(forDate) === todayString &&
+                    entryState === EntryState.Todo) {
                 projectsModel.countDueToday(+1)
             }
         }
@@ -250,13 +251,16 @@ ApplicationWindow {
     // for archived entries, as the archive should be immutable.
     function deleteItem(index, rowid) {
         index = Helpers.indexForRowid(currentEntriesModel, rowid, index)
-        var dateString = currentEntriesModel.get(index).dateString
+        var item = currentEntriesModel.get(index)
+        var dateString = item.dateString
+        var entryState = item.entryState
 
         if (index >= 0) {
             Storage.deleteEntry(rowid)
             currentEntriesModel.removeItem(index)
 
-            if (dateString === todayString) {
+            if (dateString === todayString &&
+                    entryState === EntryState.Todo) {
                 projectsModel.countDueToday(-1)
             }
         }
