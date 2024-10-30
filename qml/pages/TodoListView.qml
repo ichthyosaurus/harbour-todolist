@@ -123,7 +123,7 @@ TodoList {
         }
         MenuItem {
             text: qsTr("Show old entries")
-            onClicked: pageStack.push(Qt.resolvedUrl("ArchivePage.qml"));
+            onClicked: pageStack.animatorPush(Qt.resolvedUrl("ArchivePage.qml"));
         }
         MenuItem {
             text: qsTr("Add entry")

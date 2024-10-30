@@ -26,9 +26,9 @@
 // anywhere other than in harbour-todolist.qml.
 
 .import QtQuick.LocalStorage 2.0 as LS
+.import "helpers.js" as Helpers
 .import "../constants/EntryState.js" as EntryState
 .import "../constants/EntrySubState.js" as EntrySubState
-.import "helpers.js" as Helpers
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
@@ -174,26 +174,38 @@ function deleteProject(entryId) {
     simpleQuery('DELETE FROM entries WHERE project=?', [entryId]);
 }
 
-function getRecurrings(forProject) {
+function loadRecurrings(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
-    var q = simpleQuery('SELECT rowid, * FROM recurrings WHERE project=?;', [forProject]);
-    var res = []
+    var q = simpleQuery('\
+        SELECT rowid, *
+        FROM recurrings
+        WHERE project=?
+        ORDER BY intervalDays ASC
+    ;', [forProject])
 
-    for (var i = 0; i < q.rows.length; i++) {
-        var item = q.rows.item(i);
-
-        res.push({entryId: item.rowid,
-                     startDate: new Date(item.startDate),
-                     entryState: parseInt(item.entryState, 10),
-                     intervalDays: parseInt(item.intervalDays, 10),
-                     project: parseInt(item.project, 10),
-                     text: item.text,
-                     description: item.description
-                 });
-    }
-
-    return res;
+    _doProcessEntries(q, targetModel)
 }
+
+//function getRecurrings(forProject) {
+//    forProject = defaultFor(forProject, defaultProjectId);
+//    var q = simpleQuery('SELECT rowid, * FROM recurrings WHERE project=?;', [forProject]);
+//    var res = []
+
+//    for (var i = 0; i < q.rows.length; i++) {
+//        var item = q.rows.item(i);
+
+//        res.push({entryId: item.rowid,
+//                     startDate: new Date(item.startDate),
+//                     entryState: parseInt(item.entryState, 10),
+//                     intervalDays: parseInt(item.intervalDays, 10),
+//                     project: parseInt(item.project, 10),
+//                     text: item.text,
+//                     description: item.description
+//                 });
+//    }
+
+//    return res;
+//}
 
 function addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday) {
     simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?, ?)', [
@@ -254,22 +266,82 @@ function _prepareEntries(q) {
     return res;
 }
 
-function getEntries(forProject) {
-    forProject = defaultFor(forProject, defaultProjectId);
-    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date >= ?;', [forProject, todayString]);
-    return _prepareEntries(q);
+function _doProcessEntries(queryResult, targetModel) {
+    if (!!worker) {
+        console.time('[storage] processing entries')
+        var len = queryResult.rows.length
+        var object = []
+        for (var i = 0; i < len; ++i) {
+            object[i] = queryResult.rows.item(i)
+        }
+        console.log("[storage] loading", len, "rows")
+        console.timeEnd('[storage] processing entries')
+
+        worker.sendMessage({
+            'event': 'loadEntries',
+            'model': targetModel,
+            'queryData': object
+        })
+    } else {
+        error(qsTr("Database unavailable"),
+              qsTr("The database worker is not ready."))
+        return
+    }
 }
 
-function getArchivedEntries(forProject) {
-    // TODO time this!
-    //   - is the query slow?
-    //   - is preparing entries slow?
-    //  If only preparing is slow, it could be moved to a workerscript
-    //  storage.js could be a library again if har.qml simply registers some callbacks on startup
+function loadEntries(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
-    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
-    return _prepareEntries(q);
+    var q = simpleQuery('\
+        SELECT rowid, *
+        FROM entries
+        WHERE project=?
+            AND date >= ?
+        ORDER BY date ASC
+    ;', [forProject, todayString])
+
+    _doProcessEntries(q, targetModel)
 }
+
+//function getEntries(forProject) {
+//    forProject = defaultFor(forProject, defaultProjectId);
+//    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date >= ?;', [forProject, todayString]);
+//    return _prepareEntries(q);
+//}
+
+function loadArchive(forProject, targetModel) {
+    forProject = defaultFor(forProject, defaultProjectId);
+    var q = simpleQuery('\
+        SELECT rowid, *
+        FROM entries
+        WHERE project=?
+            AND date < ?
+        ORDER BY date DESC
+    ;', [forProject, todayString])
+
+    console.log("LOADING ARCHIVE")
+    _doProcessEntries(q, targetModel)
+}
+
+//function getArchivedEntries(forProject) {
+//    // TODO time this!
+//    //   - is the query slow?
+//    //   - is preparing entries slow?
+//    //  If only preparing is slow, it could be moved to a workerscript
+//    //  storage.js could be a library again if har.qml simply registers some callbacks on startup
+//    console.time('pick project')
+//    forProject = defaultFor(forProject, defaultProjectId);
+//    console.timeEnd('pick project')
+
+//    console.time('query')
+//    var q = simpleQuery('SELECT rowid, * FROM entries WHERE project=? AND date < ?;', [forProject, todayString]);
+//    console.timeEnd('query')
+
+//    console.time('prepare')
+//    var ret = _prepareEntries(q);
+//    console.timeEnd('prepare')
+
+//    return ret
+//}
 
 function addEntry(date, entryState, subState, createdOn, weight, interval, project, text, description) {
     simpleQuery('INSERT INTO entries VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [

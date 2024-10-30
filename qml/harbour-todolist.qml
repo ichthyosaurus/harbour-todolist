@@ -27,6 +27,7 @@ ApplicationWindow {
     property string currentProjectName: ""
     property int currentProjectId: defaultProjectId
     property date lastSelectedCategory: today
+    property bool loading: false
 
     property date today: Helpers.getDate(0)
     property date tomorrow: Helpers.getDate(1)
@@ -79,6 +80,67 @@ ApplicationWindow {
         previewBody: "" // short error description
         summary: "" // same as previewBody
         body: "" // details on the error
+
+    WorkerScript {
+        id: worker
+        source: "js/worker.js"
+
+        property int batchCount: 0
+        property int series: 0
+
+        onMessage: {
+            if (messageObject.event === 'loadingEntriesStarted') {
+                console.log("[main] preparing to load entries:",
+                            messageObject.count, "for", messageObject.model,
+                            messageObject.series)
+                loading = true
+                series = messageObject.series
+                _selectModel(messageObject).clear()
+            } else if (messageObject.event === 'loadingEntriesBatch') {
+                if (messageObject.series !== series) {
+                    console.log("[main] discarding loaded entries for " +
+                                "outdated series", messageObject.series,
+                                "- expected", series)
+                    return
+                }
+
+                batchCount += 1
+                console.log("[main] received entries: batch no.",
+                            batchCount, "for", messageObject.model,
+                            messageObject.series)
+                var model = _selectModel(messageObject)
+                for (var i in messageObject.entries) {
+                    model.append(messageObject.entries[i])
+                }
+            } else if (messageObject.event === 'loadingEntriesFinished') {
+                console.log("[main] loading finished for",
+                            messageObject.model, messageObject.series)
+
+                if (messageObject.series === series) {
+                    loading = false
+                }
+            } else {
+                Storage.error(qsTr("Internal error"),
+                              qsTr("An unknown worker message cannot be handled.") +
+                              "\n" + JSON.stringify(messageObject))
+            }
+        }
+
+        function _selectModel(message) {
+            if (message.model === 'entries') {
+                return currentEntriesModel
+            } else if (message.model === 'recurrings') {
+                return recurringsModel
+            } else if (message.model === 'archive') {
+                return archiveModel
+            }
+
+            return null
+        }
+
+        Component.onCompleted: {
+            Storage.worker = worker
+        }
     }
 
     readonly property int defaultProjectId: 1
@@ -279,20 +341,16 @@ ApplicationWindow {
             currentProjectId = project.entryId;
             startupComplete = false;
             archiveModel.clear();
-            currentEntriesModel.clear();
-            var entries = Storage.getEntries(config.currentProject);
-            for (var i in entries) currentEntriesModel.append(entries[i]);
-            startupComplete = true;
 
-            recurringsModel.clear();
-            entries = Storage.getRecurrings(config.currentProject);
-            for (i in entries) recurringsModel.append(entries[i]);
+            Storage.loadEntries(config.currentProject, 'entries');
+            Storage.loadRecurrings(config.currentProject, 'recurrings');
+            startupComplete = true;
         }
     }
 
     function loadArchive() {
-        var entries = Storage.getArchivedEntries(config.currentProject);
-        for (var i in entries) archiveModel.append(entries[i]);
+        loading = true
+        Storage.loadArchive(config.currentProject, 'archive');
     }
 
     // Resets all date properties after a date change. The force parameter can be used to force a model refresh.

@@ -27,7 +27,6 @@ import "../constants" 1.0
 Page {
     id: page
     allowedOrientations: Orientation.All
-    property bool archiveReady: false
 
     SortFilterProxyModel {
         id: filteredModel
@@ -59,6 +58,9 @@ Page {
         height: contentHeight + Theme.paddingLarge
         VerticalScrollDecorator { flickable: view }
 
+        opacity: main.loading ? 0 : 1
+        Behavior on opacity { FadeAnimator {} }
+
         header: PageHeader {
             title: currentProjectName
             description: qsTr("Archived Entries")
@@ -82,16 +84,19 @@ Page {
         }
 
         ViewPlaceholder {
-            enabled: view.count == 0 && archiveReady
+            enabled: view.count == 0 && !main.loading
             text: qsTr("No entries yet")
             hintText: qsTr("This page will show a list of all old entries.")
         }
+    }
+
+    BusyLabel {
+        running: main.loading
     }
 
     Component.onCompleted: {
         if (archiveModel.count === 0) {
             loadArchive();
         }
-        archiveReady = true;
     }
 }
