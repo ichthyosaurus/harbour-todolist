@@ -24,10 +24,16 @@ ListModel {
         var newIndex = count
 
         for (var i = 0; i < count; ) {
-            var compare = get(i).dateString
-            i += _dateCounts[compare]
+            var compare = get(i)
 
-            if (compare === item.dateString) {
+            if (compare.date > item.date) {
+                newIndex = i
+                break
+            }
+
+            i += _dateCounts[compare.dateString]
+
+            if (compare.dateString === item.dateString) {
                 newIndex = i
                 break
             }
@@ -124,10 +130,15 @@ ListModel {
         var newIndex = count
 
         for (var i = 0; i < count; ) {
-            var compare = get(i).dateString
+            var compare = get(i)
 
-            if (compare === item.dateString) {
-                for (var x = i; x < i+_dateCounts[compare]; ++x) {
+            if (compare.date > item.date) {
+                newIndex = i
+                break
+            }
+
+            if (compare.dateString === item.dateString) {
+                for (var x = i; x < i+_dateCounts[compare.dateString]; ++x) {
                     newIndex = x
 
                     if (get(x).entryState > newState) {
@@ -138,7 +149,7 @@ ListModel {
 
                 break
             } else {
-                i += _dateCounts[compare]
+                i += _dateCounts[compare.dateString]
             }
         }
 
