@@ -762,17 +762,17 @@ function copyRecurrings() {
      }
 
     if (mainResult.rowsAffected === 0 || updateResult.rowsAffected === 0) {
-        if (mainResult.rowsAffected === 0) {
-            error(qsTr("Failed to update recurring entries"),
-                  qsTr("Copying new entries failed."))
-        }
+//        if (mainResult.rowsAffected === 0) {
+//            error(qsTr("Failed to update recurring entries"),
+//                  qsTr("Copying new entries failed."))
+//        }
 
-        if (updateResult.rowsAffected === 0) {
-            error(qsTr("Failed to update recurring entries"),
-                  qsTr("Updating reference entries failed."))
-        }
+//        if (updateResult.rowsAffected === 0) {
+//            error(qsTr("Failed to update recurring entries"),
+//                  qsTr("Updating reference entries failed."))
+//        }
 
-        console.log("recurrings failed for", todayString)
+        console.log("no recurrings copied for", todayString)
         return false
     } else {
         console.log(mainResult.rowsAffected, "recurrings for", todayString)
