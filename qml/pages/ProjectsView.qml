@@ -32,7 +32,7 @@ import "../js/storage.js" as Storage
 TabItem {
     id: root
 
-    property bool arrangeEntries: false
+    property bool arrangeEntries: arrangeToggle.checked
 
     flickable: view
 
@@ -46,9 +46,8 @@ TabItem {
 
         PullDownMenu {
             MenuSwitch {
+                id: arrangeToggle
                 text: qsTr("Arrange entries")
-                onClicked: arrangeEntries = !arrangeEntries
-                checked: arrangeEntries
             }
 
             MenuItem {
