@@ -135,7 +135,7 @@ TabItem {
 
         section {
             property: 'entryState'
-            delegate: Spacer { }
+            delegate: Spacer {}
         }
 
         ViewPlaceholder {

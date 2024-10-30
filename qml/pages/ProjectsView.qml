@@ -184,7 +184,9 @@ TabItem {
 
         section {
             property: 'entryState'
-            delegate: Spacer { }
+            delegate: Spacer {
+                    height: y == 0 ? 0 : 2*Theme.paddingLarge
+            }
         }
 
         ViewPlaceholder {
