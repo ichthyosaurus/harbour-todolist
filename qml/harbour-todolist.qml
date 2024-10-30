@@ -10,7 +10,7 @@ import Nemo.Configuration 1.0
 import Nemo.Notifications 1.0
 import Opal.About 1.0 as A
 import Opal.SupportMe 1.0 as M
-import "constants" 1.0
+import Todolist.Constants 1.0
 import "js/storage.js" as Storage
 import "js/helpers.js" as Helpers
 import "pages"
@@ -173,8 +173,8 @@ ApplicationWindow {
     }
 
     function addItem(forDate, task, description, entryState, subState, createdOn, interval) {
-        entryState = Storage.defaultFor(entryState, EntryState.todo);
-        subState = Storage.defaultFor(subState, EntrySubState.today);
+        entryState = Storage.defaultFor(entryState, EntryState.Todo);
+        subState = Storage.defaultFor(subState, EntrySubState.Today);
         createdOn = Storage.defaultFor(createdOn, forDate);
         var weight = 1;
         interval = Storage.defaultFor(interval, 0);
@@ -229,7 +229,7 @@ ApplicationWindow {
         var item = currentEntriesModel.get(which);
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
         addItem(copyToDate, item.text, item.description,
-                EntryState.todo, EntrySubState.today, item.createdOn);
+                EntryState.Todo, EntrySubState.Today, item.createdOn);
     }
 
     // Move an entry in the database and in currentEntriesModel. This is not intended to be used
@@ -247,7 +247,7 @@ ApplicationWindow {
     }
 
     function addRecurring(text, description, intervalDays, startDate) {
-        var entryState = EntryState.todo;
+        var entryState = EntryState.Todo;
         intervalDays = Storage.defaultFor(intervalDays, 1);
         var project = config.currentProject;
         startDate = Helpers.getDate(0, Storage.defaultFor(startDate, today));
@@ -271,7 +271,7 @@ ApplicationWindow {
 
         if (addForToday) {
             addItem(today, text.trim(), description.trim(),
-                    entryState, EntrySubState.today, today, intervalDays);
+                    entryState, EntrySubState.Today, today, intervalDays);
         }
     }
 
@@ -302,7 +302,7 @@ ApplicationWindow {
     }
 
     function addProject(name, entryState) {
-        entryState = Storage.defaultFor(entryState, EntryState.todo);
+        entryState = Storage.defaultFor(entryState, EntryState.Todo);
         name = Storage.defaultFor(name, "")
         var entryId = Storage.addProject(name, entryState);
 

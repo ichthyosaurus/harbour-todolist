@@ -24,6 +24,10 @@ QML_IMPORT_PATH += qml/modules
 SOURCES += \
     src/harbour-todolist.cpp \
 
+HEADERS += \
+    src/enumcontainer.h \
+    src/constants.h \
+
 DISTFILES += \
     qml/*.qml \
     qml/*/*.qml \

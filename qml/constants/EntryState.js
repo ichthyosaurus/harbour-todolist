@@ -13,3 +13,13 @@ var done = 2;
 var Todo = 0
 var Ignored = 1
 var Done = 2
+
+function isValid(state) {
+    if (   state !== Todo
+        && state !== Ignored
+        && state !== Done) {
+        return false
+    }
+
+    return true
+}
