@@ -7,6 +7,7 @@ import Sailfish.Silica 1.0
 Label{id:root
 property bool wrapped:false
 property alias metrics:metricsItem
+height:implicitHeight
 TextMetrics{id:metricsItem
 font:root.font
 text:root.text
