@@ -62,11 +62,6 @@ PaddedDelegate {
         onClicked: root.apply()
     }
 
-    leftItem: Item {
-        width: Theme.iconSizeSmallPlus
-        height: 1
-    }
-
     onTextFieldFocusChanged: {
         if (!focus && canApply) {
             apply()

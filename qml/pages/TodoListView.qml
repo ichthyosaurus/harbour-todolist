@@ -31,8 +31,6 @@ TabItem {
 
             TodoListItemAdder {
                 id: adder
-                forDate: main.today
-                leftItem: null
                 onApplied: {
                     textField.forceActiveFocus()
                     focusTimer.restart()
