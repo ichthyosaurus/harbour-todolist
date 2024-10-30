@@ -29,6 +29,10 @@ DISTFILES += \
     qml/*/*.qml \
     qml/*/*.js \
     qml/*/*.py \
+    qml/*/*/*.qml \
+    qml/*/*/*.js \
+    qml/*/*/*/*.qml \
+    qml/*/*/*/*.js \
     rpm/harbour-*.changes \
     rpm/harbour-*.spec \
     rpm/harbour-*.yaml \
