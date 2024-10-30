@@ -144,6 +144,16 @@ function error(summary, details) {
     }
 }
 
+function moveProject(rowid, newIndex) {
+    var newPosition = newIndex + 1  // seq starts at 1, index at 0
+    console.log("[storage] moving project", rowid, "to", newPosition)
+    simpleQuery('\
+        UPDATE projects
+        SET seq = ?
+        WHERE rowid = ?
+    ', [newPosition, rowid])
+}
+
 function getProjects() {
     var q = simpleQuery('\
         SELECT rowid, *
