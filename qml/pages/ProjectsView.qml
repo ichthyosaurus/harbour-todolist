@@ -21,8 +21,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Opal.TabBar 1.0
-import Opal.Delegates 1.0
-import Opal.DragDrop 1.0
 import Opal.MenuSwitch 1.0
 import "../components"
 import "../constants" 1.0
@@ -31,10 +29,9 @@ import "../js/storage.js" as Storage
 
 TabItem {
     id: root
+    flickable: view
 
     property bool arrangeEntries: arrangeToggle.checked
-
-    flickable: view
 
     SilicaListView {
         id: view

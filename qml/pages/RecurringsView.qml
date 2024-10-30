@@ -21,7 +21,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Opal.TabBar 1.0
-import SortFilterProxyModel 0.2
+import Opal.MenuSwitch 1.0
 import "../components"
 import "../js/helpers.js" as Helpers
 import "../constants" 1.0
@@ -30,25 +30,21 @@ TabItem {
     id: root
     flickable: view
 
+    property bool arrangeEntries: arrangeToggle.checked
+
     SilicaListView {
         id: view
-        model: filteredModel
+        model: recurringsModel
         anchors.fill: parent
 
         VerticalScrollDecorator { flickable: view }
 
-        SortFilterProxyModel {
-            id: filteredModel
-            sourceModel: recurringsModel
-
-            sorters: [
-                RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-                RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
-                RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
-            ]
-        }
-
         PullDownMenu {
+            MenuSwitch {
+                id: arrangeToggle
+                text: qsTr("Arrange entries")
+            }
+
             MenuItem {
                 text: qsTr("Add recurring entry")
                 onClicked: {
@@ -83,12 +79,19 @@ TabItem {
 
         footer: Spacer { }
 
+        IndexedListDragHandler {
+            id: viewDragHandler
+            active: arrangeEntries
+            listView: view
+        }
+
         delegate: TodoListBaseItem {
             editable: true
             descriptionEnabled: true
             infoMarkerEnabled: false
             text: model.text
             description: model.description
+            dragHandler: viewDragHandler
 
             alwaysShowInterval: true
             editableInterval: true
@@ -97,10 +100,10 @@ TabItem {
 
             editableShowProject: true
 
-            onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
-            onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
-            onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
-            onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
+            onMarkItemAs: main.updateRecurring(which, undefined, mainState);
+            onSaveItemDetails: main.updateRecurring(which, undefined, undefined, undefined, newText, newDescription, newProject);
+            onSaveItemRecurring: main.updateRecurring(which, startDate, undefined, interval, undefined, undefined);
+            onDeleteThisItem: main.deleteRecurring(which)
             onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
             extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
 

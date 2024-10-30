@@ -9,24 +9,43 @@ ListModel {
     property string rowidProperty  // required
     property bool withSubState // required
 
-    function addItem(dict) {
+    function addItem(dict, sortHint) {
         // This does *not* save to the database!
+        //
+        // Pass a function(newItem, existingItem) as sortHint
+        // to influence where the new item will be inserted.
+        // Return true if the position is ok.
+        // If the function never returns true, the item will
+        // be added at the end of the section.
 
         var positions = getPositions(dict)
+        var minIndex = 0
         var newIndex = 0
 
         if (dict.entryState === EntryState.Todo) {
+            minIndex = positions.firstTodoIndex
             newIndex = positions.firstTodoIndex + positions.todoCount
             ++positions.todoCount
         } else if (dict.entryState === EntryState.Ignored) {
+            minIndex = positions.firstIgnoredIndex
             newIndex = positions.firstIgnoredIndex + positions.ignoredCount
             ++positions.ignoredCount
         } else if (dict.entryState === EntryState.Done) {
+            minIndex = positions.firstDoneIndex
             newIndex = positions.firstDoneIndex + positions.doneCount
             ++positions.doneCount
         } else {
             console.error("cannot add item with unknown entry state",
                           dict.entryState, "to", type)
+        }
+
+        if (sortHint instanceof Function && newIndex > 0) {
+            for (var i = newIndex-1; i >= minIndex; --i) {
+                if (sortHint(dict, root.get(i))) {
+                    newIndex = i+1
+                    break
+                }
+            }
         }
 
         console.log("[model]", type, newIndex, JSON.stringify(dict))

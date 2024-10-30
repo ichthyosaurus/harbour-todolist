@@ -25,7 +25,11 @@ ApplicationWindow {
         rowidProperty: "entryId"
         withSubState: false
     }
-    property ListModel recurringsModel: ListModel { }
+    property IndexedListModel recurringsModel: IndexedListModel {
+        type: "recurrings"
+        rowidProperty: "entryId"
+        withSubState: false
+    }
     property ListModel archiveModel: ListModel { }
     property alias configuration: config
 
@@ -117,8 +121,14 @@ ApplicationWindow {
                             batchCount, "for", messageObject.model,
                             messageObject.series)
                 var model = _selectModel(messageObject)
+                var appender = model.append
+
+                if (messageObject.model === 'recurrings') {
+                    appender = model.addItem
+                }
+
                 for (var i in messageObject.entries) {
-                    model.append(messageObject.entries[i])
+                    appender(messageObject.entries[i])
                 }
             } else if (messageObject.event === 'loadingEntriesFinished') {
                 console.log("[main] loading finished for",
@@ -256,25 +266,27 @@ ApplicationWindow {
             addForToday = true;
         }
 
-        var entryId = Storage.addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday);
-        if (entryId === undefined) {
-            console.error("failed to save new recurring item", text, intervalDays);
-            return;
-        }
+        var newItem = Storage.addRecurring(
+            startDate, entryState, intervalDays,
+            project, text, description, addForToday)
 
-        recurringsModel.append({entryId: entryId, startDate: startDate, entryState: entryState,
-                                intervalDays: intervalDays, project: project,
-                                text: text, description: description});
+        if (!!newItem) {
+            var sortHint = function(newItem, existingItem) {
+                // insert new items sorted by interval
+                return existingItem.intervalDays <= newItem.intervalDays
+            }
+
+            recurringsModel.addItem(newItem, sortHint)
+        }
 
         if (addForToday) {
             addItem(today, text.trim(), description.trim(),
-                    entryState, EntrySubState.Today, today, intervalDays);
+                    entryState, EntrySubState.Today, today, intervalDays)
         }
     }
 
     function updateRecurring(which, startDate, entryState, intervalDays, text, description, project) {
         if (startDate !== undefined) recurringsModel.setProperty(which, "startDate", startDate);
-        if (entryState !== undefined) recurringsModel.setProperty(which, "entryState", entryState);
         if (intervalDays !== undefined) recurringsModel.setProperty(which, "intervalDays", intervalDays);
         if (text !== undefined) recurringsModel.setProperty(which, "text", text);
         if (description !== undefined) recurringsModel.setProperty(which, "description", description);
@@ -282,20 +294,26 @@ ApplicationWindow {
         var item = recurringsModel.get(which);
         if (project === undefined) project = item.project;
 
-        Storage.updateRecurring(item.entryId, item.startDate, item.entryState, item.intervalDays,
-                                project, item.text, item.description);
+        if (entryState !== undefined) {
+            recurringsModel.updateState(which, entryState)
+        }
+
+        Storage.updateRecurring(
+            item.entryId, item.startDate, item.entryState,
+            item.intervalDays, project, item.text, item.description)
 
         if (project !== item.project) {
             // Switch to the new project if it was changed.
             // This reloads all entries, so we don't have to manually update
             // the item in recurringsModel.
-            setCurrentProject(project);
+            setCurrentProject(project)
         }
     }
 
     function deleteRecurring(which) {
-        Storage.deleteRecurring(recurringsModel.get(which).entryId);
-        recurringsModel.remove(which);
+        var rowid = recurringsModel.get(which).entryId
+        Storage.deleteRecurring(rowid)
+        recurringsModel.removeItem(which)
     }
 
     function addProject(name, entryState) {

@@ -116,6 +116,55 @@ DB.dbMigrations = [
 
         DB.makeTableSortable(tx, '_projects', 'seq')
     }],
+    [3, function(tx){
+        // This version adds sorting to the recurrings table.
+
+        tx.executeSql('\
+            CREATE TABLE recurrings_temp(
+                rowid INTEGER PRIMARY KEY,
+                startDate STRING NOT NULL,
+                lastCopiedTo STRING,
+                entryState INTEGER NOT NULL,
+                intervalDays INTEGER NOT NULL,
+                project INTEGER NOT NULL,
+                text TEXT NOT NULL,
+                description TEXT,
+                seq INTEGER
+        );')
+
+        tx.executeSql('\
+            INSERT INTO recurrings_temp(
+                rowid,
+                startDate,
+                lastCopiedTo,
+                entryState,
+                intervalDays,
+                project,
+                text,
+                description,
+                seq
+            ) SELECT
+                rowid,
+                startDate,
+                lastCopiedTo,
+                entryState,
+                intervalDays,
+                project,
+                text,
+                description,
+                (ROW_NUMBER() OVER(ORDER BY
+                    entryState ASC,
+                    intervalDays ASC,
+                    lastCopiedTo ASC,
+                    rowid ASC))
+            FROM recurrings
+        ;')
+
+        tx.executeSql('DROP TABLE recurrings;')
+        tx.executeSql('ALTER TABLE recurrings_temp RENAME TO _recurrings;')
+
+        DB.makeTableSortable(tx, '_recurrings', 'seq')
+    }],
 
     // add new versions here...
     //
@@ -292,38 +341,76 @@ function loadRecurrings(forProject, targetModel) {
         SELECT rowid, *
         FROM recurrings
         WHERE project=?
-        ORDER BY intervalDays ASC
+        ORDER BY seq ASC
     ;', [forProject])
 
     _doProcessEntries(q, targetModel)
 }
 
-function addRecurring(startDate, entryState, intervalDays, project, text, description, addForToday) {
-    simpleQuery('INSERT INTO recurrings VALUES (?, ?, ?, ?, ?, ?, ?)', [
-                    Helpers.getDateString(startDate), (addForToday === true ? todayString : ""),
-                    Number(entryState), Number(intervalDays),
-                    project, text, description
-                ])
+function addRecurring(startDate, entryState, intervalDays,
+                      project, text, description, addForToday) {
+    simpleQuery('\
+        INSERT INTO recurrings(
+            startDate,
+            lastCopiedTo,
+            entryState,
+            intervalDays,
+            project, text, description
+        ) VALUES (
+            ?,
+            ?,
+            ?,
+            ?,
+            ?, ?, ?
+        )',
+    [Helpers.getDateString(startDate),
+     (addForToday === true ? todayString : ""),
+     Number(entryState),
+     Number(intervalDays),
+     project, text, description
+    ])
 
-    var q = simpleQuery('SELECT rowid FROM recurrings ORDER BY rowid DESC LIMIT 1;', []);
-    if (q.rows.length > 0) return q.rows.item(0).rowid;
-    else return undefined;
+    var rowid = lastRowId('recurrings')
+
+    if (rowid !== undefined) {
+        return {
+            entryId: rowid,
+            startDate: startDate,
+            entryState: entryState,
+            intervalDays: intervalDays,
+            project: project,
+            text: text,
+            description: description,
+        }
+    } else {
+        error(qsTr("Failed to save"),
+              qsTr("The new recurring entry “%1” could not be saved.").arg(text))
+        return undefined
+    }
 }
 
-function updateRecurring(entryId, startDate, entryState, intervalDays, project, text, description) {
+function updateRecurring(entryId, startDate, entryState,
+                         intervalDays, project, text, description) {
     if (entryId === undefined) {
         error(qsTr("Failed to update recurring entry"), qsTr("No internal entry ID was provided."));
         console.error("->", startDate, text, intervalDays);
         return;
     }
 
-    simpleQuery('UPDATE recurrings SET\
-        startDate=?, entryState=?, intervalDays=?,
-        project=?, text=?, description=? WHERE rowid=?', [
-                    Helpers.getDateString(startDate),
-                    Number(entryState), Number(intervalDays),
-                    project, text, description, entryId
-                ])
+    simpleQuery('\
+        UPDATE _recurrings
+        SET startDate=?,
+            entryState=?,
+            intervalDays=?,
+            project=?, text=?, description=?
+        WHERE rowid=?',
+    [
+        Helpers.getDateString(startDate),
+        Number(entryState),
+        Number(intervalDays),
+        project, text, description,
+        entryId
+    ])
 }
 
 function deleteRecurring(entryId) {
