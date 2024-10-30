@@ -29,100 +29,100 @@ TabItem {
     id: root
     flickable: view
 
-SilicaListView {
-    id: view
-    model: filteredModel
-    anchors.fill: parent
+    SilicaListView {
+        id: view
+        model: filteredModel
+        anchors.fill: parent
 
-    VerticalScrollDecorator { flickable: view }
+        VerticalScrollDecorator { flickable: view }
 
-    SortFilterProxyModel {
-        id: filteredModel
-        sourceModel: projectsModel
-        sorters: [
-            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "entryId"; sortOrder: Qt.AscendingOrder }
-        ]
-    }
+        SortFilterProxyModel {
+            id: filteredModel
+            sourceModel: projectsModel
+            sorters: [
+                RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
+                RoleSorter { roleName: "entryId"; sortOrder: Qt.AscendingOrder }
+            ]
+        }
 
-    PullDownMenu {
-        MenuItem {
-            text: qsTr("Add project")
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Add project")
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
+                                                    date: new Date(NaN), descriptionEnabled: false,
+                                                    titleText: qsTr("Add a project"),
+                                                    showProject: false
+                                                })
+                    dialog.accepted.connect(function() {
+                        main.addProject(dialog.text.trim());
+                    });
+                }
+            }
+        }
+
+        footer: Spacer { }
+
+        delegate: TodoListBaseItem {
+            id: item
+            editable: true
+            deletable: entryId !== defaultProjectId
+            descriptionEnabled: false
+            infoMarkerEnabled: false
+            title: model.name
+            highlighted: main.configuration.currentProject === entryId
+
+            onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
+            onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
+            onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
+            onMoveAndMarkItem: console.log("error: cannot 'move' project")
+            extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
+
+            editableShowProject: false
+
+            customClickHandlingEnabled: true
+            showMenuOnPressAndHold: true
             onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("AddItemDialog.qml"), {
-                                                date: new Date(NaN), descriptionEnabled: false,
-                                                titleText: qsTr("Add a project"),
-                                                showProject: false
-                                            })
-                dialog.accepted.connect(function() {
-                    main.addProject(dialog.text.trim());
-                });
+                if (main.configuration.currentProject !== entryId) {
+                    main.setCurrentProject(entryId);
+                }
             }
-        }
-    }
 
-    footer: Spacer { }
-
-    delegate: TodoListBaseItem {
-        id: item
-        editable: true
-        deletable: entryId !== defaultProjectId
-        descriptionEnabled: false
-        infoMarkerEnabled: false
-        title: model.name
-        highlighted: main.configuration.currentProject === entryId
-
-        onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
-        onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
-        onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
-        onMoveAndMarkItem: console.log("error: cannot 'move' project")
-        extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
-
-        editableShowProject: false
-
-        customClickHandlingEnabled: true
-        showMenuOnPressAndHold: true
-        onClicked: {
-            if (main.configuration.currentProject !== entryId) {
-                main.setCurrentProject(entryId);
+            menu: Component {
+                ContextMenu {
+                    MenuItem {
+                        visible: entryState !== EntryState.todo
+                        text: qsTr("mark as active")
+                        onClicked: markItemAs(index, EntryState.todo, undefined)
+                    }
+                    MenuItem {
+                        visible: entryState !== EntryState.ignored
+                        text: qsTr("mark as halted")
+                        onClicked: markItemAs(index, EntryState.ignored, undefined)
+                    }
+                    MenuItem {
+                        visible: entryState !== EntryState.done
+                        text: qsTr("mark as finished")
+                        onClicked: markItemAs(index, EntryState.done, undefined)
+                    }
+                    MenuItem {
+                        visible: editable
+                        text: deletable ? qsTr("edit or delete") : qsTr("edit")
+                        onClicked: startEditing()
+                    }
+                }
             }
         }
 
-        menu: Component {
-            ContextMenu {
-                MenuItem {
-                    visible: entryState !== EntryState.todo
-                    text: qsTr("mark as active")
-                    onClicked: markItemAs(index, EntryState.todo, undefined)
-                }
-                MenuItem {
-                    visible: entryState !== EntryState.ignored
-                    text: qsTr("mark as halted")
-                    onClicked: markItemAs(index, EntryState.ignored, undefined)
-                }
-                MenuItem {
-                    visible: entryState !== EntryState.done
-                    text: qsTr("mark as finished")
-                    onClicked: markItemAs(index, EntryState.done, undefined)
-                }
-                MenuItem {
-                    visible: editable
-                    text: deletable ? qsTr("edit or delete") : qsTr("edit")
-                    onClicked: startEditing()
-                }
-            }
+        section {
+            property: 'entryState'
+            delegate: Spacer { }
+        }
+
+        ViewPlaceholder {
+            enabled: view.count == 0
+            text: qsTr("No entries")
+            hintText: qsTr("This should not be possible. Most probably a database error occurred.")
         }
     }
-
-    section {
-        property: 'entryState'
-        delegate: Spacer { }
-    }
-
-    ViewPlaceholder {
-        enabled: view.count == 0
-        text: qsTr("No entries")
-        hintText: qsTr("This should not be possible. Most probably a database error occurred.")
-    }
-}
 }

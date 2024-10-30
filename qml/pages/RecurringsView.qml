@@ -30,101 +30,101 @@ TabItem {
     id: root
     flickable: view
 
-SilicaListView {
-    id: view
-    model: filteredModel
-    anchors.fill: parent
+    SilicaListView {
+        id: view
+        model: filteredModel
+        anchors.fill: parent
 
-    VerticalScrollDecorator { flickable: view }
+        VerticalScrollDecorator { flickable: view }
 
-    SortFilterProxyModel {
-        id: filteredModel
-        sourceModel: recurringsModel
+        SortFilterProxyModel {
+            id: filteredModel
+            sourceModel: recurringsModel
 
-        sorters: [
-            RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
-            RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
-        ]
-    }
-
-    PullDownMenu {
-        MenuItem {
-            text: qsTr("Add recurring entry")
-            onClicked: {
-                var dialog = pageStack.push(Qt.resolvedUrl("AddRecurringDialog.qml"))
-                dialog.accepted.connect(function() {
-                    main.addRecurring(dialog.text.trim(), dialog.description.trim(), dialog.intervalDays, dialog.startDate);
-                });
-            }
+            sorters: [
+                RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
+                RoleSorter { roleName: "intervalDays"; sortOrder: Qt.AscendingOrder },
+                RoleSorter { roleName: "startDate"; sortOrder: Qt.AscendingOrder }
+            ]
         }
-    }
 
-//    header: ProjectNameHeader {
-//        text: currentProjectName
-//    }
-
-    footer: Spacer { }
-
-    delegate: TodoListBaseItem {
-        editable: true
-        descriptionEnabled: true
-        infoMarkerEnabled: false
-        title: model.text
-        description: model.description
-
-        alwaysShowInterval: true
-        editableInterval: true
-        intervalProperty: "intervalDays"
-        intervalStartProperty: "startDate"
-
-        editableShowProject: true
-
-        onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
-        onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
-        onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
-        onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
-        onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
-        extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
-
-        menu: Component {
-            ContextMenu {
-                MenuItem {
-                    visible: entryState !== EntryState.todo
-                    text: qsTr("mark as active")
-                    onClicked: markItemAs(index, EntryState.todo, undefined)
-                }
-                MenuItem {
-                    visible: entryState !== EntryState.ignored
-                    text: qsTr("mark as halted")
-                    onClicked: markItemAs(index, EntryState.ignored, undefined)
-                }
-                MenuItem {
-                    visible: entryState !== EntryState.done
-                    text: qsTr("mark as done")
-                    onClicked: markItemAs(index, EntryState.done, undefined)
-                }
-                MenuItem {
-                    enabled: false
-                    text: qsTr("press and hold to edit or delete")
-                    font.pixelSize: Theme.fontSizeSmall
-                    truncationMode: TruncationMode.Fade
-                    _elideText: false
-                    _fadeText: true
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Add recurring entry")
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddRecurringDialog.qml"))
+                    dialog.accepted.connect(function() {
+                        main.addRecurring(dialog.text.trim(), dialog.description.trim(), dialog.intervalDays, dialog.startDate);
+                    });
                 }
             }
         }
-    }
 
-    section {
-        property: 'entryState'
-        delegate: Spacer { }
-    }
+    //    header: ProjectNameHeader {
+    //        text: currentProjectName
+    //    }
 
-    ViewPlaceholder {
-        enabled: view.count == 0 && startupComplete
-        text: qsTr("No entries yet")
-        hintText: qsTr("This page will show a list of all recurring entries.")
+        footer: Spacer { }
+
+        delegate: TodoListBaseItem {
+            editable: true
+            descriptionEnabled: true
+            infoMarkerEnabled: false
+            title: model.text
+            description: model.description
+
+            alwaysShowInterval: true
+            editableInterval: true
+            intervalProperty: "intervalDays"
+            intervalStartProperty: "startDate"
+
+            editableShowProject: true
+
+            onMarkItemAs: main.updateRecurring(view.model.mapToSource(which), undefined, mainState);
+            onSaveItemDetails: main.updateRecurring(view.model.mapToSource(which), undefined, undefined, undefined, newText, newDescription, newProject);
+            onSaveItemRecurring: main.updateRecurring(view.model.mapToSource(which), startDate, undefined, interval, undefined, undefined);
+            onDeleteThisItem: main.deleteRecurring(view.model.mapToSource(which))
+            onMoveAndMarkItem: console.log("error: cannot 'move' recurring item")
+            extraDeleteWarning: qsTr("This will <i>not</i> delete entries retroactively.")
+
+            menu: Component {
+                ContextMenu {
+                    MenuItem {
+                        visible: entryState !== EntryState.todo
+                        text: qsTr("mark as active")
+                        onClicked: markItemAs(index, EntryState.todo, undefined)
+                    }
+                    MenuItem {
+                        visible: entryState !== EntryState.ignored
+                        text: qsTr("mark as halted")
+                        onClicked: markItemAs(index, EntryState.ignored, undefined)
+                    }
+                    MenuItem {
+                        visible: entryState !== EntryState.done
+                        text: qsTr("mark as done")
+                        onClicked: markItemAs(index, EntryState.done, undefined)
+                    }
+                    MenuItem {
+                        enabled: false
+                        text: qsTr("press and hold to edit or delete")
+                        font.pixelSize: Theme.fontSizeSmall
+                        truncationMode: TruncationMode.Fade
+                        _elideText: false
+                        _fadeText: true
+                    }
+                }
+            }
+        }
+
+        section {
+            property: 'entryState'
+            delegate: Spacer { }
+        }
+
+        ViewPlaceholder {
+            enabled: view.count == 0 && startupComplete
+            text: qsTr("No entries yet")
+            hintText: qsTr("This page will show a list of all recurring entries.")
+        }
     }
-}
 }
