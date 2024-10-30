@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Todolist.Constants 1.0
 import "../js/storage.js" as Storage
+import "../js/helpers.js" as Helpers
 
 ListModel {
     id: root
@@ -11,10 +12,7 @@ ListModel {
 
     function reset() {
         clear()
-        todayPositions.reset()
-        tomorrowPositions.reset()
-        thisWeekPositions.reset()
-        somedayPositions.reset()
+        _initPositions()
     }
 
     function addItem(dict, sortHint, commit) {
@@ -58,7 +56,7 @@ ListModel {
             }
         }
 
-        console.log("[model]", type, newIndex, JSON.stringify(dict))
+        // console.log("[model]", type, newIndex, JSON.stringify(dict))
         root.insert(newIndex, dict)
 
         if (!!commit) {
@@ -149,48 +147,95 @@ ListModel {
 
     function getPositions(item) {
         if (withSubState) {
-            return positions[item.subState]
+            var date = Helpers.getDateString(item.date)
+
+            if (!_positions.hasOwnProperty(date)) {
+                console.log("CREATING NEW POSITIONS")
+                _positions[date] = positionsComponent.createObject(
+                    root, {firstTodoIndex: Qt.binding(function(){return 0})})
+                _keys.push(date)
+                _refreshFirstIndex()
+            }
+
+            console.log("POSITIONS INDEX", date, _positions[date].firstTodoIndex)
+            return _positions[date]
         } else {
-            return positions[0]
+            return _positions[""]
         }
+    }
+
+    function _firstTodoIndexBinding() {
+        var myKey = key  // from ListIndices context
+        var previousKey = _keysMap[myKey]  // from IndexedListModel context
+
+        console.log("CHECKING INDEX", myKey, previousKey)
+
+        if (!!previousKey) {
+            return _positions[previousKey].lastIndex + 1 // IndexedListModel
+        } else {
+            return 0
+        }
+    }
+
+    function _initPositions() {
+        _positions = {}
+        _keys = {}
+
+        if (withSubState) {
+            _positions[todayString] = positionsComponent.createObject(
+                root, {key: todayString, firstTodoIndex: _firstTodoIndexBinding})
+            _positions[tomorrowString] = positionsComponent.createObject(
+                root, {key: tomorrowString, firstTodoIndex: _firstTodoIndexBinding})
+            _positions[thisweekString] = positionsComponent.createObject(
+                root, {key: thisweekString, firstTodoIndex: _firstTodoIndexBinding})
+            _positions[somedayString] = positionsComponent.createObject(
+                root, {key: somedayString, firstTodoIndex: _firstTodoIndexBinding})
+            _keys = [todayString, tomorrowString, thisweekString, somedayString]
+        } else {
+            _positions[""] = positionsComponent.createObject(
+                root, {key: "", firstTodoIndex: _firstTodoIndexBinding})
+            _keys = [""]
+        }
+
+        _refreshFirstIndex()
+    }
+
+    function _refreshFirstIndex() {
+        _keys.sort()  // string sorting because keys are strings
+
+        var newMap = {}
+        var previous = null
+
+        for (var i in _keys) {
+            if (previous !== null) {
+                newMap[_keys[i]] = previous
+            } else {
+                newMap[_keys[i]] = null
+            }
+
+            previous = _keys[i]
+        }
+
+        _keysMap = newMap
     }
 
     // ----- internal -----
 
-    readonly property var positions: ({})
-    readonly property ListIndices todayPositions: ListIndices {
-        model: root
-        type: root.type
-        rowidProperty: root.rowidProperty
-        firstTodoIndex: 0
-    }
-    readonly property ListIndices tomorrowPositions: ListIndices {
-        model: root
-        type: root.type
-        rowidProperty: root.rowidProperty
-        firstTodoIndex: todayPositions.lastIndex + 1
-    }
-    readonly property ListIndices thisWeekPositions: ListIndices {
-        model: root
-        type: root.type
-        rowidProperty: root.rowidProperty
-        firstTodoIndex: tomorrowPositions.lastIndex + 1
-    }
-    readonly property ListIndices somedayPositions: ListIndices {
-        model: root
-        type: root.type
-        rowidProperty: root.rowidProperty
-        firstTodoIndex: thisWeekPositions.lastIndex + 1
+    property var _positions: ({})
+    property var _keys: ([])
+    property var _keysMap: ({})
+
+    property Component positionsComponent: Component {
+        ListIndices {
+            key: ""
+            model: root
+            type: root.type
+            rowidProperty: root.rowidProperty
+            firstTodoIndex: 0 // TODO
+        }
     }
 
     Component.onCompleted: {
-        if (withSubState) {
-            positions[EntrySubState.Today] = todayPositions
-            positions[EntrySubState.Tomorrow] = tomorrowPositions
-            positions[EntrySubState.ThisWeek] = thisWeekPositions
-            positions[EntrySubState.Someday] = somedayPositions
-        } else {
-            positions[0] = todayPositions
-        }
+        _initPositions()
     }
 }

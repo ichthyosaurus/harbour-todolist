@@ -5,6 +5,7 @@ import "../js/storage.js" as Storage
 QtObject {
     id: root
 
+    property string key  // required
     property ListModel model  // required
     property string type  // required
     property string rowidProperty: "rowid"

@@ -507,6 +507,8 @@ function _doProcessEntries(queryResult, targetModel) {
 function loadEntries(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
 
+    // FIXME Why does ordering by date ASC cause everything
+    // to be in reverse?
     var q = simpleQuery('\
         SELECT rowid, *
         FROM entries
@@ -514,7 +516,7 @@ function loadEntries(forProject, targetModel) {
             AND date >= ?
         ORDER BY
             date DESC,
-            entryState DESC,
+            entryState ASC,
             weight DESC
     ;', [forProject, todayString])
 
