@@ -251,15 +251,21 @@ ApplicationWindow {
     // Move an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function moveItemTo(which, moveToDate) {
-        var item = currentEntriesModel.get(which);
+        var item = currentEntriesModel.get(which)
 
         if (Storage.defaultFor(moveToDate, "fail") === "fail") {
-            console.log("error: failed to move item", which, moveToDate);
+            console.log("error: failed to move item", which, moveToDate)
         }
 
-        addItem(moveToDate, item.text, item.description,
-                item.entryState, item.subState, item.createdOn);
-        deleteItem(which);
+        var text = item.text
+        var description = item.description
+        var entryState = item.entryState
+        var subState = item.subState
+        var createdOn = item.createdOn
+
+        deleteItem(which)  // adding will change indexes, so delete first
+        addItem(moveToDate, text, description,
+                entryState, subState, createdOn)
     }
 
     function addRecurring(text, description, intervalDays, startDate) {
