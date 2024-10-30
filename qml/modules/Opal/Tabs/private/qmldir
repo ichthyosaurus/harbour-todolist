@@ -1,5 +1,5 @@
-module Opal.TabBar.private
-# This file is part of Opal.TabBar.
+module Opal.Tabs.private
+# This file is part of Opal.Tabs.
 # SPDX-FileCopyrightText: 2023-2024 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
 Util 1.0 Util.js

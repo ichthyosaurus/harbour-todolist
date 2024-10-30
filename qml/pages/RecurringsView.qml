@@ -20,7 +20,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import Opal.TabBar 1.0
+import Opal.Tabs 1.0
 import Opal.MenuSwitch 1.0
 import "../components"
 import "../js/helpers.js" as Helpers
