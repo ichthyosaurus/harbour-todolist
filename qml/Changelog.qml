@@ -9,6 +9,22 @@ import "modules/Opal/About"
 
 ChangelogList {
     ChangelogItem {
+        version: "2.0.0-1"
+        date: "2024-10-30"
+        paragraphs: [
+            "- This update changes the database, and has major improvements under the hood. It is recommended to backup the database before updating! Simply create a copy of `~/.local/share/harbour-todolist` to be safe.<br>" +
+            "- Updated translations: Estonian, Indonesian, Spanish, and more<br>" +
+            "- Added a tab bar<br>" +
+            "- Added support for manually reordering entries<br>" +
+            "- Added a way to quickly add entries<br>" +
+            "- Added regular database maintenance<br>" +
+            "- Improved archive loading times<br>" +
+            "- Improved styling and general user experience<br>" +
+            "- Removed duplicate Romanian translation<br>" +
+            "- Fixed missing translations so that all available translations are actually shippped!"
+        ]
+    }
+    ChangelogItem {
         version: "1.3.1-1"
         date: "2024-10-12"
         paragraphs: [

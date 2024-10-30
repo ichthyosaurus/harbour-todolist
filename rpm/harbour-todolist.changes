@@ -9,6 +9,18 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Oct 30 2024 Mirian Margiani <mixosaurus+ichthyo@pm.me> 2.0.0-1
+- This update changes the database, and has major improvements under the hood. It is recommended to backup the database before updating! Simply create a copy of `~/.local/share/harbour-todolist` to be safe.
+- Updated translations: Estonian, Indonesian, Spanish, and more
+- Added a tab bar
+- Added support for manually reordering entries
+- Added a way to quickly add entries
+- Added regular database maintenance
+- Improved archive loading times
+- Improved styling and general user experience
+- Removed duplicate Romanian translation
+- Fixed missing translations so that all available translations are actually shippped!
+
 * Sat Oct 12 2024 Mirian Margiani <mixosaurus+ichthyo@pm.me> 1.3.1-1
 - Fixed an issue that broke the “About” page
 - Fixed translations to get some lost strings back
