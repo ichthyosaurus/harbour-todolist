@@ -104,9 +104,12 @@ DB.dbMigrations = [
                 rowid,
                 name,
                 entryState,
-                (ROW_NUMBER() OVER(ORDER BY rowid))
+                (ROW_NUMBER() OVER(ORDER BY entryState ASC, rowid ASC))
             FROM projects
         ;')
+
+//        WITH cte AS (SELECT *, ROW_NUMBER() OVER(ORDER BY entryState ASC, rowid ASC) AS rn FROM _projects)
+//        UPDATE _projects SET seq = (SELECT rn FROM cte WHERE cte.rowid = _projects.rowid)
 
         tx.executeSql('DROP TABLE projects;')
         tx.executeSql('ALTER TABLE projects_temp RENAME TO _projects;')
@@ -191,7 +194,7 @@ function updateProject(entryId, name, entryState) {
         return;
     }
 
-    simpleQuery('UPDATE projects SET name=?, entryState=? WHERE rowid=?',
+    simpleQuery('UPDATE _projects SET name=?, entryState=? WHERE rowid=?',
                 [name, Number(entryState), entryId])
 }
 
