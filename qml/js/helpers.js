@@ -43,7 +43,7 @@ function indexForRowid(model, rowid, indexHint) {
         }
     }
 
-    for (var i = 0; i < count; ++i) {
+    for (var i = 0; i < model.count; ++i) {
         if (model.get(i)[rowidProperty] === rowid) {
             return i
         }
