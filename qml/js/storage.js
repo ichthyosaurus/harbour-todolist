@@ -549,7 +549,7 @@ function copyRecurrings() {
     var updateResult = 0;
     if (mainResult !== undefined && mainResult.rowsAffected > 0) {
         // only update if something was copied
-        updateResult = simpleQuery('UPDATE recurrings SET lastCopiedTo=? WHERE ' + whereClause,
+        updateResult = simpleQuery('UPDATE _recurrings SET lastCopiedTo=? WHERE ' + whereClause,
             [todayString, EntryState.todo, todayString, todayString, todayString]
         );
     }
