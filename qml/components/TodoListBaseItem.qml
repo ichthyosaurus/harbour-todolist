@@ -99,6 +99,7 @@ TwoLineDelegate {
                        textLabel.lineCount > 1 ?
                            Qt.AlignTop : Qt.AlignVCenter
     rightItemAlignment: leftItemAlignment
+    hideRightItemWhileDragging: false
 
     leftItem: DelegateIconButton {
         id: checkbox
@@ -133,6 +134,7 @@ TwoLineDelegate {
         spacing: 2*Theme.paddingSmall
 
         OptionalLabel {
+            visible: !draggable
             text: infoMarkerEnabled ? "⭑" : ""
             font.pixelSize: Theme.fontSizeSmall
             opacity: Theme.opacityLow
@@ -143,6 +145,7 @@ TwoLineDelegate {
         }
 
         OptionalLabel {
+            visible: !draggable
             text: (alwaysShowInterval || model[intervalProperty] > 0) ?
                       model[intervalProperty] : ""
             font.pixelSize: Theme.fontSizeSmall
@@ -159,6 +162,19 @@ TwoLineDelegate {
                 radius: 15
                 color: Theme.rgba(parent.color,
                                   Theme.opacityFaint)
+            }
+        }
+
+        DelegateIconButton {
+            visible: draggable
+            iconSource: "image://theme/icon-m-delete"
+            onClicked: {
+                var idx = index
+                var rowid = entryId
+
+                remorseDelete(function(){
+                    root.deleteThisItem(idx, rowid)
+                })
             }
         }
     }
