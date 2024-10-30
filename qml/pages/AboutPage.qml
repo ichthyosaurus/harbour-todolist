@@ -121,15 +121,21 @@ A.AboutPageBase {
         //<<< GENERATED LIST OF TRANSLATION CREDITS
     ]
 
-    /*PullDownMenu {
+    S.PullDownMenu {
         parent: page.flickable
-        MenuItem {
+
+        /*S.MenuItem {
             text: qsTr("Import from other apps")
             onClicked: console.warn("not yet implemented")
         }
-        MenuItem {
+        S.MenuItem {
             text: qsTr("Export data")
             onClicked: console.warn("not yet implemented")
+        }*/
+
+        S.MenuItem {
+            text: qsTr("View old entries")
+            onClicked: pageStack.animatorPush(Qt.resolvedUrl("ArchivePage.qml"))
         }
-    }*/
+    }
 }

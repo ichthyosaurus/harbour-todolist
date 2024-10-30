@@ -109,12 +109,14 @@ TabItem {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("About")
+                text: qsTr("About and Archive",
+                           "as in “show me the 'About page' and " +
+                           "the 'Archive page'”")
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
-            MenuItem {
-                text: qsTr("Show old entries")
-                onClicked: pageStack.animatorPush(Qt.resolvedUrl("ArchivePage.qml"));
+            MenuSwitch {
+                id: arrangeToggle
+                text: qsTr("Arrange entries")
             }
             MenuItem {
                 text: qsTr("Add entry")
