@@ -91,7 +91,7 @@ DB.dbMigrations = [
                 rowid INTEGER PRIMARY KEY,
                 name TEXT NOT NULL,
                 entryState INTEGER NOT NULL,
-                seq INTEGER NOT NULL
+                seq INTEGER
         );')
 
         tx.executeSql('\
