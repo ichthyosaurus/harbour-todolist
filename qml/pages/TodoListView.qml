@@ -37,6 +37,10 @@ TabItem {
         header: Column {
             width: parent.width
 
+            PageHeader {
+                title: currentProjectName
+            }
+
             TodoListItemAdder {
                 id: adder
                 forDate: main.today

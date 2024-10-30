@@ -61,6 +61,10 @@ TabItem {
             }
         }
 
+        header: PageHeader {
+            title: qsTr("Projects")
+        }
+
         footer: Spacer { }
 
         delegate: TodoListBaseItem {

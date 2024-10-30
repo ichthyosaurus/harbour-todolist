@@ -60,9 +60,26 @@ TabItem {
             }
         }
 
-    //    header: ProjectNameHeader {
-    //        text: currentProjectName
-    //    }
+        header: Column {
+            width: parent.width
+            spacing: 0
+
+            PageHeader {
+                title: currentProjectName
+            }
+
+            Label {
+                width: parent.width - 2*x
+                x: Theme.horizontalPageMargin
+                font.pixelSize: Theme.fontSizeSmall
+                wrapMode: Text.Wrap
+                color: Theme.secondaryHighlightColor
+                text: qsTr("Configure recurring entries here. " +
+                           "Active entries in this list are added " +
+                           "automatically to the to-do list in " +
+                           "regular intervals.")
+            }
+        }
 
         footer: Spacer { }
 
