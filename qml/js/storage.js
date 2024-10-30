@@ -212,7 +212,9 @@ DB.dbMigrations = [
                 text,
                 description,
                 (ROW_NUMBER() OVER(
-                    PARTITION BY date
+                    PARTITION BY
+                        project,
+                        date
                     ORDER BY
                         date DESC,
                         entryState DESC,
