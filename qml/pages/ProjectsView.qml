@@ -72,53 +72,10 @@ TabItem {
 
         footer: Spacer { }
 
-        ViewDragHandler {
+        IndexedListDragHandler {
             id: viewDragHandler
             active: arrangeEntries
             listView: view
-            handleMove: false
-
-            function moveItem(fromIndex, toIndex, commit) {
-                var item = listView.model.get(fromIndex)
-                var state = item.entryState
-
-                var minIndex = -1
-                var maxIndex = -1
-
-                if (state === EntryState.Todo) {
-                    minIndex = listView.model.firstTodoIndex
-                    maxIndex = listView.model.firstIgnoredIndex - 1
-                } else if (state === EntryState.Ignored) {
-                    minIndex = listView.model.firstIgnoredIndex
-                    maxIndex = listView.model.firstDoneIndex - 1
-                } else if (state === EntryState.Done) {
-                    minIndex = listView.model.firstDoneIndex
-                    maxIndex = listView.model.lastIndex
-                }
-
-                if (toIndex < minIndex) toIndex = minIndex
-                else if (toIndex > maxIndex) toIndex = maxIndex
-
-                listView.model.setProperty(fromIndex, 'seq', toIndex)
-                listView.model.move(fromIndex, toIndex, 1)
-
-                if (!!commit) {
-                    Storage.moveProject(item.entryId, toIndex)
-                    console.log("saved move of item", item.name,
-                                "from", fromIndex, "to", toIndex)
-                } else {
-                    console.log("moved item", item.name,
-                                "from", fromIndex, "to", toIndex)
-                }
-            }
-
-            onItemDropped: {
-                viewDragHandler.moveItem(currentIndex, finalIndex, true)
-            }
-
-            onItemMoved: {
-                viewDragHandler.moveItem(fromIndex, toIndex, false)
-            }
         }
 
         delegate: TodoListBaseItem {

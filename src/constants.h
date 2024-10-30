@@ -11,6 +11,7 @@
 
 CREATE_ENUM(EntryState, Todo = 0, Ignored = 1, Done = 2)
 CREATE_ENUM(EntrySubState, Today = 0, Tomorrow = 1, ThisWeek = 2, Someday = 3)
+// CREATE_ENUM(EntryType, Project, Task, Recurring)
 
 DECLARE_ENUM_REGISTRATION_FUNCTION(Todolist)
 

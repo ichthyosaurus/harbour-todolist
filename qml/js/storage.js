@@ -144,14 +144,51 @@ function error(summary, details) {
     }
 }
 
-function moveProject(rowid, newIndex) {
+function lastRowId(table) {
+    // Inserting into a sortable table (i.e. a view)
+    // has "null" as insertId, so we cannot use that
+    // directly to address the new row.
+
+    var q = simpleQuery('\
+        SELECT rowid
+        FROM "%1"
+        ORDER BY rowid DESC
+        LIMIT 1
+    ;'.arg(table), [])
+
+    if (q.rows.length > 0) {
+        return q.rows.item(0).rowid
+    }
+
+    return undefined
+}
+
+function moveItem(type, rowid, newIndex) {
+    var table = null
+
+    if (type === 'projects') {
+        table = 'projects'
+    } else if (type === 'entries') {
+        table = 'entries'
+    } else if (type === 'recurrings') {
+        table = 'recurrings'
+    } else {
+        console.error("[storage] bug: cannot move item of unknown type", type)
+        return
+    }
+
     var newPosition = newIndex + 1  // seq starts at 1, index at 0
-    console.log("[storage] moving project", rowid, "to", newPosition)
+    console.log("[storage] moving", type, rowid, "to", newPosition)
     simpleQuery('\
-        UPDATE projects
+        UPDATE %1
         SET seq = ?
         WHERE rowid = ?
-    ', [newPosition, rowid])
+    '.arg(table),  // yes, that's ugly
+    [newPosition, rowid])
+}
+
+function moveProject(rowid, newIndex) {
+    moveItem('project', rowid, newIndex)
 }
 
 function getProjects() {
@@ -166,10 +203,9 @@ function getProjects() {
         var item = q.rows.item(i)
 
         res.push({
-            entryId: item.rowid,
+            entryId: parseInt(item.rowid, 10),
             name: item.name,
             entryState: parseInt(item.entryState, 10),
-            seq: parseInt(item.seq, 10),
         })
     }
 
@@ -187,10 +223,9 @@ function getProject(entryId) {
     if (q.rows.length > 0) {
         var item = q.rows.item(0);
         return {
-            entryId: item.rowid,
+            entryId: parseInt(item.rowid, 10),
             name: item.name,
             entryState: parseInt(item.entryState, 10),
-            seq: parseInt(item.seq, 10),
         }
     } else {
         return undefined;
@@ -198,18 +233,29 @@ function getProject(entryId) {
 }
 
 function addProject(name, entryState) {
+    name = defaultFor(name, "")
+    entryState = defaultFor(entryState, EntryState.Todo);
+
     if (!name) {
         return undefined
     }
 
-    var q = simpleQuery('\
+    simpleQuery('\
         INSERT INTO projects(name, entryState)
         VALUES (?, ?)',
         [name, Number(entryState)])
 
-    if (q.insertId) {
-        return q.insertId
+    var rowid = lastRowId('projects')
+
+    if (rowid !== undefined) {
+        return {
+            entryId: rowid,
+            entryState: entryState,
+            name: name,
+        }
     } else {
+        error(qsTr("Failed to save"),
+              qsTr("The new project “%1” could not be saved.").arg(name))
         return undefined
     }
 }
@@ -233,6 +279,8 @@ function deleteProject(entryId) {
         error(qsTr("Failed to delete project"), qsTr("The default project cannot be deleted."));
         return;
     }
+
+    console.log("[storage] deleting project", entryId)
 
     simpleQuery('DELETE FROM projects WHERE rowid=?', [entryId]);
     simpleQuery('DELETE FROM entries WHERE project=?', [entryId]);

@@ -13,20 +13,17 @@ import Opal.SupportMe 1.0 as M
 import Todolist.Constants 1.0
 import "js/storage.js" as Storage
 import "js/helpers.js" as Helpers
+import "components"
 import "pages"
 
 ApplicationWindow {
     id: main
-    property ListModel currentEntriesModel: ListModel { }
-    property ListModel projectsModel: ListModel {
-        property int todoCount: 0
-        property int ignoredCount: 0
-        property int doneCount: 0
 
-        property int firstTodoIndex: 0
-        readonly property int firstIgnoredIndex: firstTodoIndex + todoCount
-        readonly property int firstDoneIndex: firstTodoIndex + todoCount + ignoredCount
-        readonly property int lastIndex: count - 1
+    property ListModel currentEntriesModel: ListModel { }
+    property IndexedListModel projectsModel: IndexedListModel {
+        type: "projects"
+        rowidProperty: "entryId"
+        withSubState: false
     }
     property ListModel recurringsModel: ListModel { }
     property ListModel archiveModel: ListModel { }
@@ -302,15 +299,9 @@ ApplicationWindow {
     }
 
     function addProject(name, entryState) {
-        entryState = Storage.defaultFor(entryState, EntryState.Todo);
-        name = Storage.defaultFor(name, "")
-        var entryId = Storage.addProject(name, entryState);
-
-        if (entryId === undefined) {
-            console.error("failed to save new project", name, entryState);
-            return;
-        } else {
-            projectsModel.append({entryId: entryId, entryState: entryState, name: name});
+        var newProject = Storage.addProject(name, entryState)
+        if (!!newProject) {
+            projectsModel.addItem(newProject)
         }
     }
 
@@ -323,63 +314,38 @@ ApplicationWindow {
         }
 
         if (entryState !== undefined) {
-            var state = item.entryState
-
-            if (state !== entryState) {
-                var newIndex = which
-                projectsModel.setProperty(which, "entryState", entryState)
-
-                if (entryState === EntryState.Todo) {
-                    newIndex = projectsModel.firstIgnoredIndex
-                               - (state < entryState ? 1 : 0)
-                    ++projectsModel.todoCount
-                } else if (entryState === EntryState.Ignored) {
-                    newIndex = projectsModel.firstDoneIndex
-                               - (state < entryState ? 1 : 0)
-                    ++projectsModel.ignoredCount
-                } else if (entryState === EntryState.Done) {
-                    newIndex = projectsModel.lastIndex
-                    ++projectsModel.doneCount
-                }
-
-                if (state === EntryState.Todo) {
-                    --projectsModel.todoCount
-                } else if (state === EntryState.Ignored) {
-                    --projectsModel.ignoredCount
-                } else if (state === EntryState.Done) {
-                    --projectsModel.doneCount
-                }
-
-                projectsModel.move(which, newIndex, 1)
-                Storage.moveProject(item.entryId, newIndex)
-            }
+            projectsModel.updateState(which, entryState)
         }
 
         Storage.updateProject(item.entryId, item.name, item.entryState)
     }
 
     function deleteProject(which) {
-        var item = projectsModel.get(which);
+        var rowid = projectsModel.get(which).entryId
 
-        if (config.currentProject === item.entryId) {
-            setCurrentProject(defaultProjectId);
-        } else if (item.entryId === defaultProjectId) {
-            // This should not be reachable.
-            return;
+        if (rowid === config.currentProject) {
+            setCurrentProject(defaultProjectId)
+        } else if (rowid === defaultProjectId) {
+            console.error("[bug] trying to delete the default project")
+            return
         }
 
-        Storage.deleteProject(item.entryId);
-        projectsModel.remove(which);
+        Storage.deleteProject(rowid)
+        projectsModel.removeItem(which)
     }
 
     function setCurrentProject(entryId) {
+        console.log("[main] activating project", entryId)
         entryId = Storage.defaultFor(entryId, defaultProjectId);
         config.currentProject = entryId;
         var project = Storage.getProject(config.currentProject);
 
+        console.log("[main] got project data:", JSON.stringify(project))
+
         if (project === undefined) {
             // if the requested project is not available, reset it to the default project
             setCurrentProject(defaultProjectId);
+            console.warn("[main] failed to activate project", entryId)
         } else {
             lastSelectedCategory = today;
             currentProjectName = project.name;
@@ -430,38 +396,15 @@ ApplicationWindow {
         Storage.todayString = todayString
 
         // Start with true to force a refresh on application startup.
-        refreshDates(true);
-        projectsModel.clear();
-        var projects = Storage.getProjects();
+        refreshDates(true)
+        projectsModel.clear()
+
+        var projects = Storage.getProjects()
         for (var i in projects) {
-            var item = projects[i]
-
-            if (item.entryState === EntryState.Todo) {
-                if (projectsModel.todoCount === 0) {
-                    projectsModel.firstTodoIndex = i
-                }
-
-                ++projectsModel.todoCount
-            } else if (item.entryState === EntryState.Ignored) {
-                ++projectsModel.ignoredCount
-            } else if (item.entryState === EntryState.Done) {
-                ++projectsModel.doneCount
-            } else {
-                console.log("error: unknown entry state", item.entryState)
-            }
-
-            projectsModel.append(projects[i])
+            projectsModel.addItem(projects[i])
         }
 
-        console.log("stats",
-                    projectsModel.todoCount,
-                    projectsModel.ignoredCount,
-                    projectsModel.doneCount,
-                    projectsModel.firstTodoIndex,
-                    projectsModel.firstIgnoredIndex,
-                    projectsModel.firstDoneIndex)
-
         // Start the timer to check for date changes every hour.
-        timer.start();
+        timer.start()
     }
 }
