@@ -43,7 +43,7 @@ SilicaListView {
         onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
     }
 
-    cacheBuffer: 10 * Screen.height
+    cacheBuffer: 5 * Screen.height
 
     delegate: TodoListItem {
         id: listItem
