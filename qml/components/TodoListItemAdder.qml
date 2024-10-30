@@ -7,6 +7,7 @@
 import QtQuick 2.6
 import Sailfish.Silica 1.0
 import Opal.Delegates 1.0
+import Opal.ComboData 1.0
 
 PaddedDelegate {
     id: root
@@ -14,7 +15,7 @@ PaddedDelegate {
     readonly property bool canApply: !!text.trim()
     signal applied
 
-    property date forDate
+    readonly property alias forDate: scheduledCombo.currentData
     property alias text: _textField.text
     property TextField textField: _textField
     property alias acceptableInput: _textField.acceptableInput
@@ -32,11 +33,13 @@ PaddedDelegate {
     minContentHeight: Theme.itemSizeSmall
     centeredContainer: contentContainer
     interactive: false
+    rightItemAlignment: Qt.AlignTop
     padding.topBottom: 0
 
     Column {
         id: contentContainer
         width: parent.width
+        spacing: Theme.paddingSmall
 
         TextField {
             id: _textField
@@ -52,6 +55,35 @@ PaddedDelegate {
                  "../images/icon-m-enter-add.png" :
                  "image://theme/icon-m-enter-close"
             onActiveFocusChanged: textFieldFocusChanged(activeFocus)
+        }
+
+        ComboBox {
+            id: scheduledCombo
+            width: root.width
+            x: -root.padding.effectiveLeft
+            label: qsTr("Scheduled for")
+
+            property date currentData
+            ComboData { dataRole: "value" }
+
+            menu: ContextMenu {
+                MenuItem {
+                    text: qsTr("today")
+                    property date value: today
+                }
+                MenuItem {
+                    text: qsTr("tomorrow")
+                    property date value: tomorrow
+                }
+                MenuItem {
+                    text: qsTr("this week")
+                    property date value: thisweek
+                }
+                MenuItem {
+                    text: qsTr("someday")
+                    property date value: someday
+                }
+            }
         }
     }
 
