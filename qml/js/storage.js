@@ -506,12 +506,16 @@ function _doProcessEntries(queryResult, targetModel) {
 
 function loadEntries(forProject, targetModel) {
     forProject = defaultFor(forProject, defaultProjectId);
+
     var q = simpleQuery('\
         SELECT rowid, *
         FROM entries
         WHERE project=?
             AND date >= ?
-        ORDER BY date ASC
+        ORDER BY
+            date DESC,
+            entryState DESC,
+            weight DESC
     ;', [forProject, todayString])
 
     _doProcessEntries(q, targetModel)
@@ -524,7 +528,10 @@ function loadArchive(forProject, targetModel) {
         FROM entries
         WHERE project=?
             AND date < ?
-        ORDER BY date DESC
+        ORDER BY
+            date DESC,
+            entryState ASC,
+            weight DESC
     ;', [forProject, todayString])
 
     _doProcessEntries(q, targetModel)
@@ -617,57 +624,57 @@ function deleteEntry(entryId) {
 }
 
 function carryOverFrom(fromDate) {
-    fromDate = defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
-    var fromDateString = Helpers.getDateString(fromDate)
+//    fromDate = defaultFor(fromDate, new Date("0000-01-01T00:00Z"));
+//    var fromDateString = Helpers.getDateString(fromDate)
 
-    // copy all entries with entryState = todo and subState = today, that are older than today
-    // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
-    var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description)\
-        SELECT date("now", "localtime"), entryState, subState, createdOn, weight, interval, project, text, description FROM entries\
-            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime")) ORDER BY rowid ASC',
-                             [EntryState.todo, EntrySubState.today, fromDateString]);
+//    // copy all entries with entryState = todo and subState = today, that are older than today
+//    // (and, if we have fromDate, younger than fromDate), and set the new date to today's date
+//    var mainResult = simpleQuery('INSERT INTO entries(date, entryState, subState, createdOn, interval, project, text, description)\
+//        SELECT date("now", "localtime"), entryState, subState, createdOn, interval, project, text, description FROM entries\
+//            WHERE (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime")) ORDER BY rowid ASC',
+//                             [EntryState.todo, EntrySubState.today, fromDateString]);
 
-    var updateResult = simpleQuery('UPDATE entries SET subState=? WHERE\
-        (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime"))',
-                                   [EntrySubState.tomorrow, EntryState.todo,
-                                    EntrySubState.today, fromDateString]);
+//    var updateResult = simpleQuery('UPDATE entries SET subState=? WHERE\
+//        (date < date("now", "localtime")) AND (entryState = ?) AND (subState = ?) AND (date >= date(?, "localtime"))',
+//                                   [EntrySubState.tomorrow, EntryState.todo,
+//                                    EntrySubState.today, fromDateString]);
 
-    if (mainResult === undefined || updateResult === undefined) {
-        if (mainResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Copying old entries failed."));
-        if (updateResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Updating old entries failed."));
-        return false;
-    } else {
-        console.log("entries carried over:", mainResult.rowsAffected);
-        return true;
-    }
+//    if (mainResult === undefined || updateResult === undefined) {
+//        if (mainResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Copying old entries failed."));
+//        if (updateResult === undefined) error(qsTr("Failed to carry over old entries"), qsTr("Updating old entries failed."));
+//        return false;
+//    } else {
+//        console.log("entries carried over:", mainResult.rowsAffected);
+//        return true;
+//    }
 }
 
 function copyRecurrings() {
-    var whereClause = '(entryState = ?) AND (lastCopiedTo != ? OR lastCopiedTo is null) AND ' +
-        '(date(startDate, "localtime") <= date(?, "localtime")) AND ' +
-        '((julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0)';
+//    var whereClause = '(entryState = ?) AND (lastCopiedTo != ? OR lastCopiedTo is null) AND ' +
+//        '(date(startDate, "localtime") <= date(?, "localtime")) AND ' +
+//        '((julianday(?, "localtime") - julianday(startDate, "localtime")) % intervalDays = 0)';
 
-    var mainResult = simpleQuery(
-        'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description) ' +
-            'SELECT ?, 0, 0, ?, 0, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
-        [todayString, todayString, EntryState.todo, todayString, todayString, todayString]
-    );
+    // var mainResult = simpleQuery(
+    //     'INSERT INTO entries(date, entryState, subState, createdOn, weight, interval, project, text, description) ' +
+    //         'SELECT ?, 0, 0, ?, 0, intervalDays, project, text, description FROM recurrings WHERE ' + whereClause,
+    //     [todayString, todayString, EntryState.todo, todayString, todayString, todayString]
+    // );
 
-    var updateResult = 0;
-    if (mainResult !== undefined && mainResult.rowsAffected > 0) {
-        // only update if something was copied
-        updateResult = simpleQuery('UPDATE _recurrings SET lastCopiedTo=? WHERE ' + whereClause,
-            [todayString, EntryState.todo, todayString, todayString, todayString]
-        );
-    }
+    // var updateResult = 0;
+    // if (mainResult !== undefined && mainResult.rowsAffected > 0) {
+    //     // only update if something was copied
+    //     updateResult = simpleQuery('UPDATE _recurrings SET lastCopiedTo=? WHERE ' + whereClause,
+    //         [todayString, EntryState.todo, todayString, todayString, todayString]
+    //     );
+    // }
 
-    if (mainResult === undefined || updateResult === undefined) {
-        if (mainResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Copying new entries failed."));
-        if (updateResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Updating reference entries failed."));
-        console.log("recurrings failed for", todayString)
-        return false;
-    } else {
-        console.log(mainResult.rowsAffected, "recurrings for", todayString);
-        return true;
-    }
+//    if (mainResult === undefined || updateResult === undefined) {
+//        if (mainResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Copying new entries failed."));
+//        if (updateResult === undefined) error(qsTr("Failed to update recurring entries"), qsTr("Updating reference entries failed."));
+//        console.log("recurrings failed for", todayString)
+//        return false;
+//    } else {
+//        console.log(mainResult.rowsAffected, "recurrings for", todayString);
+//        return true;
+//    }
 }

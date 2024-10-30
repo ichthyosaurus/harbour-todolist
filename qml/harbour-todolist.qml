@@ -19,7 +19,10 @@ import "pages"
 ApplicationWindow {
     id: main
 
-    property ListModel currentEntriesModel: ListModel { }
+    property IndexedListModel currentEntriesModel: IndexedListModel {
+        type: "entries"
+        withSubState: true
+    }
     property IndexedListModel projectsModel: IndexedListModel {
         type: "projects"
         withSubState: false
@@ -130,14 +133,16 @@ ApplicationWindow {
                             batchCount, "for", messageObject.model,
                             messageObject.series)
                 var model = _selectModel(messageObject)
-                var appender = model.append
 
-                if (messageObject.model === 'recurrings') {
-                    appender = model.addItem
-                }
-
-                for (var i in messageObject.entries) {
-                    appender(messageObject.entries[i])
+                if (messageObject.model === 'recurrings' ||
+                        messageObject.model === 'entries') {
+                    for (var i in messageObject.entries) {
+                        model.addItem(messageObject.entries[i], null, false)
+                    }
+                } else {
+                    for (var j in messageObject.entries) {
+                        model.append(messageObject.entries[j])
+                    }
                 }
             } else if (messageObject.event === 'loadingEntriesFinished') {
                 console.log("[main] loading finished for",
@@ -200,23 +205,24 @@ ApplicationWindow {
             forDate, entryState, subState, createdOn,
             weight, interval, project, task, description)
 
-        if (newItem === undefined) {
-            console.error("failed to save new item", forDate, task)
-            return
-        } else {
-            currentEntriesModel.append(newItem)
+        if (!!newItem) {
+            currentEntriesModel.addItem(newItem, null, true)
         }
     }
 
     // Update an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function updateItem(which, entryState, subState, text, description, project) {
-        if (entryState !== undefined) currentEntriesModel.setProperty(which, "entryState", entryState);
         if (subState !== undefined) currentEntriesModel.setProperty(which, "subState", subState);
         if (text !== undefined) currentEntriesModel.setProperty(which, "text", text);
         if (description !== undefined) currentEntriesModel.setProperty(which, "description", description);
 
         var item = currentEntriesModel.get(which);
+
+        if (entryState !== undefined) {
+            currentEntriesModel.updateState(which, entryState)
+        }
+
         Storage.updateEntry(item.entryId, item.date, item.entryState, item.subState,
                             item.createdOn, item.weight, item.interval,
                             (project === undefined ? item.project : project),
@@ -233,15 +239,17 @@ ApplicationWindow {
     // Delete an entry from the database and from currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function deleteItem(which) {
-        Storage.deleteEntry(currentEntriesModel.get(which).entryId);
-        currentEntriesModel.remove(which);
+        var rowid = currentEntriesModel.get(which).entryId
+        Storage.deleteEntry(rowid)
+        currentEntriesModel.removeItem(which)
     }
 
     // Copy an entry in the database and in currentEntriesModel. This is not intended to be used
     // for archived entries, as the archive should be immutable.
     function copyItemTo(which, copyToDate) {
-        var item = currentEntriesModel.get(which);
+        var item = currentEntriesModel.get(which)
         copyToDate = Storage.defaultFor(copyToDate, Helpers.getDate(1, item.date))
+
         addItem(copyToDate, item.text, item.description,
                 EntryState.Todo, EntrySubState.Today, item.createdOn);
     }
