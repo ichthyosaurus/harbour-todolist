@@ -9,6 +9,10 @@ import Sailfish.Silica 1.0
 import Opal.DragDrop 1.0
 import "../js/helpers.js" as Helpers
 
+// Important: this item can only be used by and in the
+// context of TodoListView because it requires variables
+// and functions from that context.
+
 SilicaListView {
     id: view
     VerticalScrollDecorator { flickable: view }
@@ -28,10 +32,42 @@ SilicaListView {
         onValueChanged: if (key === "currentProject") closedSections = defaultClosedSections.slice()
     }
 
+    ViewDragHandler {
+        id: viewDragHandler
+        active: arrangeEntries
+        handleMove: false
+        listView: view
+
+        onItemDropped: {
+            var draggedItem = view.model.get(currentIndex)
+            var targetItem = view.model.get(finalIndex)
+            var sourceIndex = view.model.mapToSource(currentIndex)
+
+            console.log("DROP", draggedItem.weight, targetItem.weight)
+
+            //listView.model.moveItem(currentIndex, finalIndex, true)
+        }
+
+        onItemMoved: {
+            var draggedItem = view.model.get(fromIndex)
+            var targetItem = view.model.get(toIndex)
+            var sourceIndex = view.model.mapToSource(fromIndex)
+
+
+            console.log("X-DRAG", draggedItem.weight, targetItem.weight)
+            view.model.sourceModel.setProperty(sourceIndex, 'weight', targetItem.weight-1)
+            console.log("Y-DRAG", draggedItem.weight, targetItem.weight)
+
+            //listView.model.moveItem(fromIndex, toIndex, false)
+        }
+    }
+
     cacheBuffer: 5 * Screen.height
 
     delegate: TodoListItem {
         id: listItem
+        dragHandler: viewDragHandler
+
         onMarkItemAs: updateItem(view.model.mapToSource(which), mainState, subState);
         onCopyAndMarkItem: {
             var sourceIndex = view.model.mapToSource(which);

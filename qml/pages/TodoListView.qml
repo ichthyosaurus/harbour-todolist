@@ -7,12 +7,15 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Opal.TabBar 1.0
+import Opal.MenuSwitch 1.0
 import SortFilterProxyModel 0.2
 import "../components"
 
 TabItem {
     id: root
     flickable: todoList
+
+    property bool arrangeEntries: arrangeToggle.checked
 
     TodoList {
         id: todoList
