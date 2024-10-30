@@ -518,21 +518,28 @@ function addEntry(date, entryState, subState, createdOn,
     }
 }
 
-function updateEntry(entryId, date, entryState, subState, createdOn, weight, interval, project, text, description) {
+function updateEntry(entryId, date, entryState, subState,
+                     createdOn, weight, interval, project,
+                     text, description) {
     if (entryId === undefined) {
         error(qsTr("Failed to update entry"), qsTr("No internal entry ID was provided."));
         console.error("->", date, text);
         return;
     }
 
-    simpleQuery('UPDATE entries SET\
-        date=?, entryState=?, subState=?,
-        createdOn=?, weight=?, interval=?,
-        project=?, text=?, description=? WHERE rowid=?', [
+    simpleQuery('\
+        UPDATE _entries SET
+            date=?, entryState=?, subState=?,
+            createdOn=?, weight=?, interval=?,
+            project=?, text=?, description=?
+        WHERE rowid=?', [
         Helpers.getDateString(date),
-        Number(entryState), Number(subState),
+        Number(entryState),
+        Number(subState),
         Helpers.getDateString(createdOn),
-        weight, interval, project, text, description,
+        weight,
+        interval,
+        project, text, description,
         entryId
     ])
 }
