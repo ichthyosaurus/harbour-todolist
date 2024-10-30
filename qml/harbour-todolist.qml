@@ -472,6 +472,16 @@ ApplicationWindow {
             return;
         }
 
+        // (re)load projects to get "due today" counts right,
+        // and to populate the model on startup
+        projectsModel.reset()
+
+        var projects = Storage.getProjects()
+        for (var i in projects) {
+            projectsModel.addItem(projects[i], null, false)
+        }
+
+        // actually update dates
         tomorrow = Helpers.getDate(1);
         thisweek = Helpers.getDate(0, new Date("8888-01-01T00:00Z"));
         someday = Helpers.getDate(0, new Date("9999-01-01T00:00Z"));
@@ -495,12 +505,6 @@ ApplicationWindow {
 
         // Start with true to force a refresh on application startup.
         refreshDates(true)
-        projectsModel.reset()
-
-        var projects = Storage.getProjects()
-        for (var i in projects) {
-            projectsModel.addItem(projects[i], null, false)
-        }
 
         // Start the timer to check for date changes every hour.
         timer.start()
