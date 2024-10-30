@@ -29,6 +29,11 @@ ApplicationWindow {
         type: "recurrings"
         rowidProperty: "entryId"
         withSubState: false
+
+        function sortHint(newItem, existingItem) {
+            // sort items by interval by default
+            return existingItem.intervalDays <= newItem.intervalDays
+        }
     }
     property ListModel archiveModel: ListModel { }
     property alias configuration: config
@@ -271,12 +276,7 @@ ApplicationWindow {
             project, text, description, addForToday)
 
         if (!!newItem) {
-            var sortHint = function(newItem, existingItem) {
-                // insert new items sorted by interval
-                return existingItem.intervalDays <= newItem.intervalDays
-            }
-
-            recurringsModel.addItem(newItem, sortHint)
+            recurringsModel.addItem(newItem, recurringsModel.sortHint)
         }
 
         if (addForToday) {
@@ -295,7 +295,8 @@ ApplicationWindow {
         if (project === undefined) project = item.project;
 
         if (entryState !== undefined) {
-            recurringsModel.updateState(which, entryState)
+            recurringsModel.updateState(
+                which, entryState, recurringsModel.sortHint)
         }
 
         Storage.updateRecurring(

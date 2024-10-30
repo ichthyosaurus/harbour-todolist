@@ -116,13 +116,20 @@ ListModel {
         }
     }
 
-    function updateState(index, newState) {
+    function updateState(index, newState, sortHint) {
         // This *saves* to the database!
         // This *changes* the item's index so the index passed
         // into this function will no longer point to the item!
+        //
+        // Pass a function(newItem, existingItem) as sortHint
+        // to influence where the new item will be inserted.
+        // Return true if the position is ok.
+        // If the function never returns true, the item will
+        // be added at the end of the section.
+
         var item = root.get(index)
         var positions = getPositions(item)
-        positions.updateState(index, newState)
+        positions.updateState(index, newState, sortHint)
     }
 
     function getPositions(item) {

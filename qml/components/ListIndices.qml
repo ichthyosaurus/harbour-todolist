@@ -3,6 +3,8 @@ import Todolist.Constants 1.0
 import "../js/storage.js" as Storage
 
 QtObject {
+    id: root
+
     property ListModel model  // required
     property string type  // required
     property string rowidProperty: "rowid"
@@ -16,8 +18,14 @@ QtObject {
     readonly property int firstDoneIndex: firstIgnoredIndex + ignoredCount
     readonly property int lastIndex: firstDoneIndex + doneCount - 1
 
-    function updateState(index, newState) {
+    function updateState(index, newState, sortHint) {
         // This *saves* to the database!
+        //
+        // Pass a function(newItem, existingItem) as sortHint
+        // to influence where the new item will be inserted.
+        // Return true if the position is ok.
+        // If the function never returns true, the item will
+        // be added at the end of the section.
 
         var item = model.get(index)
         var oldIndex = index
@@ -36,16 +44,20 @@ QtObject {
 
         model.setProperty(oldIndex, "entryState", newState)
         var newIndex = oldIndex
+        var minIndex = 0
 
         if (newState === EntryState.Todo) {
+            minIndex = firstTodoIndex
             newIndex = firstIgnoredIndex
-                    - (oldState < newState ? 1 : 0)
+                       - (oldState < newState ? 1 : 0)
             ++todoCount
         } else if (newState === EntryState.Ignored) {
+            minIndex = firstIgnoredIndex
             newIndex = firstDoneIndex
-                    - (oldState < newState ? 1 : 0)
+                       - (oldState < newState ? 1 : 0)
             ++ignoredCount
         } else if (newState === EntryState.Done) {
+            minIndex = firstDoneIndex
             newIndex = lastIndex
             ++doneCount
         }
@@ -56,6 +68,15 @@ QtObject {
             --ignoredCount
         } else if (oldState === EntryState.Done) {
             --doneCount
+        }
+
+        if (sortHint instanceof Function && newIndex > 0) {
+            for (var i = newIndex-1; i >= minIndex; --i) {
+                if (sortHint(item, model.get(i))) {
+                    newIndex = i+1 - (oldState < newState ? 1 : 0)
+                    break
+                }
+            }
         }
 
         model.move(oldIndex, newIndex, 1)
