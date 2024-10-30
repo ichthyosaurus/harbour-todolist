@@ -20,23 +20,22 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Opal.TabBar 1.0
 import SortFilterProxyModel 0.2
 import "../components"
 import "../constants" 1.0
 
+TabItem {
+    id: root
+    flickable: todoList
+
 TodoList {
     id: todoList
     model: filteredModel
-    property int showFakeNavigation: FakeNavigation.None
+    anchors.fill: parent
 
     header: Column {
         width: parent.width
-
-        FakeNavigationHeader {
-            title: appName
-            description: currentProjectName
-            showNavigation: showFakeNavigation
-        }
 
         TodoListItemAdder {
             id: adder
@@ -127,9 +126,10 @@ TodoList {
         }
         MenuItem {
             text: qsTr("Add entry")
-            onClicked: addItem()
+            onClicked: todoList.addItem()
         }
     }
 
     footer: Spacer { }
+}
 }

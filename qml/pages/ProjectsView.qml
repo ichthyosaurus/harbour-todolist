@@ -20,15 +20,21 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Opal.TabBar 1.0
 import SortFilterProxyModel 0.2
 import "../components"
 import "../constants" 1.0
 
+TabItem {
+    id: root
+    flickable: view
+
 SilicaListView {
     id: view
     model: filteredModel
+    anchors.fill: parent
+
     VerticalScrollDecorator { flickable: view }
-    property int showFakeNavigation: FakeNavigation.None
 
     SortFilterProxyModel {
         id: filteredModel
@@ -37,11 +43,6 @@ SilicaListView {
             RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
             RoleSorter { roleName: "entryId"; sortOrder: Qt.AscendingOrder }
         ]
-    }
-
-    header: FakeNavigationHeader {
-        title: qsTr("Projects")
-        showNavigation: showFakeNavigation
     }
 
     PullDownMenu {
@@ -123,4 +124,5 @@ SilicaListView {
         text: qsTr("No entries")
         hintText: qsTr("This should not be possible. Most probably a database error occurred.")
     }
+}
 }

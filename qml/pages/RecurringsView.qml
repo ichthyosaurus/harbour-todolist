@@ -20,22 +20,22 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Opal.TabBar 1.0
 import SortFilterProxyModel 0.2
 import "../components"
 import "../js/helpers.js" as Helpers
 import "../constants" 1.0
 
+TabItem {
+    id: root
+    flickable: view
+
 SilicaListView {
     id: view
     model: filteredModel
-    VerticalScrollDecorator { flickable: view }
-    property int showFakeNavigation: FakeNavigation.None
+    anchors.fill: parent
 
-    header: FakeNavigationHeader {
-        title: qsTr("Recurring Entries")
-        description: currentProjectName
-        showNavigation: showFakeNavigation
-    }
+    VerticalScrollDecorator { flickable: view }
 
     SortFilterProxyModel {
         id: filteredModel
@@ -59,6 +59,10 @@ SilicaListView {
             }
         }
     }
+
+//    header: ProjectNameHeader {
+//        text: currentProjectName
+//    }
 
     footer: Spacer { }
 
@@ -122,4 +126,5 @@ SilicaListView {
         text: qsTr("No entries yet")
         hintText: qsTr("This page will show a list of all recurring entries.")
     }
+}
 }

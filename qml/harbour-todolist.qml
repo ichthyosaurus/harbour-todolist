@@ -44,9 +44,6 @@ ApplicationWindow {
     readonly property string fullDateFormat: qsTr("ddd d MMM yyyy", "date format including weekday")
     readonly property string shortDateFormat: qsTr("d MMM yyyy", "date format without weekday")
 
-    signal fakeNavigateLeft()
-    signal fakeNavigateRight()
-
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 

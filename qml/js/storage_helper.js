@@ -124,7 +124,7 @@ function guardedTx(tx, callback) {
 
         console.error("guarded transaction failed:",
                       "\n   ERROR  >", e,
-                      "\n   CALLER >", e.stack.split('\n')[0]);
+                      "\n   CALLER >", e.stack);
         throw e
     }
 
