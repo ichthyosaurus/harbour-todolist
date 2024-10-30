@@ -44,6 +44,17 @@ TodoListBaseItem {
     showMenuOnPressAndHold: false
     onPressAndHold: editable && startEditing()
     onCheckboxClicked: {
+        if (isArchived || !editable) {
+            openMenu()
+        } else if (entryState === EntryState.Todo) {
+            markDone()
+        } else if (entryState === EntryState.Done) {
+            markContinue()
+        } else {
+            openMenu()
+        }
+    }
+
     function markDone() {
         if (isSomeday || isThisWeek) {
             moveAndMarkItem(index, EntryState.Done, subState, main.today)

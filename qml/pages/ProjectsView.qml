@@ -23,32 +23,34 @@ import Sailfish.Silica 1.0
 import Opal.TabBar 1.0
 import Opal.Delegates 1.0
 import Opal.DragDrop 1.0
-import SortFilterProxyModel 0.2
+import Opal.MenuSwitch 1.0
 import "../components"
 import "../constants" 1.0
 
+import "../js/storage.js" as Storage
+
 TabItem {
     id: root
+
+    property bool arrangeEntries: false
+
     flickable: view
 
     SilicaListView {
         id: view
-        model: filteredModel
+        model: projectsModel
         anchors.fill: parent
         cacheBuffer: 3 * Screen.height
 
         VerticalScrollDecorator { flickable: view }
 
-        SortFilterProxyModel {
-            id: filteredModel
-            sourceModel: projectsModel
-            sorters: [
-                RoleSorter { roleName: "entryState"; sortOrder: Qt.AscendingOrder },
-                RoleSorter { roleName: "entryId"; sortOrder: Qt.AscendingOrder }
-            ]
-        }
-
         PullDownMenu {
+            MenuSwitch {
+                text: qsTr("Arrange entries")
+                onClicked: arrangeEntries = !arrangeEntries
+                checked: arrangeEntries
+            }
+
             MenuItem {
                 text: qsTr("Add project")
                 onClicked: {
@@ -70,79 +72,69 @@ TabItem {
 
         footer: Spacer { }
 
-//        ViewDragHandler {
-//            id: viewDragHandler
-//            active: true
-//            listView: view
-//        }
+        ViewDragHandler {
+            id: viewDragHandler
+            active: arrangeEntries
+            listView: view
+            handleMove: false
 
-        delegate: TwoLineDelegate {
-            id: delegate
-            minContentHeight: Theme.itemSizeExtraSmall
-            padding.topBottom: 0
-            // dragHandler: viewDragHandler
+            function moveItem(fromIndex, toIndex, commit) {
+                var item = listView.model.get(fromIndex)
+                var state = item.entryState
 
-            property bool _isArchivedEntry: typeof(_isOld) !== 'undefined'
-                                            && _isOld === true
-            property real contentOpacity: _isArchivedEntry ?
-                1-baseOpacity : baseOpacity
-            property real baseOpacity: {
-                if (entryState === EntryState.Todo) {
-                    1.0
-                } else if (entryState === EntryState.Ignored) {
-                    0.7
-                } else if (entryState === EntryState.Done) {
-                    0.6
+                var minIndex = -1
+                var maxIndex = -1
+
+                if (state === EntryState.Todo) {
+                    minIndex = listView.model.firstTodoIndex
+                    maxIndex = listView.model.firstIgnoredIndex - 1
+                } else if (state === EntryState.Ignored) {
+                    minIndex = listView.model.firstIgnoredIndex
+                    maxIndex = listView.model.firstDoneIndex - 1
+                } else if (state === EntryState.Done) {
+                    minIndex = listView.model.firstDoneIndex
+                    maxIndex = listView.model.lastIndex
+                }
+
+                if (toIndex < minIndex) toIndex = minIndex
+                else if (toIndex > maxIndex) toIndex = maxIndex
+
+                listView.model.setProperty(fromIndex, 'seq', toIndex)
+                listView.model.move(fromIndex, toIndex, 1)
+
+                if (!!commit) {
+                    Storage.moveProject(item.entryId, toIndex)
+                    console.log("saved move of item", item.name,
+                                "from", fromIndex, "to", toIndex)
+                } else {
+                    console.log("moved item", item.name,
+                                "from", fromIndex, "to", toIndex)
                 }
             }
 
-            text: model.name
-            textLabel.opacity: contentOpacity
-            descriptionLabel.opacity: contentOpacity
-            highlighted: down || main.configuration.currentProject === model.entryId
-
-            leftItem: DelegateIconButton {
-                id: checkbox
-
-                Binding on highlighted {
-                    when: delegate.highlighted
-                    value: true
-                }
-
-                opacity: 0.7 * _delegate.contentOpacity
-                iconSize: Theme.iconSizeMedium
-                iconSource: {
-                    if (entryState === EntryState.Todo) {
-                        Qt.resolvedUrl("../images/icon-m-todo.png")
-                    } else if (entryState === EntryState.Ignored) {
-                        Qt.resolvedUrl("../images/icon-m-ignored.png")
-                    } else if (entryState === EntryState.Done) {
-                        Qt.resolvedUrl("../images/icon-m-done.png")
-                    }
-                }
+            onItemDropped: {
+                viewDragHandler.moveItem(currentIndex, finalIndex, true)
             }
 
-            onClicked: {
-                if (main.configuration.currentProject !== model.entryId) {
-                    main.setCurrentProject(model.entryId)
-                }
+            onItemMoved: {
+                viewDragHandler.moveItem(fromIndex, toIndex, false)
             }
         }
 
-/*
         delegate: TodoListBaseItem {
             id: item
             text: model.name
             highlighted: down || main.configuration.currentProject === model.entryId
+            dragHandler: viewDragHandler
 
             editable: true
             deletable: entryId !== defaultProjectId
             descriptionEnabled: false
             infoMarkerEnabled: false
 
-            onMarkItemAs: main.updateProject(view.model.mapToSource(which), undefined, mainState);
-            onSaveItemDetails: main.updateProject(view.model.mapToSource(which), newText, undefined);
-            onDeleteThisItem: main.deleteProject(view.model.mapToSource(which))
+            onMarkItemAs: main.updateProject(which, undefined, mainState);
+            onSaveItemDetails: main.updateProject(which, newText, undefined);
+            onDeleteThisItem: main.deleteProject(which)
             onMoveAndMarkItem: console.log("error: cannot 'move' project")
             extraDeleteWarning: qsTr("All entries belonging to this project will be deleted!")
 
@@ -154,6 +146,9 @@ TabItem {
                 if (main.configuration.currentProject !== model.entryId) {
                     main.setCurrentProject(model.entryId)
                 }
+            }
+            onCheckboxClicked: {
+                openMenu()
             }
 
             menu: Component {
@@ -181,7 +176,6 @@ TabItem {
                 }
             }
         }
-        */
 
         section {
             property: 'entryState'

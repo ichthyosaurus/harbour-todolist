@@ -18,7 +18,16 @@ import "pages"
 ApplicationWindow {
     id: main
     property ListModel currentEntriesModel: ListModel { }
-    property ListModel projectsModel: ListModel { }
+    property ListModel projectsModel: ListModel {
+        property int todoCount: 0
+        property int ignoredCount: 0
+        property int doneCount: 0
+
+        property int firstTodoIndex: 0
+        readonly property int firstIgnoredIndex: firstTodoIndex + todoCount
+        readonly property int firstDoneIndex: firstTodoIndex + todoCount + ignoredCount
+        readonly property int lastIndex: count - 1
+    }
     property ListModel recurringsModel: ListModel { }
     property ListModel archiveModel: ListModel { }
     property alias configuration: config
@@ -390,7 +399,34 @@ ApplicationWindow {
         refreshDates(true);
         projectsModel.clear();
         var projects = Storage.getProjects();
-        for (var i in projects) projectsModel.append(projects[i]);
+        for (var i in projects) {
+            var item = projects[i]
+
+            if (item.entryState === EntryState.Todo) {
+                if (projectsModel.todoCount === 0) {
+                    projectsModel.firstTodoIndex = i
+                }
+
+                ++projectsModel.todoCount
+            } else if (item.entryState === EntryState.Ignored) {
+                ++projectsModel.ignoredCount
+            } else if (item.entryState === EntryState.Done) {
+                ++projectsModel.doneCount
+            } else {
+                console.log("error: unknown entry state", item.entryState)
+            }
+
+            projectsModel.append(projects[i])
+        }
+
+        console.log("stats",
+                    projectsModel.todoCount,
+                    projectsModel.ignoredCount,
+                    projectsModel.doneCount,
+                    projectsModel.firstTodoIndex,
+                    projectsModel.firstIgnoredIndex,
+                    projectsModel.firstDoneIndex)
+
         // Start the timer to check for date changes every hour.
         timer.start();
     }
