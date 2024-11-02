@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver entradas antiguas</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -263,17 +263,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>Recurrentes</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished">To-do List</translation>
+        <translation>To-do List</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished">Proyectos</translation>
+        <translation>Proyectos</translation>
     </message>
 </context>
 <context>
@@ -549,7 +549,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Organizar entradas</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
@@ -602,7 +602,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Organizar entradas</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
@@ -612,7 +612,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure aquí las entradas recurrentes. Las entradas activas de esta lista se agregan automáticamente a la lista de tareas pendientes en intervalos regulares.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
@@ -886,27 +886,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished">Programado para</translation>
+        <translation>Programado para</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished">hoy</translation>
+        <translation>hoy</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished">mañana</translation>
+        <translation>mañana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished">esta semana</translation>
+        <translation>esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished">algún día</translation>
+        <translation>algún día</translation>
     </message>
 </context>
 <context>
@@ -920,12 +920,12 @@
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Acerca de y Archivo</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Organizar entradas</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
@@ -972,12 +972,12 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error interno</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede gestionar un mensaje de trabajador desconocido.</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
@@ -1033,32 +1033,32 @@
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pudo guardar</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido guardar el nuevo proyecto &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido guardar la nueva entrada recurrente &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Base de datos no disponible</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está lista.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido guardar la nueva entrada &quot;%1&quot;.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
