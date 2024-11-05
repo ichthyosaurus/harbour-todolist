@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US">
+<TS version="2.1" language="nn" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -305,6 +305,7 @@
     <message numerus="yes">
         <source>Data License(s)</source>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
