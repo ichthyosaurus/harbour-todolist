@@ -100,7 +100,7 @@ A.AboutPageBase {
                     ]
                 },
                 A.ContributionGroup {
-                    title: qsTr("Norwegian Bokmål")
+                    title: qsTr("Norwegian Nynorsk")
                     entries: [
                         "Øystein S. Haaland"
                     ]
