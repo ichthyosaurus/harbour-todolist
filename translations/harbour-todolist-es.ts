@@ -39,6 +39,11 @@
         <translation>Polaco</translation>
     </message>
     <message>
+        <location filename="../qml/pages/AboutPage.qml" line="103"/>
+        <source>Norwegian Nynorsk</source>
+        <translation>Noruego (Nynorsk)</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
         <source>Indonesian</source>
         <translation>Indonesio</translation>
@@ -57,11 +62,6 @@
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Swedish</source>
         <translation>Sueco</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AboutPage.qml" line="103"/>
-        <source>Norwegian Bokmål</source>
-        <translation>Noruego (Bokmål)</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="133"/>

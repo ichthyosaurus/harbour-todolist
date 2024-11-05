@@ -39,6 +39,11 @@
         <translation>poola</translation>
     </message>
     <message>
+        <location filename="../qml/pages/AboutPage.qml" line="103"/>
+        <source>Norwegian Nynorsk</source>
+        <translation>uusnorra</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
         <source>Indonesian</source>
         <translation>indoneesia</translation>
@@ -57,11 +62,6 @@
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Swedish</source>
         <translation>rootsi</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/AboutPage.qml" line="103"/>
-        <source>Norwegian Bokmål</source>
-        <translation>norra bokmål</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="133"/>
