@@ -121,6 +121,7 @@ TwoLineDelegate {
             }
         }
 
+        onPressAndHold: clicked(mouse)
         onClicked: {
             if (root.customClickHandlingEnabled) {
                 root.checkboxClicked(mouse)
@@ -166,6 +167,12 @@ TwoLineDelegate {
         }
 
         DelegateIconButton {
+            visible: draggable && editable
+            iconSource: "image://theme/icon-m-edit"
+            onClicked: startEditing()
+        }
+
+        DelegateIconButton {
             visible: draggable
             iconSource: "image://theme/icon-m-delete"
             onClicked: {
@@ -183,7 +190,13 @@ TwoLineDelegate {
 
     Connections {
         target: customClickHandlingEnabled ? null : root
-        onPressAndHold: if (editable) startEditing()
+        onPressAndHold: {
+            if (!!dragHandler) {
+                dragHandler.active = !dragHandler.active
+            } else if (editable) {
+                startEditing()
+            }
+        }
         onClicked: menu ? openMenu() : {}
     }
 }

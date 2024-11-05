@@ -40,9 +40,17 @@ TodoListBaseItem {
     editable: !isArchived
 
     customClickHandlingEnabled: true
-    onClicked: openMenu()
     showMenuOnPressAndHold: false
-    onPressAndHold: editable && startEditing()
+    onClicked: openMenu()
+
+    onPressAndHold: {
+        if (!!dragHandler) {
+            dragHandler.active = !dragHandler.active
+        } else if (editable) {
+            startEditing()
+        }
+    }
+
     onCheckboxClicked: {
         if (isArchived || !editable) {
             openMenu()
@@ -177,12 +185,9 @@ TodoListBaseItem {
                             else if (subState === EntrySubState.thisweek) text = text.arg(qsTr("continue later this week"))
                             else if (subState === EntrySubState.someday) text = text.arg(qsTr("continue someday later"))
                         }
-
-                        if (editable) text += "\n"
                     }
 
-                    if (editable) text += qsTr("press and hold to edit or delete")
-                    return text;
+                    return text
                 }
             }
         }

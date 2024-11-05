@@ -15,8 +15,6 @@ TabItem {
     id: root
     flickable: todoList
 
-    property bool arrangeEntries: arrangeToggle.checked
-
     TodoList {
         id: todoList
         model: currentEntriesModel
@@ -81,6 +79,10 @@ TabItem {
             MenuSwitch {
                 id: arrangeToggle
                 text: qsTr("Arrange entries")
+                checked: todoList.viewDragHandler.active
+                automaticCheck: false
+                onClicked: todoList.viewDragHandler.active =
+                           !todoList.viewDragHandler.active
             }
             MenuItem {
                 text: qsTr("Add entry")

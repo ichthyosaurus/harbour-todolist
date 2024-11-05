@@ -30,8 +30,6 @@ TabItem {
     id: root
     flickable: view
 
-    property bool arrangeEntries: arrangeToggle.checked
-
     SilicaListView {
         id: view
         model: recurringsModel
@@ -43,6 +41,9 @@ TabItem {
             MenuSwitch {
                 id: arrangeToggle
                 text: qsTr("Arrange entries")
+                checked: viewDragHandler.active
+                automaticCheck: false
+                onClicked: viewDragHandler.active = !viewDragHandler.active
             }
 
             MenuItem {
@@ -81,7 +82,7 @@ TabItem {
 
         IndexedListDragHandler {
             id: viewDragHandler
-            active: arrangeEntries
+            active: false
             listView: view
         }
 
@@ -123,9 +124,6 @@ TabItem {
                         visible: entryState !== EntryState.done
                         text: qsTr("mark as done")
                         onClicked: markItemAs(index, EntryState.done, undefined)
-                    }
-                    MenuLabel {
-                        text: qsTr("press and hold to edit or delete")
                     }
                 }
             }

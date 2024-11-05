@@ -31,8 +31,6 @@ TabItem {
     id: root
     flickable: view
 
-    property bool arrangeEntries: arrangeToggle.checked
-
     SilicaListView {
         id: view
         model: projectsModel
@@ -45,6 +43,9 @@ TabItem {
             MenuSwitch {
                 id: arrangeToggle
                 text: qsTr("Arrange entries")
+                checked: viewDragHandler.active
+                automaticCheck: false
+                onClicked: viewDragHandler.active = !viewDragHandler.active
             }
 
             MenuItem {
@@ -70,7 +71,7 @@ TabItem {
 
         IndexedListDragHandler {
             id: viewDragHandler
-            active: arrangeEntries
+            active: false
             listView: view
         }
 
@@ -96,7 +97,8 @@ TabItem {
             editableShowProject: false
 
             customClickHandlingEnabled: true
-            showMenuOnPressAndHold: true
+            showMenuOnPressAndHold: false
+            onPressAndHold: viewDragHandler.active = !viewDragHandler.active
             onClicked: {
                 if (main.configuration.currentProject !== model.entryId) {
                     main.setCurrentProject(model.entryId)
@@ -122,11 +124,6 @@ TabItem {
                         visible: entryState !== EntryState.done
                         text: qsTr("mark as finished")
                         onClicked: markItemAs(index, EntryState.done, undefined)
-                    }
-                    MenuItem {
-                        visible: editable
-                        text: deletable ? qsTr("edit or delete") : qsTr("edit")
-                        onClicked: startEditing()
                     }
                 }
             }

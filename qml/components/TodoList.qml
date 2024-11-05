@@ -17,6 +17,8 @@ SilicaListView {
     id: view
     VerticalScrollDecorator { flickable: view }
 
+    property alias viewDragHandler: viewDragHandler
+
     readonly property var defaultClosedSections: [somedayString]
     property var closedSections: defaultClosedSections.slice()
     signal sectionToggled(var whichSection)
@@ -28,7 +30,7 @@ SilicaListView {
 
     IndexedListDragHandler {
         id: viewDragHandler
-        active: arrangeEntries
+        active: false
         listView: view
     }
 
