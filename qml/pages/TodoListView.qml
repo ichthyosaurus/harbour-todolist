@@ -45,28 +45,13 @@ TabItem {
         }
 
         function addItem() {
-            var dialog = pageStack.push(addComponent, { date: lastSelectedCategory })
+            var dialog = pageStack.push(
+                Qt.resolvedUrl("AddRegularDialog.qml"),
+                { date: lastSelectedCategory })
             dialog.accepted.connect(function() {
                 main.addItem(dialog.date, dialog.text.trim(), dialog.description.trim());
                 main.lastSelectedCategory = dialog.date
             });
-        }
-
-        Component {
-            id: addComponent
-            AddItemDialog {
-                SectionHeader { text: qsTr("Note") }
-                Label {
-                    anchors {
-                        left: parent.left; right: parent.right;
-                        leftMargin: Theme.horizontalPageMargin; rightMargin: Theme.horizontalPageMargin;
-                    }
-                    wrapMode: Text.WordWrap
-                    color: Theme.highlightColor
-                    text: qsTr("Swipe left to add recurring entries. You can specify an interval "
-                               + "in which they will be added automatically to the current to-do list.")
-                }
-            }
         }
 
         PullDownMenu {
