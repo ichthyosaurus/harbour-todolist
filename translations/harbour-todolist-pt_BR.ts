@@ -290,22 +290,22 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="22"/>
         <source>Translate on Weblate</source>
-        <translation type="unfinished"></translation>
+        <translation>Traduza no Weblate</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="23"/>
         <source>Help with translating this app in as many languages as possible.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajude a traduzir este app pela maior quantidade possível de idiomas.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="30"/>
         <source>Develop on Github</source>
-        <translation type="unfinished"></translation>
+        <translation>Desenvolva no Github</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="31"/>
         <source>Support with maintenance and packaging, write code, or provide valuable bug reports.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajude com a manutenção e novas versões, escreva códigos ou dê valiosos reportes de bugs.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="37"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="40"/>
         <source>This project is built with love and passion by a single developer in their spare time, and is provided to you free of charge.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este projeto é construído com amor e paixão por um único desenvolvedor em seu tempo livre, e é disponibilizado à você livre de custos.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="46"/>
@@ -568,17 +568,17 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
-        <translation type="unfinished"></translation>
+        <translation>marcar como concluído</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>editar ou apagar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit</source>
-        <translation type="unfinished"></translation>
+        <translation>editar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="144"/>
@@ -646,7 +646,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="128"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>pressione e segure para editar ou apagar</translation>
     </message>
 </context>
 <context>
@@ -654,7 +654,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation type="unfinished"></translation>
+        <translation>Começando de</translation>
     </message>
 </context>
 <context>
@@ -662,27 +662,27 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="9"/>
         <source>Hi there!</source>
-        <translation type="unfinished"></translation>
+        <translation>Olá!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="10"/>
         <source>Thank you for using my little app! Maybe you can contribute back?</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrigado por usar meu pequeno app! Talvez você poderia contribuir de volta?</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="11"/>
         <source>Thank you for your support!</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrigado pelo seu apoio!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="55"/>
         <source>Remind me later</source>
-        <translation type="unfinished"></translation>
+        <translation>Me lembre mais tarde</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
         <source>Don&apos;t ask me again</source>
-        <translation type="unfinished"></translation>
+        <translation>Não pergunte novamente</translation>
     </message>
 </context>
 <context>
@@ -690,32 +690,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="121"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="122"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="175"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ainda sem entradas</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="176"/>
         <source>Pull down to add entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Deslize para baixo para adicionar entradas</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Someday</source>
-        <translation type="unfinished"></translation>
+        <translation>Algum dia</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>This week</source>
-        <translation type="unfinished"></translation>
+        <translation>Esta semana</translation>
     </message>
 </context>
 <context>
@@ -723,33 +723,33 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="75"/>
         <source>continue today</source>
-        <translation type="unfinished"></translation>
+        <translation>continuar hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="81"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>concluído</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="90"/>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>concluído por hoje, continue amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="137"/>
         <source>ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>ignorar</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>continuar amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>not completely done yet</source>
-        <translation type="unfinished"></translation>
+        <translation>ainda incompleto</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="152"/>
@@ -775,7 +775,7 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for today</source>
-        <translation type="unfinished"></translation>
+        <translation>para hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="168"/>
@@ -785,33 +785,33 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored today</source>
-        <translation type="unfinished"></translation>
+        <translation>ignorado hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>para ser feito amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done today</source>
-        <translation type="unfinished"></translation>
+        <translation>concluído hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>pressione e segure para editar ou apagar</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="130"/>
         <source>move to someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>mover para algum dia depois</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue next day</source>
-        <translation type="unfinished"></translation>
+        <translation>continuar no dia seguinte</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
@@ -890,22 +890,22 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>algum dia</translation>
     </message>
 </context>
 <context>
@@ -913,7 +913,7 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="60"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
