@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Nynorsk</source>
-        <translation type="unfinished"></translation>
+        <translation>挪威尼诺斯克</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>查看旧条目</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>添加</translation>
     </message>
 </context>
 <context>
@@ -262,17 +262,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>复发</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished">待办列表</translation>
+        <translation>待办列表</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished">项目</translation>
+        <translation>项目</translation>
     </message>
 </context>
 <context>
@@ -546,7 +546,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>排列条目</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
@@ -599,7 +599,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>排列条目</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>在此处配置重复条目。此列表中的活动条目会定期自动添加到待办事项列表中。</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
@@ -883,27 +883,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished">计划日期</translation>
+        <translation>计划日期</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished">今日</translation>
+        <translation>今日</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished">明日</translation>
+        <translation>明日</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished">本周</translation>
+        <translation>本周</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished">某日</translation>
+        <translation>某日</translation>
     </message>
 </context>
 <context>
@@ -917,12 +917,12 @@
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>关于和存档</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>排列条目</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
@@ -969,12 +969,12 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>内部错误</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法处理未知的工作人员消息。</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
@@ -1030,32 +1030,32 @@
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>保存失败</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法保存新项目“%1”。</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法保存新的重复条目“%1”。</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>数据库不可用</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>数据库工作人员尚未准备好。</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法保存新条目“%1”。</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
