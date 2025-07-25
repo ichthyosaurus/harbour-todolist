@@ -264,17 +264,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished">Повторения</translation>
+        <translation>Повторения</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished">Список дел</translation>
+        <translation>Список дел</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished">Проекты</translation>
+        <translation>Проекты</translation>
     </message>
 </context>
 <context>
@@ -552,7 +552,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished">Упорядочить записи</translation>
+        <translation>Упорядочить записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished">Упорядочить записи</translation>
+        <translation>Упорядочить записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
@@ -889,27 +889,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished">Запланировано на</translation>
+        <translation>Запланировано на</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished">сегодня</translation>
+        <translation>сегодня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished">завтра</translation>
+        <translation>завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished">на этой неделе</translation>
+        <translation>на этой неделе</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished">когда-нибудь</translation>
+        <translation>когда-нибудь</translation>
     </message>
 </context>
 <context>
@@ -928,7 +928,7 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Упорядочить записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
@@ -981,7 +981,7 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутренняя ошибка</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
@@ -1001,12 +1001,12 @@
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось сохранить</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый проект &quot;%1&quot; не может быть сохранен.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
@@ -1033,7 +1033,7 @@
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая повторяющаяся запись &quot;%1&quot; не может быть сохранена.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1056,17 +1056,17 @@
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>База данных недоступна</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Рабочий процесс базы данных не готов.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Новая запись &quot;%1&quot; не может быть сохранена.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
