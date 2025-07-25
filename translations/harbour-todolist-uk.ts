@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Простий інструмент для планування подальших дій.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Переглянути старі записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -84,67 +84,67 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть назву</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть опис за бажанням</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>опис</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Скасувати</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Заплановано на</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>завтра</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>цього тижня</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>колись</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Демонструвати</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation type="unfinished"></translation>
+        <translation>Увімкнути інтелектуальне введення тексту</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>додати</translation>
     </message>
 </context>
 <context>
@@ -152,17 +152,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Архівовані записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Записів ще немає</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>На цій сторінці буде показано список усіх старих записів.</translation>
     </message>
 </context>
 <context>
@@ -178,27 +178,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>опис</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>текст</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>УВАГА</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Скасувати</translation>
     </message>
 </context>
 <context>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>зберегти</translation>
     </message>
 </context>
 <context>
@@ -232,22 +232,22 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторювані</translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished"></translation>
+        <translation>один раз</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>кожен %n день</numerusform>
+            <numerusform>кожні %n днів</numerusform>
+            <numerusform>кожні %n днів</numerusform>
         </translation>
     </message>
 </context>
@@ -264,17 +264,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>повторювані</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished"></translation>
+        <translation>Список справ</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Проекти</translation>
     </message>
 </context>
 <context>
@@ -542,62 +542,62 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="66"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Проекти</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="51"/>
         <source>Add project</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати проект</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Упорядкуйте записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Усі записи, що належать до цього проекту, будуть видалені!</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="113"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як активний</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="118"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як зупинене</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як завершене</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>редагувати або видаляти</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit</source>
-        <translation type="unfinished"></translation>
+        <translation>редагувати</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="144"/>
         <source>No entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Записів немає</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="145"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Це не повинно бути можливим. Швидше за все сталася помилка бази даних.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="55"/>
         <source>Add a project</source>
-        <translation type="unfinished"></translation>
+        <translation>Додайте проект</translation>
     </message>
 </context>
 <context>
@@ -605,52 +605,52 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Упорядкуйте записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
         <source>Add recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати повторюваний запис</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Тут можна налаштувати повторювані записи. Активні записи в цьому списку автоматично додаються до списку справ через регулярні проміжки часу.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation type="unfinished"></translation>
+        <translation>Це &lt;i&gt;не&lt;/i&gt; видалятиме записи заднім числом.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="114"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як активний</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="119"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як зупинене</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="124"/>
         <source>mark as done</source>
-        <translation type="unfinished"></translation>
+        <translation>позначити як виконане</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="141"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Записів ще немає</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="142"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>На цій сторінці буде показано список усіх повторюваних записів.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="128"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>натисніть і утримуйте, щоб</translation>
     </message>
 </context>
 <context>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation type="unfinished"></translation>
+        <translation>Починаючи з</translation>
     </message>
 </context>
 <context>
@@ -694,32 +694,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="121"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="122"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="175"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Записів ще немає</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="176"/>
         <source>Pull down to add entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Потягніть вниз, щоб додати записи</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Someday</source>
-        <translation type="unfinished"></translation>
+        <translation>Колись</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>This week</source>
-        <translation type="unfinished"></translation>
+        <translation>Цього тижня</translation>
     </message>
 </context>
 <context>
@@ -727,161 +727,161 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="75"/>
         <source>continue today</source>
-        <translation type="unfinished"></translation>
+        <translation>продовжити сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="81"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>зроблено</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="90"/>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>зроблено на сьогодні, продовжимо завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="137"/>
         <source>ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>ігнорувати</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>продовжити завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>not completely done yet</source>
-        <translation type="unfinished"></translation>
+        <translation>ще не повністю зроблено</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="152"/>
         <source>⭑ %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>⭑ %1, %2</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from today</source>
-        <translation type="unfinished"></translation>
+        <translation>від сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <location filename="../qml/components/TodoListItem.qml" line="159"/>
         <source>from yesterday</source>
-        <translation type="unfinished"></translation>
+        <translation>від учора</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="161"/>
         <source>from earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>від раніше</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for today</source>
-        <translation type="unfinished"></translation>
+        <translation>на сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="168"/>
         <source>carried over</source>
-        <translation type="unfinished"></translation>
+        <translation>перенесено</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored today</source>
-        <translation type="unfinished"></translation>
+        <translation>проігноровано сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>буде зроблено завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done today</source>
-        <translation type="unfinished"></translation>
+        <translation>зроблено сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>натисніть і утримуйте, щоб редагувати або видалити</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="130"/>
         <source>move to someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>перенести на якийсь день пізніше</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue next day</source>
-        <translation type="unfinished"></translation>
+        <translation>продовжити наступного дня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from this day</source>
-        <translation type="unfinished"></translation>
+        <translation>з цього дня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <source>from last day</source>
-        <translation type="unfinished"></translation>
+        <translation>з минулого дня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for this day</source>
-        <translation type="unfinished"></translation>
+        <translation>на цей день</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>for someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>колись пізніше</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored this day</source>
-        <translation type="unfinished"></translation>
+        <translation>проігнорував цей день</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done next day</source>
-        <translation type="unfinished"></translation>
+        <translation>буде зроблено наступного дня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="173"/>
         <source>to be done someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>буде зроблено колись пізніше</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done this day</source>
-        <translation type="unfinished"></translation>
+        <translation>зроблено цього дня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="97"/>
         <source>handle today</source>
-        <translation type="unfinished"></translation>
+        <translation>обробляти сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <location filename="../qml/components/TodoListItem.qml" line="177"/>
         <source>continue later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>продовжити пізніше цього тижня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <source>handle later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>обробити пізніше цього тижня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="172"/>
         <source>to be done later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>буде зроблено пізніше цього тижня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>continue someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>продовжити колись пізніше</translation>
     </message>
 </context>
 <context>
@@ -889,27 +889,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Заплановано на</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>сьогодні</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>завтра</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>цього тижня</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>колись</translation>
     </message>
 </context>
 <context>
@@ -917,28 +917,28 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="60"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Примітка</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Про та Архів</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Упорядкуйте записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
         <source>Add entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати запис</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="68"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Проведіть пальцем ліворуч, щоб додати повторювані записи. Ви можете вказати інтервал, через який вони автоматично додаватимуться до поточного списку справ.</translation>
     </message>
 </context>
 <context>
@@ -946,47 +946,47 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка бази даних</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM рррр &apos;(&apos;чч&apos;:&apos;мм&apos;)&apos;</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation type="unfinished"></translation>
+        <translation>чч&apos;:&apos;мм</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>ддд d MMM рррр</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM рррр</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутрішня помилка</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо обробити повідомлення невідомого працівника.</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>Список справ</translation>
     </message>
 </context>
 <context>
@@ -994,34 +994,34 @@
     <message>
         <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>За замовчуванням</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося оновити проект</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутрішній ідентифікатор проекту не надано.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="411"/>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося видалити проект</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Проект за замовчуванням не можна видалити.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося оновити запис</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1029,70 +1029,70 @@
         <location filename="../qml/js/storage.js" line="632"/>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внутрішній ідентифікатор запису не надано.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="392"/>
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти новий проект «%1».</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти новий повторюваний запис «%1».</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Database недоступний</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Працівник бази даних не готовий.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зберегти новий запис «%1».</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
         <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося перенести старі записи</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося скопіювати старі записи.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося оновити старі записи.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося оновити повторюваний запис</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося видалити повторюваний запис</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося видалити запис</translation>
     </message>
 </context>
 </TS>
