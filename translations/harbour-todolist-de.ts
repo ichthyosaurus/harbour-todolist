@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Alte Einträge ansehen</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -273,7 +273,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished">Projekte</translation>
+        <translation>Projekte</translation>
     </message>
 </context>
 <context>
@@ -549,7 +549,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Einträge ordnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
@@ -602,7 +602,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Einträge ordnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
@@ -886,27 +886,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished">Geplant für</translation>
+        <translation>Geplant für</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished">heute</translation>
+        <translation>heute</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished">morgen</translation>
+        <translation>morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished">diese Woche</translation>
+        <translation>diese Woche</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished">irgendwann</translation>
+        <translation>irgendwann</translation>
     </message>
 </context>
 <context>
@@ -925,7 +925,7 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Einträge ordnen</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
@@ -972,7 +972,7 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Interner Fehler</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
@@ -1048,7 +1048,7 @@
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenbank nicht verfügbar</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
