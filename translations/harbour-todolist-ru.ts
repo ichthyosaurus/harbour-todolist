@@ -245,9 +245,9 @@
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
         <translation>
-            <numerusform>каждый день</numerusform>
-            <numerusform>каждые %n дня(ей)</numerusform>
-            <numerusform></numerusform>
+            <numerusform>каждый %n день</numerusform>
+            <numerusform>каждые %n дня</numerusform>
+            <numerusform>каждые %n дней</numerusform>
         </translation>
     </message>
 </context>
@@ -394,7 +394,7 @@
         <translation>
             <numerusform>Показать лицензию</numerusform>
             <numerusform>Показать лицензии</numerusform>
-            <numerusform></numerusform>
+            <numerusform>Показать лицензии</numerusform>
         </translation>
     </message>
     <message>
@@ -442,7 +442,7 @@
         <translation>
             <numerusform>Лицензия</numerusform>
             <numerusform>Лицензии</numerusform>
-            <numerusform></numerusform>
+            <numerusform>Лицензии</numerusform>
         </translation>
     </message>
     <message>
@@ -572,7 +572,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
-        <translation>Отметить как завершённый</translation>
+        <translation>отметить как завершённый</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
@@ -615,12 +615,12 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройте повторяющиеся записи здесь. Активные записи в этом списке автоматически добавляются в список дел через регулярные интервалы.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</translation>
+        <translation>Это &lt;i&gt;не&lt;/i&gt; удалит записи ретроактивно.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="114"/>
@@ -635,7 +635,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="124"/>
         <source>mark as done</source>
-        <translation>Отметить как завершённый</translation>
+        <translation>отметить как выполненное</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="141"/>
@@ -923,7 +923,7 @@
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Про приложение и архив</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
@@ -986,7 +986,7 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не возможно обработать сообщение от неизвестного работника.</translation>
     </message>
 </context>
 <context>
