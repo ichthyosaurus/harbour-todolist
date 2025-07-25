@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Просмотреть старые записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -264,7 +264,7 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Повторения</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
@@ -552,7 +552,7 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Упорядочить записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Упорядочить записи</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
