@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir sonraki adımda ne yapılacağını planlamak için basit bir araç.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Nynorsk</source>
-        <translation type="unfinished"></translation>
+        <translation>Norveççe Nynorsk</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski girdileri görüntüle</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -84,67 +84,67 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık girin</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Başlık</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsiyonel tanımı girin</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanım</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>İptal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Şu zaman için planlandı</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>yarın</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>bu hafta</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>bir gün</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation type="unfinished"></translation>
+        <translation>Tahmini metin girişini etkinleştir</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekle</translation>
     </message>
 </context>
 <context>
@@ -152,17 +152,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Arşivlenmiş Girdiler</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz girdi yok</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sayfa tüm eski girdileri gösterir.</translation>
     </message>
 </context>
 <context>
@@ -178,27 +178,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanım</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Metin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>İptal</translation>
     </message>
 </context>
 <context>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Sil</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydet</translation>
     </message>
 </context>
 <context>
@@ -232,20 +232,20 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen</translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished"></translation>
+        <translation>bir kez</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>her %n günde</numerusform>
         </translation>
     </message>
 </context>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="119"/>
         <source>License text</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisans metni</translation>
     </message>
 </context>
 <context>
@@ -262,17 +262,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenenler</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished"></translation>
+        <translation>Yapılacaklar listesi</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeler</translation>
     </message>
 </context>
 <context>
@@ -280,7 +280,7 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="14"/>
         <source>Donate on Liberapay</source>
-        <translation type="unfinished"></translation>
+        <translation>Liberapay ile bağışta bulun</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="15"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="56"/>
         <source>Why donate?</source>
-        <translation type="unfinished"></translation>
+        <translation>Neden bağış yapmalısınız?</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="59"/>
@@ -366,7 +366,7 @@
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
-        <translation type="unfinished"></translation>
+        <translation>Değişim günlüğü</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
         <source>News</source>
-        <translation type="unfinished"></translation>
+        <translation>Haberler</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="62"/>
@@ -518,7 +518,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>Harici olarak aç</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
@@ -536,62 +536,62 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="66"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeler</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="51"/>
         <source>Add project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje ekle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdileri düzenle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu projeye ait olan bütün girdiler silinecektir!</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="113"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>aktif olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="118"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>durdurulmuş olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
-        <translation type="unfinished"></translation>
+        <translation>bitmiş olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>düzenle veya sil</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit</source>
-        <translation type="unfinished"></translation>
+        <translation>düzenle</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="144"/>
         <source>No entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdi yok</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="145"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Böyle bir hata mümkün değil. Muhtemelen veritabanı hatası meydana geldi.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="55"/>
         <source>Add a project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje ekle</translation>
     </message>
 </context>
 <context>
@@ -599,52 +599,52 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdileri düzenle</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
         <source>Add recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen girdi ekle</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen girişleri buradan yapılandırın. Bu listedeki aktif girişler düzenli aralıklarla otomatik olarak yapılacaklar listesine eklenir.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu, girdileri geriye dönük olarak &lt;i&gt;silmeyecektir&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="114"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>aktif olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="119"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>durdurulmuş olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="124"/>
         <source>mark as done</source>
-        <translation type="unfinished"></translation>
+        <translation>bitmiş olarak işaretle</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="141"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz girdi yok</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="142"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu sayfa yinelenen girdileri gösterir.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="128"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>silmek veya düzenlemek için basılı tutun</translation>
     </message>
 </context>
 <context>
@@ -652,7 +652,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation type="unfinished"></translation>
+        <translation>Şu tarihte başlar</translation>
     </message>
 </context>
 <context>
@@ -660,7 +660,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="9"/>
         <source>Hi there!</source>
-        <translation type="unfinished"></translation>
+        <translation>Merhaba!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="10"/>
@@ -688,32 +688,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="121"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Bugün</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="122"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Yarın</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="175"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Henüz girdi yok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="176"/>
         <source>Pull down to add entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdi eklemek için aşağı kaydırın</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Someday</source>
-        <translation type="unfinished"></translation>
+        <translation>Bir gün</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>This week</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu hafta</translation>
     </message>
 </context>
 <context>
@@ -721,161 +721,161 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="75"/>
         <source>continue today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün devam et</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="81"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>bitti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="90"/>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün bitti, yarın devam et</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="137"/>
         <source>ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>görmezden gel</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>yarın devam et</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>not completely done yet</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün tamamen bitmedi</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="152"/>
         <source>⭑ %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>⭑ %1, %2</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugünden itibaren</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <location filename="../qml/components/TodoListItem.qml" line="159"/>
         <source>from yesterday</source>
-        <translation type="unfinished"></translation>
+        <translation>dünden itibaren</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="161"/>
         <source>from earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>önceden beri</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün için</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="168"/>
         <source>carried over</source>
-        <translation type="unfinished"></translation>
+        <translation>devredildi</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün görmezden gelindi</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>yatın yapılacak</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün bitti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>press and hold to edit or delete</source>
-        <translation type="unfinished"></translation>
+        <translation>silmek veya düzenlemek için basılı tutun</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="130"/>
         <source>move to someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>bir gün sonraya taşı</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue next day</source>
-        <translation type="unfinished"></translation>
+        <translation>gelecek gün devam et</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from this day</source>
-        <translation type="unfinished"></translation>
+        <translation>bugünden itibaren</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <source>from last day</source>
-        <translation type="unfinished"></translation>
+        <translation>geçen günden itibaren</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for this day</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün için</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>for someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>daha sonra bir gün için</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored this day</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün görmezden gelindi</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done next day</source>
-        <translation type="unfinished"></translation>
+        <translation>gelecek gün yapılmak üzere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="173"/>
         <source>to be done someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>bir gün yapılmak üzere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done this day</source>
-        <translation type="unfinished"></translation>
+        <translation>bu günde bitti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="97"/>
         <source>handle today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün hallet</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <location filename="../qml/components/TodoListItem.qml" line="177"/>
         <source>continue later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>bu hafta başka zaman devam et</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <source>handle later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>bu hafta başka zaman hallet</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="172"/>
         <source>to be done later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>bu hafta içinde yapılacak</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>continue someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>başka bir gün devam et</translation>
     </message>
 </context>
 <context>
@@ -883,27 +883,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Şu tarih için ayarlandı</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>bugün</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>yarın</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>bu hafta</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>bir gün</translation>
     </message>
 </context>
 <context>
@@ -911,28 +911,28 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="60"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Not</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Hakkında ve Arşiv</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdileri düzenle</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
         <source>Add entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdi ekle</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="68"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen girdiler eklemek için sola kaydırın. Geçerli yapılacaklar listesine otomatik olarak eklenecekleri bir aralık belirleyebilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -940,47 +940,47 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Veritabanı hatası</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation type="unfinished"></translation>
+        <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>ddd d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili hata</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilinmeyen bir çalışan mesajı işlenemiyor.</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>To-do List</translation>
     </message>
 </context>
 <context>
@@ -988,34 +988,34 @@
     <message>
         <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje güncellenemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili bir proje kimliği verilmemiştir.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="411"/>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proje silinemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsayılan proje silinemez.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdi güncellenemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1023,70 +1023,70 @@
         <location filename="../qml/js/storage.js" line="632"/>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili giriş kimliği sağlanmamıştır.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="392"/>
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaydedilemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni proje &quot;%1&quot; kaydedilemedi.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni yinelenen giriş &quot;%1&quot; kaydedilemedi.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Veritabanı kullanılamıyor</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veritabanı çalışanı hazır değil.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni giriş &quot;%1&quot; kaydedilemedi.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
         <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski girdiler taşınamadı</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski girdiler kopyalanamadı.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eski girdiler güncellenemedi.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen girdi güncellenemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Yinelenen girdi silinemedi</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Girdi silinemedi</translation>
     </message>
 </context>
 </TS>

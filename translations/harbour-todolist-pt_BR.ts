@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="et" sourcelanguage="en_US">
+<TS version="2.1" sourcelanguage="en_US" language="pt_BR">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="60"/>
         <source>Development</source>
-        <translation>Arendus</translation>
+        <translation>Desenvolvimento</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>A simple tool for planning what to do next.</source>
-        <translation>Lihtne tarvik oma tegemiste planeerimiseks.</translation>
+        <translation>Uma ferramenta simples para planejar o que fazer depois.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
         <source>Programming</source>
-        <translation>Koodi kirjutamine</translation>
+        <translation>Programação</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="74"/>
         <source>Translations</source>
-        <translation>Tõlked</translation>
+        <translation>Traduções</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="83"/>
         <source>Spanish</source>
-        <translation>hispaania</translation>
+        <translation>Espanhol</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="90"/>
         <source>Russian</source>
-        <translation>vene</translation>
+        <translation>Russo</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>Polish</source>
-        <translation>poola</translation>
+        <translation>Polonês</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Nynorsk</source>
-        <translation>uusnorra</translation>
+        <translation>Novo Norueguês</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
         <source>Indonesian</source>
-        <translation>indoneesia</translation>
+        <translation>Indonésio</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="121"/>
         <source>Estonian</source>
-        <translation>eesti</translation>
+        <translation>Estoniano</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation>Vaata vanu tegemisi</translation>
+        <translation>Ver entradas antigas</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
         <source>Swedish</source>
-        <translation>rootsi</translation>
+        <translation>Sueco</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="133"/>
         <source>Chinese</source>
-        <translation>hiina</translation>
+        <translation>Chinês</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="115"/>
         <source>German</source>
-        <translation>saksa</translation>
+        <translation>Alemão</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="127"/>
         <source>English</source>
-        <translation>inglise</translation>
+        <translation>Inglês</translation>
     </message>
 </context>
 <context>
@@ -84,67 +84,67 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation>Sisesta pealkiri</translation>
+        <translation>Insira o título</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation>Pealkiri</translation>
+        <translation>Título</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation>Kui soovid, sisesta kirjeldus</translation>
+        <translation>Insira a descrição opcional</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation>Kirjeldus</translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation>Katkesta</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation>Ajastatud</translation>
+        <translation>Previsto para</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation>tänaseks</translation>
+        <translation>hoje</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation>homseks</translation>
+        <translation>amanhã</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation>selleks nädalaks</translation>
+        <translation>esta semana</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation>ühel heal päeval tulevikus</translation>
+        <translation>algum dia</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation>Projekt</translation>
+        <translation>Projeto</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation>Kasuta ennustavat tekstisisestust</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation>Lisa</translation>
+        <translation>Adicionar</translation>
     </message>
 </context>
 <context>
@@ -152,17 +152,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
-        <translation>Vanad tegemised</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
-        <translation>Tegemiste kirjeid veel pole</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
-        <translation>Siin lehel saavad olema kirjas vanad tegemised.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -170,7 +170,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/AskForSupport.qml" line="11"/>
         <source>Please take a moment to consider if you can contribute to this project in one way or another.</source>
-        <translation>Palun kaalu hetkeks, kas sul on viisil või teisel võimalik seda arendusprojekti toetada.</translation>
+        <translation>Por favor, reserve um momento para considerar se você pode contribuir vom este projeto de alguma forma.</translation>
     </message>
 </context>
 <context>
@@ -178,27 +178,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation>Kustuta</translation>
+        <translation>Apagar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation>Kirjeldus</translation>
+        <translation>Descrição</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation>Tekst</translation>
+        <translation>Texto</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation>Hoiatus</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation>Katkesta</translation>
+        <translation>Cancelar</translation>
     </message>
 </context>
 <context>
@@ -206,12 +206,12 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="53"/>
         <source>show less</source>
-        <translation>näita vähem</translation>
+        <translation>exibir menos</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="53"/>
         <source>show more</source>
-        <translation>näita rohkem</translation>
+        <translation>exibir mais</translation>
     </message>
 </context>
 <context>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation>Kustuta</translation>
+        <translation>Apagar</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation>Salvesta</translation>
+        <translation>Salvar</translation>
     </message>
 </context>
 <context>
@@ -232,21 +232,20 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation>Korduvad</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation>üks kord</translation>
+        <translation>uma vez</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation>
-            <numerusform>kord päevas</numerusform>
-            <numerusform>iga %n päeva järel</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -255,7 +254,7 @@
     <message>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="119"/>
         <source>License text</source>
-        <translation>Litsentsi tekst</translation>
+        <translation>Texto de licença</translation>
     </message>
 </context>
 <context>
@@ -263,17 +262,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation>Korduvad</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation>Tegemiste loend</translation>
+        <translation>Lista de Tarefas</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation>Projektid</translation>
+        <translation>Projetos</translation>
     </message>
 </context>
 <context>
@@ -281,62 +280,62 @@
     <message>
         <location filename="../qml/MySupportDialog.qml" line="14"/>
         <source>Donate on Liberapay</source>
-        <translation>Toeta meid Liberapay vahendusel</translation>
+        <translation>Doe pelo Liberapay</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="15"/>
         <source>Pay the amount of a cup of coffee, a slice of pizza, or a ticket to the theater.</source>
-        <translation>Toetuseks sobib ka kohvitassi, pitsaviilu või teatripileti suurusjärgus summa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="22"/>
         <source>Translate on Weblate</source>
-        <translation>Tõlgi Weblate&apos;i abil</translation>
+        <translation>Traduza no Weblate</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="23"/>
         <source>Help with translating this app in as many languages as possible.</source>
-        <translation>Aita seda rakendust tõlkida nii paljudesse keeltesse, kui võimalik.</translation>
+        <translation>Ajude a traduzir este app pela maior quantidade possível de idiomas.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="30"/>
         <source>Develop on Github</source>
-        <translation>Osale arenduses Githubi abil</translation>
+        <translation>Desenvolva no Github</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="31"/>
         <source>Support with maintenance and packaging, write code, or provide valuable bug reports.</source>
-        <translation>Osale rakenduse haldamisel ja pakendamisel, uue lähtekoodi kirjutamisel või oluliste veateadete koostamisel.</translation>
+        <translation>Ajude com a manutenção e novas versões, escreva códigos ou dê valiosos reportes de bugs.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="37"/>
         <source>Why should you care?</source>
-        <translation>Miks see peaks oluline olema?</translation>
+        <translation>Por que você deveria se importar?</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="40"/>
         <source>This project is built with love and passion by a single developer in their spare time, and is provided to you free of charge.</source>
-        <translation>Seda tarkvara on hoole ja armastusega arendanud üks arendaja oma vabast ajast ning tulemus on sulle saadaval tasuta.</translation>
+        <translation>Este projeto é construído com amor e paixão por um único desenvolvedor em seu tempo livre, e é disponibilizado à você livre de custos.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="46"/>
         <source>I develop Free Software because I am convinced that it is the ethical thing to do - and it is a fun hobby. However, developing software takes a lot of time and effort. As Sailfish and living in general costs money, I need your support to be able to spend time on non-paying projects like this.</source>
-        <translation>Ma arendan avatud lähtekoodiga tarkvara, sest selline tegevus on eetiline, aga samas ka suurepärane hobi. Kuid samas kulub selliseks arendustööks palju aega ja märgatavaid jõupingutusi. Kuna Sailfishi kasutamine ja igapäevaelu on seotud kuludega, siis ma vajan sinu abi, et oleks võimalik selliste mitteäriliste projektidega tegeleda.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="56"/>
         <source>Why donate?</source>
-        <translation>Miks peaksid rahaliselt toetama?</translation>
+        <translation>Por que doar?</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="59"/>
         <source>Jolla raised prices and is trying to force developers (who work for free) to pay rent for Sailfish.</source>
-        <translation>Jolla on tõstnud hindu ja proovib sundida (tasuta töötavaid) arendajaid maksma Sailfishi kasutamise eest tasu.</translation>
+        <translation>Jolla aumentou os preços e está tentando forçar os desenvolvedores (que trabalham de graça) a pagar mensalidade ao Sailfish.</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="64"/>
         <source>If you can afford it, donating is the easiest way to ensure that I can continue working on apps for Sailfish. Any amount is appreciated, be it a cup of coffee, a slice of pizza, or more.</source>
-        <translation>Kui see on sul võimalik, siis sinu rahaline toetus võimaldab mul jätkata rakenduste loomist ja arendamist Sailfishile. Igasugune summa on teretulnud, kas kohvitassi või pitsaviilu jagu, aga ka enamgi.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -344,42 +343,42 @@
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="56"/>
         <source>About</source>
-        <translation>Rakenduse teave</translation>
+        <translation>Sobre</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="85"/>
         <source>Version %1</source>
-        <translation>Versioon %1</translation>
+        <translation>Versão %1</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="101"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="33"/>
         <source>Development</source>
-        <translation>Arendus</translation>
+        <translation>Desenvolvimento</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="104"/>
         <source>show contributors</source>
-        <translation>näita kaasautoreid</translation>
+        <translation>exibir contribuidores</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
-        <translation>Muudatuste logi</translation>
+        <translation>Registro de mudanças</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
         <source>License</source>
-        <translation>Litsents</translation>
+        <translation>Licença</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="135"/>
         <source>show license(s)</source>
         <translation>
-            <numerusform>näita litsentsi</numerusform>
-            <numerusform>näita litsentse</numerusform>
+            <numerusform>exibir licença</numerusform>
+            <numerusform>exibir licenças</numerusform>
         </translation>
     </message>
     <message>
@@ -388,50 +387,50 @@
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="25"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="50"/>
         <source>Source Code</source>
-        <translation>Lähtekood</translation>
+        <translation>Código Fonte</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/InfoSection.qml" line="15"/>
         <source>show details</source>
-        <translation>näita üksikasju</translation>
+        <translation>exibir detalhes</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="23"/>
         <source>Contributors</source>
-        <translation>Kaasautorid</translation>
+        <translation>Contribuidores</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>License(s)</source>
         <translation>
-            <numerusform>Litsents</numerusform>
-            <numerusform>Litsentsid</numerusform>
+            <numerusform>Licença</numerusform>
+            <numerusform>Licenças</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="124"/>
         <source>Donations</source>
-        <translation>Rahalised toetused</translation>
+        <translation>Doações</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="112"/>
         <source>Translations</source>
-        <translation>Tõlked</translation>
+        <translation>Traduções</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="39"/>
         <source>Acknowledgements</source>
-        <translation>Tänuavaldused</translation>
+        <translation>Agradecimentos</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="11"/>
         <source>Thank you!</source>
-        <translation>Täname!</translation>
+        <translation>Obrigado!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
         <source>Note: please check the source code for most accurate information.</source>
-        <translation>Märkus: kõige täpsema teabe saamiseks palun vaata lähtekoodi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="106"/>
@@ -439,53 +438,53 @@
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="47"/>
         <source>Homepage</source>
-        <translation>Avaleht</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="15"/>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>Details</source>
-        <translation>Lisateave</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="15"/>
         <source>External Link</source>
-        <translation>Väline link</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="32"/>
         <source>Open in browser</source>
-        <translation>Ava veebibrauseris</translation>
+        <translation>Abrir no navegador</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation>Kopeerisin lõikelauale: %1</translation>
+        <translation>Copiado para a área de transferência: %1</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="41"/>
         <source>Copy to clipboard</source>
-        <translation>Kopeeri lõikelauale</translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
         <source>Download license texts</source>
-        <translation>Laadi alla litsentside tekstid</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="61"/>
         <source>News</source>
-        <translation>Uudised</translation>
+        <translation>Novidades</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/ChangelogNews.qml" line="62"/>
         <source>Changes since version %1</source>
-        <translation>Muudatused alates versioonist %1</translation>
+        <translation>Mudanças desde a versão %1</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="120"/>
         <source>Please refer to &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</source>
-        <translation>Palun vaata siia: &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
+        <translation>Por favor, consulte &lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -493,17 +492,17 @@
     <message>
         <location filename="../qml/modules/Opal/About/private/DonationsGroup.qml" line="7"/>
         <source>If you want to support my work, you can buy me a cup of coffee.</source>
-        <translation>Kui sa soovid mu tööd toetada, võid mulle tassi kohvi osta.</translation>
+        <translation>Se você deseja apoiar o meu trabalho, você pode me pagar um copo de café.</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/DonationsGroup.qml" line="8"/>
         <source>You can support this project by contributing, or by donating using any of these services.</source>
-        <translation>Sa võid seda arendusprojekti toetada kas kaastööd tehes või toetada rahaliselt järgmiste teenuste abil.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/DonationsGroup.qml" line="9"/>
         <source>Your contributions to translations or code would be most welcome.</source>
-        <translation>Sinu panus tõlgete või rakenduse koodi näol oleks väga teretulnud.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -511,27 +510,27 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>External Link</source>
-        <translation>Väline link</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open in browser</source>
-        <translation>Ava veebibrauseris</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
         <source>Open externally</source>
-        <translation>Ava välise rakendusega</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
         <source>Copied to clipboard: %1</source>
-        <translation>Kopeerisin lõikelauale: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="41"/>
         <source>Copy to clipboard</source>
-        <translation>Kopeeri lõikelauale</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -539,62 +538,62 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="66"/>
         <source>Projects</source>
-        <translation>Projektid</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="51"/>
         <source>Add project</source>
-        <translation>Lisa projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="47"/>
         <source>Arrange entries</source>
-        <translation>Järjesta tegemisi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="94"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation>Kõik selles projektis leiduvad tegemiste kirjed kustutatakse!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="113"/>
         <source>mark as active</source>
-        <translation>märgi aktiivseks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="118"/>
         <source>mark as halted</source>
-        <translation>märgi peatatuks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="123"/>
         <source>mark as finished</source>
-        <translation>märgi lõpetatuks</translation>
+        <translation>marcar como concluído</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit or delete</source>
-        <translation>muuda või kustuta</translation>
+        <translation>editar ou apagar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="128"/>
         <source>edit</source>
-        <translation>muuda</translation>
+        <translation>editar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="144"/>
         <source>No entries</source>
-        <translation>Tegemisi pole kirjas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="145"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation>See nüüd küll poleks pidanud juhtuma. Tõenäoliselt tekkis andmebaasiviga.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="55"/>
         <source>Add a project</source>
-        <translation>Lisa projekt</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -602,52 +601,52 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation>Järjesta tegemisi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="49"/>
         <source>Add recurring entry</source>
-        <translation>Lisa korduv tegevus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="73"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation>Seadista korduvaid tegemisi siin. Aktiivsed tegevused lisanduvad etteantud vahemike alusel ka põhivaatesse.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="108"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation>Sellega sa &lt;i&gt;ei&lt;/i&gt; kustuta tegemisi tagasiulatuvalt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="114"/>
         <source>mark as active</source>
-        <translation>märgi aktiivseks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="119"/>
         <source>mark as halted</source>
-        <translation>märgi peatatuks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="124"/>
         <source>mark as done</source>
-        <translation>märgi tehtuks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="141"/>
         <source>No entries yet</source>
-        <translation>Sa pole veel ühtegi korduvat tegemist lisanud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="142"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation>Kui mõne lisad, siis saavad nad olema kirjas siin.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="128"/>
         <source>press and hold to edit or delete</source>
-        <translation>muutmiseks või kustutamiseks vajuta ja hoia paigal</translation>
+        <translation>pressione e segure para editar ou apagar</translation>
     </message>
 </context>
 <context>
@@ -655,7 +654,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation>Algusega</translation>
+        <translation>Começando de</translation>
     </message>
 </context>
 <context>
@@ -663,27 +662,27 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="9"/>
         <source>Hi there!</source>
-        <translation>Hei!</translation>
+        <translation>Olá!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="10"/>
         <source>Thank you for using my little app! Maybe you can contribute back?</source>
-        <translation>Tänud, et kasutad minu pisikest rakendust! Kas sa sooviksid aidata?</translation>
+        <translation>Obrigado por usar meu pequeno app! Talvez você poderia contribuir de volta?</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="11"/>
         <source>Thank you for your support!</source>
-        <translation>Tänan sind toetuse eest!</translation>
+        <translation>Obrigado pelo seu apoio!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="55"/>
         <source>Remind me later</source>
-        <translation>Tuleta mulle hiljem meelde</translation>
+        <translation>Me lembre mais tarde</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
         <source>Don&apos;t ask me again</source>
-        <translation>Ära enam küsi minult uuesti</translation>
+        <translation>Não pergunte novamente</translation>
     </message>
 </context>
 <context>
@@ -691,32 +690,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="121"/>
         <source>Today</source>
-        <translation>Täna</translation>
+        <translation>Hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="122"/>
         <source>Tomorrow</source>
-        <translation>Homme</translation>
+        <translation>Amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="175"/>
         <source>No entries yet</source>
-        <translation>Sa pole veel ühtegi tegemist lisanud</translation>
+        <translation>Ainda sem entradas</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="176"/>
         <source>Pull down to add entries</source>
-        <translation>Lisamiseks viipa ülalt alla</translation>
+        <translation>Deslize para baixo para adicionar entradas</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Someday</source>
-        <translation>Ühel heal päeval tulevikus</translation>
+        <translation>Algum dia</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>This week</source>
-        <translation>Sel nädalal</translation>
+        <translation>Esta semana</translation>
     </message>
 </context>
 <context>
@@ -724,161 +723,161 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="75"/>
         <source>continue today</source>
-        <translation>jätka täna</translation>
+        <translation>continuar hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="81"/>
         <source>done</source>
-        <translation>valmis</translation>
+        <translation>concluído</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="90"/>
         <source>done for today, continue tomorrow</source>
-        <translation>tänaseks lõpetatud, aga jätkan homme</translation>
+        <translation>concluído por hoje, continue amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="137"/>
         <source>ignore</source>
-        <translation>eira</translation>
+        <translation>ignorar</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue tomorrow</source>
-        <translation>jätkan homme</translation>
+        <translation>continuar amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="143"/>
         <source>not completely done yet</source>
-        <translation>pole päris valmis</translation>
+        <translation>ainda incompleto</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="152"/>
         <source>⭑ %1, %2</source>
-        <translation>⭑ %1, %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from today</source>
-        <translation>tänasest</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <location filename="../qml/components/TodoListItem.qml" line="159"/>
         <source>from yesterday</source>
-        <translation>eilsest</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="161"/>
         <source>from earlier</source>
-        <translation>varasemast</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for today</source>
-        <translation>tänaseks</translation>
+        <translation>para hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="168"/>
         <source>carried over</source>
-        <translation>edasilükatud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored today</source>
-        <translation>täna eiratud</translation>
+        <translation>ignorado hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done tomorrow</source>
-        <translation>liiguta homseks</translation>
+        <translation>para ser feito amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done today</source>
-        <translation>tehtud täna</translation>
+        <translation>concluído hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>press and hold to edit or delete</source>
-        <translation>muutmiseks ja kustutamiseks vajuta ja hoia</translation>
+        <translation>pressione e segure para editar ou apagar</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="130"/>
         <source>move to someday later</source>
-        <translation>lükka kuhugile tulevikku</translation>
+        <translation>mover para algum dia depois</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="107"/>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>continue next day</source>
-        <translation>jätka homme</translation>
+        <translation>continuar no dia seguinte</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="155"/>
         <source>from this day</source>
-        <translation>tänasest</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="157"/>
         <source>from last day</source>
-        <translation>eilsest</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="166"/>
         <source>for this day</source>
-        <translation>tänaseks</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>for someday later</source>
-        <translation>kuhugile tulevikku</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="170"/>
         <source>ignored this day</source>
-        <translation>eira seda päeva</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="171"/>
         <source>to be done next day</source>
-        <translation>tegemiseks järgmisel päeval</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="173"/>
         <source>to be done someday later</source>
-        <translation>tegemiseks ühel heal päeval tulevikus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>done this day</source>
-        <translation>tehtud sel päeval</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="97"/>
         <source>handle today</source>
-        <translation>tegele täna</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <location filename="../qml/components/TodoListItem.qml" line="177"/>
         <source>continue later this week</source>
-        <translation>jätka hiljem sel nädalal</translation>
+        <translation>continuar mais tarde esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="120"/>
         <source>handle later this week</source>
-        <translation>tegele hiljem sel nädalal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="172"/>
         <source>to be done later this week</source>
-        <translation>tegemiseks hiljem sel nädalal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>continue someday later</source>
-        <translation>jätka ühel heal päeval tulevikus</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -886,27 +885,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation>Ajastatud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation>tänaseks</translation>
+        <translation>hoje</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation>homseks</translation>
+        <translation>amanhã</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation>selleks nädalaks</translation>
+        <translation>esta semana</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation>ühel heal päeval tulevikus</translation>
+        <translation>algum dia</translation>
     </message>
 </context>
 <context>
@@ -914,28 +913,28 @@
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="60"/>
         <source>Note</source>
-        <translation>Märkus</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="76"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation>Rakenduse teave ja arhiiv</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="83"/>
         <source>Arrange entries</source>
-        <translation>Järjesta tegemisi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="86"/>
         <source>Add entry</source>
-        <translation>Lisa tegevus</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="68"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation>Korduvate tegemiste lisamiseks viipa vasakule. Saad määrata ka ajavahemiku, mille alusel nad saavad olema nähtavad üldloendis.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -943,47 +942,47 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
-        <translation>Andmebaasiviga</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation>dd.MM.yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation>hh&apos;:&apos;mm</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation>ddd d MMM yyyy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation>dd.MM.yyyy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation>Sisemine viga</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation>Protsessi töö tulemusena tekkis tundmatu sõnum, mida me hetkel käsitleda ei oska.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation>Tegemiste loend</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -991,34 +990,34 @@
     <message>
         <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
-        <translation>Vaikimisi</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
-        <translation>Projekti uuendamine ei õnnestunud</translation>
+        <translation>Falha ao atualizar projeto</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
-        <translation>Projekti sisemine id andmebaasis oli puudu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="411"/>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
-        <translation>Projekti kustutamine ei õnnestunud</translation>
+        <translation>Falha ao apagar projeto</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
-        <translation>Vaikimisi projekti ei saa kustutada.</translation>
+        <translation>O projeto padrão não pode ser apagado.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
-        <translation>Tegevuse uuendamine ei õnnestunud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1026,70 +1025,70 @@
         <location filename="../qml/js/storage.js" line="632"/>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
-        <translation>Tegevuse sisemine id andmebaasis oli puudu.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="392"/>
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation>Salvestamine ei õnnestunud</translation>
+        <translation>Falha ao salvar</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation>Uut projekti „%1“ ei õnnestunud salvestada.</translation>
+        <translation>O novo projeto “%1” não pôde ser salvo.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation>Uut korduvat tegevust „%1“ ei õnnestunud salvestada.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation>Andmebaas pole saadaval</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation>Andmebaasi protsess pole tööks valmis.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation>Uut tegevust „%1“ ei õnnestunud salvestada.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
         <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
-        <translation>Vanade kirjete ümbertõstmine ei õnnestunud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
-        <translation>Vanade kirjete kopeerimine ei õnnestunud.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
-        <translation>Vanade kirjete uuendamine ei õnnestunud.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
-        <translation>Korduva tegevuse uuendamine ei õnnestunud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
-        <translation>Korduva tegevuse kustutamine ei õnnestunud</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
-        <translation>Tegevuse kustutamine ei õnnestunud</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
