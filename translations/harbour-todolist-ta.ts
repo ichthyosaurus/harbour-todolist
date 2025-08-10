@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US" language="ta">
+<TS version="2.1" language="ta" sourcelanguage="en_US">
 <context>
     <name>AboutPage</name>
     <message>
@@ -148,6 +148,19 @@
     </message>
 </context>
 <context>
+    <name>AddRegularDialog</name>
+    <message>
+        <location filename="../qml/pages/AddRegularDialog.qml" line="13"/>
+        <source>Note</source>
+        <translation type="unfinished">குறிப்பு</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AddRegularDialog.qml" line="26"/>
+        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
+        <translation type="unfinished">தொடர்ச்சியான உள்ளீடுகளைச் சேர்க்க இடதுபுறமாக ச்வைப் செய்யவும். தற்போதைய செய்ய வேண்டிய பட்டியலில் அவை தானாக சேர்க்கப்படும் ஒரு இடைவெளியை நீங்கள் குறிப்பிடலாம்.</translation>
+    </message>
+</context>
+<context>
     <name>ArchivePage</name>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
@@ -168,7 +181,7 @@
 <context>
     <name>AskForSupport</name>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/AskForSupport.qml" line="11"/>
+        <location filename="../qml/modules/Opal/SupportMe/AskForSupport.qml" line="13"/>
         <source>Please take a moment to consider if you can contribute to this project in one way or another.</source>
         <translation>இந்த திட்டத்திற்கு நீங்கள் ஒரு வழியில் அல்லது வேறு வழியில் பங்களிக்க முடியுமா என்பதைக் கருத்தில் கொள்ள சிறிது நேரம் ஒதுக்குங்கள்.</translation>
     </message>
@@ -204,12 +217,12 @@
 <context>
     <name>DetailsDrawer</name>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="53"/>
+        <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="54"/>
         <source>show less</source>
         <translation>குறைவாகக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="53"/>
+        <location filename="../qml/modules/Opal/SupportMe/DetailsDrawer.qml" line="54"/>
         <source>show more</source>
         <translation>மேலும் காட்டு</translation>
     </message>
@@ -342,40 +355,40 @@
 <context>
     <name>Opal.About</name>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="56"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="57"/>
         <source>About</source>
         <translation>பற்றி</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="85"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="86"/>
         <source>Version %1</source>
         <translation>பதிப்பு %1</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="101"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="102"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsPage.qml" line="33"/>
         <source>Development</source>
         <translation>வளர்ச்சி</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="104"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="105"/>
         <source>show contributors</source>
         <translation>பங்களிப்பாளர்களைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="109"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="110"/>
         <location filename="../qml/modules/Opal/About/private/ChangelogPage.qml" line="16"/>
         <source>Changelog</source>
         <translation>மாற்றபதிவு</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="130"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="131"/>
         <source>License</source>
         <translation>உரிமம்</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="135"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="136"/>
         <source>show license(s)</source>
         <translation>
             <numerusform>உரிமத்தைக் காட்டு</numerusform>
@@ -383,7 +396,7 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="115"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="116"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="17"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="25"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="50"/>
@@ -391,7 +404,7 @@
         <translation>மூலக் குறியீடு</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/InfoSection.qml" line="15"/>
+        <location filename="../qml/modules/Opal/About/InfoSection.qml" line="16"/>
         <source>show details</source>
         <translation>விவரங்களைக் காட்டு</translation>
     </message>
@@ -409,12 +422,12 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="124"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="125"/>
         <source>Donations</source>
         <translation>நன்கொடைகள்</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="112"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="113"/>
         <source>Translations</source>
         <translation>மொழிபெயர்ப்புகள்</translation>
     </message>
@@ -434,7 +447,7 @@
         <translation>குறிப்பு: மிகவும் துல்லியமான தகவல்களுக்கு மூலக் குறியீட்டைச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="106"/>
+        <location filename="../qml/modules/Opal/About/AboutPageBase.qml" line="107"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="18"/>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="24"/>
         <location filename="../qml/modules/Opal/About/private/LicenseListPart.qml" line="47"/>
@@ -446,26 +459,6 @@
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="34"/>
         <source>Details</source>
         <translation>விவரங்கள்</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="15"/>
-        <source>External Link</source>
-        <translation>வெளிப்புற இணைப்பு</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="32"/>
-        <source>Open in browser</source>
-        <translation>உலாவியில் திற</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="36"/>
-        <source>Copied to clipboard: %1</source>
-        <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது: %1</translation>
-    </message>
-    <message>
-        <location filename="../qml/modules/Opal/About/private/ExternalUrlPage.qml" line="41"/>
-        <source>Copy to clipboard</source>
-        <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="28"/>
@@ -509,90 +502,95 @@
 <context>
     <name>Opal.LinkHandler</name>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="24"/>
         <source>External Link</source>
         <translation>வெளிப்புற இணைப்பு</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="44"/>
+        <source>Copy text to clipboard</source>
+        <translation>கிளிப்போர்டுக்கு உரையை நகலெடுக்கவும்</translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="55"/>
+        <source>Share</source>
+        <translation>பங்கு</translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="60"/>
         <source>Open in browser</source>
         <translation>உலாவியில் திற</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="32"/>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="60"/>
         <source>Open externally</source>
         <translation>வெளிப்புறமாக திறக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="36"/>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="17"/>
         <source>Copied to clipboard: %1</source>
-        <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது: %1</translation>
+        <translation>கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது: %1</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/private/LinkHandler/private/ExternalUrlPage.qml" line="41"/>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
+        <source>Share link</source>
+        <translation>இணைப்பைப் பகிரவும்</translation>
+    </message>
+    <message>
+        <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="50"/>
         <source>Copy to clipboard</source>
-        <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கவும்</translation>
+        <translation>கிளிப்போர்டுக்கு நகலெடுக்கவும்</translation>
     </message>
 </context>
 <context>
     <name>ProjectsView</name>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="66"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="67"/>
         <source>Projects</source>
         <translation>திட்டங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="51"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="52"/>
         <source>Add project</source>
         <translation>திட்டத்தைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="47"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="45"/>
         <source>Arrange entries</source>
         <translation>உள்ளீடுகளை ஏற்பாடு செய்யுங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="94"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="95"/>
         <source>All entries belonging to this project will be deleted!</source>
         <translation>இந்த திட்டத்தைச் சேர்ந்த அனைத்து உள்ளீடுகளும் நீக்கப்படும்!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="113"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="115"/>
         <source>mark as active</source>
         <translation>செயலில் குறிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="118"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="120"/>
         <source>mark as halted</source>
         <translation>நிறுத்தப்பட்டபடி குறி</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="123"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="125"/>
         <source>mark as finished</source>
         <translation>முடிந்ததும் குறி</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="128"/>
-        <source>edit or delete</source>
-        <translation>திருத்த அல்லது நீக்கு</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="128"/>
-        <source>edit</source>
-        <translation>தொகு</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="144"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="141"/>
         <source>No entries</source>
         <translation>உள்ளீடுகள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="145"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="142"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
         <translation>இது சாத்தியமில்லை. அநேகமாக ஒரு தரவுத்தள பிழை ஏற்பட்டது.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProjectsView.qml" line="55"/>
+        <location filename="../qml/pages/ProjectsView.qml" line="56"/>
         <source>Add a project</source>
         <translation>ஒரு திட்டத்தைச் சேர்க்கவும்</translation>
     </message>
@@ -600,54 +598,49 @@
 <context>
     <name>RecurringsView</name>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="45"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="43"/>
         <source>Arrange entries</source>
         <translation>உள்ளீடுகளை ஏற்பாடு செய்யுங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="49"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="50"/>
         <source>Add recurring entry</source>
         <translation>தொடர்ச்சியான உள்ளீட்டைச் சேர்க்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="73"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="74"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
         <translation>தொடர்ச்சியான உள்ளீடுகளை இங்கே உள்ளமைக்கவும். இந்த பட்டியலில் செயலில் உள்ளீடுகள் சரியான இடைவெளியில் செய்ய வேண்டிய பட்டியலுக்கு தானாக சேர்க்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="108"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="109"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
         <translation>இது &lt;i&gt; அல்ல &lt;/i&gt; உள்ளீடுகளை மீண்டும் செயல்படுத்தும்.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="114"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="115"/>
         <source>mark as active</source>
         <translation>செயலில் குறிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="119"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="120"/>
         <source>mark as halted</source>
         <translation>நிறுத்தப்பட்டபடி குறி</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="124"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="125"/>
         <source>mark as done</source>
         <translation>மார்க் செய்தபடி</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="141"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="139"/>
         <source>No entries yet</source>
         <translation>இன்னும் உள்ளீடுகள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="142"/>
+        <location filename="../qml/pages/RecurringsView.qml" line="140"/>
         <source>This page will show a list of all recurring entries.</source>
         <translation>இந்த பக்கம் தொடர்ச்சியான அனைத்து உள்ளீடுகளின் பட்டியலையும் காண்பிக்கும்.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/RecurringsView.qml" line="128"/>
-        <source>press and hold to edit or delete</source>
-        <translation>திருத்த அல்லது நீக்க அழுத்தவும்</translation>
     </message>
 </context>
 <context>
@@ -676,12 +669,12 @@
         <translation>உங்கள் ஆதரவுக்கு நன்றி!</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="55"/>
+        <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
         <source>Remind me later</source>
         <translation>பின்னர் எனக்கு நினைவூட்டுங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
+        <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="59"/>
         <source>Don&apos;t ask me again</source>
         <translation>மீண்டும் என்னிடம் கேட்க வேண்டாம்</translation>
     </message>
@@ -689,32 +682,32 @@
 <context>
     <name>TodoList</name>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="121"/>
+        <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>Today</source>
         <translation>இன்று</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="122"/>
+        <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Tomorrow</source>
         <translation>நாளை</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="175"/>
+        <location filename="../qml/components/TodoList.qml" line="177"/>
         <source>No entries yet</source>
         <translation>இன்னும் உள்ளீடுகள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="176"/>
+        <location filename="../qml/components/TodoList.qml" line="178"/>
         <source>Pull down to add entries</source>
         <translation>உள்ளீடுகளைச் சேர்க்க கீழே இழுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="124"/>
+        <location filename="../qml/components/TodoList.qml" line="126"/>
         <source>Someday</source>
         <translation>ஒருநாள்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoList.qml" line="123"/>
+        <location filename="../qml/components/TodoList.qml" line="125"/>
         <source>This week</source>
         <translation>இந்த வாரம்</translation>
     </message>
@@ -722,161 +715,156 @@
 <context>
     <name>TodoListItem</name>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="75"/>
+        <location filename="../qml/components/TodoListItem.qml" line="83"/>
         <source>continue today</source>
         <translation>இன்று தொடரவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="81"/>
+        <location filename="../qml/components/TodoListItem.qml" line="89"/>
         <source>done</source>
         <translation>முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="90"/>
+        <location filename="../qml/components/TodoListItem.qml" line="98"/>
         <source>done for today, continue tomorrow</source>
         <translation>இன்று முடிந்தது, நாளை தொடரவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="137"/>
+        <location filename="../qml/components/TodoListItem.qml" line="145"/>
         <source>ignore</source>
         <translation>புறக்கணிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="107"/>
-        <location filename="../qml/components/TodoListItem.qml" line="176"/>
+        <location filename="../qml/components/TodoListItem.qml" line="115"/>
+        <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue tomorrow</source>
         <translation>நாளை தொடரவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="143"/>
+        <location filename="../qml/components/TodoListItem.qml" line="151"/>
         <source>not completely done yet</source>
         <translation>இன்னும் முழுமையாக செய்யப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="152"/>
+        <location filename="../qml/components/TodoListItem.qml" line="160"/>
         <source>⭑ %1, %2</source>
         <translation>1 %1, %2</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="155"/>
+        <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from today</source>
         <translation>இன்று முதல்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="157"/>
-        <location filename="../qml/components/TodoListItem.qml" line="159"/>
+        <location filename="../qml/components/TodoListItem.qml" line="165"/>
+        <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>from yesterday</source>
         <translation>நேற்று முதல்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="161"/>
+        <location filename="../qml/components/TodoListItem.qml" line="169"/>
         <source>from earlier</source>
         <translation>முந்தையதிலிருந்து</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="166"/>
+        <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for today</source>
         <translation>இன்றைக்கு</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="168"/>
+        <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>carried over</source>
         <translation>எடுத்துச் செல்லப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="170"/>
+        <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored today</source>
         <translation>இன்று புறக்கணிக்கப்பட்டுள்ளது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="171"/>
+        <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done tomorrow</source>
         <translation>நாளை செய்ய வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="175"/>
+        <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done today</source>
         <translation>இன்று முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="184"/>
-        <source>press and hold to edit or delete</source>
-        <translation>திருத்த அல்லது நீக்க அழுத்தவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/components/TodoListItem.qml" line="130"/>
+        <location filename="../qml/components/TodoListItem.qml" line="138"/>
         <source>move to someday later</source>
         <translation>ஒருநாள் பின்னர் செல்லுங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="107"/>
-        <location filename="../qml/components/TodoListItem.qml" line="176"/>
+        <location filename="../qml/components/TodoListItem.qml" line="115"/>
+        <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue next day</source>
         <translation>அடுத்த நாள் தொடரவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="155"/>
+        <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from this day</source>
         <translation>இந்த நாளிலிருந்து</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="157"/>
+        <location filename="../qml/components/TodoListItem.qml" line="165"/>
         <source>from last day</source>
         <translation>கடைசி நாளிலிருந்து</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="166"/>
+        <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for this day</source>
         <translation>இந்த நாளுக்காக</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="167"/>
+        <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>for someday later</source>
         <translation>ஒருநாள் பின்னர்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="170"/>
+        <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored this day</source>
         <translation>இந்த நாள் புறக்கணிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="171"/>
+        <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done next day</source>
         <translation>அடுத்த நாள் செய்யப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="173"/>
+        <location filename="../qml/components/TodoListItem.qml" line="181"/>
         <source>to be done someday later</source>
         <translation>ஒருநாள் செய்யப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="175"/>
+        <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done this day</source>
         <translation>இந்த நாள் முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="97"/>
+        <location filename="../qml/components/TodoListItem.qml" line="105"/>
         <source>handle today</source>
         <translation>இன்று கையாளவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="120"/>
-        <location filename="../qml/components/TodoListItem.qml" line="177"/>
+        <location filename="../qml/components/TodoListItem.qml" line="128"/>
+        <location filename="../qml/components/TodoListItem.qml" line="185"/>
         <source>continue later this week</source>
         <translation>இந்த வார இறுதியில் தொடரவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="120"/>
+        <location filename="../qml/components/TodoListItem.qml" line="128"/>
         <source>handle later this week</source>
         <translation>இந்த வார இறுதியில் கையாளவும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="172"/>
+        <location filename="../qml/components/TodoListItem.qml" line="180"/>
         <source>to be done later this week</source>
         <translation>இந்த வார இறுதியில் செய்யப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../qml/components/TodoListItem.qml" line="178"/>
+        <location filename="../qml/components/TodoListItem.qml" line="186"/>
         <source>continue someday later</source>
         <translation>ஒருநாள் பின்னர் தொடரவும்</translation>
     </message>
@@ -912,30 +900,20 @@
 <context>
     <name>TodoListView</name>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="60"/>
-        <source>Note</source>
-        <translation>குறிப்பு</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TodoListView.qml" line="76"/>
+        <location filename="../qml/pages/TodoListView.qml" line="59"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
         <translation>பற்றி மற்றும் காப்பகம்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="83"/>
+        <location filename="../qml/pages/TodoListView.qml" line="66"/>
         <source>Arrange entries</source>
         <translation>உள்ளீடுகளை ஏற்பாடு செய்யுங்கள்</translation>
     </message>
     <message>
-        <location filename="../qml/pages/TodoListView.qml" line="86"/>
+        <location filename="../qml/pages/TodoListView.qml" line="73"/>
         <source>Add entry</source>
         <translation>உள்ளீட்டைச் சேர்க்கவும்</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/TodoListView.qml" line="68"/>
-        <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation>தொடர்ச்சியான உள்ளீடுகளைச் சேர்க்க இடதுபுறமாக ச்வைப் செய்யவும். தற்போதைய செய்ய வேண்டிய பட்டியலில் அவை தானாக சேர்க்கப்படும் ஒரு இடைவெளியை நீங்கள் குறிப்பிடலாம்.</translation>
     </message>
 </context>
 <context>
