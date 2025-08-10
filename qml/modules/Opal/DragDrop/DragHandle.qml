@@ -4,12 +4,13 @@
 //@ SPDX-License-Identifier: GPL-3.0-or-later
 import QtQuick 2.6
 import Sailfish.Silica 1.0
-SilicaItem{id:root
+Item{id:root
 property DelegateDragHandler moveHandler
 property alias handleImage:image
 property int verticalAlignment:Qt.AlignCenter
 property int verticalPadding:Theme.paddingMedium
 property bool showActiveArea:false
+property bool highlighted:false
 visible:!!moveHandler&&moveHandler.active
 implicitWidth:visible?Theme.itemSizeMedium:0
 implicitHeight:visible?Theme.itemSizeSmall-2*Theme.paddingMedium:0

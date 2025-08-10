@@ -20,14 +20,14 @@ readonly property real _yOffset:flickable&&flickable.pullDownMenu?flickable.cont
 property alias _cacheExpiry:cleanupTimer.interval
 property bool _hasPullDownMenu:!!flickable&&!!flickable.pullDownMenu
 property bool _hasPushUpMenu:!!flickable&&!!flickable.pushUpMenu
-implicitWidth:_tabContainer?_tabContainer.PagedView.contentWidth:0
-implicitHeight:{if(!_tabContainer){return 0
-}else{var view=flickable&&flickable.pullDownMenu?_tabContainer.PagedView.view:null
-return view?view.height:_tabContainer.PagedView.contentHeight
+implicitWidth:_tabContainer?_tabContainer.PagedView.contentWidth:(__silica_page.isPortrait?Screen.width:Screen.height)
+implicitHeight:{if(!_tabContainer||!_tabContainer.PagedView){return(__silica_page.isPortrait?Screen.height:Screen.width)
+}else if(flickable&&flickable.pullDownMenu&&_tabContainer.PagedView.view){return _tabContainer.PagedView.view.height
+}else{return _tabContainer.PagedView.contentHeight
 }}opacity:0
 clip:!flickable||!flickable.pullDownMenu||!flickable.pushUpMenu
 Component.onCompleted:{if(_tabContainer&&!!_tabContainer.DelegateModel){_tabContainer.DelegateModel.inPersistedItems=true
-}if(!flickable){for(var child in children){if(child.hasOwnProperty("maximumFlickVelocity")&&!child.hasOwnProperty("__silica_hidden_flickable")){flickable=child
+}if(!flickable){for(var i=0;i<contents.length;i++){if(contents[i].hasOwnProperty("maximumFlickVelocity")&&!contents[i].hasOwnProperty("__silica_hidden_flickable")){flickable=contents[i]
 break
 }}}}Binding{target:!!flickable&&!!flickable.pullDownMenu?flickable.pullDownMenu:null
 property:"y"

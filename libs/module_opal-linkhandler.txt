@@ -1,6 +1,6 @@
 # Store this file to keep track of packaged module versions.
 # It is not necessary to ship this in your app's final RPM package.
-# SPDX-FileCopyrightText: 2024 Mirian Margiani:2013-2020 Jolla Ltd:2020 Open Mobile Platform LLC
+# SPDX-FileCopyrightText: 2020-2024 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 # Attribution using Opal.About:
@@ -9,13 +9,13 @@
 #
 # Manual attribution:
 #   1. Import "../modules/Opal/Attributions" in your "About" page.
-#   2. Attribute this module by adding "OpalTabsAttribution {}"
+#   2. Attribute this module by adding "OpalLinkHandlerAttribution {}"
 #      to the "attributions" list property of the "About" page.
 
-module: Opal.Tabs (opal-tabs)
-version: 2.0.0 (git:22ca11a)
-description: This module provides an easy way to add tab bars to apps.
+module: Opal.LinkHandler (opal-linkhandler)
+version: 2.3.0 (git:dec5c79)
+description: This module provides a link handler to open or copy external links.
 maintainers: Mirian Margiani
-attribution: 2024 Mirian Margiani:2013-2020 Jolla Ltd:2020 Open Mobile Platform LLC
+attribution: 2020-2024 Mirian Margiani
 license: GPL-3.0-or-later
-sources: https://github.com/Pretty-SFOS/opal-tabs
+sources: https://github.com/Pretty-SFOS/opal-linkhandler
