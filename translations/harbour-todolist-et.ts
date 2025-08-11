@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="13"/>
         <source>Note</source>
-        <translation type="unfinished">Märkus</translation>
+        <translation>Märge</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="26"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished">Korduvate tegemiste lisamiseks viipa vasakule. Saad määrata ka ajavahemiku, mille alusel nad saavad olema nähtavad üldloendis.</translation>
+        <translation>Korduvate tegemiste lisamiseks viipa vasakule. Saad määrata ka ajavahemiku, mille alusel nad saavad olema nähtavad üldloendis.</translation>
     </message>
 </context>
 <context>
