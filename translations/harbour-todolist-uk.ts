@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="13"/>
         <source>Note</source>
-        <translation type="unfinished">Примітка</translation>
+        <translation>Примітка</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="26"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished">Проведіть пальцем ліворуч, щоб додати повторювані записи. Ви можете вказати інтервал, через який вони автоматично додаватимуться до поточного списку справ.</translation>
+        <translation>Проведіть пальцем ліворуч, щоб додати повторювані записи. Ви можете вказати інтервал, через який вони будуть автоматично додаватися до поточного списку справ.</translation>
     </message>
 </context>
 <context>
