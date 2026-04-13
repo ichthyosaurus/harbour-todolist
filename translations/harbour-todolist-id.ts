@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="103"/>
         <source>Norwegian Nynorsk</source>
-        <translation type="unfinished"></translation>
+        <translation>Nynorsk Norwegia</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="109"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Lihat entri lama</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -124,27 +124,27 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>minggu ini</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>suatu hari</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyek</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktifkan masukan teks prediktif</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah</translation>
     </message>
 </context>
 <context>
@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="13"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Catatan</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="26"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geser ke kiri untuk menambahkan entri berulang. Anda dapat menentukan interval agar entri tersebut ditambahkan secara otomatis ke daftar tugas saat ini.</translation>
     </message>
 </context>
 <context>
@@ -165,17 +165,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Entri yang Diarsipkan</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Belum ada entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Halaman ini akan menampilkan daftar semua entri lama.</translation>
     </message>
 </context>
 <context>
@@ -191,27 +191,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation type="unfinished">Deskripsi</translation>
+        <translation>Deskripsi</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Teks</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation type="unfinished">Batal</translation>
+        <translation>Batal</translation>
     </message>
 </context>
 <context>
@@ -232,12 +232,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Simpan</translation>
     </message>
 </context>
 <context>
@@ -245,20 +245,20 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation type="unfinished"></translation>
+        <translation>Berulang</translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished"></translation>
+        <translation>sekali</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>setiap %n hari</numerusform>
         </translation>
     </message>
 </context>
@@ -275,17 +275,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>Item Berulang</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished"></translation>
+        <translation>Daftar Tugas</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyek</translation>
     </message>
 </context>
 <context>
@@ -506,12 +506,12 @@
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="44"/>
         <source>Copy text to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Salin teks ke papan klip</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="55"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Bagikan</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="60"/>
@@ -531,7 +531,7 @@
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>Share link</source>
-        <translation type="unfinished"></translation>
+        <translation>Bagikan tautan</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="50"/>
@@ -544,52 +544,52 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="67"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyek</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="52"/>
         <source>Add project</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah proyek</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Atur urutan entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="95"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua entri yang termasuk dalam proyek ini akan dihapus!</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="115"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai aktif</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="120"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai dihentikan</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="125"/>
         <source>mark as finished</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai selesai</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="141"/>
         <source>No entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak ada entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="142"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seharusnya ini tidak mungkin terjadi. Kemungkinan besar telah terjadi kesalahan basis data.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="56"/>
         <source>Add a project</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah proyek</translation>
     </message>
 </context>
 <context>
@@ -597,47 +597,47 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="43"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Atur urutan entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="50"/>
         <source>Add recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah entri berulang</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="74"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurasikan entri berulang di sini. Entri aktif dalam daftar ini ditambahkan secara otomatis ke daftar tugas dalam interval teratur.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="109"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ini &lt;i&gt;tidak&lt;/i&gt; akan menghapus entri secara surut.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="115"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai aktif</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="120"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai dihentikan</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="125"/>
         <source>mark as done</source>
-        <translation type="unfinished"></translation>
+        <translation>tandai sebagai selesai</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="139"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Belum ada entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="140"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Halaman ini akan menampilkan daftar semua entri berulang.</translation>
     </message>
 </context>
 <context>
@@ -645,7 +645,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation type="unfinished"></translation>
+        <translation>Mulai pada</translation>
     </message>
 </context>
 <context>
@@ -681,32 +681,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>Hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>Besok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="177"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Belum ada entri</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="178"/>
         <source>Pull down to add entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarik ke bawah untuk menambahkan entri</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="126"/>
         <source>Someday</source>
-        <translation type="unfinished"></translation>
+        <translation>Suatu hari</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="125"/>
         <source>This week</source>
-        <translation type="unfinished"></translation>
+        <translation>Minggu ini</translation>
     </message>
 </context>
 <context>
@@ -714,156 +714,156 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="83"/>
         <source>continue today</source>
-        <translation type="unfinished"></translation>
+        <translation>lanjutkan hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="89"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>selesai</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="98"/>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>selesai untuk hari ini, lanjutkan besok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="145"/>
         <source>ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>abaikan</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="115"/>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>lanjutkan besok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="151"/>
         <source>not completely done yet</source>
-        <translation type="unfinished"></translation>
+        <translation>belum sepenuhnya selesai</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="160"/>
         <source>⭑ %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>⭑ %1, %2</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from today</source>
-        <translation type="unfinished"></translation>
+        <translation>dari hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="165"/>
         <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>from yesterday</source>
-        <translation type="unfinished"></translation>
+        <translation>dari kemarin</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="169"/>
         <source>from earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>dari sebelumnya</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for today</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>carried over</source>
-        <translation type="unfinished"></translation>
+        <translation>dipindahkan</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored today</source>
-        <translation type="unfinished"></translation>
+        <translation>diabaikan hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk dikerjakan besok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done today</source>
-        <translation type="unfinished"></translation>
+        <translation>selesai hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="138"/>
         <source>move to someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>pindahkan ke suatu hari nanti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="115"/>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue next day</source>
-        <translation type="unfinished"></translation>
+        <translation>lanjutkan hari berikutnya</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from this day</source>
-        <translation type="unfinished"></translation>
+        <translation>dari hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="165"/>
         <source>from last day</source>
-        <translation type="unfinished"></translation>
+        <translation>dari hari sebelumnya</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for this day</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>for someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk suatu hari nanti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored this day</source>
-        <translation type="unfinished"></translation>
+        <translation>diabaikan hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done next day</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk dikerjakan hari berikutnya</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="181"/>
         <source>to be done someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk dikerjakan suatu hari nanti</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done this day</source>
-        <translation type="unfinished"></translation>
+        <translation>selesai hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="105"/>
         <source>handle today</source>
-        <translation type="unfinished"></translation>
+        <translation>tangani hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="128"/>
         <location filename="../qml/components/TodoListItem.qml" line="185"/>
         <source>continue later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>lanjutkan nanti minggu ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="128"/>
         <source>handle later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>tangani nanti minggu ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="180"/>
         <source>to be done later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>untuk dikerjakan nanti minggu ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="186"/>
         <source>continue someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>lanjutkan suatu hari nanti</translation>
     </message>
 </context>
 <context>
@@ -871,27 +871,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished">Dijadwalkan pada</translation>
+        <translation>Dijadwalkan untuk</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished">hari ini</translation>
+        <translation>hari ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished">besok</translation>
+        <translation>besok</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>minggu ini</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>suatu hari</translation>
     </message>
 </context>
 <context>
@@ -900,17 +900,17 @@
         <location filename="../qml/pages/TodoListView.qml" line="59"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Tentang dan Arsip</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="66"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Atur urutan entri</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="73"/>
         <source>Add entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah entri</translation>
     </message>
 </context>
 <context>
@@ -918,47 +918,47 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesalahan Basis Data</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation type="unfinished"></translation>
+        <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>ddd d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kesalahan internal</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesan worker yang tidak diketahui tidak dapat ditangani.</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>Daftar Tugas</translation>
     </message>
 </context>
 <context>
@@ -966,34 +966,34 @@
     <message>
         <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Default</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal memperbarui proyek</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak ada ID proyek internal yang diberikan.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="411"/>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal menghapus proyek</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyek default tidak dapat dihapus.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal memperbarui entri</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1001,70 +1001,70 @@
         <location filename="../qml/js/storage.js" line="632"/>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidak ada ID entri internal yang diberikan.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="392"/>
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal menyimpan</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proyek baru “%1” tidak dapat disimpan.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entri berulang baru “%1” tidak dapat disimpan.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Basis data tidak tersedia</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Worker basis data belum siap.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Entri baru “%1” tidak dapat disimpan.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
         <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal memindahkan entri lama</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Penyalinan entri lama gagal.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pembaruan entri lama gagal.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal memperbarui entri berulang</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal menghapus entri berulang</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Gagal menghapus entri</translation>
     </message>
 </context>
 </TS>
