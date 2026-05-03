@@ -29,7 +29,7 @@ SupportDialog {
         title: qsTr("Develop on %1").arg("GitHub")
         description: qsTr("Support with maintenance and packaging, " +
                           "write code, or provide valuable bug reports.")
-        link: "https://github.com/ichthyosaurus/harbour-todolist"
+        link: "https://codeberg.org/ichthyosaurus/harbour-todolist"
     }
 
     DetailsDrawer {

@@ -14,7 +14,7 @@ Version:    2.0.0
 Release:    1
 Group:      Applications/Productivity
 License:    GPL-3.0-or-later
-URL:        https://github.com/ichthyosaurus/harbour-todolist
+URL:        https://codeberg.org/ichthyosaurus/harbour-todolist
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-todolist.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
