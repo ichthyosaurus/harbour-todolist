@@ -5,8 +5,8 @@
 //@ Original license: BSD-3-Clause (see separate license file SILICA-LICENSE)
 //@ Original copyright notices are listed above.
 import QtQuick 2.0
+import QtQml.Models 2.2
 import Sailfish.Silica 1.0
-import"private/Util.js"as Util
 SilicaControl{id:root
 default property alias contents:bodyItem.data
 property int topMargin:parent._ctxTopMargin||_ctxTopMargin||0

@@ -8,4 +8,5 @@ property string description
 property int count:0
 property string icon
 default property Component body
+property url source
 }

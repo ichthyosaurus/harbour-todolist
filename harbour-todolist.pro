@@ -12,14 +12,14 @@
 #   - translation filenames have to be changed
 TARGET = harbour-todolist
 
-CONFIG += sailfishapp
+CONFIG += sailfishapp c++11
 
 # Note: version number is configured in yaml
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += APP_RELEASE=\\\"$$RELEASE\\\"
 include(libs/opal-cached-defines.pri)
 
-QML_IMPORT_PATH += qml/modules
+include(libs/opal.pri)
 
 SOURCES += \
     src/harbour-todolist.cpp \
@@ -49,6 +49,3 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-todolist-*.ts
-
-CONFIG += c++11
-include(libs/SortFilterProxyModel/SortFilterProxyModel.pri)

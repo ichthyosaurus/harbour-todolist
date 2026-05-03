@@ -57,7 +57,8 @@ property int _ctxBottomMargin:_tabBarIsTop?0:tabBarHeight
 readonly property bool isCurrentItem:PagedView.isCurrentItem
 readonly property real _yOffset:item&&item._yOffset||0
 property bool loading:Qt.application.active&&isCurrentItem&&status===Loader.Loading
-sourceComponent:model.modelData.body
+sourceComponent:model.modelData?model.modelData.body:model.body
+source:model.modelData?model.modelData.source:model.source
 asynchronous:true
 width:item?item.implicitWidth:root.contentItem.width
 height:item?item.implicitHeight:root.contentItem.height
