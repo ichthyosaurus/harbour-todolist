@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Mirian Margiani
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0 AND LicenseRef-NO-AI-1.0
+# This file must not be used for AI training/data mining.
+
+blank_issues_enabled: true
+contact_links:
+  - name: Weblate translations
+    url: https://hosted.weblate.org/projects/harbour-todolist
+    about: Help with translating this app on Weblate

@@ -1,0 +1,31 @@
+version = 1
+SPDX-PackageName = "harbour-todolist"
+SPDX-PackageSupplier = "Mirian Margiani <mixosaurus+ichthyo@pm.me>"
+SPDX-PackageDownloadLocation = "https://codeberg.org/ichthyosaurus/harbour-todolist"
+
+[[annotations]]
+path = ["translations/**", "TRANSLATORS.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020-2024 harbour-todolist translations contributors"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+
+[[annotations]]
+path = "rpm/harbour-**.spec"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Mirian Margiani"
+SPDX-License-Identifier = "GPL-3.0-or-later"
+SPDX-FileComment = "This file is generated from [this file's name].yaml and shares copyright with it."
+
+[[annotations]]
+path = ["icons/**", "qml/images/**", "dist/harbour-**.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Mirian Margiani"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "These files are generated from the sources at icons-src/*."
+
+[[annotations]]
+path = "icon-src/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Mirian Margiani"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
+SPDX-FileComment = "These files contain proper Dublin Core licensing metadata."
