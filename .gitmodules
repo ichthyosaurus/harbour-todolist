@@ -2,6 +2,3 @@
 # SPDX-FileCopyrightText: 2020-2021 Mirian Margiani
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-[submodule "libs/SortFilterProxyModel"]
-	path = libs/SortFilterProxyModel
-	url = https://github.com/oKcerG/SortFilterProxyModel
