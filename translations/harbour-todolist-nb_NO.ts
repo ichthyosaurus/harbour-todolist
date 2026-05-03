@@ -11,7 +11,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>A simple tool for planning what to do next.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et enkelt verktøy for å planlegge det neste du skal gjøre.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="63"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="156"/>
         <source>View old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis gamle oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="77"/>
@@ -84,67 +84,67 @@
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="112"/>
         <source>Enter title</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn tittel</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="113"/>
         <source>Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Tittel</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="151"/>
         <source>Enter optional description</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriv inn valgfri beskrivelse</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="152"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="56"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="84"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Planlagt til</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="95"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>i dag</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="96"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>i morgen</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="97"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>denne uken</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="98"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>en dag</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="62"/>
         <source>Project</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjekt</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="141"/>
         <source>Enable predictive text input</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiver tekstforslag</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddItemDialog.qml" line="37"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til</translation>
     </message>
 </context>
 <context>
@@ -152,12 +152,12 @@
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="13"/>
         <source>Note</source>
-        <translation type="unfinished"></translation>
+        <translation>Notat</translation>
     </message>
     <message>
         <location filename="../qml/pages/AddRegularDialog.qml" line="26"/>
         <source>Swipe left to add recurring entries. You can specify an interval in which they will be added automatically to the current to-do list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sveip til venstre for å legge til gjentakende oppføringer. Du kan angi et intervall for når de automatisk legges til i den nåværende oppgavelisten.</translation>
     </message>
 </context>
 <context>
@@ -165,17 +165,17 @@
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="66"/>
         <source>Archived Entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Arkiverte oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="88"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen oppføringer ennå</translation>
     </message>
     <message>
         <location filename="../qml/pages/ArchivePage.qml" line="89"/>
         <source>This page will show a list of all old entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne siden vil vise en liste over alle gamle oppføringer.</translation>
     </message>
 </context>
 <context>
@@ -191,27 +191,27 @@
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="47"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="67"/>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="52"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="83"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../qml/pages/ConfirmDeleteDialog.qml" line="48"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
 </context>
 <context>
@@ -232,12 +232,12 @@
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="62"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="../qml/pages/EditItemDialog.qml" line="42"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre</translation>
     </message>
 </context>
 <context>
@@ -245,21 +245,21 @@
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="27"/>
         <source>Recurring</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjentakende</translation>
     </message>
     <message>
         <location filename="../qml/components/IntervalCombo.qml" line="34"/>
         <source>once</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished"></translation>
+        <translation>en gang</translation>
     </message>
     <message numerus="yes">
         <location filename="../qml/components/IntervalCombo.qml" line="35"/>
         <source>every %n day(s)</source>
         <comment>interval for recurring entries</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>hver %n dag</numerusform>
+            <numerusform>hver %n dager</numerusform>
         </translation>
     </message>
 </context>
@@ -276,17 +276,17 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="24"/>
         <source>Recurrings</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjentakende oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="30"/>
         <source>To-do List</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjøremålsliste</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="36"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjekter</translation>
     </message>
 </context>
 <context>
@@ -439,7 +439,7 @@
     <message>
         <location filename="../qml/modules/Opal/About/private/ContributorsAttributionRepeater.qml" line="11"/>
         <source>Thank you!</source>
-        <translation>Takk.</translation>
+        <translation>Takk!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/About/private/LicensePage.qml" line="44"/>
@@ -509,12 +509,12 @@
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="44"/>
         <source>Copy text to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier til utklippstavle</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="55"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="60"/>
@@ -534,7 +534,7 @@
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="15"/>
         <source>Share link</source>
-        <translation type="unfinished"></translation>
+        <translation>Dele lenke</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/LinkHandler/private/ExternalUrlPage.qml" line="50"/>
@@ -547,52 +547,52 @@
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="67"/>
         <source>Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosjekter</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="52"/>
         <source>Add project</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til prosjekt</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="45"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorter oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="95"/>
         <source>All entries belonging to this project will be deleted!</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle oppføringer som tilhører dette prosjektet vil bli slettet!</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="115"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>marker som aktiv</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="120"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>Marker som satt på pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="125"/>
         <source>mark as finished</source>
-        <translation type="unfinished"></translation>
+        <translation>marker som fullført</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="141"/>
         <source>No entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="142"/>
         <source>This should not be possible. Most probably a database error occurred.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette skal ikke være mulig. Mest sannsynlig oppstod det en databasefeil.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProjectsView.qml" line="56"/>
         <source>Add a project</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til et prosjekt</translation>
     </message>
 </context>
 <context>
@@ -600,47 +600,47 @@
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="43"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorter oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="50"/>
         <source>Add recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til gjentakende oppføring</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="74"/>
         <source>Configure recurring entries here. Active entries in this list are added automatically to the to-do list in regular intervals.</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurer gjentakende oppføringer her. Aktive oppføringer i denne listen legges automatisk til i gjøremålslisten med jevne mellomrom.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="109"/>
         <source>This will &lt;i&gt;not&lt;/i&gt; delete entries retroactively.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette vil &lt;i&gt;ikke&lt;/i&gt; slette oppføringene i ettertid.</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="115"/>
         <source>mark as active</source>
-        <translation type="unfinished"></translation>
+        <translation>marker som aktiv</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="120"/>
         <source>mark as halted</source>
-        <translation type="unfinished"></translation>
+        <translation>marker som stanset</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="125"/>
         <source>mark as done</source>
-        <translation type="unfinished"></translation>
+        <translation>marker som fullført</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="139"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen oppføring ennå</translation>
     </message>
     <message>
         <location filename="../qml/pages/RecurringsView.qml" line="140"/>
         <source>This page will show a list of all recurring entries.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne siden viser en liste over alle gjentakende oppføringer.</translation>
     </message>
 </context>
 <context>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../qml/components/StartDateButton.qml" line="28"/>
         <source>Starting at</source>
-        <translation type="unfinished"></translation>
+        <translation>Starter kl.</translation>
     </message>
 </context>
 <context>
@@ -656,7 +656,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="9"/>
         <source>Hi there!</source>
-        <translation>Hei på deg</translation>
+        <translation>Hei på deg!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="10"/>
@@ -666,7 +666,7 @@
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="11"/>
         <source>Thank you for your support!</source>
-        <translation>Takk for din støtte.</translation>
+        <translation>Takk for din støtte!</translation>
     </message>
     <message>
         <location filename="../qml/modules/Opal/SupportMe/SupportDialog.qml" line="57"/>
@@ -684,32 +684,32 @@
     <message>
         <location filename="../qml/components/TodoList.qml" line="123"/>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation>I dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="124"/>
         <source>Tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>I morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="177"/>
         <source>No entries yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen oppføringer ennå</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="178"/>
         <source>Pull down to add entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Trekk ned for å legge til oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="126"/>
         <source>Someday</source>
-        <translation type="unfinished"></translation>
+        <translation>En dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoList.qml" line="125"/>
         <source>This week</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne uken</translation>
     </message>
 </context>
 <context>
@@ -717,156 +717,156 @@
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="83"/>
         <source>continue today</source>
-        <translation type="unfinished"></translation>
+        <translation>fortsett i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="89"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>fullført</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="98"/>
         <source>done for today, continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>ferdig for i dag, fortsetter i morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="145"/>
         <source>ignore</source>
-        <translation type="unfinished"></translation>
+        <translation>ignorer</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="115"/>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>fortsett i morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="151"/>
         <source>not completely done yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikke helt ferdig ennå</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="160"/>
         <source>⭑ %1, %2</source>
-        <translation type="unfinished"></translation>
+        <translation>⭑ %1, %2</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from today</source>
-        <translation type="unfinished"></translation>
+        <translation>fra i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="165"/>
         <location filename="../qml/components/TodoListItem.qml" line="167"/>
         <source>from yesterday</source>
-        <translation type="unfinished"></translation>
+        <translation>fra i går</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="169"/>
         <source>from earlier</source>
-        <translation type="unfinished"></translation>
+        <translation>fra tidligere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for today</source>
-        <translation type="unfinished"></translation>
+        <translation>for i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="176"/>
         <source>carried over</source>
-        <translation type="unfinished"></translation>
+        <translation>overført</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored today</source>
-        <translation type="unfinished"></translation>
+        <translation>ignorert i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>skal gjøres i morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done today</source>
-        <translation type="unfinished"></translation>
+        <translation>fullført i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="138"/>
         <source>move to someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>flytt til senere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="115"/>
         <location filename="../qml/components/TodoListItem.qml" line="184"/>
         <source>continue next day</source>
-        <translation type="unfinished"></translation>
+        <translation>fortsett neste dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="163"/>
         <source>from this day</source>
-        <translation type="unfinished"></translation>
+        <translation>fra denne dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="165"/>
         <source>from last day</source>
-        <translation type="unfinished"></translation>
+        <translation>fra forrige dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="174"/>
         <source>for this day</source>
-        <translation type="unfinished"></translation>
+        <translation>for denne dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="175"/>
         <source>for someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>for senere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="178"/>
         <source>ignored this day</source>
-        <translation type="unfinished"></translation>
+        <translation>ignorert denne dagen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="179"/>
         <source>to be done next day</source>
-        <translation type="unfinished"></translation>
+        <translation>gjøres neste dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="181"/>
         <source>to be done someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>skal gjøres en gang senere</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="183"/>
         <source>done this day</source>
-        <translation type="unfinished"></translation>
+        <translation>fullført denne dagen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="105"/>
         <source>handle today</source>
-        <translation type="unfinished"></translation>
+        <translation>gjøre i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="128"/>
         <location filename="../qml/components/TodoListItem.qml" line="185"/>
         <source>continue later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>fortsett senere denne uken</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="128"/>
         <source>handle later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>gjøre senere denne uken</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="180"/>
         <source>to be done later this week</source>
-        <translation type="unfinished"></translation>
+        <translation>gjøres senere denne uken</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItem.qml" line="186"/>
         <source>continue someday later</source>
-        <translation type="unfinished"></translation>
+        <translation>fortsett en annen dag</translation>
     </message>
 </context>
 <context>
@@ -874,27 +874,27 @@
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="71"/>
         <source>Scheduled for</source>
-        <translation type="unfinished"></translation>
+        <translation>Planlagt til</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="78"/>
         <source>today</source>
-        <translation type="unfinished"></translation>
+        <translation>i dag</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="82"/>
         <source>tomorrow</source>
-        <translation type="unfinished"></translation>
+        <translation>i morgen</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="86"/>
         <source>this week</source>
-        <translation type="unfinished"></translation>
+        <translation>denne uken</translation>
     </message>
     <message>
         <location filename="../qml/components/TodoListItemAdder.qml" line="90"/>
         <source>someday</source>
-        <translation type="unfinished"></translation>
+        <translation>en dag</translation>
     </message>
 </context>
 <context>
@@ -903,17 +903,17 @@
         <location filename="../qml/pages/TodoListView.qml" line="59"/>
         <source>About and Archive</source>
         <comment>as in “show me the &apos;About page&apos; and the &apos;Archive page&apos;”</comment>
-        <translation type="unfinished"></translation>
+        <translation>Om og Arkiv</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="66"/>
         <source>Arrange entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordne oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/TodoListView.qml" line="73"/>
         <source>Add entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Opprett oppføring</translation>
     </message>
 </context>
 <context>
@@ -921,47 +921,47 @@
     <message>
         <location filename="../qml/harbour-todolist.qml" line="96"/>
         <source>Database Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Databasefeil</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="65"/>
         <source>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</source>
         <comment>date format including date and time but no weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy &apos;(&apos;hh&apos;:&apos;mm&apos;)&apos;</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="66"/>
         <source>hh&apos;:&apos;mm</source>
         <comment>format for times</comment>
-        <translation type="unfinished"></translation>
+        <translation>hh&apos;:&apos;mm</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="67"/>
         <source>ddd d MMM yyyy</source>
         <comment>date format including weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>ddd d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="68"/>
         <source>d MMM yyyy</source>
         <comment>date format without weekday</comment>
-        <translation type="unfinished"></translation>
+        <translation>d MMM yyyy</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="162"/>
         <source>Internal error</source>
-        <translation type="unfinished"></translation>
+        <translation>Intern feil</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="163"/>
         <source>An unknown worker message cannot be handled.</source>
-        <translation type="unfinished"></translation>
+        <translation>En melding fra en ukjent arbeidsprosess kan ikke behandles.</translation>
     </message>
     <message>
         <location filename="../qml/harbour-todolist.qml" line="64"/>
         <source>To-do List</source>
         <comment>the app&apos;s name</comment>
-        <translation type="unfinished"></translation>
+        <translation>Gjøremålsliste</translation>
     </message>
 </context>
 <context>
@@ -969,34 +969,34 @@
     <message>
         <location filename="../qml/js/storage.js" line="73"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <source>Failed to update project</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oppdatere prosjektet</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="400"/>
         <location filename="../qml/js/storage.js" line="411"/>
         <source>No internal project ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen intern prosjekt-ID ble oppgitt.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="411"/>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>Failed to delete project</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil oppsto ved sletting av prosjekt</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="414"/>
         <source>The default project cannot be deleted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardprosjektet kan ikke slettes.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="632"/>
         <source>Failed to update entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oppdatere oppføringen</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
@@ -1004,70 +1004,70 @@
         <location filename="../qml/js/storage.js" line="632"/>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>No internal entry ID was provided.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen intern oppføring‑ID ble oppgitt.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="392"/>
         <location filename="../qml/js/storage.js" line="472"/>
         <location filename="../qml/js/storage.js" line="614"/>
         <source>Failed to save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagring feilet</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="393"/>
         <source>The new project “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det nye prosjektet “%1” kunne ikke lagres.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="473"/>
         <source>The new recurring entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den nye gjentakende oppføringen “%1” kunne ikke lagres.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="528"/>
         <source>Database unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Database ikke tilgjengelig</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="529"/>
         <source>The database worker is not ready.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsprosessen for databasen er ikke klar.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="615"/>
         <source>The new entry “%1” could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation>Den nye oppføringen “%1” kunne ikke lagres.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="718"/>
         <location filename="../qml/js/storage.js" line="723"/>
         <source>Failed to carry over old entries</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke overføre gamle oppføringer</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="719"/>
         <source>Copying old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiering av gamle oppføringer feilet.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="724"/>
         <source>Updating old entries failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdatering av gamle oppføringer feilet.</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="481"/>
         <source>Failed to update recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oppdatere gjentakende oppføring</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="504"/>
         <source>Failed to delete recurring entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke slette gjentakende oppføring</translation>
     </message>
     <message>
         <location filename="../qml/js/storage.js" line="656"/>
         <source>Failed to delete entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke slette oppføring</translation>
     </message>
 </context>
 </TS>
