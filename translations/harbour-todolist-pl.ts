@@ -294,8 +294,8 @@
     <name>MySupportDialog</name>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="14"/>
-        <source>Donate on Liberapay</source>
-        <translation>Przekaż darowiznę na Liberapay</translation>
+        <source>Donate on %1</source>
+        <translation>Przekaż darowiznę na %1</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="15"/>
@@ -304,8 +304,8 @@
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="22"/>
-        <source>Translate on Weblate</source>
-        <translation>Tłumacz na Weblate</translation>
+        <source>Translate on %1</source>
+        <translation>Tłumacz na %1</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="23"/>
@@ -314,8 +314,8 @@
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="30"/>
-        <source>Develop on Github</source>
-        <translation>Rozwój na Githubie</translation>
+        <source>Develop on %1</source>
+        <translation>Rozwój na %1ie</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="31"/>

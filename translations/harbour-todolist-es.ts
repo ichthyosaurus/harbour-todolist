@@ -293,8 +293,8 @@
     <name>MySupportDialog</name>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="14"/>
-        <source>Donate on Liberapay</source>
-        <translation>Donar en Liberapay</translation>
+        <source>Donate on %1</source>
+        <translation>Donar en %1</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="15"/>
@@ -303,8 +303,8 @@
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="22"/>
-        <source>Translate on Weblate</source>
-        <translation>Traducir en Weblate</translation>
+        <source>Translate on %1</source>
+        <translation>Traducir en %1</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="23"/>
@@ -313,8 +313,8 @@
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="30"/>
-        <source>Develop on Github</source>
-        <translation>Desarrollar en GitHub</translation>
+        <source>Develop on %1</source>
+        <translation>Desarrollar en %1</translation>
     </message>
     <message>
         <location filename="../qml/MySupportDialog.qml" line="31"/>
